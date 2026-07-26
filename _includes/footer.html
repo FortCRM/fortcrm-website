@@ -10,6 +10,8 @@
   {% assign t_footer_blog = "Latest articles" %}
   {% assign t_footer_blog_all = "All articles" %}
   {% assign t_footer_blog_url = "/en/blog/" %}
+  {% assign t_scheduler_title = "Plan a call" %}
+  {% assign t_scheduler_close = "Close" %}
 {% else %}
   {% assign t_cookie_prefs = "Cookievoorkeuren" %}
   {% assign t_cookie_text = "We gebruiken alleen analytics-cookies met jouw toestemming, om te begrijpen hoe bezoekers de site gebruiken. Geen marketing- of trackingcookies van derden." %}
@@ -21,6 +23,8 @@
   {% assign t_footer_blog = "Laatste artikelen" %}
   {% assign t_footer_blog_all = "Alle artikelen" %}
   {% assign t_footer_blog_url = "/blog/" %}
+  {% assign t_scheduler_title = "Plan een gesprek" %}
+  {% assign t_scheduler_close = "Sluiten" %}
 {% endif %}
 
 {% assign footer_posts = site.posts | where: "lang", footer_lang | limit: 3 %}
@@ -73,6 +77,20 @@
       <button id="cookie-decline" class="text-sm font-medium text-inkt/70 hover:text-inkt transition-colors">{{ t_cookie_decline }}</button>
       <button id="cookie-accept" class="btn btn-sm border-none bg-vermiljoen hover:bg-vermiljoen/90 text-inkt font-semibold normal-case rounded-full px-5">{{ t_cookie_accept }}</button>
     </div>
+  </div>
+</div>
+
+<!-- ============ SCHEDULER MODAL ============ -->
+<div id="scheduler-backdrop" class="fixed inset-0 bg-inkt/50 z-[60] hidden"></div>
+<div id="scheduler-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="{{ t_scheduler_title }}">
+  <div class="bg-krijt rounded-2xl shadow-xl w-full max-w-[800px] h-[90vh] flex flex-col overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-inkt/10 flex-shrink-0">
+      <span class="font-display font-semibold text-inkt">{{ t_scheduler_title }}</span>
+      <button id="scheduler-close" aria-label="{{ t_scheduler_close }}" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-inkt/5 transition-colors flex-shrink-0">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" class="stroke-inkt" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <iframe id="scheduler-iframe" data-src="https://fortcrm.pipedrive.com/scheduler/1BZLr4C6/kennismaking" title="Pipedrive Scheduler Embed" frameborder="0" class="flex-1 w-full" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -134,5 +152,40 @@
     acceptBtn.addEventListener('click', function () { setConsent(true); });
     declineBtn.addEventListener('click', function () { setConsent(false); });
     settingsLink.addEventListener('click', function () { banner.classList.remove('hidden'); });
+  })();
+</script>
+
+<!-- Scheduler popup (Pipedrive) -->
+<script>
+  (function () {
+    var backdrop = document.getElementById('scheduler-backdrop');
+    var modal = document.getElementById('scheduler-modal');
+    var closeBtn = document.getElementById('scheduler-close');
+    var iframe = document.getElementById('scheduler-iframe');
+
+    function openScheduler(e) {
+      if (e) e.preventDefault();
+      if (!iframe.src) iframe.src = iframe.dataset.src;
+      backdrop.classList.remove('hidden');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeScheduler() {
+      backdrop.classList.add('hidden');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.js-open-scheduler').forEach(function (link) {
+      link.addEventListener('click', openScheduler);
+    });
+    closeBtn.addEventListener('click', closeScheduler);
+    backdrop.addEventListener('click', closeScheduler);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeScheduler();
+    });
   })();
 </script>
