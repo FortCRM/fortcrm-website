@@ -5,7 +5,7 @@ permalink: /blog/:title/
 timezone: Europe/Amsterdam
 
 # Vul in zodra de GA4-property is aangemaakt (Beheer > Gegevensstromen > je stream)
-google_analytics_id: ""
+google_analytics_id: "G-SLD185WBNG"
 
 # Files/folders Jekyll should leave completely alone
 exclude:
