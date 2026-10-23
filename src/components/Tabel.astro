@@ -1,0 +1,34 @@
+---
+type Kolom = { naam: string; prijs?: string; uitgelicht?: boolean };
+type Rij = { onderdeel: string; waarden: string[] };
+const { kolommen, rijen } = Astro.props as { kolommen: Kolom[]; rijen: Rij[] };
+const n = kolommen.length;
+---
+
+<div class="overflow-x-auto rounded-lg border border-black/15 dark:border-white/20">
+  <table class="tabel">
+    <thead>
+      <tr>
+        <th scope="col"><span class="sr-only">Onderdeel</span></th>
+        {kolommen.map((k) => (
+          <th scope="col" class={k.uitgelicht ? "uitgelicht" : ""}>
+            <div>{k.naam}</div>
+            {k.prijs && <div class="font-normal text-black/60 dark:text-white/70 tabular-nums">{k.prijs}</div>}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rijen.map((r) => (
+        <tr>
+          <th scope="row">{r.onderdeel}</th>
+          {r.waarden.length === 1 && n > 1 ? (
+            <td colspan={n}>{r.waarden[0]}</td>
+          ) : (
+            kolommen.map((k, i) => <td class={k.uitgelicht ? "uitgelicht" : ""}>{r.waarden[i] ?? ""}</td>)
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

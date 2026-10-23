@@ -1,0 +1,53 @@
+---
+import Container from "@components/Container.astro";
+import Sectiekop from "@components/Sectiekop.astro";
+import Contact from "@components/Contact.astro";
+import { home } from "@lib/content";
+import { pad, type Lang } from "@consts";
+
+const { lang, p } = Astro.props as { lang: Lang; p: any };
+const h = await home(lang);
+const d = p.data;
+---
+
+<Container>
+  <div class="space-y-20">
+    <section class="space-y-5">
+      <a href={pad(lang, "/#voor-wie")} class="animate navlink text-sm">← {h.voorWie.eyebrow}</a>
+      <p class="animate eyebrow">{d.eyebrow}</p>
+      <h1 class="animate text-4xl sm:text-5xl leading-[1.05] tracking-tight">{d.kop}</h1>
+      <p class="animate text-lg font-serif max-w-prose">{d.intro}</p>
+      <div class="animate flex flex-wrap gap-2">
+        <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
+        {lang === "nl" && h.hero.knopScan && <a href="/quick-scan/" class="knop-lijn">{h.hero.knopScan}</a>}
+      </div>
+    </section>
+
+    {d.pijnpunten.length > 0 && (
+      <section class="animate space-y-5">
+        <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={d.pijnTitel} />
+        <ul class="space-y-2 font-serif">
+          {d.pijnpunten.map((t: string) => <li class="flex gap-2"><span class="font-sans text-black dark:text-white">–</span><span>{t}</span></li>)}
+        </ul>
+      </section>
+    )}
+
+    {d.inrichting.length > 0 && (
+      <section class="animate space-y-5">
+        <Sectiekop titel={d.inrichtingTitel} />
+        <ul class="grid gap-3 sm:grid-cols-3">
+          {d.inrichting.map((k: any) => (
+            <li class="kaart space-y-1">
+              <h3 class="font-semibold">{k.titel}</h3>
+              <p class="text-sm">{k.tekst}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {d.slot && <p class="animate font-serif text-xl max-w-prose text-black dark:text-white">{d.slot}</p>}
+
+    <Contact lang={lang} data={h.contact} />
+  </div>
+</Container>

@@ -1,0 +1,254 @@
+seo:
+  titel: 'FortCRM: Pipedrive implementation for SMEs'
+  beschrijving: 'FortCRM implements Pipedrive for small and medium-sized businesses and makes sure your team keeps using it: setup, automation and a recurring ambition review.'
+  deelTitel: 'FortCRM: Pipedrive your team actually uses'
+hero:
+  eyebrow: Pipedrive implementation for SMEs
+  titel: Pipedrive your team _actually_ uses.
+  intro: We set up Pipedrive, build the automation around it and keep steering after go-live. So you don't end up with a CRM that gathers dust after three weeks, but a system that becomes the foundation of your business. And ready for AI.
+  belofte: Live within 6 weeks. Still in use after 60 days. If not, we stand behind it.*
+  knopGesprek: Book a call
+  knopPakketten: See the packages
+  knopScan: ''
+  voetnoot: '* Not live within 6 weeks while your requirements were in order? Then you pay no licence fees for the overrun. If your team is not actively using Pipedrive after 60 days, you get an extra training session for free. Both guarantees apply to Fully managed and Shared. What active means is agreed together up front.'
+  feiten:
+  - kop: Pipedrive
+    tekst: One CRM as the single source of truth for your customer data
+  - kop: Authorized partner
+    tekst: Official Pipedrive partner
+  - kop: 5 to 250 employees
+    tekst: The businesses where we make the difference
+herkenbaar:
+  eyebrow: Sound familiar?
+  titel: What we hear at almost every growing business
+  kaarten:
+  - citaat: Follow-up happens when there's time.
+    tekst: Requests and orders come in every day, but everyone handles them differently.
+  - citaat: Only the person who was there knows.
+    tekst: One deal takes five conversations. What was discussed is known only to whoever was in the room.
+  - citaat: It runs on gut feeling.
+    tekst: You send few quotes, but every quote counts. Follow-up runs on gut feeling.
+  slotVet: A CRM doesn't work because it's there.
+  slot: Pipedrive works when it fits how your team works, and when you keep steering it. That is what we do.
+aanpak:
+  eyebrow: Our approach
+  titel: From first call to a team that uses it
+  intro: Five steps. After each step you know what you get.
+  stappen:
+  - titel: Introduction
+    tekst: A 30-minute call about how you work today and what you want to achieve.
+    resultaat: An honest answer on whether Pipedrive fits.
+  - titel: Design
+    tekst: We map how a request becomes a customer, in your own words.
+    resultaat: A setup plan your team recognises.
+  - titel: Setup and automation
+    tekst: FortCRM sets up Pipedrive, migrates your data and builds the automation around it.
+    resultaat: A working Pipedrive, ready to use.
+  - titel: Training and go-live
+    tekst: Your team learns to work in your real situation, not in a demo. You are live within 6 weeks of the start.
+    resultaat: Your team works in Pipedrive.
+  - titel: Steering
+    tekst: After 60 days we check together whether your team is actively using Pipedrive. If not, you get an extra training session for free.
+    resultaat: Usage that lasts.
+  naderhandTitel: 'After that: the ambition review'
+  naderhandTekst: What works, what doesn't, and what the next step is. That way Pipedrive grows with your business. Part of every SLA.
+voorWie:
+  eyebrow: Who we help
+  titel: Three kinds of businesses where Pipedrive makes the difference
+  kaarten:
+  - titel: Few deals, high win rate
+    tekst: Construction companies, for example. You send few quotes and each one counts. The gain is in tight follow-up on every quote.
+    pagina: ''
+  - titel: Custom work and advice with several conversations
+    tekst: Consultancies and agencies where one deal takes several conversations. The gain is a complete customer picture, even when someone else takes over.
+    pagina: ''
+  - titel: Many requests, many orders
+    tekst: 'Small amounts, large volumes. The gain is speed and a fixed route: every request is handled the same way.'
+    pagina: ''
+  oproep: Recognise yourself in one of these? Book a 30-minute call and we'll look at what Pipedrive can do for your team. If it is not a fit, we'll tell you honestly.
+  oproepLink: Book a 30-minute call
+  nietVoorTitel: Who we are not for
+  nietVoorTekst: 'Working with one or two people? Then an extensive setup may not be needed yet. Book a call anyway: we''ll see together whether it fits, and if there is a better first step, we''ll say so.'
+scan:
+  tonen: false
+  eyebrow: Quick scan
+  titel: How solid is your CRM foundation?
+  tekst: Six questions, two minutes.
+  knop: Start the quick scan
+pakketten:
+  eyebrow: Packages
+  titel: Choose how much you do yourself
+  intro: Three ways to work with us. All three are built with Pipedrive as the source of truth.
+  kolommen:
+  - naam: Self-directed
+    prijs: €4,950
+    uitgelicht: false
+  - naam: Shared
+    prijs: €7,950
+    uitgelicht: true
+  - naam: Fully managed
+    prijs: €12,950
+    uitgelicht: false
+  rijen:
+  - onderdeel: For whom
+    waarden:
+    - You do it yourself.
+    - We do it together.
+    - We do it for you.
+  - onderdeel: Pipelines
+    waarden:
+    - '1'
+    - '2'
+    - '3'
+  - onderdeel: Fields
+    waarden:
+    - Up to 20
+    - Up to 30
+    - Up to 60
+  - onderdeel: Automations
+    waarden:
+    - '4'
+    - '8'
+    - '12'
+  - onderdeel: Dashboards
+    waarden:
+    - '1'
+    - '2'
+    - '3'
+  - onderdeel: Data migration
+    waarden:
+    - One Excel or CSV file
+    - One system
+    - Up to two systems
+  - onderdeel: Integration with an external system
+    waarden:
+    - Available separately
+    - Available separately
+    - One included
+  - onderdeel: Training
+    waarden:
+    - 1 session
+    - 2 sessions
+    - 3 sessions
+  - onderdeel: Hypercare after go-live
+    waarden:
+    - 30 days
+    - 30 days
+    - 30 days
+  - onderdeel: Lead time
+    waarden:
+    - Live within 6 weeks, provided your requirements are in order.
+  - onderdeel: Guarantee on go-live and usage
+    waarden:
+    - 'No'
+    - 'Yes'
+    - 'Yes'
+  - onderdeel: SLA and ambition review
+    waarden:
+    - Available with every package, see below.
+  prijsnoot: 'All prices exclude VAT. Pipedrive licences are not included; Pipedrive invoices those directly. Extra integration with an external system: €950 per integration. Tech Discovery session: €1,295.'
+  slaEyebrow: After go-live
+  slaTitel: 'SLA: support, management and the ambition review'
+  slaIntro: 'With an SLA we keep steering on usage. Every level includes the ambition review: what works, what doesn''t and what the next step is.'
+  slaKolommen:
+  - naam: Basic
+    prijs: €595 p/m
+    uitgelicht: false
+  - naam: Plus
+    prijs: €1,250 p/m
+    uitgelicht: true
+  - naam: Max
+    prijs: €2,450 p/m
+    uitgelicht: false
+  slaRijen:
+  - onderdeel: Ambition review
+    waarden:
+    - Every quarter
+    - Every month
+    - Every month
+  - onderdeel: Support hours included
+    waarden:
+    - 2 per month
+    - 6 per month
+    - 14 per month
+  - onderdeel: Management and small changes
+    waarden:
+    - 'Yes'
+    - 'Yes'
+    - 'Yes'
+  - onderdeel: Dedicated contact
+    waarden:
+    - 'No'
+    - 'No'
+    - 'Yes'
+  knopVoorstel: Request a proposal
+  knopScan: ''
+garantie:
+  getal: '60'
+  getalTekst: day guarantee
+  eyebrow: Our guarantee
+  titel: Live on time and in use. Otherwise we stand behind it.
+  punten:
+  - Not live within 6 weeks while your requirements were in order? Then you pay no licence fees for the overrun.
+  - After 60 days we check together whether your team is actively using Pipedrive.
+  - If not, you get an extra training session for free.
+  - What active means is agreed up front. No discussion afterwards.
+  noot: Both guarantees apply to Fully managed and Shared.
+waarom:
+  eyebrow: Why FortCRM
+  titel: Usage is the goal, not go-live
+  punten:
+  - titel: Results, not effort
+    tekst: Others promise effort. We promise a team that still uses Pipedrive after 60 days, and we steer on that.
+  - titel: Integrations built in-house
+    tekst: We build the integrations and workflows around Pipedrive ourselves, in n8n. Manual work disappears and everything stays adaptable.
+  - titel: Ready for AI
+    tekst: Pipedrive as the source of truth, with clean data. That is what AI can rely on.
+  - titel: Honest about fit
+    tekst: If Pipedrive doesn't suit you, you'll hear it from us in the first call.
+  - titel: Fixed points of contact
+    tekst: You work with two people who do the work themselves, long after go-live. No handover between sales and delivery.
+  - titel: Secure foundation
+    tekst: EU hosting and GDPR compliance are standard, for Pipedrive and for the integrations we build.
+team:
+  eyebrow: About us
+  titel: Two people, over twenty years of system implementations combined
+  intro: FortCRM is a young agency. That means you work with the two people who run the company.
+  mensen:
+  - naam: Joost Smaardijk
+    rol: Strategy and guidance
+    tekst: 'Makes sure the project adds up: strategy, sales, guidance and project management. Previously 15 years as a project lead on SAP programmes.'
+    foto: /images/team/joost-smaardijk.jpg
+    linkedin: https://www.linkedin.com/in/joostsmaardijk/
+    linkedinTekst: Connect on LinkedIn
+  - naam: Joost Beers
+    rol: Implementation and technology
+    tekst: Builds the setup, automations, integrations and workflows, and optimises processes. Delivered three full Pipedrive implementations in the past three years, including migration. Before that, seven years as an IT business consultant.
+    foto: /images/team/joost-beers.jpg
+    linkedin: https://www.linkedin.com/in/jfbeers
+    linkedinTekst: Connect on LinkedIn
+  noot: We are both called Joost. Internally we use Smaardijk and Beers.
+faq:
+  eyebrow: FAQ
+  titel: What people ask us up front
+  vragen:
+  - vraag: How long does an implementation take?
+    antwoord: 'You are live within 6 weeks, provided your requirements are in order. Live means: delivered, tested against what we agreed and your team is trained. If we miss that, with Fully managed and Shared you pay no licence fees for the overrun.'
+  - vraag: Why Pipedrive?
+    antwoord: Pipedrive is simple enough to use every day and powerful enough to grow with you. That second part is why teams keep using it.
+  - vraag: What if my team doesn't use it?
+    antwoord: That is what the usage guarantee is for. After 60 days we check together whether your team is actively using Pipedrive. If not, you get an extra training session for free. Applies to Fully managed and Shared.
+  - vraag: Can I bring my existing data?
+    antwoord: Yes. We move data from Excel, mailboxes or your current CRM to Pipedrive and clean up duplicates.
+  - vraag: What does ready for AI mean?
+    antwoord: AI is only as good as the data it works on. We set up Pipedrive with clean, consistent data, so you can build AI applications on top of it later.
+  - vraag: What does it cost?
+    antwoord: 'Self-directed costs €4,950, Shared €7,950 and Fully managed €12,950. After go-live you choose an SLA: Basic €595, Plus €1,250 or Max €2,450 per month. All excluding VAT. After the first call you receive a proposal.'
+  - vraag: Do I already need a Pipedrive licence?
+    antwoord: 'No. We discuss that in the first call and advise which plan fits. As a Pipedrive partner we start your trial through our partner link: 30 days instead of 14.'
+contact:
+  eyebrow: Contact
+  titel: Book a 30-minute call
+  intro: We look at what Pipedrive can do for your team. If it is not a fit, we will tell you honestly.
+  knopPlanner: Pick a time
+  reactietijd: We reply within one working day.

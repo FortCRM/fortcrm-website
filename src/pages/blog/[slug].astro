@@ -1,0 +1,15 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import BlogPost from "@components/BlogPost.astro";
+import { posts } from "@lib/content";
+
+export async function getStaticPaths() {
+  return (await posts("nl")).map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+const { post } = Astro.props;
+const vertaling = post.data.vertaling ? `/en/blog/${post.data.vertaling}/` : undefined;
+---
+
+<PageLayout title={`${post.data.titel} | FortCRM`} description={post.data.omschrijving} lang="nl" vertaling={vertaling}>
+  <BlogPost lang="nl" post={post} />
+</PageLayout>

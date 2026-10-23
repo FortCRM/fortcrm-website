@@ -1,0 +1,44 @@
+---
+import Container from "@components/Container.astro";
+import { instellingen } from "@lib/content";
+import { formatDatum } from "@lib/utils";
+import { render } from "astro:content";
+import { pad, SITE, type Lang } from "@consts";
+
+const { lang, post } = Astro.props as { lang: Lang; post: any };
+const b = (await instellingen(lang)).blog;
+const { Content } = await render(post);
+const url = `${SITE.URL}${pad(lang, `/blog/${post.slug}/`)}`;
+const d = post.data;
+---
+
+<Container>
+  <div class="max-w-screen-sm mx-auto space-y-8">
+    <a href={pad(lang, "/blog/")} class="animate navlink text-sm">← {b.terug}</a>
+    <div class="space-y-2">
+      <div class="animate text-sm">{formatDatum(d.datum, lang)}</div>
+      <h1 class="animate text-3xl leading-tight">{d.titel}</h1>
+    </div>
+    {d.tldr.length > 0 && (
+      <aside class="animate kaart space-y-2">
+        <div class="eyebrow">{b.tldr}</div>
+        <ul class="list-disc pl-5 space-y-1 font-serif">
+          {d.tldr.map((t: string) => <li>{t}</li>)}
+        </ul>
+      </aside>
+    )}
+    <article class="animate">
+      <Content />
+    </article>
+    <div class="animate kaart space-y-3">
+      <p class="font-serif">{b.cta}</p>
+      <a href={`${pad(lang)}#contact`} data-plan class="knop">{b.ctaKnop}</a>
+    </div>
+    <div class="animate flex flex-wrap items-center gap-2 text-sm border-t border-black/10 dark:border-white/10 pt-5">
+      <span class="font-semibold text-black dark:text-white">{b.delen}</span>
+      <a class="knop-lijn knop-sm" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener">LinkedIn</a>
+      <a class="knop-lijn knop-sm" href={`mailto:?subject=${encodeURIComponent(d.titel)}&body=${encodeURIComponent(url)}`}>E-mail</a>
+      <button type="button" class="knop-lijn knop-sm" data-kopieer={url} data-klaar={b.gekopieerd}>{b.kopieer}</button>
+    </div>
+  </div>
+</Container>

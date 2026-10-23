@@ -1,0 +1,14 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Landing from "@components/Landing.astro";
+import { landingspaginas } from "@lib/content";
+
+export async function getStaticPaths() {
+  return (await landingspaginas("nl")).map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+---
+
+<PageLayout title={`${p.data.titel} | FortCRM`} description={p.data.beschrijving} lang="nl">
+  <Landing lang="nl" p={p} />
+</PageLayout>

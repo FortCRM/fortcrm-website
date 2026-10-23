@@ -1,0 +1,205 @@
+---
+import Container from "@components/Container.astro";
+import Sectiekop from "@components/Sectiekop.astro";
+import Contact from "@components/Contact.astro";
+import Tabel from "@components/Tabel.astro";
+import { home } from "@lib/content";
+import { splitNadruk } from "@lib/utils";
+import { pad, type Lang } from "@consts";
+
+const { lang } = Astro.props as { lang: Lang };
+const h = await home(lang);
+const titel = splitNadruk(h.hero.titel);
+const [oproepVoor, oproepNa] = h.voorWie.oproepLink && h.voorWie.oproep.includes(h.voorWie.oproepLink)
+  ? h.voorWie.oproep.split(h.voorWie.oproepLink)
+  : [h.voorWie.oproep, null];
+const toonScan = lang === "nl" && h.scan?.tonen;
+---
+
+<Container>
+  <div class="space-y-24">
+    <!-- hero -->
+    <section class="space-y-6">
+      <p class="animate eyebrow">{h.hero.eyebrow}</p>
+      <h1 class="animate text-4xl sm:text-5xl leading-[1.05] tracking-tight">
+        {titel.map((t) => (t.nadruk ? <span class="font-light font-serif italic">{t.deel}</span> : t.deel))}
+      </h1>
+      <p class="animate text-lg max-w-prose font-serif">{h.hero.intro}</p>
+      <p class="animate font-semibold text-black dark:text-white max-w-prose">{h.hero.belofte}</p>
+      <div class="animate flex flex-wrap gap-2">
+        <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
+        <a href="#pakketten" class="knop-lijn">{h.hero.knopPakketten}</a>
+        {h.hero.knopScan && lang === "nl" && <a href="/quick-scan/" class="knop-lijn">{h.hero.knopScan}</a>}
+      </div>
+      <p class="animate text-xs max-w-prose">{h.hero.voetnoot}</p>
+      {h.hero.feiten?.length > 0 && (
+        <ul class="animate grid gap-4 sm:grid-cols-3 border-t border-black/10 dark:border-white/10 pt-5">
+          {h.hero.feiten.map((f: any) => (
+            <li>
+              <div class="font-semibold text-black dark:text-white">{f.kop}</div>
+              <div class="text-sm">{f.tekst}</div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+
+    <!-- herkenbaar -->
+    <section class="animate space-y-6">
+      <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={h.herkenbaar.titel} />
+      <ul class="grid gap-3 sm:grid-cols-3">
+        {h.herkenbaar.kaarten.map((k: any) => (
+          <li class="kaart space-y-2">
+            <p class="font-serif italic text-black dark:text-white">&ldquo;{k.citaat}&rdquo;</p>
+            <p class="text-sm">{k.tekst}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="font-serif text-lg max-w-prose"><strong class="font-sans font-semibold text-black dark:text-white">{h.herkenbaar.slotVet}</strong> {h.herkenbaar.slot}</p>
+    </section>
+
+    <!-- aanpak -->
+    <section id="aanpak" class="animate space-y-6">
+      <Sectiekop eyebrow={h.aanpak.eyebrow} titel={h.aanpak.titel} intro={h.aanpak.intro} />
+      <ol class="relative space-y-6 border-l border-black/15 dark:border-white/20 pl-6">
+        {h.aanpak.stappen.map((s: any, i: number) => (
+          <li class="relative">
+            <span class="absolute -left-[2.15rem] top-0 size-6 rounded-full bg-stone-100 dark:bg-stone-900 border border-black/30 dark:border-white/40 grid place-items-center text-xs font-semibold text-black dark:text-white">{i + 1}</span>
+            <h3 class="font-semibold">{s.titel}</h3>
+            <p class="font-serif">{s.tekst}</p>
+            <p class="text-sm mt-1"><span class="text-black dark:text-white">→</span> {s.resultaat}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="kaart">
+        <div class="font-semibold text-black dark:text-white">{h.aanpak.naderhandTitel}</div>
+        <p class="font-serif">{h.aanpak.naderhandTekst}</p>
+      </div>
+    </section>
+
+    <!-- voor wie -->
+    <section id="voor-wie" class="animate space-y-6">
+      <Sectiekop eyebrow={h.voorWie.eyebrow} titel={h.voorWie.titel} />
+      <ul class="flex flex-col gap-3">
+        {h.voorWie.kaarten.map((k: any) => (
+          <li>
+            {k.pagina ? (
+              <a href={pad(lang, `/${k.pagina}/`)} class="pijlkaart group">
+                <div class="flex-1 min-w-0">
+                  <div class="font-semibold text-black dark:text-white">{k.titel}</div>
+                  <div class="text-sm">{k.tekst}</div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-3 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+                  <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+                </svg>
+              </a>
+            ) : (
+              <div class="kaart">
+                <div class="font-semibold text-black dark:text-white">{k.titel}</div>
+                <div class="text-sm">{k.tekst}</div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p class="font-serif max-w-prose">
+        {oproepNa !== null ? (<>{oproepVoor}<a href="#contact" data-plan class="font-sans underline underline-offset-2 decoration-black/30 dark:decoration-white/40 text-black dark:text-white">{h.voorWie.oproepLink}</a>{oproepNa}</>) : oproepVoor}
+      </p>
+      <div class="kaart border-dashed">
+        <div class="font-semibold text-black dark:text-white">{h.voorWie.nietVoorTitel}</div>
+        <p class="font-serif">{h.voorWie.nietVoorTekst}</p>
+      </div>
+    </section>
+
+    {toonScan && (
+      <section class="animate kaart p-6 flex flex-wrap gap-4 items-center justify-between">
+        <div class="space-y-1 min-w-0 flex-1">
+          <p class="eyebrow">{h.scan.eyebrow}</p>
+          <h2 class="text-xl">{h.scan.titel}</h2>
+          <p class="text-sm max-w-prose">{h.scan.tekst}</p>
+        </div>
+        <a href="/quick-scan/" class="knop">{h.scan.knop}</a>
+      </section>
+    )}
+
+    <!-- pakketten -->
+    <section id="pakketten" class="animate space-y-6">
+      <Sectiekop eyebrow={h.pakketten.eyebrow} titel={h.pakketten.titel} intro={h.pakketten.intro} />
+      <Tabel kolommen={h.pakketten.kolommen} rijen={h.pakketten.rijen} />
+      <p class="text-sm max-w-prose">{h.pakketten.prijsnoot}</p>
+      <div class="pt-6">
+        <Sectiekop eyebrow={h.pakketten.slaEyebrow} titel={h.pakketten.slaTitel} intro={h.pakketten.slaIntro} klein />
+      </div>
+      <Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} />
+      <div class="flex flex-wrap gap-2">
+        <a href="#contact" class="knop">{h.pakketten.knopVoorstel}</a>
+        {h.pakketten.knopScan && lang === "nl" && <a href="/quick-scan/" class="knop-lijn">{h.pakketten.knopScan}</a>}
+      </div>
+    </section>
+
+    <!-- garantie -->
+    <section class="animate grid gap-6 sm:grid-cols-[auto_1fr] items-start">
+      <div class="leading-none">
+        <div class="text-7xl font-semibold tracking-tight text-black dark:text-white tabular-nums">{h.garantie.getal}</div>
+        <div class="text-sm mt-1">{h.garantie.getalTekst}</div>
+      </div>
+      <div class="space-y-4 min-w-0">
+        <Sectiekop eyebrow={h.garantie.eyebrow} titel={h.garantie.titel} klein />
+        <ul class="space-y-2 font-serif">
+          {h.garantie.punten.map((p: string) => <li class="flex gap-2"><span class="text-fort dark:text-fort-dark font-sans">✓</span><span>{p}</span></li>)}
+        </ul>
+        <p class="text-sm">{h.garantie.noot}</p>
+      </div>
+    </section>
+
+    <!-- waarom -->
+    <section id="waarom" class="animate space-y-6">
+      <Sectiekop eyebrow={h.waarom.eyebrow} titel={h.waarom.titel} />
+      <dl class="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+        {h.waarom.punten.map((p: any) => (
+          <div>
+            <dt class="font-semibold text-black dark:text-white">{p.titel}</dt>
+            <dd class="font-serif">{p.tekst}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <!-- team -->
+    <section id="over-ons" class="animate space-y-6">
+      <Sectiekop eyebrow={h.team.eyebrow} titel={h.team.titel} intro={h.team.intro} />
+      <ul class="grid gap-4 sm:grid-cols-2">
+        {h.team.mensen.map((m: any) => (
+          <li class="kaart flex gap-4 items-start">
+            {m.foto && <img src={m.foto} alt={m.naam} width="72" height="72" loading="lazy" class="size-16 rounded-full object-cover flex-none grayscale" />}
+            <div class="space-y-1 min-w-0">
+              <div class="text-xs uppercase tracking-wider">{m.rol}</div>
+              <h3 class="font-semibold">{m.naam}</h3>
+              <p class="text-sm font-serif">{m.tekst}</p>
+              {m.linkedin && <a href={m.linkedin} class="text-sm underline underline-offset-2 decoration-black/15 dark:decoration-white/30 navlink">{m.linkedinTekst}</a>}
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="text-sm">{h.team.noot}</p>
+    </section>
+
+    <!-- faq -->
+    <section id="faq" class="animate space-y-6">
+      <Sectiekop eyebrow={h.faq.eyebrow} titel={h.faq.titel} />
+      <div class="divide-y divide-black/10 dark:divide-white/10 border-y border-black/10 dark:border-white/10">
+        {h.faq.vragen.map((v: any) => (
+          <details class="group py-3">
+            <summary class="cursor-pointer list-none flex justify-between gap-4 font-semibold text-black dark:text-white">
+              <span>{v.vraag}</span><span class="transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="font-serif pt-2 max-w-prose">{v.antwoord}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <Contact lang={lang} data={h.contact} />
+  </div>
+</Container>

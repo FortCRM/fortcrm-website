@@ -1,0 +1,391 @@
+import { config, collection, singleton, fields } from "@keystatic/core";
+
+// Keystatic: lokaal schrijft het in de map zelf, online commit het via de GitHub-app naar de repo.
+const storage = import.meta.env.DEV
+  ? ({ kind: "local" } as const)
+  : ({ kind: "github", repo: { owner: "FortCRM", name: "fortcrm-website" } } as const);
+
+const tekst = (label: string, description?: string) => fields.text({ label, description });
+const alinea = (label: string, description?: string) => fields.text({ label, description, multiline: true });
+
+const lijst = <T extends Parameters<typeof fields.array>[0]>(element: T, label: string, itemLabel?: (p: any) => string) =>
+  fields.array(element, { label, itemLabel });
+
+const kop = {
+  eyebrow: tekst("Klein kopje boven de titel"),
+  titel: tekst("Titel"),
+};
+
+// ---------- homepage (zelfde opbouw voor NL en EN) ----------
+const homeSchema = {
+  seo: fields.object(
+    {
+      titel: tekst("Paginatitel in Google en het tabblad"),
+      beschrijving: alinea("Beschrijving in Google", "Ongeveer 150 tekens."),
+      deelTitel: tekst("Titel bij delen op LinkedIn en WhatsApp"),
+    },
+    { label: "Vindbaarheid" },
+  ),
+  hero: fields.object(
+    {
+      eyebrow: tekst("Klein kopje boven de titel"),
+      titel: tekst("Titel", "Zet het woord dat dun moet tussen _liggende streepjes_, bijvoorbeeld: Pipedrive dat je team _écht_ gebruikt."),
+      intro: alinea("Inleiding"),
+      belofte: tekst("Belofte in het vet"),
+      knopGesprek: tekst("Knop gesprek plannen"),
+      knopPakketten: tekst("Knop naar pakketten"),
+      knopScan: tekst("Knop quick scan", "Laat leeg om de knop te verbergen."),
+      voetnoot: alinea("Voetnoot bij de belofte"),
+      feiten: lijst(
+        fields.object({ kop: tekst("Kop"), tekst: tekst("Tekst") }),
+        "Feiten onder de hero",
+        (p) => p.fields.kop.value,
+      ),
+    },
+    { label: "Bovenaan (hero)" },
+  ),
+  herkenbaar: fields.object(
+    {
+      ...kop,
+      kaarten: lijst(
+        fields.object({ citaat: tekst("Citaat"), tekst: alinea("Toelichting") }),
+        "Kaarten",
+        (p) => p.fields.citaat.value,
+      ),
+      slotVet: tekst("Slotzin, vet deel"),
+      slot: alinea("Slotzin, rest"),
+    },
+    { label: "Herkenbaar" },
+  ),
+  aanpak: fields.object(
+    {
+      ...kop,
+      intro: alinea("Inleiding"),
+      stappen: lijst(
+        fields.object({ titel: tekst("Stap"), tekst: alinea("Uitleg"), resultaat: tekst("Resultaat") }),
+        "Stappen",
+        (p) => p.fields.titel.value,
+      ),
+      naderhandTitel: tekst("Daarna: titel"),
+      naderhandTekst: alinea("Daarna: tekst"),
+    },
+    { label: "Aanpak" },
+  ),
+  voorWie: fields.object(
+    {
+      ...kop,
+      kaarten: lijst(
+        fields.object({
+          titel: tekst("Titel"),
+          tekst: alinea("Tekst"),
+          pagina: tekst("Link naar landingspagina", "De korte naam van de pagina, bijvoorbeeld weinig-deals. Leeg = geen link."),
+        }),
+        "Soorten bedrijven",
+        (p) => p.fields.titel.value,
+      ),
+      oproep: alinea("Zin onder de kaarten"),
+      oproepLink: tekst("Linktekst in die zin", "Dit stuk tekst wordt de link naar de afspraakplanner. Moet letterlijk in de zin staan."),
+      nietVoorTitel: tekst("Voor wie niet: titel"),
+      nietVoorTekst: alinea("Voor wie niet: tekst"),
+    },
+    { label: "Voor wie" },
+  ),
+  scan: fields.object(
+    {
+      tonen: fields.checkbox({ label: "Blok quick scan tonen", defaultValue: true }),
+      ...kop,
+      tekst: alinea("Tekst"),
+      knop: tekst("Knop"),
+    },
+    { label: "Quick scan-blok" },
+  ),
+  pakketten: fields.object(
+    {
+      ...kop,
+      intro: alinea("Inleiding"),
+      kolommen: lijst(
+        fields.object({
+          naam: tekst("Pakket"),
+          prijs: tekst("Prijs", "Bijvoorbeeld €7.950"),
+          uitgelicht: fields.checkbox({ label: "Uitgelicht", defaultValue: false }),
+        }),
+        "Pakketten (kolommen)",
+        (p) => p.fields.naam.value,
+      ),
+      rijen: lijst(
+        fields.object({
+          onderdeel: tekst("Onderdeel"),
+          waarden: lijst(tekst("Waarde"), "Waarde per pakket, in dezelfde volgorde als de kolommen. Eén waarde = over de hele breedte."),
+        }),
+        "Rijen",
+        (p) => p.fields.onderdeel.value,
+      ),
+      prijsnoot: alinea("Noot onder de tabel"),
+      slaEyebrow: tekst("SLA: klein kopje"),
+      slaTitel: tekst("SLA: titel"),
+      slaIntro: alinea("SLA: inleiding"),
+      slaKolommen: lijst(
+        fields.object({
+          naam: tekst("Niveau"),
+          prijs: tekst("Prijs per maand"),
+          uitgelicht: fields.checkbox({ label: "Uitgelicht", defaultValue: false }),
+        }),
+        "SLA-niveaus",
+        (p) => p.fields.naam.value,
+      ),
+      slaRijen: lijst(
+        fields.object({ onderdeel: tekst("Onderdeel"), waarden: lijst(tekst("Waarde"), "Waarde per niveau") }),
+        "SLA-rijen",
+        (p) => p.fields.onderdeel.value,
+      ),
+      knopVoorstel: tekst("Knop voorstel aanvragen"),
+      knopScan: tekst("Knop quick scan", "Leeg = verbergen."),
+    },
+    { label: "Pakketten en SLA" },
+  ),
+  garantie: fields.object(
+    {
+      getal: tekst("Groot getal", "Bijvoorbeeld 60"),
+      getalTekst: tekst("Tekst onder het getal"),
+      ...kop,
+      punten: lijst(tekst("Punt"), "Punten"),
+      noot: tekst("Noot"),
+    },
+    { label: "Garantie" },
+  ),
+  waarom: fields.object(
+    {
+      ...kop,
+      punten: lijst(
+        fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst") }),
+        "Redenen",
+        (p) => p.fields.titel.value,
+      ),
+    },
+    { label: "Waarom FortCRM" },
+  ),
+  team: fields.object(
+    {
+      ...kop,
+      intro: alinea("Inleiding"),
+      mensen: lijst(
+        fields.object({
+          naam: tekst("Naam"),
+          rol: tekst("Rol"),
+          tekst: alinea("Over"),
+          foto: fields.image({ label: "Foto", directory: "public/images/team", publicPath: "/images/team/" }),
+          linkedin: fields.url({ label: "LinkedIn-profiel" }),
+          linkedinTekst: tekst("Linktekst LinkedIn"),
+        }),
+        "Mensen",
+        (p) => p.fields.naam.value,
+      ),
+      noot: tekst("Noot onder het team"),
+    },
+    { label: "Over ons" },
+  ),
+  faq: fields.object(
+    {
+      ...kop,
+      vragen: lijst(
+        fields.object({ vraag: tekst("Vraag"), antwoord: alinea("Antwoord") }),
+        "Vragen",
+        (p) => p.fields.vraag.value,
+      ),
+    },
+    { label: "Veelgestelde vragen" },
+  ),
+  contact: fields.object(
+    {
+      ...kop,
+      intro: alinea("Inleiding"),
+      knopPlanner: tekst("Knop afspraakplanner"),
+      reactietijd: tekst("Reactietijd"),
+    },
+    { label: "Contact" },
+  ),
+};
+
+// ---------- instellingen: menu, footer, formulier, blogteksten ----------
+const instellingenSchema = {
+  menu: fields.object(
+    {
+      aanpak: tekst("Aanpak"),
+      pakketten: tekst("Pakketten"),
+      voorWie: tekst("Voor wie"),
+      overOns: tekst("Over ons"),
+      faq: tekst("Veelgestelde vragen"),
+      quickscan: tekst("Quick scan", "Leeg = niet in het menu."),
+      blog: tekst("Blog"),
+      knop: tekst("Knop gesprek plannen"),
+      menu: tekst("Menuknop op mobiel"),
+      andereTaal: tekst("Link naar de andere taal"),
+    },
+    { label: "Menu" },
+  ),
+  bedrijf: fields.object(
+    {
+      mail: tekst("E-mailadres"),
+      telefoon: tekst("Telefoonnummer"),
+      kvk: tekst("KvK-nummer"),
+      linkedin: fields.url({ label: "LinkedIn-bedrijfspagina" }),
+    },
+    { label: "Bedrijfsgegevens" },
+  ),
+  footer: fields.object(
+    {
+      tagline: alinea("Zin onder het logo"),
+      paginas: tekst("Kopje pagina's"),
+      contact: tekst("Kopje contact"),
+      artikelen: tekst("Kopje laatste artikelen"),
+      linkedin: tekst("Linktekst LinkedIn"),
+      privacy: tekst("Regel privacyverklaring"),
+      partner: tekst("Regel Pipedrive-partner"),
+      cookieknop: tekst("Knop cookievoorkeuren"),
+    },
+    { label: "Footer" },
+  ),
+  cookies: fields.object(
+    { tekst: alinea("Tekst"), weigeren: tekst("Knop weigeren"), akkoord: tekst("Knop akkoord") },
+    { label: "Cookiemelding" },
+  ),
+  formulier: fields.object(
+    {
+      naam: tekst("Label naam"),
+      mail: tekst("Label e-mail"),
+      bron: tekst("Label hoe ken je ons"),
+      bronKies: tekst("Eerste keuze in de lijst"),
+      bronOpties: fields.object(
+        {
+          referral: tekst("Aanbevolen"),
+          linkedin: tekst("LinkedIn"),
+          zoeken: tekst("Gezocht"),
+          netwerk: tekst("Kennen elkaar"),
+          pipedrive: tekst("Via Pipedrive"),
+          anders: tekst("Anders"),
+        },
+        { label: "Keuzes hoe ken je ons", description: "Alleen de tekst is aan te passen; de waarde achter elke keuze gaat naar Pipedrive." },
+      ),
+      vraag: tekst("Label vraag"),
+      verstuur: tekst("Knop versturen"),
+      privacy: tekst("Regel onder het formulier"),
+      planner: tekst("Titel afspraakplanner"),
+      sluiten: tekst("Knop sluiten"),
+    },
+    { label: "Contactformulier" },
+  ),
+  blog: fields.object(
+    {
+      titel: tekst("Titel blogoverzicht"),
+      intro: alinea("Inleiding blogoverzicht"),
+      beschrijving: tekst("Beschrijving in Google"),
+      terug: tekst("Link terug naar overzicht"),
+      tldr: tekst("Kopje samenvatting"),
+      cta: alinea("Oproep onder elk artikel"),
+      ctaKnop: tekst("Knop onder elk artikel"),
+      delen: tekst("Kopje delen"),
+      kopieer: tekst("Knop link kopiëren"),
+      gekopieerd: tekst("Melding link gekopieerd"),
+    },
+    { label: "Blog" },
+  ),
+};
+
+// ---------- landingspagina's ----------
+const landingSchema = {
+  titel: fields.slug({ name: { label: "Titel in Google en het tabblad" } }),
+  beschrijving: alinea("Beschrijving in Google"),
+  eyebrow: tekst("Klein kopje"),
+  kop: tekst("Grote titel"),
+  intro: alinea("Inleiding"),
+  pijnTitel: tekst("Kopje herkenbaar"),
+  pijnpunten: lijst(tekst("Punt"), "Herkenbare punten"),
+  inrichtingTitel: tekst("Kopje wat we inrichten"),
+  inrichting: lijst(
+    fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst") }),
+    "Wat we inrichten",
+    (p) => p.fields.titel.value,
+  ),
+  slot: alinea("Slotzin"),
+};
+
+// ---------- blog ----------
+const blogSchema = {
+  titel: fields.slug({ name: { label: "Titel" } }),
+  omschrijving: alinea("Samenvatting", "Staat in het overzicht en in Google."),
+  datum: fields.date({ label: "Datum" }),
+  tldr: lijst(tekst("Punt"), "Kort samengevat", (p) => p.value),
+  vertaling: tekst("Vertaling", "De korte naam (slug) van hetzelfde artikel in de andere taal. Leeg = geen vertaling."),
+  inhoud: fields.markdoc({ label: "Artikel", extension: "md" }),
+};
+
+const blog = (label: string, map: string) =>
+  collection({
+    label,
+    slugField: "titel",
+    path: `src/content/blog/${map}/*`,
+    format: { contentField: "inhoud" },
+    entryLayout: "content",
+    columns: ["titel", "datum"],
+    schema: blogSchema,
+  });
+
+const landing = (label: string, map: string) =>
+  collection({
+    label,
+    slugField: "titel",
+    path: `src/content/landing/${map}/*`,
+    format: { data: "yaml" },
+    schema: landingSchema,
+  });
+
+
+// ---------- quick scan: alleen de teksten in de uitslag; vragen en scoring blijven code ----------
+const drie = (label: string) =>
+  fields.object(
+    { niet: alinea("Nog niet op orde"), deels: alinea("Gedeeltelijk op orde"), wel: alinea("Op orde") },
+    { label },
+  );
+const type = (label: string) =>
+  fields.object(
+    { kop: tekst("Kop"), tekst: alinea("Uitleg"), stap1: tekst("Eerste stap 1"), stap2: tekst("Eerste stap 2"), stap3: tekst("Eerste stap 3") },
+    { label },
+  );
+const quickscanSchema = {
+  niveaus: fields.object({ niet: tekst("Nog niet op orde"), deels: tekst("Gedeeltelijk op orde"), wel: tekst("Op orde") }, { label: "Labels per niveau" }),
+  vastleggen: drie("Vastleggen"),
+  opvolgen: drie("Opvolgen"),
+  delen: drie("Delen"),
+  typeA: type("Uitslag: veel aanvragen en orders"),
+  typeB: type("Uitslag: maatwerk en advies"),
+  typeC: type("Uitslag: weinig deals, hoge slagingskans"),
+  typeD: type("Uitslag: nog zoekend"),
+  wens: fields.object(
+    { lead: alinea("Geen aanvraag laten liggen"), overzicht: alinea("Overzicht pipeline"), handwerk: alinea("Minder handwerk"), gebruik: alinea("Team dat het gebruikt") },
+    { label: "Zin bij wat als eerste opgelost moet worden" },
+  ),
+};
+
+export default config({
+  storage,
+  ui: {
+    brand: { name: "FortCRM" },
+    navigation: {
+      Nederlands: ["homeNl", "landingNl", "blogNl", "quickscanNl", "instellingenNl"],
+      English: ["homeEn", "landingEn", "blogEn", "instellingenEn"],
+    },
+  },
+  singletons: {
+    homeNl: singleton({ label: "Homepage", path: "src/content/home/nl", format: { data: "yaml" }, schema: homeSchema }),
+    homeEn: singleton({ label: "Homepage (EN)", path: "src/content/home/en", format: { data: "yaml" }, schema: homeSchema }),
+    quickscanNl: singleton({ label: "Quick scan: uitslagteksten", path: "src/content/quickscan/nl", format: { data: "yaml" }, schema: quickscanSchema }),
+    instellingenNl: singleton({ label: "Menu, footer en formulier", path: "src/content/instellingen/nl", format: { data: "yaml" }, schema: instellingenSchema }),
+    instellingenEn: singleton({ label: "Menu, footer en formulier (EN)", path: "src/content/instellingen/en", format: { data: "yaml" }, schema: instellingenSchema }),
+  },
+  collections: {
+    landingNl: landing("Landingspagina's", "nl"),
+    landingEn: landing("Landingspagina's (EN)", "en"),
+    blogNl: blog("Blog", "nl"),
+    blogEn: blog("Blog (EN)", "en"),
+  },
+});

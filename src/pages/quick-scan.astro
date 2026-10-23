@@ -1,0 +1,23 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { getEntry } from "astro:content";
+const scan = (await getEntry("quickscan", "nl"))?.data ?? null;
+---
+
+<PageLayout title="Quick scan: hoe staat je CRM-basis ervoor? | FortCRM" description="Zes vragen, twee minuten. Zie direct hoe het staat met vastleggen, opvolgen en delen in je bedrijf." lang="nl">
+  <script is:inline define:vars={{ scan }}>window.FORTCRM_SCAN = scan;</script>
+  <Container>
+    <div class="max-w-screen-sm mx-auto space-y-8">
+      <div class="space-y-3">
+        <p class="animate eyebrow">Quick scan</p>
+        <h1 class="animate text-3xl sm:text-4xl leading-tight">Hoe staat je CRM-basis ervoor?</h1>
+        <p class="animate font-serif text-lg">Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen, en waar je als eerste winst haalt.</p>
+      </div>
+      <div class="animate grid gap-5" id="scan">
+        <div><ol class="prog" data-prog aria-label="Voortgang"></ol></div>
+        <div data-body></div>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

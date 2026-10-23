@@ -1,4 +1,8 @@
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.bundle/
+dist/
+.astro/
+node_modules/
+.wrangler/
+.env
+.env.*
+.dev.vars
+.DS_Store

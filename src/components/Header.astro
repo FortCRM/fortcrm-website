@@ -1,0 +1,49 @@
+---
+import Container from "@components/Container.astro";
+import { instellingen } from "@lib/content";
+import { pad, type Lang } from "@consts";
+
+const { lang, vertaling } = Astro.props as { lang: Lang; vertaling?: string };
+const m = (await instellingen(lang)).menu;
+const home = pad(lang);
+const links = [
+  { href: `${home}#aanpak`, tekst: m.aanpak },
+  { href: `${home}#pakketten`, tekst: m.pakketten },
+  { href: `${home}#voor-wie`, tekst: m.voorWie },
+  { href: `${home}#over-ons`, tekst: m.overOns },
+  { href: `${home}#faq`, tekst: m.faq },
+  ...(m.quickscan && lang === "nl" ? [{ href: "/quick-scan/", tekst: m.quickscan }] : []),
+  { href: pad(lang, "/blog/"), tekst: m.blog },
+].filter((l) => l.tekst);
+---
+
+<header>
+  <Container>
+    <div class="flex items-center gap-4 justify-between">
+      <a href={home} class="shrink-0" aria-label="FortCRM">
+        <img src="/logo-inkt.png" alt="FortCRM" width="120" height="41" class="h-8 w-auto dark:hidden" />
+        <img src="/logo-linnen.png" alt="FortCRM" width="120" height="41" class="h-8 w-auto hidden dark:block" />
+      </a>
+      <nav class="hidden lg:flex flex-wrap items-center gap-1 text-sm" aria-label="Hoofdmenu">
+        {links.map((l, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true">/</span>}
+            <a href={l.href} class="navlink">{l.tekst}</a>
+          </>
+        ))}
+      </nav>
+      <div class="flex items-center gap-3 shrink-0">
+        {vertaling && (
+          <a href={vertaling} class="navlink text-sm font-semibold" lang={lang === "nl" ? "en" : "nl"}>{m.andereTaal}</a>
+        )}
+        <a href={`${home}#contact`} data-plan class="knop knop-sm">{m.knop}</a>
+        <details class="lg:hidden relative">
+          <summary class="knop-lijn knop-sm cursor-pointer list-none">{m.menu}</summary>
+          <div class="absolute right-0 top-full mt-2 w-56 rounded-lg border border-black/15 dark:border-white/20 bg-stone-100 dark:bg-stone-900 p-2 flex flex-col">
+            {links.map((l) => <a href={l.href} class="px-3 py-2 rounded hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white">{l.tekst}</a>)}
+          </div>
+        </details>
+      </div>
+    </div>
+  </Container>
+</header>

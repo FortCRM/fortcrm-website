@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basis uit Astro Nano */
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+  scroll-padding-top: 5rem;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply flex flex-col;
+  @apply bg-stone-100 dark:bg-stone-900;
+  @apply text-black/60 dark:text-white/75;
+}
+
+header {
+  @apply fixed top-0 left-0 right-0 z-50 py-4;
+  @apply bg-stone-100/75 dark:bg-stone-900/25;
+  @apply backdrop-blur-sm saturate-200;
+}
+
+main {
+  @apply flex-1 pt-28 pb-24;
+}
+
+footer {
+  @apply py-5 text-sm;
+}
+
+h1, h2, h3 {
+  @apply font-semibold text-black dark:text-white;
+  text-wrap: balance;
+}
+
+article {
+  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-semibold prose-p:font-serif prose-li:font-serif;
+  @apply prose-headings:text-black prose-headings:dark:text-white;
+}
+
+@layer utilities {
+  article a {
+    @apply font-sans text-current underline underline-offset-2;
+    @apply decoration-black/15 dark:decoration-white/30;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+  article a:hover {
+    @apply text-black dark:text-white;
+    @apply decoration-black/25 dark:decoration-white/50;
+  }
+}
+
+.animate {
+  @apply opacity-0 translate-y-3;
+  @apply transition-all duration-700 ease-out;
+}
+
+.animate.show {
+  @apply opacity-100 translate-y-0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate { @apply opacity-100 translate-y-0 transition-none; }
+}
+
+html #back-to-top {
+  @apply opacity-0 pointer-events-none;
+}
+
+html.scrolled #back-to-top {
+  @apply opacity-100 pointer-events-auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* FortCRM-onderdelen in Nano-stijl */
+@layer components {
+  .navlink {
+    @apply text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-fort dark:text-fort-dark;
+  }
+  .sectiekop {
+    @apply text-2xl sm:text-3xl leading-tight;
+  }
+  .knop {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-semibold;
+    @apply bg-black text-white dark:bg-white dark:text-black;
+    @apply hover:bg-black/80 dark:hover:bg-white/85 transition-colors duration-300 ease-in-out;
+  }
+  .knop-lijn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-semibold;
+    @apply border border-black/15 dark:border-white/20 text-black dark:text-white;
+    @apply hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out;
+  }
+  .knop-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+  .pijlkaart {
+    @apply relative flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20;
+    @apply hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out;
+  }
+  .kaart {
+    @apply rounded-lg border border-black/15 dark:border-white/20 p-4;
+  }
+  .tabel {
+    @apply w-full min-w-[40rem] text-sm border-collapse;
+  }
+  .tabel th, .tabel td {
+    @apply text-left align-top py-2.5 px-3 border-b border-black/10 dark:border-white/10;
+  }
+  .tabel thead th {
+    @apply text-black dark:text-white font-semibold border-b-black/30 dark:border-b-white/30;
+  }
+  .tabel tbody th {
+    @apply font-normal text-black/50 dark:text-white/60 w-1/4;
+  }
+  .tabel .uitgelicht {
+    @apply bg-black/[0.03] dark:bg-white/[0.04];
+  }
+  .veld {
+    @apply grid gap-1 text-sm;
+  }
+  .veld input, .veld textarea, .veld select {
+    @apply w-full rounded-lg border border-black/15 dark:border-white/20 bg-white/60 dark:bg-white/5 px-3 py-2 text-base text-black dark:text-white;
+    @apply focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/30;
+  }
+  .veld textarea {
+    @apply min-h-24;
+  }
+  .melding {
+    @apply text-sm font-semibold min-h-5 text-black dark:text-white;
+  }
+  .melding.err {
+    @apply text-red-700 dark:text-red-300;
+  }
+
+  /* quick scan */
+  .prog { @apply flex items-center gap-2 list-none m-0 p-0; }
+  .prog li { @apply size-3 rounded-full border-2 border-black/30 dark:border-white/30 flex-none; }
+  .prog li.done { @apply bg-fort border-fort dark:bg-fort-dark dark:border-fort-dark; }
+  .prog li.now { @apply border-fort dark:border-fort-dark; }
+  .prog hr { @apply flex-1 h-px border-0 bg-black/15 dark:bg-white/20 m-0; }
+  .qcard { @apply kaart grid gap-4 p-5; }
+  .qcard h2 { @apply text-xl; }
+  .opts { @apply grid gap-2 border-0 p-0 m-0; }
+  .opt { @apply flex gap-3 items-start rounded-lg border border-black/15 dark:border-white/20 px-4 py-3 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5; }
+  .opt input { @apply mt-1 flex-none accent-black dark:accent-white; }
+  .opt:has(input:checked) { @apply border-black dark:border-white text-black dark:text-white; }
+  .qnav { @apply flex flex-wrap gap-2 items-center; }
+  .qnav .btn, .next .btn { @apply knop; }
+  .qnav .btn.line, .next .btn.line { @apply knop-lijn; }
+  .btn:disabled { @apply opacity-40 cursor-not-allowed; }
+  .fld { @apply veld; }
+  .fld input { @apply w-full rounded-lg border border-black/15 dark:border-white/20 bg-white/60 dark:bg-white/5 px-3 py-2 text-base text-black dark:text-white; }
+  .chk { @apply flex gap-2 items-start text-sm; }
+  .chk input { @apply mt-1; }
+  .msg { @apply melding; }
+  .micro { @apply text-xs; }
+  .lead { @apply text-base; }
+  .eyebrow-scan { @apply eyebrow; }
+  .result { @apply kaart p-0 overflow-hidden; }
+  .result .rh { @apply p-5 grid gap-2 border-b border-black/10 dark:border-white/10; }
+  .result .rh h2 { @apply text-2xl; }
+  .result .rb { @apply p-5 grid gap-5; }
+  .ind { @apply grid gap-3 list-none m-0 p-0; }
+  .ind li { @apply grid gap-1 sm:grid-cols-[7rem_10rem_1fr] sm:items-center; }
+  .ind .nm { @apply font-semibold text-black dark:text-white; }
+  .chip { @apply inline-block w-fit rounded px-2 py-0.5 text-xs font-semibold; }
+  .chip.s2 { @apply bg-fort text-white; }
+  .chip.s1 { @apply bg-oker text-black; }
+  .chip.s0 { @apply bg-black/10 text-black dark:bg-white/15 dark:text-white; }
+  .ind .tx { @apply text-sm; }
+  .focus { @apply border-l-2 border-fort dark:border-fort-dark pl-3; }
+  .note { @apply text-sm border border-dashed border-black/20 dark:border-white/25 rounded-lg px-3 py-2; }
+  .res-sub { @apply grid gap-2; }
+  .res-sub h3 { @apply text-lg; }
+  .res-sub ol { @apply list-decimal pl-5 grid gap-1; }
+  .next { @apply grid gap-3 border-t border-black/10 dark:border-white/10 pt-4; }
+  .btnrow { @apply flex flex-wrap gap-2 items-center; }
+}

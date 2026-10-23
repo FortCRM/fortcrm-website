@@ -1,0 +1,10 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Home from "@components/Home.astro";
+import { home } from "@lib/content";
+const h = await home("nl");
+---
+
+<PageLayout title={h.seo.titel} description={h.seo.beschrijving} socialTitle={h.seo.deelTitel} lang="nl" vertaling="/en/">
+  <Home lang="nl" />
+</PageLayout>

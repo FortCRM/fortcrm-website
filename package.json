@@ -1,0 +1,37 @@
+{
+  "name": "fortcrm-website",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "12.6.13",
+    "@astrojs/react": "4.4.2",
+    "@astrojs/sitemap": "3.6.1",
+    "@astrojs/tailwind": "6.0.2",
+    "@fontsource/inter": "5.2.8",
+    "@fontsource/lora": "5.2.8",
+    "@keystatic/astro": "6.0.0",
+    "@keystatic/core": "0.6.9",
+    "@tailwindcss/typography": "0.5.16",
+    "astro": "5.18.2",
+    "clsx": "2.1.1",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "tailwind-merge": "2.6.0",
+    "tailwindcss": "3.4.17"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "typescript": "5.8.3",
+    "wrangler": "4.42.0"
+  }
+}

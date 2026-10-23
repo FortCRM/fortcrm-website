@@ -1,0 +1,57 @@
+menu:
+  aanpak: Approach
+  pakketten: Packages
+  voorWie: Who we help
+  overOns: About us
+  faq: FAQ
+  quickscan: ''
+  blog: Blog
+  knop: Book a call
+  menu: Menu
+  andereTaal: NL
+bedrijf:
+  mail: hallo@fortcrm.nl
+  telefoon: +31 6 28681315
+  kvk: '42105837'
+  linkedin: https://www.linkedin.com/company/fortcrm/
+footer:
+  tagline: Pipedrive implementation for SMEs. A CRM your team keeps using.
+  paginas: Pages
+  contact: Contact
+  artikelen: Latest articles
+  linkedin: FortCRM on LinkedIn
+  privacy: 'Privacy statement: coming soon'
+  partner: Pipedrive Authorized partner. Pipedrive is a trademark of Pipedrive Inc.
+  cookieknop: Cookie preferences
+cookies:
+  tekst: We only use analytics cookies with your consent, to understand how visitors use the site. No marketing or third-party tracking cookies.
+  weigeren: Decline
+  akkoord: OK
+formulier:
+  naam: Name
+  mail: Email
+  bron: How did you find us? (optional)
+  bronKies: Choose…
+  bronOpties:
+    referral: Someone recommended you
+    linkedin: Via LinkedIn
+    zoeken: Searched online
+    netwerk: We already know each other
+    pipedrive: Via Pipedrive
+    anders: Other
+  vraag: What are you running into? (optional)
+  verstuur: Send
+  privacy: We only use your details to reply to your question.
+  planner: Book a call
+  sluiten: Close
+blog:
+  titel: Blog
+  intro: Insights on CRM, Pipedrive and AI for small and medium-sized businesses.
+  beschrijving: Insights on CRM, Pipedrive and AI for SMEs.
+  terug: All articles
+  tldr: In short
+  cta: Curious what this means for your team? Book a 30-minute call.
+  ctaKnop: Book a call
+  delen: Share
+  kopieer: Copy link
+  gekopieerd: Link copied
