@@ -12,8 +12,8 @@ exclude:
   - README.md
 
 # Formulieren (contact en quick scan). Leeg = contactformulier opent het mailprogramma.
-# Vul hier de n8n-webhook in die een lead met source_channel in Pipedrive aanmaakt.
-form_endpoint: ""
+# n8n-workflow "Websiteformulieren naar Pipedrive": maakt een lead met Source channel in het RF-account.
+form_endpoint: "https://fortcrm.app.n8n.cloud/webhook/fortcrm-website-formulier"
 
 # Pipedrive-afspraakplanner achter "Plan een gesprek"
 scheduler_url: "https://fortcrm.pipedrive.com/scheduler/MkpLWmFq/kennismaking-met-fortcrm"

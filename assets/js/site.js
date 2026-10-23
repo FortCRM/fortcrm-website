@@ -77,7 +77,7 @@
   /* ---------- quick scan ---------- */
   var root = document.getElementById('scan');
   if (root) {
-    var ans = {}, i = 0, nm = '';
+    var ans = {}, i = 0, nm = '', ml = '';
     var body = root.querySelector('[data-body]');
     var prog = root.querySelector('[data-prog]');
 
@@ -135,6 +135,7 @@
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.mail.value.trim())) { msg.textContent = 'Dit e-mailadres lijkt niet te kloppen.'; f.mail.focus(); return; }
         if (f.bel.checked && !f.tel.value.trim()) { msg.textContent = 'Vul je telefoonnummer in, of haal het vinkje weg.'; f.tel.focus(); return; }
         nm = f.naam.value.trim();
+        ml = f.mail.value.trim();
         if (CFG.formEndpoint) {
           send({ soort: 'quickscan', naam: nm, mail: f.mail.value.trim(), terugbellen: f.bel.checked,
             telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan' }).catch(function () {});
@@ -174,7 +175,7 @@
       if (oi) {
         if (!CFG.formEndpoint) { oi.closest('label').hidden = true; }
         oi.addEventListener('change', function () {
-          if (oi.checked) send({ soort: 'nieuwsbrief', naam: nm, bron: 'quickscan' }).catch(function () {});
+          if (oi.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan' }).catch(function () {});
         });
       }
     };
@@ -209,7 +210,7 @@
       m.classList.remove('err');
       if (!naam) { m.textContent = T.naam; el.naam.focus(); return; }
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { m.textContent = T.mail; el.mail.focus(); return; }
-      var data = { soort: 'contact', naam: naam, mail: mail, bron: el.bron ? el.bron.value : '', vraag: el.vraag.value.trim() };
+      var data = { soort: 'contact', naam: naam, mail: mail, bron: el.bron ? el.bron.value : '', vraag: el.vraag.value.trim(), website: el.website ? el.website.value : '' };
       var btn = f.querySelector('button');
       var mailto = function () {
         var body = 'Naam: ' + naam + '\nE-mail: ' + mail + (data.bron ? '\n' + T.bron + data.bron : '') + '\n\n' + data.vraag;

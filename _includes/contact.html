@@ -10,6 +10,7 @@
 <label class="fld">Email<input name="mail" type="email" autocomplete="email" required></label>
 <label class="fld">How did you find us? (optional)<select name="bron"><option value="">Choose…</option><option value="referral">Someone recommended you</option><option value="linkedin">Via LinkedIn</option><option value="zoeken">Searched online</option><option value="netwerk">We already know each other</option><option value="pipedrive">Via Pipedrive</option><option value="anders">Other</option></select></label>
 <label class="fld">What are you running into? (optional)<textarea name="vraag"></textarea></label>
+<div aria-hidden="true" style="position:absolute;left:-9999px"><label>Laat leeg<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <p class="msg" role="status"></p><button class="btn" type="submit">Send</button>
 <p class="micro">We only use your details to reply to your question.</p></form></div></section>
 {% else %}
@@ -23,6 +24,7 @@
 <label class="fld">E-mailadres<input name="mail" type="email" autocomplete="email" required></label>
 <label class="fld">Hoe ken je ons? (optioneel)<select name="bron"><option value="">Kies…</option><option value="referral">Iemand raadde jullie aan</option><option value="linkedin">Via LinkedIn</option><option value="zoeken">Gezocht op internet</option><option value="netwerk">We kennen elkaar al</option><option value="pipedrive">Via Pipedrive</option><option value="anders">Anders</option></select></label>
 <label class="fld">Waar loop je tegenaan? (optioneel)<textarea name="vraag"></textarea></label>
+<div aria-hidden="true" style="position:absolute;left:-9999px"><label>Laat leeg<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <p class="msg" role="status"></p><button class="btn" type="submit">Verstuur</button>
 <p class="micro">We gebruiken je gegevens alleen om te reageren op je vraag.</p></form></div></section>
 {% endif %}
