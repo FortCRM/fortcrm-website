@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Terug van vakantie en je pijplijn staat er nog precies zo bij als je hem achterliet — dat is het doel"
+title: "Terug van vakantie en je pijplijn staat er nog precies zo bij als je hem achterliet: dat is het doel"
 date: 2026-08-13
 categories: [crm, automatisering]
 tags: [vakantie, checklist, automatisering, mkb]
@@ -15,7 +15,7 @@ translation_url: /en/blog/pijplijn-ongeschonden-terug-van-vakantie/
   <ul class="space-y-2 text-inkt/80 leading-relaxed">
     <li>Het doel van een goed ingericht CRM tijdens vakantie is niet "minder werk voor jou", maar "de klant merkt niets van je afwezigheid".</li>
     <li>Een concurrent met een gemiddelde B2B-reactietijd van 42 uur verliest tijdens vakantieweken nog meer terrein aan wie sneller reageert.</li>
-    <li>De basis: automatische leadopvolging, een duidelijke back-up per deal, en gestructureerde binnenkomende data — geen los document, geen losse app-groep.</li>
+    <li>De basis: automatische leadopvolging, een duidelijke back-up per deal, en gestructureerde binnenkomende data: geen los document, geen losse app-groep.</li>
   </ul>
 </div>
 
@@ -23,23 +23,23 @@ Deze zomer schreven we vier posts over hetzelfde onderliggende thema: wat gebeur
 
 ## Waarom dit meer is dan gemak
 
-Het makkelijke antwoord is: minder stress voor jou. Maar de kern zit ergens anders — bij de klant. Een lead die tijdens jouw vakantie binnenkomt, vergelijkt op dat moment leveranciers. Onderzoek naar reactietijden laat zien dat bedrijven die binnen enkele minuten reageren tot 21 keer vaker converteren dan bedrijven die uren of dagen wachten, terwijl de gemiddelde reactietijd nu al op 42 uur ligt. Tijdens vakantieweken, met minder mensen beschikbaar, loopt die vertraging eerder op dan af. De klant merkt niet dat jij op vakantie bent — die merkt alleen dat een concurrent sneller was.
+Het makkelijke antwoord is: minder stress voor jou. Maar de kern zit ergens anders: bij de klant. Een lead die tijdens jouw vakantie binnenkomt, vergelijkt op dat moment leveranciers. Onderzoek naar reactietijden laat zien dat bedrijven die binnen enkele minuten reageren tot 21 keer vaker converteren dan bedrijven die uren of dagen wachten, terwijl de gemiddelde reactietijd nu al op 42 uur ligt. Tijdens vakantieweken, met minder mensen beschikbaar, loopt die vertraging eerder op dan af. De klant merkt niet dat jij op vakantie bent: die merkt alleen dat een concurrent sneller was.
 
 ## De drie basisonderdelen die het verschil maken
 
-Uit de afgelopen weken destilleren we drie concrete bouwstenen. Ten eerste: automatische opvolging van nieuwe leads, zodat er altijd een eerste reactie is, ook als niemand fysiek beschikbaar is. Ten tweede: gestructureerde verwerking van binnenkomende data — een aanvraag die automatisch in de juiste pijplijnfase belandt in plaats van in een ongesorteerde mailbox, zodat er bij terugkomst een overzicht is in plaats van een berg. Ten derde: een expliciete back-up per lopende deal, met de volledige context in het CRM in plaats van in het hoofd van de afwezige eigenaar. Geen van deze drie is los een grote klus. Samen vormen ze het verschil tussen een bedrijf dat afhankelijk is van één persoon, en een bedrijf dat een systeem heeft.
+Uit de afgelopen weken destilleren we drie concrete bouwstenen. Ten eerste: automatische opvolging van nieuwe leads, zodat er altijd een eerste reactie is, ook als niemand fysiek beschikbaar is. Ten tweede: gestructureerde verwerking van binnenkomende data: een aanvraag die automatisch in de juiste pijplijnfase belandt in plaats van in een ongesorteerde mailbox, zodat er bij terugkomst een overzicht is in plaats van een berg. Ten derde: een expliciete back-up per lopende deal, met de volledige context in het CRM in plaats van in het hoofd van de afwezige eigenaar. Geen van deze drie is los een grote klus. Samen vormen ze het verschil tussen een bedrijf dat afhankelijk is van één persoon, en een bedrijf dat een systeem heeft.
 
 ## De herkenbare situatie: twee soorten terugkomst
 
-Er zijn twee scenario's bij terugkomst. In het eerste scenario is er een stapel ongelezen mail, een paar boze klanten die niets hebben gehoord, en een lijst van "moet ik nog even nakijken". In het tweede scenario is er een kort overzicht: dit is automatisch afgehandeld, deze paar zaken wachten bewust op jou, en de rest loopt gewoon door. Het verschil tussen die twee scenario's zit niet in geluk of in hoe druk het toevallig was — het zit in wat er vóór vertrek is ingericht.
+Er zijn twee scenario's bij terugkomst. In het eerste scenario is er een stapel ongelezen mail, een paar boze klanten die niets hebben gehoord, en een lijst van "moet ik nog even nakijken". In het tweede scenario is er een kort overzicht: dit is automatisch afgehandeld, deze paar zaken wachten bewust op jou, en de rest loopt gewoon door. Het verschil tussen die twee scenario's zit niet in geluk of in hoe druk het toevallig was: het zit in wat er vóór vertrek is ingericht.
 
 ## Hoe FortCRM hierop inspeelt
 
-Dit is precies waarvoor een goed ingerichte Pipedrive-omgeving bedoeld is: niet alleen mooie software, maar een vangnet dat blijft werken als jij er even niet bent. Automatische leadopvolging, gestructureerde dataverwerking en duidelijk eigenaarschap per deal zijn geen aparte features — het zijn de drie onderdelen die we standaard meenemen bij de inrichting, juist omdat elk bedrijf een keer met vakantie gaat, ziek wordt, of gewoon een dag off is.
+Dit is precies waarvoor een goed ingerichte Pipedrive-omgeving bedoeld is: niet alleen mooie software, maar een vangnet dat blijft werken als jij er even niet bent. Automatische leadopvolging, gestructureerde dataverwerking en duidelijk eigenaarschap per deal zijn geen aparte features: het zijn de drie onderdelen die we standaard meenemen bij de inrichting, juist omdat elk bedrijf een keer met vakantie gaat, ziek wordt, of gewoon een dag off is.
 
 ## Een concrete eerste stap
 
-Loop, voordat je zelf weggaat, deze drie vragen langs: staat er een automatische eerste reactie op nieuwe leads? Belandt binnenkomende informatie gestructureerd in het systeem, of in een ongesorteerde inbox? Heeft elke openstaande deal een aangewezen back-up met volledige context? Kun je alle drie met ja beantwoorden, dan hoeft je vakantie geen concessie te zijn — voor jou, of voor je klant.
+Loop, voordat je zelf weggaat, deze drie vragen langs: staat er een automatische eerste reactie op nieuwe leads? Belandt binnenkomende informatie gestructureerd in het systeem, of in een ongesorteerde inbox? Heeft elke openstaande deal een aangewezen back-up met volledige context? Kun je alle drie met ja beantwoorden, dan hoeft je vakantie geen concessie te zijn: voor jou, of voor je klant.
 
 ## Bronnen
 

@@ -14,12 +14,12 @@ translation_url: /en/blog/vakantie-plannen-voor-je-klantproces/
   <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-3">TL;DR</p>
   <ul class="space-y-2 text-inkt/80 leading-relaxed">
     <li>Voor veel MKB-bedrijven is de zomer financieel de zwaarste periode: klanten zijn weg, beslissingen worden uitgesteld naar september.</li>
-    <li>Andere bedrijven gebruiken de zomer juist actief om te groeien — het verschil zit in voorbereiding, niet in geluk.</li>
+    <li>Andere bedrijven gebruiken de zomer juist actief om te groeien: het verschil zit in voorbereiding, niet in geluk.</li>
     <li>Een gestructureerde overdracht van lopende deals hoort in het CRM te leven, niet in een los Word-document of een berichtje in de app-groep.</li>
   </ul>
 </div>
 
-Elk jaar hetzelfde verhaal: voor veel ondernemers is de zomer financieel de zwaarste periode. Klanten zijn op vakantie, beslissingen worden uitgesteld, en nieuwe opdrachten schuiven door naar september. Toch is dat niet voor iedereen zo. Onderzoek laat zien dat de zomer voor een deel van het Nederlandse MKB juist de belangrijkste verkoopperiode van het jaar is — bedrijven die de rustigere periode bewust gebruiken om terrein te winnen op concurrenten die wél stilvallen.
+Elk jaar hetzelfde verhaal: voor veel ondernemers is de zomer financieel de zwaarste periode. Klanten zijn op vakantie, beslissingen worden uitgesteld, en nieuwe opdrachten schuiven door naar september. Toch is dat niet voor iedereen zo. Onderzoek laat zien dat de zomer voor een deel van het Nederlandse MKB juist de belangrijkste verkoopperiode van het jaar is: bedrijven die de rustigere periode bewust gebruiken om terrein te winnen op concurrenten die wél stilvallen.
 
 ## Het verschil zit in de voorbereiding, niet in geluk
 
@@ -31,15 +31,15 @@ Bij veel kleinere bedrijven bestaat "overdracht" tijdens vakantie uit een kort b
 
 ## Wat het kost als je dit niet oplost
 
-Het resultaat is voorspelbaar: deals die tijdens de vakantieperiode "even blijven liggen" tot de eigenaar terug is, terwijl een concurrent die zijn proces wél heeft voorbereid, gewoon doorgaat. Dat is niet zichtbaar als concrete fout, maar als een zomer die stiller aanvoelt dan nodig — terwijl de vertraging niet kwam door minder vraag, maar door een proces dat op één persoon leunde.
+Het resultaat is voorspelbaar: deals die tijdens de vakantieperiode "even blijven liggen" tot de eigenaar terug is, terwijl een concurrent die zijn proces wél heeft voorbereid, gewoon doorgaat. Dat is niet zichtbaar als concrete fout, maar als een zomer die stiller aanvoelt dan nodig: terwijl de vertraging niet kwam door minder vraag, maar door een proces dat op één persoon leunde.
 
 ## Hoe FortCRM hierop inspeelt
 
-Bij de inrichting van Pipedrive denken we bewust na over eigenaarschap per deal: wie is de hoofdverantwoordelijke, en wie is de aangewezen back-up als die persoon afwezig is. Via automatisering zorgen we dat een deal die door de back-up wordt overgenomen, dezelfde context meekrijgt als de oorspronkelijke eigenaar had — geen los document, maar de volledige geschiedenis direct in het CRM. Zo hoeft "ik ben er even niet" nooit te betekenen dat een klant even niemand heeft.
+Bij de inrichting van Pipedrive denken we bewust na over eigenaarschap per deal: wie is de hoofdverantwoordelijke, en wie is de aangewezen back-up als die persoon afwezig is. Via automatisering zorgen we dat een deal die door de back-up wordt overgenomen, dezelfde context meekrijgt als de oorspronkelijke eigenaar had: geen los document, maar de volledige geschiedenis direct in het CRM. Zo hoeft "ik ben er even niet" nooit te betekenen dat een klant even niemand heeft.
 
 ## Een concrete eerste stap
 
-Ga je zelf, of gaat een collega, binnenkort weg? Wijs voor elke openstaande deal een tijdelijke back-up aan in het CRM, en zorg dat de laatste stand van zaken (laatste contact, eerstvolgende actie, deadline) in het systeem staat — niet alleen in het hoofd van de eigenaar. Dat kost een middag, en is het verschil tussen een zomer die stilvalt en een zomer die gewoon doorloopt.
+Ga je zelf, of gaat een collega, binnenkort weg? Wijs voor elke openstaande deal een tijdelijke back-up aan in het CRM, en zorg dat de laatste stand van zaken (laatste contact, eerstvolgende actie, deadline) in het systeem staat: niet alleen in het hoofd van de eigenaar. Dat kost een middag, en is het verschil tussen een zomer die stilvalt en een zomer die gewoon doorloopt.
 
 ## Bronnen
 

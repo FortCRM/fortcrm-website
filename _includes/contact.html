@@ -1,0 +1,28 @@
+{% assign lang = page.lang | default: "nl" %}
+{% if lang == "en" %}
+<section id="contact" class="last"><div class="in contact"><div class="sec">
+<div class="sec-head"><p class="eyebrow">Contact</p><h2>Book a 30-minute call</h2>
+<p class="lead">We look at what Pipedrive can do for your team. If it is not a fit, we will tell you honestly.</p></div>
+<div class="btnrow"><a class="btn" href="#contact" data-plan>Pick a time</a></div>
+<div class="cdata"><div>Email: <a href="mailto:hallo@fortcrm.nl">hallo@fortcrm.nl</a></div><div>Phone: <a href="tel:+31628681315">+31 6 28681315</a></div>
+<div class="micro">We reply within one working day.</div></div></div>
+<form class="f" data-contact novalidate><label class="fld">Name<input name="naam" autocomplete="name" required></label>
+<label class="fld">Email<input name="mail" type="email" autocomplete="email" required></label>
+<label class="fld">How did you find us? (optional)<select name="bron"><option value="">Choose…</option><option value="referral">Someone recommended you</option><option value="linkedin">Via LinkedIn</option><option value="zoeken">Searched online</option><option value="netwerk">We already know each other</option><option value="pipedrive">Via Pipedrive</option><option value="anders">Other</option></select></label>
+<label class="fld">What are you running into? (optional)<textarea name="vraag"></textarea></label>
+<p class="msg" role="status"></p><button class="btn" type="submit">Send</button>
+<p class="micro">We only use your details to reply to your question.</p></form></div></section>
+{% else %}
+<section id="contact" class="last"><div class="in contact"><div class="sec">
+<div class="sec-head"><p class="eyebrow">Contact</p><h2>Plan een gesprek van 30 minuten</h2>
+<p class="lead">We kijken wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.</p></div>
+<div class="btnrow"><a class="btn" href="#contact" data-plan>Kies direct een moment</a></div>
+<div class="cdata"><div>Mail: <a href="mailto:hallo@fortcrm.nl">hallo@fortcrm.nl</a></div><div>Bel: <a href="tel:+31628681315">+31 6 28681315</a></div>
+<div class="micro">We reageren binnen één werkdag.</div></div></div>
+<form class="f" data-contact novalidate><label class="fld">Naam<input name="naam" autocomplete="name" required></label>
+<label class="fld">E-mailadres<input name="mail" type="email" autocomplete="email" required></label>
+<label class="fld">Hoe ken je ons? (optioneel)<select name="bron"><option value="">Kies…</option><option value="referral">Iemand raadde jullie aan</option><option value="linkedin">Via LinkedIn</option><option value="zoeken">Gezocht op internet</option><option value="netwerk">We kennen elkaar al</option><option value="pipedrive">Via Pipedrive</option><option value="anders">Anders</option></select></label>
+<label class="fld">Waar loop je tegenaan? (optioneel)<textarea name="vraag"></textarea></label>
+<p class="msg" role="status"></p><button class="btn" type="submit">Verstuur</button>
+<p class="micro">We gebruiken je gegevens alleen om te reageren op je vraag.</p></form></div></section>
+{% endif %}

@@ -13,21 +13,21 @@ translation_url: /en/blog/de-inbox-berg-na-de-vakantie-voorkomen/
 <div class="rounded-2xl border border-viridiaan/20 bg-viridiaan/5 px-6 py-5 mb-10">
   <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-3">TL;DR</p>
   <ul class="space-y-2 text-inkt/80 leading-relaxed">
-    <li>43% noemt "terugkomen op een berg werk" als belangrijkste reden om geen vakantie te nemen — een stijging ten opzichte van het jaar ervoor.</li>
+    <li>43% noemt "terugkomen op een berg werk" als belangrijkste reden om geen vakantie te nemen: een stijging ten opzichte van het jaar ervoor.</li>
     <li>Bijna 6 op de 10 mensen ervaren hun werklast na een vakantie als zwaarder dan normaal.</li>
     <li>Het probleem zit niet in de vakantie, maar in de manier waarop binnenkomende zaken zich ondertussen opstapelen in één ongestructureerde inbox.</li>
   </ul>
 </div>
 
-De angst voor de inbox na thuiskomst is inmiddels een serieuze reden om helemaal geen vakantie te plannen. Onderzoek laat zien dat 43% "terugkomen op een berg werk" noemt als voornaamste reden om vrije dagen te laten liggen — een stijging ten opzichte van het jaar daarvoor. En terecht: bijna 6 op de 10 mensen (59,2%) zeggen dat ze na hun vakantie meestal of altijd met een zwaardere werklast te maken krijgen dan daarvoor.
+De angst voor de inbox na thuiskomst is inmiddels een serieuze reden om helemaal geen vakantie te plannen. Onderzoek laat zien dat 43% "terugkomen op een berg werk" noemt als voornaamste reden om vrije dagen te laten liggen: een stijging ten opzichte van het jaar daarvoor. En terecht: bijna 6 op de 10 mensen (59,2%) zeggen dat ze na hun vakantie meestal of altijd met een zwaardere werklast te maken krijgen dan daarvoor.
 
 ## Waarom de e-mail het probleem is, niet de vakantie
 
-E-mail is voor 70% van de werkenden de belangrijkste bron van werkstress, en 42% omschrijft de eigen inbox als "niet meer onder controle". Zonder vakantie hebben al 40% van de mensen structureel 50 of meer ongelezen mails openstaan. Tel daar twee weken afwezigheid bovenop, en die stapel groeit ongemerkt door tot een berg die je bij terugkomst in één keer moet doorspitten — offertes, facturen, klantvragen en spam allemaal door elkaar, zonder enige prioritering.
+E-mail is voor 70% van de werkenden de belangrijkste bron van werkstress, en 42% omschrijft de eigen inbox als "niet meer onder controle". Zonder vakantie hebben al 40% van de mensen structureel 50 of meer ongelezen mails openstaan. Tel daar twee weken afwezigheid bovenop, en die stapel groeit ongemerkt door tot een berg die je bij terugkomst in één keer moet doorspitten: offertes, facturen, klantvragen en spam allemaal door elkaar, zonder enige prioritering.
 
 ## De herkenbare situatie bij veel MKB-bedrijven
 
-Bij bedrijven die klantcontact via een gedeelde mailbox en Excel-lijstjes regelen, is dit exact wat er gebeurt: alles wat binnenkomt tijdens de vakantie belandt in dezelfde ongesorteerde stroom. Een belangrijke offerteaanvraag staat tussen een nieuwsbrief en een betalingsherinnering, zonder enig onderscheid. De eerste ochtend terug gaat dan niet naar het bedienen van klanten, maar naar het handmatig triageren van honderden mails — waarbij de kans groot is dat iets belangrijks wordt overgeslagen of te laat wordt opgepakt.
+Bij bedrijven die klantcontact via een gedeelde mailbox en Excel-lijstjes regelen, is dit exact wat er gebeurt: alles wat binnenkomt tijdens de vakantie belandt in dezelfde ongesorteerde stroom. Een belangrijke offerteaanvraag staat tussen een nieuwsbrief en een betalingsherinnering, zonder enig onderscheid. De eerste ochtend terug gaat dan niet naar het bedienen van klanten, maar naar het handmatig triageren van honderden mails: waarbij de kans groot is dat iets belangrijks wordt overgeslagen of te laat wordt opgepakt.
 
 ## Wat het kost als je dit niet oplost
 

@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ page.lang | default: 'nl' }}">
 <head>
 {% include head.html %}
 </head>
-<body class="bg-krijt text-inkt antialiased min-h-screen flex flex-col">
-
-{% include nav.html %}
-
-<main class="flex-1">
+<body>
+{% include header.html %}
+<main>
 {{ content }}
 </main>
-
 {% include footer.html %}
 </body>
 </html>

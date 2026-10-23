@@ -4,74 +4,33 @@ layout: default
 {% assign share_url = site.url | append: page.url | uri_escape %}
 {% assign share_title = page.title | uri_escape %}
 {% if page.lang == "en" %}
-  {% assign t_share_label = "Share" %}
-  {% assign t_share_linkedin = "Share on LinkedIn" %}
-  {% assign t_share_x = "Share on X" %}
-  {% assign t_share_email = "Share by email" %}
-  {% assign t_share_copy = "Copy link" %}
-  {% assign t_share_copied = "Link copied" %}
+  {% assign back = "← Back to the blog" %}{% assign back_url = "/en/blog/" %}{% assign t_share = "Share" %}{% assign t_copy = "Copy link" %}{% assign t_copied = "Link copied" %}
+  {% assign datum = page.date | date: "%B %-d, %Y" %}
+  {% assign cta = "Want to know what this means for your team? Book a 30-minute call." %}{% assign cta_btn = "Book a call" %}{% assign home = "/en/" %}
 {% else %}
-  {% assign t_share_label = "Delen" %}
-  {% assign t_share_linkedin = "Delen op LinkedIn" %}
-  {% assign t_share_x = "Delen op X" %}
-  {% assign t_share_email = "Delen via e-mail" %}
-  {% assign t_share_copy = "Kopieer link" %}
-  {% assign t_share_copied = "Link gekopieerd" %}
+  {% assign back = "← Terug naar het blog" %}{% assign back_url = "/blog/" %}{% assign t_share = "Delen" %}{% assign t_copy = "Kopieer link" %}{% assign t_copied = "Link gekopieerd" %}
+  {% assign maanden = "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december" | split: "," %}
+  {% assign mi = page.date | date: "%-m" | minus: 1 %}
+  {% capture datum %}{{ page.date | date: "%-d" }} {{ maanden[mi] }} {{ page.date | date: "%Y" }}{% endcapture %}
+  {% assign cta = "Benieuwd wat dit voor jouw team betekent? Plan een gesprek van 30 minuten." %}{% assign cta_btn = "Plan een gesprek" %}{% assign home = "/" %}
 {% endif %}
-<article class="max-w-3xl mx-auto px-6 py-20">
-  {% if page.lang == "en" %}
-  <a href="/en/blog/" class="text-sm font-medium text-viridiaan hover:text-inkt transition-colors">← Back to the blog</a>
-  {% else %}
-  <a href="/blog/" class="text-sm font-medium text-viridiaan hover:text-inkt transition-colors">← Terug naar het blog</a>
-  {% endif %}
-
-  <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mt-8 mb-4">
-    {% if page.lang == "en" %}
-    {% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
-    {% assign month_index = page.date | date: "%-m" | minus: 1 %}
-    {{ months[month_index] }} {{ page.date | date: "%-d" }}, {{ page.date | date: "%Y" }}
-    {% else %}
-    {% assign maanden = "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december" | split: "," %}
-    {% assign maand_index = page.date | date: "%-m" | minus: 1 %}
-    {{ page.date | date: "%-d" }} {{ maanden[maand_index] }} {{ page.date | date: "%Y" }}
-    {% endif %}
-  </p>
-  <h1 class="font-display font-bold text-3xl md:text-4xl leading-tight mb-10">{{ page.title }}</h1>
-
-  <div class="prose-post">
-    {{ content }}
-  </div>
-
-  <div class="mt-14 pt-8 border-t border-inkt/10">
-    <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-4">{{ t_share_label }}</p>
-    <div class="flex items-center gap-3">
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener" aria-label="{{ t_share_linkedin }}" class="w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors">
-        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://twitter.com/intent/tweet?url={{ share_url }}&amp;text={{ share_title }}" target="_blank" rel="noopener" aria-label="{{ t_share_x }}" class="w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors">
-        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="mailto:?subject={{ share_title }}&amp;body={{ share_url }}" aria-label="{{ t_share_email }}" class="w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors">
-        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M2.5 4A1.5 1.5 0 001 5.5v13A1.5 1.5 0 002.5 20h19a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0021.5 4h-19zm.94 1.5h17.12L12 12.29 3.44 5.5zM2.5 6.94l8.99 7.02a1 1 0 001.02 0l8.99-7.02V18.5h-19V6.94z"/></svg>
-      </a>
-      <button type="button" id="copy-link-btn" data-url="{{ site.url }}{{ page.url }}" aria-label="{{ t_share_copy }}" class="w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors">
-        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 00-7.07 0L4.1 13.83a5 5 0 007.07 7.07l1.5-1.5"/></svg>
-      </button>
-      <span id="copy-link-feedback" class="text-xs text-viridiaan opacity-0 transition-opacity">{{ t_share_copied }}</span>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var btn = document.getElementById('copy-link-btn');
-      var feedback = document.getElementById('copy-link-feedback');
-      if (!btn) return;
-      btn.addEventListener('click', function () {
-        navigator.clipboard.writeText(btn.dataset.url).then(function () {
-          feedback.classList.remove('opacity-0');
-          setTimeout(function () { feedback.classList.add('opacity-0'); }, 2000);
-        });
-      });
-    })();
-  </script>
-</article>
+<div class="lp-hero"><div class="in"><p class="crumb"><a href="{{ back_url }}">{{ back }}</a></p><p class="post-date" style="color:var(--band-fg)">{{ datum }}</p><h1>{{ page.title }}</h1></div></div>
+<section class="last"><div class="in"><article class="post sec">
+<div class="prose-post">
+{{ content }}
+</div>
+<div class="closer"><p>{{ cta }}</p><div class="btnrow"><a class="btn" href="{{ home }}#contact" data-plan>{{ cta_btn }}</a></div></div>
+<div class="share"><b>{{ t_share }}</b>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener">LinkedIn</a>
+<a href="mailto:?subject={{ share_title }}&amp;body={{ share_url }}">E-mail</a>
+<button type="button" id="copy-link" data-url="{{ site.url }}{{ page.url }}" data-done="{{ t_copied }}">{{ t_copy }}</button>
+</div>
+<script>
+(function () {
+  var b = document.getElementById('copy-link');
+  if (b && navigator.clipboard) b.addEventListener('click', function () {
+    navigator.clipboard.writeText(b.dataset.url).then(function () { b.textContent = b.dataset.done; });
+  });
+})();
+</script>
+</article></div></section>
