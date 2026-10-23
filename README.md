@@ -29,7 +29,8 @@ Site op http://localhost:4321, beheer op http://localhost:4321/keystatic. Lokaal
 
 - Cloudflare Pages bouwt bij elke push: `npm run build`, uitvoermap `dist`.
 - Keystatic online op `/keystatic` werkt via de GitHub-app van FortCRM. Opslaan is een commit op de gekozen branch, waarna Cloudflare opnieuw bouwt.
-- Omgevingsvariabelen in Cloudflare: `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET`, `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`.
+- GitHub-app: `fortcrm-keystatic` (FortCRM-organisatie). App-naam staat in `.env.production`, client ID in `wrangler.jsonc`.
+- Versleutelde secrets in Cloudflare Pages (Settings, Variables and Secrets): `KEYSTATIC_GITHUB_CLIENT_SECRET` en `KEYSTATIC_SECRET`.
 
 ## Formulieren
 
