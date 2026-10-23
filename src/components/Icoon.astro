@@ -1,0 +1,9 @@
+---
+import { ICONEN, type IcoonNaam } from "@lib/iconen";
+const { naam, kleur = "currentColor", maat = 20 } = Astro.props as { naam?: string; kleur?: string; maat?: number };
+const svg = ICONEN[(naam || "geen") as IcoonNaam]?.svg ?? "";
+---
+
+{svg && (
+  <svg width={maat} height={maat} viewBox="0 0 24 24" fill="none" stroke={kleur} stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={svg} />
+)}

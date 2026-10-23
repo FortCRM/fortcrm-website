@@ -12,8 +12,11 @@ inrichtingTitel: Pipedrive voor jouw situatie
 inrichting:
 - titel: Elke offerte met opvolgdatum
   tekst: Elke offerte krijgt een eigenaar, een verwachte waarde en een datum voor de volgende stap.
+  icoon: offerte
 - titel: Waarschuwing bij stilstand
   tekst: Pipedrive maakt een taak aan zodra een offerte blijft liggen.
+  icoon: klok
 - titel: Zicht op de verwachte omzet
   tekst: Een overzicht van wat er loopt, met kans en waarde per offerte.
+  icoon: grafiek
 slot: Bij weinig offertes mag er geen enkele blijven liggen.

@@ -12,8 +12,11 @@ inrichtingTitel: Pipedrive voor jouw situatie
 inrichting:
 - titel: Compleet klantbeeld
   tekst: 'Per contact en deal staat alles bij elkaar: gesprekken, mails, afspraken en de volgende stap.'
+  icoon: gesprek
 - titel: Vaste structuur na elk gesprek
   tekst: Een korte, vaste manier van vastleggen die niemand tijd kost.
+  icoon: mensen
 - titel: Koppeling met mail en agenda
   tekst: Mail en afspraken komen automatisch bij de juiste deal terecht.
+  icoon: koppeling
 slot: Bij meerdere gesprekken per deal gaat informatie verloren tussen de gesprekken.

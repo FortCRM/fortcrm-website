@@ -1,31 +1,77 @@
 ---
-type Kolom = { naam: string; prijs?: string; uitgelicht?: boolean };
+// Pakkettentabel in de stijl van de oude fortcrm.nl: sticky eerste kolom, stip per pakket,
+// Ja / Nee / Deels worden iconen, overige waarden tekst.
+import { KLEUREN, type KleurNaam } from "@lib/iconen";
+
+type Kolom = { naam: string; prijs?: string; uitgelicht?: boolean; badge?: string; kleur?: string };
 type Rij = { onderdeel: string; waarden: string[] };
-const { kolommen, rijen } = Astro.props as { kolommen: Kolom[]; rijen: Rij[] };
+const { kolommen, rijen, hint } = Astro.props as { kolommen: Kolom[]; rijen: Rij[]; hint?: string };
 const n = kolommen.length;
+const kleurVan = (k: Kolom, i: number) =>
+  KLEUREN[(k.kleur as KleurNaam) || (k.uitgelicht ? "vermiljoen" : i === n - 1 ? "viridiaan" : "grijs")] ?? KLEUREN.grijs;
+
+const soort = (w: string) => {
+  const s = w.trim().toLowerCase();
+  if (["ja", "yes", "✓"].includes(s)) return "ja";
+  if (["nee", "no", "–", "-"].includes(s)) return "nee";
+  if (["deels", "partly", "samen", "together"].includes(s)) return "deels";
+  return "tekst";
+};
+const getal = (w: string) => /^[\d\s.,€+%/-]+$/.test(w.trim());
+const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/80 py-4 pr-6 align-middle w-28 sm:w-auto text-xs sm:text-base leading-snug sm:leading-normal";
 ---
 
-<div class="overflow-x-auto rounded-lg border border-black/15 dark:border-white/20">
-  <table class="tabel">
+<div class="mt-2 overflow-x-auto">
+  <table class="w-full border-collapse min-w-[640px]">
     <thead>
       <tr>
-        <th scope="col"><span class="sr-only">Onderdeel</span></th>
-        {kolommen.map((k) => (
-          <th scope="col" class={k.uitgelicht ? "uitgelicht" : ""}>
-            <div>{k.naam}</div>
-            {k.prijs && <div class="font-normal text-black/60 dark:text-white/70 tabular-nums">{k.prijs}</div>}
+        <th class="sticky left-0 z-10 bg-tabelkop text-left pb-6 pr-6 align-bottom font-normal text-xs text-inkt/40 leading-snug w-28 sm:w-auto">
+          {hint && <span class="sm:hidden">{hint}</span>}
+        </th>
+        {kolommen.map((k, i) => (
+          <th scope="col" class="pb-6 px-6 align-bottom text-center font-normal">
+            {k.badge && <span class="inline-block bg-vermiljoen text-inkt text-xs font-mono font-medium px-3 py-1 rounded-full whitespace-nowrap mb-3">{k.badge}</span>}
+            <span class:list={["block w-2.5 h-2.5 rounded-full mx-auto mb-3", kleurVan(k, i).vol]}></span>
+            <span class="block font-display font-semibold text-lg">{k.naam}</span>
+            {k.prijs && <span class="block mt-1 font-display font-semibold text-inkt/70 tabular-nums">{k.prijs}</span>}
           </th>
         ))}
       </tr>
     </thead>
     <tbody>
-      {rijen.map((r) => (
-        <tr>
-          <th scope="row">{r.onderdeel}</th>
+      {rijen.map((r, ri) => (
+        <tr class:list={["border-t border-inkt/10", ri === rijen.length - 1 && "border-b"]}>
+          <th scope="row" class={kopcel}>{r.onderdeel}</th>
           {r.waarden.length === 1 && n > 1 ? (
-            <td colspan={n}>{r.waarden[0]}</td>
+            <td colspan={n} class="text-center py-4 px-6 text-sm text-inkt/70">{r.waarden[0]}</td>
           ) : (
-            kolommen.map((k, i) => <td class={k.uitgelicht ? "uitgelicht" : ""}>{r.waarden[i] ?? ""}</td>)
+            kolommen.map((_, i) => {
+              const w = r.waarden[i] ?? "";
+              const s = soort(w);
+              return (
+                <td class="text-center py-4 px-6">
+                  {s === "ja" && (
+                    <span class="inline-flex w-6 h-6 rounded-full bg-viridiaan/15 items-center justify-center" title={w}>
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="#2C6C4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      <span class="sr-only">{w}</span>
+                    </span>
+                  )}
+                  {s === "deels" && (
+                    <span class="inline-flex w-6 h-6 rounded-full bg-oker/20 items-center justify-center" title={w}>
+                      <svg width="10" height="10" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="#D99F3C"></circle></svg>
+                      <span class="sr-only">{w}</span>
+                    </span>
+                  )}
+                  {s === "nee" && (
+                    <span class="inline-flex w-6 h-6 rounded-full bg-inkt/8 items-center justify-center" title={w}>
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-opacity="0.35" stroke-width="2.5" stroke-linecap="round"></path></svg>
+                      <span class="sr-only">{w}</span>
+                    </span>
+                  )}
+                  {s === "tekst" && <span class:list={["text-sm text-inkt/70", getal(w) && "font-mono"]}>{w}</span>}
+                </td>
+              );
+            })
           )}
         </tr>
       ))}

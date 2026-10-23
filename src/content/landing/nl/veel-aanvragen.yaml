@@ -12,8 +12,11 @@ inrichtingTitel: Pipedrive voor jouw situatie
 inrichting:
 - titel: Eén pijplijn voor alle kanalen
   tekst: Alle aanvragen komen op één plek binnen, met vaste velden en een duidelijke eigenaar.
+  icoon: trechter
 - titel: Automatische opvolging
   tekst: Herinneringen, taken en eerste reacties lopen automatisch. Niets blijft liggen.
+  icoon: bliksem
 - titel: Koppelingen
   tekst: Wij koppelen Pipedrive aan je webformulier, webshop en mail, zodat handwerk verdwijnt.
+  icoon: koppeling
 slot: Bij veel aanvragen telt dat elke lead dezelfde route volgt.

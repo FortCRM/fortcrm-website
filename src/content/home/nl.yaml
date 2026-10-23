@@ -59,16 +59,20 @@ voorWie:
   - titel: Weinig deals, hoge slagingskans
     tekst: Bijvoorbeeld bouwbedrijven. Je maakt weinig offertes en elke telt. Winst zit in strakke opvolging van elke offerte.
     pagina: weinig-deals
+    icoon: offerte
   - titel: Maatwerk en advies met meerdere gesprekken
     tekst: Adviesbureaus en bureaus waar één deal meerdere gesprekken kost. Winst zit in een compleet klantbeeld, ook als iemand anders het overneemt.
     pagina: advies-maatwerk
+    icoon: gesprek
   - titel: Veel aanvragen, veel orders
     tekst: 'Kleine bedragen, grote aantallen. Winst zit in snelheid en een vaste route: elke aanvraag wordt op dezelfde manier opgepakt.'
     pagina: veel-aanvragen
+    icoon: trechter
   oproep: Herken je jezelf in een van de drie? Plan een gesprek van 30 minuten, dan kijken we wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.
   oproepLink: Plan een gesprek van 30 minuten
   nietVoorTitel: Voor wie we het niet zijn
   nietVoorTekst: 'Werk je met één of twee mensen? Dan is een uitgebreide inrichting misschien nog niet nodig. Plan toch een gesprek: we kijken samen of het past en als er een betere eerste stap is, zeggen we dat.'
+  meerTekst: Bekijk wat we inrichten
 scan:
   tonen: true
   eyebrow: Quick scan
@@ -83,12 +87,18 @@ pakketten:
   - naam: Zelfstandig
     prijs: €4.950
     uitgelicht: false
+    kleur: grijs
+    badge: ''
   - naam: Shared
     prijs: €7.950
     uitgelicht: true
+    kleur: vermiljoen
+    badge: Meest gekozen
   - naam: Volledig ontzorgd
     prijs: €12.950
     uitgelicht: false
+    kleur: viridiaan
+    badge: ''
   rijen:
   - onderdeel: Voor wie
     waarden:
@@ -154,12 +164,18 @@ pakketten:
   - naam: Basis
     prijs: €595 p/m
     uitgelicht: false
+    kleur: grijs
+    badge: ''
   - naam: Plus
     prijs: €1.250 p/m
     uitgelicht: true
+    kleur: vermiljoen
+    badge: ''
   - naam: Max
     prijs: €2.450 p/m
     uitgelicht: false
+    kleur: viridiaan
+    badge: ''
   slaRijen:
   - onderdeel: Ambitiegesprek
     waarden:
@@ -200,16 +216,22 @@ waarom:
   punten:
   - titel: Resultaat, geen inspanning
     tekst: Anderen beloven inspanning. Wij beloven een team dat Pipedrive na 60 dagen nog gebruikt, en sturen daarop.
+    icoon: doel
   - titel: Koppelingen zelf gebouwd
     tekst: Wij bouwen de koppelingen en workflows rond Pipedrive zelf, in n8n. Zo verdwijnt handwerk en blijft het aanpasbaar.
+    icoon: koppeling
   - titel: Klaar voor AI
     tekst: Pipedrive als bron van waarheid, met schone data. Daar kan AI op rekenen.
+    icoon: ai
   - titel: Eerlijk over wat past
     tekst: Past Pipedrive niet bij jullie, dan horen jullie dat van ons in het eerste gesprek.
+    icoon: gesprek
   - titel: Vaste aanspreekpunten
     tekst: Je werkt met twee mensen die het ook echt doen, ook ruim na livegang. Geen overdracht tussen sales en uitvoering.
+    icoon: mensen
   - titel: Veilige basis
     tekst: EU-hosting en AVG zijn standaard, voor Pipedrive en voor de koppelingen die wij bouwen.
+    icoon: schild
 team:
   eyebrow: Over ons
   titel: Twee mensen, samen ruim twintig jaar systeemimplementaties

@@ -1,6 +1,6 @@
 # fortcrm.nl
 
-Astro-site op basis van [Astro Nano](https://github.com/markhorn-dev/astro-nano), gehost op Cloudflare Pages. Teksten en blog worden beheerd in Keystatic.
+Astro-site, gehost op Cloudflare Pages. Teksten en blog worden beheerd in Keystatic. De opmaak volgt de huisstijl van de oorspronkelijke fortcrm.nl: kleuren krijt, inkt, viridiaan, salie, vermiljoen, oker en omber; lettertypes Space Grotesk, Inter en JetBrains Mono.
 
 ## Lokaal draaien
 
@@ -23,7 +23,8 @@ Site op http://localhost:4321, beheer op http://localhost:4321/keystatic. Lokaal
 | Teamfoto's | `public/images/team/` | via Over ons |
 | Vragen en scoring quick scan, formulierlogica | `public/js/site.js` | nee |
 | Formulier-webhook, afspraakplanner, Analytics | `src/consts.ts` | nee |
-| Opmaak | `src/styles/global.css`, `src/components/` | nee |
+| Iconen en kleuren voor kaarten | `src/lib/iconen.ts` | kiezen per kaart, nieuwe iconen niet |
+| Opmaak en huisstijl | `tailwind.config.mjs`, `src/styles/global.css`, `src/components/` | nee |
 
 ## Online
 

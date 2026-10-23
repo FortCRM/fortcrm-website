@@ -1,11 +1,15 @@
 ---
 import "../styles/global.css";
 import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-600.css";
-import "@fontsource/lora/400.css";
-import "@fontsource/lora/600.css";
+import "@fontsource/space-grotesk/latin-300.css";
+import "@fontsource/space-grotesk/latin-500.css";
+import "@fontsource/space-grotesk/latin-600.css";
+import "@fontsource/space-grotesk/latin-700.css";
+import "@fontsource/jetbrains-mono/latin-500.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
-import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
+import grotesk700 from "@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2";
 import { SITE, type Lang } from "@consts";
 
 interface Props {
@@ -26,7 +30,7 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin />
-<link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={grotesk700} as="font" type="font/woff2" crossorigin />
 <link rel="canonical" href={canonicalURL} />
 {vertaling && (
   <>
@@ -60,11 +64,11 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
 <script is:inline define:vars={{ config }}>window.FORTCRM = config;</script>
 
 <script is:inline>
-  // Thema voor de eerste paint, zoals Astro Nano: licht, donker of systeem
+  // Thema voor de eerste paint, zoals de oude site: opgeslagen keuze, anders systeem
   (function () {
     var t = null;
-    try { t = localStorage.theme; } catch (e) {}
-    var dark = t === "dark" || ((!t || t === "system") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    try { t = localStorage.getItem("fortcrm-theme"); } catch (e) {}
+    var dark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", dark);
   })();
 </script>

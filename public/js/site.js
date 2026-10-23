@@ -281,33 +281,45 @@
   }
 })();
 
-/* Astro Nano: thema-knoppen, naar boven, binnenkomende animaties */
+/* Thema-knop en mobiel menu, zoals de oude fortcrm.nl */
 (function () {
   'use strict';
   var root = document.documentElement;
-  var setTheme = function (t) {
-    try { localStorage.theme = t; } catch (e) {}
-    var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    root.classList.toggle('dark', dark);
-  };
-  var on = function (id, fn) { var el = document.getElementById(id); if (el) el.addEventListener('click', fn); };
-  on('light-theme-button', function () { setTheme('light'); });
-  on('dark-theme-button', function () { setTheme('dark'); });
-  on('system-theme-button', function () { setTheme('system'); });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    var t = null; try { t = localStorage.theme; } catch (err) {}
-    if (!t || t === 'system') root.classList.toggle('dark', e.matches);
+  document.querySelectorAll('.theme-toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var dark = !root.classList.contains('dark');
+      root.classList.toggle('dark', dark);
+      try { localStorage.setItem('fortcrm-theme', dark ? 'dark' : 'light'); } catch (e) {}
+    });
   });
-  on('back-to-top', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-  var scrolled = function () { root.classList.toggle('scrolled', window.scrollY > 0); };
-  document.addEventListener('scroll', scrolled); scrolled();
-  document.querySelectorAll('.animate').forEach(function (el, i) { setTimeout(function () { el.classList.add('show'); }, Math.min(i, 6) * 120); });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    var t = null; try { t = localStorage.getItem('fortcrm-theme'); } catch (err) {}
+    if (!t) root.classList.toggle('dark', e.matches);
+  });
+
+  var menu = document.getElementById('mobile-menu');
+  var bg = document.getElementById('mobile-menu-backdrop');
+  var toggle = document.getElementById('menu-toggle');
+  if (menu && bg && toggle) {
+    var open = function () { menu.classList.remove('translate-x-full'); bg.hidden = false; toggle.setAttribute('aria-expanded', 'true'); };
+    var close = function () { menu.classList.add('translate-x-full'); bg.hidden = true; toggle.setAttribute('aria-expanded', 'false'); };
+    toggle.addEventListener('click', open);
+    document.getElementById('menu-close').addEventListener('click', close);
+    bg.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  }
 })();
 
 /* Link kopiëren onder blogartikelen */
 document.querySelectorAll('[data-kopieer]').forEach(function (b) {
   b.addEventListener('click', function () {
     if (!navigator.clipboard) return;
-    navigator.clipboard.writeText(b.getAttribute('data-kopieer')).then(function () { b.textContent = b.getAttribute('data-klaar'); }).catch(function () {});
+    navigator.clipboard.writeText(b.getAttribute('data-kopieer')).then(function () {
+      var m = document.querySelector('[data-kopieer-melding]');
+      if (!m) return;
+      m.classList.remove('opacity-0');
+      setTimeout(function () { m.classList.add('opacity-0'); }, 2000);
+    }).catch(function () {});
   });
 });

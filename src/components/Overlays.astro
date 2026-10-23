@@ -5,22 +5,24 @@ const { lang } = Astro.props as { lang: Lang };
 const i = await instellingen(lang);
 ---
 
-<div id="cookie" class="fixed inset-x-0 bottom-0 z-50 border-t border-black/15 dark:border-white/20 bg-stone-100/95 dark:bg-stone-900/95 backdrop-blur-sm" hidden>
-  <div class="mx-auto max-w-screen-md px-5 py-4 flex flex-wrap gap-3 items-center">
-    <p class="flex-1 min-w-[16rem] text-sm">{i.cookies.tekst}</p>
-    <div class="flex gap-2">
-      <button type="button" data-no class="knop-lijn knop-sm">{i.cookies.weigeren}</button>
+<div id="cookie" class="fixed inset-x-0 bottom-0 z-50 bg-krijt/95 backdrop-blur border-t border-inkt/10" hidden>
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center gap-4 text-sm">
+    <p class="text-inkt/70 flex-1">{i.cookies.tekst}</p>
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <button type="button" data-no class="text-sm font-medium text-inkt/70 hover:text-inkt transition-colors">{i.cookies.weigeren}</button>
       <button type="button" data-yes class="knop knop-sm">{i.cookies.akkoord}</button>
     </div>
   </div>
 </div>
 
-<div id="sched-bg" class="fixed inset-0 z-[60] bg-black/50" hidden></div>
-<div id="sched" class="fixed inset-0 z-[61] grid place-items-center p-4" role="dialog" aria-modal="true" aria-label={i.formulier.planner} hidden>
-  <div class="w-full max-w-3xl h-[90vh] flex flex-col rounded-lg overflow-hidden border border-black/15 dark:border-white/20 bg-stone-100 dark:bg-stone-900">
-    <div class="flex items-center justify-between px-4 py-3 border-b border-black/10 dark:border-white/10">
-      <span class="font-semibold text-black dark:text-white">{i.formulier.planner}</span>
-      <button type="button" class="knop-lijn knop-sm">{i.formulier.sluiten}</button>
+<div id="sched-bg" class="fixed inset-0 z-[60] bg-inkt/50" hidden></div>
+<div id="sched" class="fixed inset-0 z-[61] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={i.formulier.planner} hidden>
+  <div class="bg-krijt rounded-2xl shadow-xl w-full max-w-[800px] h-[90vh] flex flex-col overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-inkt/10 flex-shrink-0">
+      <span class="font-display font-semibold">{i.formulier.planner}</span>
+      <button type="button" aria-label={i.formulier.sluiten} class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-inkt/5 transition-colors">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" class="stroke-inkt" stroke-width="2" stroke-linecap="round"></path></svg>
+      </button>
     </div>
     <iframe title={i.formulier.planner} loading="lazy" class="flex-1 w-full bg-white"></iframe>
   </div>

@@ -59,16 +59,20 @@ voorWie:
   - titel: Few deals, high win rate
     tekst: Construction companies, for example. You send few quotes and each one counts. The gain is in tight follow-up on every quote.
     pagina: ''
+    icoon: offerte
   - titel: Custom work and advice with several conversations
     tekst: Consultancies and agencies where one deal takes several conversations. The gain is a complete customer picture, even when someone else takes over.
     pagina: ''
+    icoon: gesprek
   - titel: Many requests, many orders
     tekst: 'Small amounts, large volumes. The gain is speed and a fixed route: every request is handled the same way.'
     pagina: ''
+    icoon: trechter
   oproep: Recognise yourself in one of these? Book a 30-minute call and we'll look at what Pipedrive can do for your team. If it is not a fit, we'll tell you honestly.
   oproepLink: Book a 30-minute call
   nietVoorTitel: Who we are not for
   nietVoorTekst: 'Working with one or two people? Then an extensive setup may not be needed yet. Book a call anyway: we''ll see together whether it fits, and if there is a better first step, we''ll say so.'
+  meerTekst: See what we set up
 scan:
   tonen: false
   eyebrow: Quick scan
@@ -83,12 +87,18 @@ pakketten:
   - naam: Self-directed
     prijs: €4,950
     uitgelicht: false
+    kleur: grijs
+    badge: ''
   - naam: Shared
     prijs: €7,950
     uitgelicht: true
+    kleur: vermiljoen
+    badge: Most chosen
   - naam: Fully managed
     prijs: €12,950
     uitgelicht: false
+    kleur: viridiaan
+    badge: ''
   rijen:
   - onderdeel: For whom
     waarden:
@@ -154,12 +164,18 @@ pakketten:
   - naam: Basic
     prijs: €595 p/m
     uitgelicht: false
+    kleur: grijs
+    badge: ''
   - naam: Plus
     prijs: €1,250 p/m
     uitgelicht: true
+    kleur: vermiljoen
+    badge: ''
   - naam: Max
     prijs: €2,450 p/m
     uitgelicht: false
+    kleur: viridiaan
+    badge: ''
   slaRijen:
   - onderdeel: Ambition review
     waarden:
@@ -200,16 +216,22 @@ waarom:
   punten:
   - titel: Results, not effort
     tekst: Others promise effort. We promise a team that still uses Pipedrive after 60 days, and we steer on that.
+    icoon: doel
   - titel: Integrations built in-house
     tekst: We build the integrations and workflows around Pipedrive ourselves, in n8n. Manual work disappears and everything stays adaptable.
+    icoon: koppeling
   - titel: Ready for AI
     tekst: Pipedrive as the source of truth, with clean data. That is what AI can rely on.
+    icoon: ai
   - titel: Honest about fit
     tekst: If Pipedrive doesn't suit you, you'll hear it from us in the first call.
+    icoon: gesprek
   - titel: Fixed points of contact
     tekst: You work with two people who do the work themselves, long after go-live. No handover between sales and delivery.
+    icoon: mensen
   - titel: Secure foundation
     tekst: EU hosting and GDPR compliance are standard, for Pipedrive and for the integrations we build.
+    icoon: schild
 team:
   eyebrow: About us
   titel: Two people, over twenty years of system implementations combined

@@ -2,195 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Basis uit Astro Nano */
-html {
-  overflow-y: scroll;
+/* Huisstijl van de oorspronkelijke fortcrm.nl: krijt en inkt wisselen om in donker */
+:root {
+  --color-krijt: 240 238 228;
+  --color-inkt: 29 33 28;
+  --color-tabelkop: 225 227 217;
   color-scheme: light;
-  scroll-padding-top: 5rem;
 }
-
-html.dark {
+.dark {
+  --color-krijt: 29 33 28;
+  --color-inkt: 240 238 228;
+  --color-tabelkop: 35 43 37;
   color-scheme: dark;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
-  @apply size-full;
+  @apply bg-krijt text-inkt font-sans antialiased min-h-screen flex flex-col;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
-
-body {
-  @apply font-sans antialiased;
-  @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-stone-900;
-  @apply text-black/60 dark:text-white/75;
-}
-
-header {
-  @apply fixed top-0 left-0 right-0 z-50 py-4;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
-  @apply backdrop-blur-sm saturate-200;
-}
-
 main {
-  @apply flex-1 pt-28 pb-24;
+  @apply flex-1;
 }
-
-footer {
-  @apply py-5 text-sm;
+section[id] {
+  scroll-margin-top: 88px;
 }
-
 h1, h2, h3 {
-  @apply font-semibold text-black dark:text-white;
+  @apply font-display;
   text-wrap: balance;
 }
-
-article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold prose-p:font-serif prose-li:font-serif;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+summary::-webkit-details-marker {
+  display: none;
 }
-
-@layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
-  }
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
-  }
+summary {
+  list-style: none;
 }
-
-.animate {
-  @apply opacity-0 translate-y-3;
-  @apply transition-all duration-700 ease-out;
-}
-
-.animate.show {
-  @apply opacity-100 translate-y-0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate { @apply opacity-100 translate-y-0 transition-none; }
-}
-
-html #back-to-top {
-  @apply opacity-0 pointer-events-none;
-}
-
-html.scrolled #back-to-top {
-  @apply opacity-100 pointer-events-auto;
-}
-
 [hidden] {
   display: none !important;
 }
 
-/* FortCRM-onderdelen in Nano-stijl */
-@layer components {
-  .navlink {
-    @apply text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out;
-  }
-  .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.12em] text-fort dark:text-fort-dark;
-  }
-  .sectiekop {
-    @apply text-2xl sm:text-3xl leading-tight;
-  }
-  .knop {
-    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-semibold;
-    @apply bg-black text-white dark:bg-white dark:text-black;
-    @apply hover:bg-black/80 dark:hover:bg-white/85 transition-colors duration-300 ease-in-out;
-  }
-  .knop-lijn {
-    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 font-semibold;
-    @apply border border-black/15 dark:border-white/20 text-black dark:text-white;
-    @apply hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out;
-  }
-  .knop-sm {
-    @apply px-3 py-1.5 text-sm;
-  }
-  .pijlkaart {
-    @apply relative flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20;
-    @apply hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out;
-  }
-  .kaart {
-    @apply rounded-lg border border-black/15 dark:border-white/20 p-4;
-  }
-  .tabel {
-    @apply w-full min-w-[40rem] text-sm border-collapse;
-  }
-  .tabel th, .tabel td {
-    @apply text-left align-top py-2.5 px-3 border-b border-black/10 dark:border-white/10;
-  }
-  .tabel thead th {
-    @apply text-black dark:text-white font-semibold border-b-black/30 dark:border-b-white/30;
-  }
-  .tabel tbody th {
-    @apply font-normal text-black/50 dark:text-white/60 w-1/4;
-  }
-  .tabel .uitgelicht {
-    @apply bg-black/[0.03] dark:bg-white/[0.04];
-  }
-  .veld {
-    @apply grid gap-1 text-sm;
-  }
-  .veld input, .veld textarea, .veld select {
-    @apply w-full rounded-lg border border-black/15 dark:border-white/20 bg-white/60 dark:bg-white/5 px-3 py-2 text-base text-black dark:text-white;
-    @apply focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/30;
-  }
-  .veld textarea {
-    @apply min-h-24;
-  }
-  .melding {
-    @apply text-sm font-semibold min-h-5 text-black dark:text-white;
-  }
-  .melding.err {
-    @apply text-red-700 dark:text-red-300;
-  }
+/* zeshoekpatroon achter de hero */
+.hex-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48'%3E%3Cg fill='none' stroke='%231D211C' stroke-opacity='0.12' stroke-width='1.4'%3E%3Cpolygon points='21,2 39,12 39,32 21,42 3,32 3,12'/%3E%3Cpolygon points='63,2 81,12 81,32 63,42 45,32 45,12'/%3E%3Cpolygon points='0,24 18,34 18,54 0,64 -18,54 -18,34'/%3E%3Cpolygon points='84,24 102,34 102,54 84,64 66,54 66,34'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 84px 48px;
+}
+.dark .hex-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48'%3E%3Cg fill='none' stroke='%23F0EEE4' stroke-opacity='0.12' stroke-width='1.4'%3E%3Cpolygon points='21,2 39,12 39,32 21,42 3,32 3,12'/%3E%3Cpolygon points='63,2 81,12 81,32 63,42 45,32 45,12'/%3E%3Cpolygon points='0,24 18,34 18,54 0,64 -18,54 -18,34'/%3E%3Cpolygon points='84,24 102,34 102,54 84,64 66,54 66,34'/%3E%3C/g%3E%3C/svg%3E");
+}
 
-  /* quick scan */
+/* blogartikelen */
+.prose-post h2 { @apply font-display font-bold text-2xl mt-8 mb-3; }
+.prose-post h3 { @apply font-display font-semibold text-xl mt-6 mb-2; }
+.prose-post p { @apply mb-5 leading-[1.75] text-inkt/80; }
+.prose-post ul, .prose-post ol { @apply mb-5 pl-6; }
+.prose-post li { @apply mb-2 leading-[1.7] text-inkt/80; }
+.prose-post ul { list-style-type: disc; }
+.prose-post ol { list-style-type: decimal; }
+.prose-post a { @apply text-viridiaan underline; }
+.prose-post strong { @apply font-semibold text-inkt; }
+.prose-post blockquote { @apply border-l-2 border-viridiaan/40 pl-6 my-6 font-display text-xl; }
+.prose-post code { @apply font-mono text-sm bg-inkt/5 rounded px-1; }
+.prose-post hr { @apply my-10 border-inkt/10; }
+.prose-post table { @apply w-full text-sm my-6 border-collapse; }
+.prose-post th, .prose-post td { @apply text-left py-2 pr-4 border-b border-inkt/10; }
+
+@layer components {
+  .wrap { @apply max-w-6xl mx-auto px-6; }
+  .sectie { @apply py-24; }
+  .tint { @apply bg-salie/10; }
+  .eyebrow { @apply font-mono text-sm tracking-[0.2em] text-viridiaan uppercase; }
+  .sectiekop { @apply font-display font-bold text-3xl md:text-4xl leading-tight max-w-xl; }
+  .intro { @apply text-inkt/70 leading-relaxed max-w-xl; }
+  .navlink { @apply hover:text-viridiaan transition-colors; }
+  .tekstlink { @apply text-sm font-medium text-inkt/70 hover:text-inkt transition-colors; }
+  .groenlink { @apply text-sm font-medium text-viridiaan hover:text-inkt transition-colors; }
+
+  /* knoppen zoals de oude DaisyUI-knop: vermiljoen, rond */
+  .knop {
+    @apply inline-flex items-center justify-center h-12 min-h-12 rounded-full px-7 text-sm font-semibold;
+    @apply bg-vermiljoen text-inkt hover:bg-vermiljoen/90 transition-colors cursor-pointer select-none;
+  }
+  .knop-sm { @apply h-8 min-h-8 px-3.5 sm:px-5; }
+  .knop-lijn {
+    @apply inline-flex items-center justify-center h-12 min-h-12 rounded-full px-7 text-sm font-semibold;
+    @apply border border-inkt/20 text-inkt hover:border-inkt/40 hover:bg-inkt/5 transition-colors cursor-pointer select-none;
+  }
+  .rondje {
+    @apply flex items-center justify-center rounded-full flex-shrink-0;
+  }
+  .kaart { @apply rounded-2xl border border-inkt/15 p-8; }
+
+  /* formulieren */
+  .veld { @apply grid gap-1.5 text-sm font-medium text-inkt/80; }
+  .veld input, .veld textarea, .veld select {
+    @apply w-full rounded-xl border border-inkt/15 bg-krijt px-4 py-3 text-base font-normal text-inkt;
+    @apply focus:outline-none focus:border-viridiaan focus:ring-2 focus:ring-viridiaan/20;
+  }
+  .veld textarea { @apply min-h-28; }
+  .melding { @apply text-sm font-semibold min-h-5 text-viridiaan; }
+  .melding.err { @apply text-vermiljoen; }
+
+  /* quick scan (door site.js opgebouwd) */
   .prog { @apply flex items-center gap-2 list-none m-0 p-0; }
-  .prog li { @apply size-3 rounded-full border-2 border-black/30 dark:border-white/30 flex-none; }
-  .prog li.done { @apply bg-fort border-fort dark:bg-fort-dark dark:border-fort-dark; }
-  .prog li.now { @apply border-fort dark:border-fort-dark; }
-  .prog hr { @apply flex-1 h-px border-0 bg-black/15 dark:bg-white/20 m-0; }
-  .qcard { @apply kaart grid gap-4 p-5; }
-  .qcard h2 { @apply text-xl; }
+  .prog li { @apply size-3 rounded-full border-2 border-inkt/25 flex-none; }
+  .prog li.done { @apply bg-viridiaan border-viridiaan; }
+  .prog li.now { @apply border-viridiaan; }
+  .prog hr { @apply flex-1 h-px border-0 bg-inkt/15 m-0; }
+  .qcard { @apply rounded-2xl border border-inkt/15 bg-krijt grid gap-5 p-6 sm:p-8; }
+  .qcard h2 { @apply font-display font-semibold text-2xl leading-snug; }
   .opts { @apply grid gap-2 border-0 p-0 m-0; }
-  .opt { @apply flex gap-3 items-start rounded-lg border border-black/15 dark:border-white/20 px-4 py-3 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5; }
-  .opt input { @apply mt-1 flex-none accent-black dark:accent-white; }
-  .opt:has(input:checked) { @apply border-black dark:border-white text-black dark:text-white; }
-  .qnav { @apply flex flex-wrap gap-2 items-center; }
+  .opt { @apply flex gap-3 items-start rounded-xl border border-inkt/15 px-4 py-3 cursor-pointer transition-colors hover:border-viridiaan/50; }
+  .opt input { @apply mt-1 flex-none accent-viridiaan; }
+  .opt:has(input:checked) { @apply border-viridiaan bg-viridiaan/5; }
+  .qnav { @apply flex flex-wrap gap-3 items-center; }
   .qnav .btn, .next .btn { @apply knop; }
   .qnav .btn.line, .next .btn.line { @apply knop-lijn; }
   .btn:disabled { @apply opacity-40 cursor-not-allowed; }
   .fld { @apply veld; }
-  .fld input { @apply w-full rounded-lg border border-black/15 dark:border-white/20 bg-white/60 dark:bg-white/5 px-3 py-2 text-base text-black dark:text-white; }
-  .chk { @apply flex gap-2 items-start text-sm; }
-  .chk input { @apply mt-1; }
+  .fld input { @apply w-full rounded-xl border border-inkt/15 bg-krijt px-4 py-3 text-base font-normal text-inkt focus:outline-none focus:border-viridiaan; }
+  .chk { @apply flex gap-2 items-start text-sm text-inkt/80; }
+  .chk input { @apply mt-1 accent-viridiaan; }
   .msg { @apply melding; }
-  .micro { @apply text-xs; }
-  .lead { @apply text-base; }
+  .micro { @apply text-xs text-inkt/60; }
+  .lead { @apply text-inkt/70 leading-relaxed; }
   .eyebrow-scan { @apply eyebrow; }
-  .result { @apply kaart p-0 overflow-hidden; }
-  .result .rh { @apply p-5 grid gap-2 border-b border-black/10 dark:border-white/10; }
-  .result .rh h2 { @apply text-2xl; }
-  .result .rb { @apply p-5 grid gap-5; }
+  .result { @apply rounded-2xl border border-inkt/15 bg-krijt overflow-hidden; }
+  .result .rh { @apply p-6 sm:p-8 grid gap-2 border-b border-inkt/10 border-l-4 border-l-viridiaan; }
+  .result .rh h2 { @apply font-display font-bold text-2xl md:text-3xl; }
+  .result .rb { @apply p-6 sm:p-8 grid gap-6; }
   .ind { @apply grid gap-3 list-none m-0 p-0; }
-  .ind li { @apply grid gap-1 sm:grid-cols-[7rem_10rem_1fr] sm:items-center; }
-  .ind .nm { @apply font-semibold text-black dark:text-white; }
-  .chip { @apply inline-block w-fit rounded px-2 py-0.5 text-xs font-semibold; }
-  .chip.s2 { @apply bg-fort text-white; }
-  .chip.s1 { @apply bg-oker text-black; }
-  .chip.s0 { @apply bg-black/10 text-black dark:bg-white/15 dark:text-white; }
-  .ind .tx { @apply text-sm; }
-  .focus { @apply border-l-2 border-fort dark:border-fort-dark pl-3; }
-  .note { @apply text-sm border border-dashed border-black/20 dark:border-white/25 rounded-lg px-3 py-2; }
+  .ind li { @apply grid gap-1 sm:grid-cols-[7rem_11rem_1fr] sm:items-center; }
+  .ind .nm { @apply font-display font-semibold; }
+  .chip { @apply inline-block w-fit rounded-full px-3 py-0.5 text-xs font-mono font-medium; }
+  .chip.s2 { @apply bg-viridiaan/15 text-viridiaan; }
+  .chip.s1 { @apply bg-oker/20 text-omber dark:text-oker; }
+  .chip.s0 { @apply bg-vermiljoen/15 text-vermiljoen; }
+  .ind .tx { @apply text-sm text-inkt/70; }
+  .focus { @apply border-l-2 border-viridiaan pl-4; }
+  .note { @apply text-sm text-inkt/70 border border-dashed border-inkt/20 rounded-xl px-4 py-3; }
   .res-sub { @apply grid gap-2; }
-  .res-sub h3 { @apply text-lg; }
-  .res-sub ol { @apply list-decimal pl-5 grid gap-1; }
-  .next { @apply grid gap-3 border-t border-black/10 dark:border-white/10 pt-4; }
-  .btnrow { @apply flex flex-wrap gap-2 items-center; }
+  .res-sub h3 { @apply font-display font-semibold text-lg; }
+  .res-sub ol { @apply list-decimal pl-5 grid gap-1 text-inkt/80; }
+  .next { @apply grid gap-3 border-t border-inkt/10 pt-5; }
+  .btnrow { @apply flex flex-wrap gap-3 items-center; }
 }

@@ -1,53 +1,62 @@
 ---
-import Container from "@components/Container.astro";
 import Sectiekop from "@components/Sectiekop.astro";
 import Contact from "@components/Contact.astro";
+import Icoon from "@components/Icoon.astro";
 import { home } from "@lib/content";
+import { kleurBij, type KleurNaam } from "@lib/iconen";
 import { pad, type Lang } from "@consts";
 
 const { lang, p } = Astro.props as { lang: Lang; p: any };
 const h = await home(lang);
 const d = p.data;
+const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
 ---
 
-<Container>
-  <div class="space-y-20">
-    <section class="space-y-5">
-      <a href={pad(lang, "/#voor-wie")} class="animate navlink text-sm">← {h.voorWie.eyebrow}</a>
-      <p class="animate eyebrow">{d.eyebrow}</p>
-      <h1 class="animate text-4xl sm:text-5xl leading-[1.05] tracking-tight">{d.kop}</h1>
-      <p class="animate text-lg font-serif max-w-prose">{d.intro}</p>
-      <div class="animate flex flex-wrap gap-2">
-        <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
-        {lang === "nl" && h.hero.knopScan && <a href="/quick-scan/" class="knop-lijn">{h.hero.knopScan}</a>}
-      </div>
-    </section>
-
-    {d.pijnpunten.length > 0 && (
-      <section class="animate space-y-5">
-        <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={d.pijnTitel} />
-        <ul class="space-y-2 font-serif">
-          {d.pijnpunten.map((t: string) => <li class="flex gap-2"><span class="font-sans text-black dark:text-white">–</span><span>{t}</span></li>)}
-        </ul>
-      </section>
-    )}
-
-    {d.inrichting.length > 0 && (
-      <section class="animate space-y-5">
-        <Sectiekop titel={d.inrichtingTitel} />
-        <ul class="grid gap-3 sm:grid-cols-3">
-          {d.inrichting.map((k: any) => (
-            <li class="kaart space-y-1">
-              <h3 class="font-semibold">{k.titel}</h3>
-              <p class="text-sm">{k.tekst}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    {d.slot && <p class="animate font-serif text-xl max-w-prose text-black dark:text-white">{d.slot}</p>}
-
-    <Contact lang={lang} data={h.contact} />
+<section class="relative hex-texture bg-krijt">
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+    <a href={pad(lang, "/#voor-wie")} class="groenlink">← {h.voorWie.eyebrow}</a>
+    <p class="mt-8 font-mono text-sm tracking-[0.2em] text-omber dark:text-oker uppercase mb-6">{d.eyebrow}</p>
+    <h1 class="font-display font-bold text-4xl md:text-6xl leading-[1.05] max-w-3xl">{d.kop}</h1>
+    <p class="mt-6 text-lg md:text-xl text-inkt/75 max-w-xl leading-relaxed">{d.intro}</p>
+    <div class="mt-10 flex flex-wrap items-center gap-6">
+      <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
+      {lang === "nl" && h.hero.knopScan && <a href="/quick-scan/" class="tekstlink">{h.hero.knopScan} →</a>}
+    </div>
   </div>
-</Container>
+</section>
+
+{d.pijnpunten.length > 0 && (
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={d.pijnTitel} />
+    <div class="mt-12 grid md:grid-cols-3 gap-8">
+      {d.pijnpunten.map((t: string, i: number) => (
+        <div class:list={["border-l-2 pl-6", kleurBij(i, reeks).lijn]}>
+          <p class="font-display font-semibold text-xl leading-snug">{t}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
+{d.inrichting.length > 0 && (
+  <section class="tint py-24">
+    <div class="wrap">
+      <Sectiekop eyebrow={d.eyebrow} titel={d.inrichtingTitel} />
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        {d.inrichting.map((k: any, i: number) => {
+          const c = kleurBij(i);
+          return (
+            <div class="bg-krijt rounded-2xl p-8">
+              {k.icoon && k.icoon !== "geen" && <span class:list={["rondje w-11 h-11 mb-4", c.zacht]}><Icoon naam={k.icoon} kleur={c.hex} /></span>}
+              <h3 class="font-display font-semibold text-lg mb-2">{k.titel}</h3>
+              <p class="text-inkt/70 leading-relaxed">{k.tekst}</p>
+            </div>
+          );
+        })}
+      </div>
+      {d.slot && <p class="mt-14 text-center font-display font-semibold text-2xl md:text-3xl text-viridiaan max-w-2xl mx-auto">{d.slot}</p>}
+    </div>
+  </section>
+)}
+
+<Contact lang={lang} data={h.contact} tint={d.inrichting.length === 0} />

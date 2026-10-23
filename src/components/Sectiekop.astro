@@ -1,9 +1,10 @@
 ---
-const { eyebrow, titel, intro, klein = false } = Astro.props as { eyebrow?: string; titel: string; intro?: string; klein?: boolean };
+const { eyebrow, titel, intro, class: klasse = "" } = Astro.props as { eyebrow?: string; titel?: string; intro?: string; class?: string };
 ---
 
-<div class="space-y-2 max-w-prose">
-  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h2 class={klein ? "text-xl sm:text-2xl leading-tight" : "sectiekop"}>{titel}</h2>
-  {intro && <p class="font-serif">{intro}</p>}
+<div class={klasse}>
+  {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
+  {titel && <h2 class="sectiekop">{titel}</h2>}
+  {intro && <p class="intro mt-5">{intro}</p>}
+  <slot />
 </div>

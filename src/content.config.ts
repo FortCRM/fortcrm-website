@@ -24,7 +24,7 @@ const landing = defineCollection({
     pijnTitel: z.string().default(""),
     pijnpunten: z.array(z.string()).default([]),
     inrichtingTitel: z.string().default(""),
-    inrichting: z.array(z.object({ titel: z.string(), tekst: z.string() })).default([]),
+    inrichting: z.array(z.object({ titel: z.string(), tekst: z.string(), icoon: z.string().nullish() })).default([]),
     slot: z.string().default(""),
   }),
 });

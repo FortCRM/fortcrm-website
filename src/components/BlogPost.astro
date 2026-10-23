@@ -1,5 +1,4 @@
 ---
-import Container from "@components/Container.astro";
 import { instellingen } from "@lib/content";
 import { formatDatum } from "@lib/utils";
 import { render } from "astro:content";
@@ -10,35 +9,46 @@ const b = (await instellingen(lang)).blog;
 const { Content } = await render(post);
 const url = `${SITE.URL}${pad(lang, `/blog/${post.slug}/`)}`;
 const d = post.data;
+const rond = "w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors";
 ---
 
-<Container>
-  <div class="max-w-screen-sm mx-auto space-y-8">
-    <a href={pad(lang, "/blog/")} class="animate navlink text-sm">← {b.terug}</a>
-    <div class="space-y-2">
-      <div class="animate text-sm">{formatDatum(d.datum, lang)}</div>
-      <h1 class="animate text-3xl leading-tight">{d.titel}</h1>
-    </div>
-    {d.tldr.length > 0 && (
-      <aside class="animate kaart space-y-2">
-        <div class="eyebrow">{b.tldr}</div>
-        <ul class="list-disc pl-5 space-y-1 font-serif">
-          {d.tldr.map((t: string) => <li>{t}</li>)}
-        </ul>
-      </aside>
-    )}
-    <article class="animate">
-      <Content />
-    </article>
-    <div class="animate kaart space-y-3">
-      <p class="font-serif">{b.cta}</p>
-      <a href={`${pad(lang)}#contact`} data-plan class="knop">{b.ctaKnop}</a>
-    </div>
-    <div class="animate flex flex-wrap items-center gap-2 text-sm border-t border-black/10 dark:border-white/10 pt-5">
-      <span class="font-semibold text-black dark:text-white">{b.delen}</span>
-      <a class="knop-lijn knop-sm" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener">LinkedIn</a>
-      <a class="knop-lijn knop-sm" href={`mailto:?subject=${encodeURIComponent(d.titel)}&body=${encodeURIComponent(url)}`}>E-mail</a>
-      <button type="button" class="knop-lijn knop-sm" data-kopieer={url} data-klaar={b.gekopieerd}>{b.kopieer}</button>
+<article class="max-w-3xl mx-auto px-6 py-20">
+  <a href={pad(lang, "/blog/")} class="groenlink">← {b.terug}</a>
+  <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mt-8 mb-4">{formatDatum(d.datum, lang)}</p>
+  <h1 class="font-display font-bold text-3xl md:text-4xl leading-tight mb-10">{d.titel}</h1>
+
+  {d.tldr.length > 0 && (
+    <aside class="mb-10 rounded-2xl border-l-4 border-viridiaan bg-viridiaan/8 px-6 py-6">
+      <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-3">{b.tldr}</p>
+      <ul class="list-disc pl-5 space-y-1.5 text-inkt/80 leading-relaxed">
+        {d.tldr.map((t: string) => <li>{t}</li>)}
+      </ul>
+    </aside>
+  )}
+
+  <div class="prose-post"><Content /></div>
+
+  <div class="mt-14 rounded-[2rem] border-l-4 border-vermiljoen bg-vermiljoen/8 px-6 py-8 md:px-10">
+    <p class="text-inkt/80 leading-relaxed">{b.cta}</p>
+    <a href={`${pad(lang)}#contact`} data-plan class="knop mt-5">{b.ctaKnop}</a>
+  </div>
+
+  <div class="mt-14 pt-8 border-t border-inkt/10">
+    <p class="font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-4">{b.delen}</p>
+    <div class="flex items-center gap-3">
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener" aria-label="LinkedIn" class={rond}>
+        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+      </a>
+      <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(d.titel)}`} target="_blank" rel="noopener" aria-label="X" class={rond}>
+        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+      </a>
+      <a href={`mailto:?subject=${encodeURIComponent(d.titel)}&body=${encodeURIComponent(url)}`} aria-label="E-mail" class={rond}>
+        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M2.5 4A1.5 1.5 0 001 5.5v13A1.5 1.5 0 002.5 20h19a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0021.5 4h-19zm.94 1.5h17.12L12 12.29 3.44 5.5zM2.5 6.94l8.99 7.02a1 1 0 001.02 0l8.99-7.02V18.5h-19V6.94z"></path></svg>
+      </a>
+      <button type="button" data-kopieer={url} data-klaar={b.gekopieerd} aria-label={b.kopieer} class={rond}>
+        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.5 1.5"></path><path d="M14 11a5 5 0 00-7.07 0L4.1 13.83a5 5 0 007.07 7.07l1.5-1.5"></path></svg>
+      </button>
+      <span data-kopieer-melding class="text-xs text-viridiaan opacity-0 transition-opacity">{b.gekopieerd}</span>
     </div>
   </div>
-</Container>
+</article>

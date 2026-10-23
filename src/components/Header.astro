@@ -1,5 +1,5 @@
 ---
-import Container from "@components/Container.astro";
+import Logo from "@components/Logo.astro";
 import { instellingen } from "@lib/content";
 import { pad, type Lang } from "@consts";
 
@@ -8,42 +8,69 @@ const m = (await instellingen(lang)).menu;
 const home = pad(lang);
 const links = [
   { href: `${home}#aanpak`, tekst: m.aanpak },
-  { href: `${home}#pakketten`, tekst: m.pakketten },
   { href: `${home}#voor-wie`, tekst: m.voorWie },
+  { href: `${home}#pakketten`, tekst: m.pakketten },
   { href: `${home}#over-ons`, tekst: m.overOns },
   { href: `${home}#faq`, tekst: m.faq },
   ...(m.quickscan && lang === "nl" ? [{ href: "/quick-scan/", tekst: m.quickscan }] : []),
   { href: pad(lang, "/blog/"), tekst: m.blog },
 ].filter((l) => l.tekst);
+
+const t = lang === "en"
+  ? { thema: "Toggle light and dark theme", open: "Open menu", dicht: "Close menu", taal: "Bekijk in het Nederlands" }
+  : { thema: "Wissel tussen licht en donker thema", open: "Menu openen", dicht: "Menu sluiten", taal: "View in English" };
+
+const VLAG_GB = `<span class="inline-flex overflow-hidden rounded-[3px]" style="line-height:0"><svg viewBox="0 0 60 30" width="22" height="14" preserveAspectRatio="none" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0 0 L60 30 M60 0 L0 30" stroke="#FFFFFF" stroke-width="9"/><path d="M0 0 L60 30 M60 0 L0 30" stroke="#C8102E" stroke-width="3.6"/><path d="M30 0 V30 M0 15 H60" stroke="#FFFFFF" stroke-width="16"/><path d="M30 0 V30 M0 15 H60" stroke="#C8102E" stroke-width="9.6"/></svg></span>`;
+const VLAG_NL = `<span class="inline-flex overflow-hidden rounded-[3px]" style="line-height:0"><svg viewBox="0 0 30 20" width="22" height="14" preserveAspectRatio="none" aria-hidden="true"><rect y="0" width="30" height="6.667" fill="#AE1C28"/><rect y="6.667" width="30" height="6.667" fill="#FFFFFF"/><rect y="13.334" width="30" height="6.666" fill="#21468B"/></svg></span>`;
+const THEMA = `<svg class="block dark:hidden" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" stroke="#1D211C" stroke-width="1.5"/><path d="M10 1.5v2M10 16.5v2M18.5 10h-2M3.5 10h-2M15.66 4.34l-1.41 1.41M5.75 14.25l-1.41 1.41M15.66 15.66l-1.41-1.41M5.75 5.75L4.34 4.34" stroke="#1D211C" stroke-width="1.5" stroke-linecap="round"/></svg><svg class="hidden dark:block" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17.5 11.2A7.3 7.3 0 018.8 2.5a7.3 7.3 0 105.7 11.8 6.2 6.2 0 003-3.1z" stroke="#F0EEE4" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
 ---
 
-<header>
-  <Container>
-    <div class="flex items-center gap-4 justify-between">
-      <a href={home} class="shrink-0" aria-label="FortCRM">
-        <img src="/logo-inkt.png" alt="FortCRM" width="120" height="41" class="h-8 w-auto dark:hidden" />
-        <img src="/logo-linnen.png" alt="FortCRM" width="120" height="41" class="h-8 w-auto hidden dark:block" />
-      </a>
-      <nav class="hidden lg:flex flex-wrap items-center gap-1 text-sm" aria-label="Hoofdmenu">
-        {links.map((l, i) => (
-          <>
-            {i > 0 && <span aria-hidden="true">/</span>}
-            <a href={l.href} class="navlink">{l.tekst}</a>
-          </>
-        ))}
-      </nav>
-      <div class="flex items-center gap-3 shrink-0">
-        {vertaling && (
-          <a href={vertaling} class="navlink text-sm font-semibold" lang={lang === "nl" ? "en" : "nl"}>{m.andereTaal}</a>
-        )}
-        <a href={`${home}#contact`} data-plan class="knop knop-sm">{m.knop}</a>
-        <details class="lg:hidden relative">
-          <summary class="knop-lijn knop-sm cursor-pointer list-none">{m.menu}</summary>
-          <div class="absolute right-0 top-full mt-2 w-56 rounded-lg border border-black/15 dark:border-white/20 bg-stone-100 dark:bg-stone-900 p-2 flex flex-col">
-            {links.map((l) => <a href={l.href} class="px-3 py-2 rounded hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white">{l.tekst}</a>)}
-          </div>
-        </details>
-      </div>
+<header class="sticky top-0 z-50 bg-krijt/90 backdrop-blur border-b border-inkt/10">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4" aria-label="Hoofdmenu">
+    <a href={home} class="mr-4 lg:mr-0" aria-label="FortCRM"><Logo /></a>
+
+    <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+      {links.map((l) => <a href={l.href} class="navlink">{l.tekst}</a>)}
     </div>
-  </Container>
+
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+      {vertaling && (
+        <a href={vertaling} class="hidden lg:flex w-9 h-9 items-center justify-center rounded-full hover:bg-inkt/5 transition-colors" aria-label={t.taal} title={t.taal}>
+          <Fragment set:html={lang === "nl" ? VLAG_GB : VLAG_NL} />
+        </a>
+      )}
+      <button type="button" class="theme-toggle-btn hidden lg:flex w-9 h-9 items-center justify-center rounded-full hover:bg-inkt/5 transition-colors" aria-label={t.thema}>
+        <Fragment set:html={THEMA} />
+      </button>
+      <a href={`${home}#contact`} data-plan class="knop knop-sm">{m.knop}</a>
+      <button type="button" id="menu-toggle" aria-label={t.open} aria-controls="mobile-menu" aria-expanded="false" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8 flex-shrink-0 ml-3">
+        <span class="block w-6 h-0.5 bg-inkt rounded-full"></span>
+        <span class="block w-6 h-0.5 bg-inkt rounded-full"></span>
+        <span class="block w-6 h-0.5 bg-inkt rounded-full"></span>
+      </button>
+    </div>
+  </nav>
 </header>
+
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-inkt/40 z-40" hidden></div>
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 max-w-[80%] bg-krijt z-50 shadow-xl translate-x-full transition-transform duration-300 lg:hidden" aria-label={m.menu}>
+  <div class="flex items-center justify-between px-6 py-4 border-b border-inkt/10">
+    <span class="font-display font-bold text-lg">{m.menu}</span>
+    <div class="flex items-center gap-1">
+      {vertaling && (
+        <a href={vertaling} class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-inkt/5 transition-colors" aria-label={t.taal} title={t.taal}>
+          <Fragment set:html={lang === "nl" ? VLAG_GB : VLAG_NL} />
+        </a>
+      )}
+      <button type="button" class="theme-toggle-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-inkt/5 transition-colors" aria-label={t.thema}>
+        <Fragment set:html={THEMA} />
+      </button>
+      <button type="button" id="menu-close" aria-label={t.dicht} class="w-8 h-8 flex items-center justify-center">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" class="stroke-inkt" stroke-width="2" stroke-linecap="round"></path></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="flex flex-col px-6 py-6 gap-5 text-lg font-medium">
+    {links.map((l) => <a href={l.href} class="pb-2 border-b border-inkt/10">{l.tekst}</a>)}
+  </nav>
+</div>

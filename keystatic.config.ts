@@ -1,4 +1,5 @@
 import { config, collection, singleton, fields } from "@keystatic/core";
+import { ICOON_OPTIES, KLEUR_OPTIES } from "./src/lib/iconen";
 
 // Keystatic: lokaal schrijft het in de map zelf, online commit het via de GitHub-app naar de repo.
 const storage = import.meta.env.DEV
@@ -10,6 +11,11 @@ const alinea = (label: string, description?: string) => fields.text({ label, des
 
 const lijst = <T extends Parameters<typeof fields.array>[0]>(element: T, label: string, itemLabel?: (p: any) => string) =>
   fields.array(element, { label, itemLabel });
+
+const icoon = (standaard = "geen") =>
+  fields.select({ label: "Icoon", description: "Uit de vaste iconenset van de huisstijl.", options: ICOON_OPTIES, defaultValue: standaard });
+const kleur = () =>
+  fields.select({ label: "Kleur van de stip", description: "Grijs is neutraal.", options: KLEUR_OPTIES, defaultValue: "grijs" });
 
 const kop = {
   eyebrow: tekst("Klein kopje boven de titel"),
@@ -78,11 +84,13 @@ const homeSchema = {
         fields.object({
           titel: tekst("Titel"),
           tekst: alinea("Tekst"),
+          icoon: icoon(),
           pagina: tekst("Link naar landingspagina", "De korte naam van de pagina, bijvoorbeeld weinig-deals. Leeg = geen link."),
         }),
         "Soorten bedrijven",
         (p) => p.fields.titel.value,
       ),
+      meerTekst: tekst("Linktekst op de kaarten", "Bijvoorbeeld: Bekijk wat we inrichten"),
       oproep: alinea("Zin onder de kaarten"),
       oproepLink: tekst("Linktekst in die zin", "Dit stuk tekst wordt de link naar de afspraakplanner. Moet letterlijk in de zin staan."),
       nietVoorTitel: tekst("Voor wie niet: titel"),
@@ -108,6 +116,8 @@ const homeSchema = {
           naam: tekst("Pakket"),
           prijs: tekst("Prijs", "Bijvoorbeeld €7.950"),
           uitgelicht: fields.checkbox({ label: "Uitgelicht", defaultValue: false }),
+          badge: tekst("Label boven het pakket", "Bijvoorbeeld: Meest gekozen. Leeg = geen label."),
+          kleur: kleur(),
         }),
         "Pakketten (kolommen)",
         (p) => p.fields.naam.value,
@@ -129,6 +139,8 @@ const homeSchema = {
           naam: tekst("Niveau"),
           prijs: tekst("Prijs per maand"),
           uitgelicht: fields.checkbox({ label: "Uitgelicht", defaultValue: false }),
+          badge: tekst("Label boven het niveau", "Leeg = geen label."),
+          kleur: kleur(),
         }),
         "SLA-niveaus",
         (p) => p.fields.naam.value,
@@ -157,7 +169,7 @@ const homeSchema = {
     {
       ...kop,
       punten: lijst(
-        fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst") }),
+        fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst"), icoon: icoon("vinkje") }),
         "Redenen",
         (p) => p.fields.titel.value,
       ),
@@ -302,7 +314,7 @@ const landingSchema = {
   pijnpunten: lijst(tekst("Punt"), "Herkenbare punten"),
   inrichtingTitel: tekst("Kopje wat we inrichten"),
   inrichting: lijst(
-    fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst") }),
+    fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst"), icoon: icoon() }),
     "Wat we inrichten",
     (p) => p.fields.titel.value,
   ),
