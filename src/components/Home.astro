@@ -113,6 +113,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           <h3 class="mt-6 font-display font-semibold text-xl">{s.titel}</h3>
           <p class="mt-2 text-inkt/65 leading-relaxed">{s.tekst}</p>
           {s.resultaat && <p class="mt-4 text-sm font-medium text-[#8FBFA6]">{s.resultaat}</p>}
+          {s.knop && <a href="#contact" data-plan class="knop mt-5 px-5 py-2 text-sm">{s.knop}</a>}
         </li>
       ))}
     </ol>

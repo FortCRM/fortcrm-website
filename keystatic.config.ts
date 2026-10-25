@@ -106,7 +106,7 @@ const homeSchema = {
       ...kop,
       intro: alinea("Inleiding"),
       stappen: lijst(
-        fields.object({ titel: tekst("Stap"), tekst: alinea("Uitleg"), resultaat: tekst("Resultaat") }),
+        fields.object({ titel: tekst("Stap"), tekst: alinea("Uitleg"), resultaat: tekst("Resultaat"), knop: tekst("Link afspraak inplannen", "Opent de afsprakenplanner. Leeg = geen link.") }),
         "Stappen",
         (p) => p.fields.titel.value,
       ),

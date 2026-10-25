@@ -109,6 +109,7 @@ aanpak:
   - titel: Introduction
     tekst: A 30-minute call about how you work today and what you want to achieve.
     resultaat: An honest answer on whether Pipedrive fits.
+    knop: Book your intro call
   - titel: Design
     tekst: In your own words, we map how a request becomes a customer, and an order becomes a project.
     resultaat: A setup plan your team recognises.
