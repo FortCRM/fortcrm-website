@@ -1,5 +1,5 @@
 titel: Veel aanvragen, veel orders
-beschrijving: 'FortCRM voor bedrijven met veel aanvragen en orders: één verkoopoverzicht, vaste route en automatische opvolging in Pipedrive.'
+beschrijving: 'FortCRM voor bedrijven met veel aanvragen en orders: één pijplijn, vaste route en automatische opvolging in Pipedrive.'
 eyebrow: Veel aanvragen, veel orders
 kop: Elke aanvraag op dezelfde manier opgepakt.
 intro: Kleine bedragen, grote aantallen. Je groeit niet door meer te doen, maar door elke aanvraag dezelfde route te laten volgen.
@@ -10,7 +10,7 @@ pijnpunten:
 - Aanvragen komen binnen via mail, telefoon, formulier en webshop, en staan overal verspreid.
 inrichtingTitel: Pipedrive voor jouw situatie
 inrichting:
-- titel: Eén overzicht voor alle kanalen
+- titel: Eén pijplijn voor alle kanalen
   tekst: Alle aanvragen komen op één plek binnen, met vaste velden en een duidelijke eigenaar.
   icoon: trechter
 - titel: Automatische opvolging

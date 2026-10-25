@@ -17,7 +17,7 @@ delen:
 typeA:
   kop: Veel aanvragen en orders
   tekst: Bij veel aanvragen telt dat elke lead dezelfde route volgt. Snel reageren en automatisch opvolgen levert hier het meeste op.
-  stap1: Zet alle aanvraagkanalen in één verkoopoverzicht.
+  stap1: Zet alle aanvraagkanalen in één pijplijn.
   stap2: Leg een vaste route met herinneringen vast.
   stap3: Automatiseer de eerste reactie en de taken erna.
 typeB:
@@ -40,6 +40,6 @@ typeD:
   stap3: Bouw uit zodra het team het gebruikt.
 wens:
   lead: Je wilt geen aanvraag meer laten liggen. Dat vraagt om een vaste opvolgroute.
-  overzicht: Je wilt overzicht in je verkoop en omzet. Dat vraagt eerst om betrouwbare invoer.
+  overzicht: Je wilt overzicht in pipeline en omzet. Dat vraagt eerst om betrouwbare invoer.
   handwerk: Je wilt minder handwerk. Dat lossen we op met automatisering rond Pipedrive.
   gebruik: Je wilt dat je team het gebruikt. Dat bereik je met een inrichting die past bij hoe jullie werken.

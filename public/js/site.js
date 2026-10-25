@@ -37,7 +37,7 @@
       [0, 'Nee. Wat er is besproken, weet alleen degene die erbij zat.']] },
     { id: 'pain', title: 'Wat wil je als eerste opgelost zien?', opts: [
       ['lead', 'Geen aanvraag of offerte meer laten liggen'],
-      ['overzicht', 'Overzicht van je verkoop en verwachte omzet'],
+      ['overzicht', 'Overzicht van pipeline en verwachte omzet'],
       ['handwerk', 'Minder handwerk en administratie'],
       ['gebruik', 'Een team dat het systeem echt gebruikt']] }
   ];
@@ -59,7 +59,7 @@
   };
   var TYPE = {
     A: { kop: 'Veel aanvragen en orders', tekst: 'Bij veel aanvragen telt dat elke lead dezelfde route volgt. Snel reageren en automatisch opvolgen levert hier het meeste op.',
-      stap: ['Zet alle aanvraagkanalen in één verkoopoverzicht.', 'Leg een vaste route met herinneringen vast.', 'Automatiseer de eerste reactie en de taken erna.'] },
+      stap: ['Zet alle aanvraagkanalen in één pijplijn.', 'Leg een vaste route met herinneringen vast.', 'Automatiseer de eerste reactie en de taken erna.'] },
     B: { kop: 'Maatwerk en advies met meerdere gesprekken', tekst: 'Bij meerdere gesprekken per deal gaat informatie verloren tussen de gesprekken. Een compleet klantbeeld per deal maakt het verschil.',
       stap: ['Leg na elk gesprek vast wat er is besproken, met een vaste structuur.', 'Koppel mail en agenda aan de deal.', 'Maak per fase duidelijk wat de volgende stap is.'] },
     C: { kop: 'Weinig deals, hoge slagingskans', tekst: 'Bij weinig offertes mag er geen enkele blijven liggen. Een strakke offerteopvolging is hier goud waard.',
@@ -69,7 +69,7 @@
   };
   var PAIN = {
     lead: 'Je wilt geen aanvraag meer laten liggen. Dat vraagt om een vaste opvolgroute.',
-    overzicht: 'Je wilt overzicht in je verkoop en omzet. Dat vraagt eerst om betrouwbare invoer.',
+    overzicht: 'Je wilt overzicht in pipeline en omzet. Dat vraagt eerst om betrouwbare invoer.',
     handwerk: 'Je wilt minder handwerk. Dat lossen we op met automatisering rond Pipedrive.',
     gebruik: 'Je wilt dat je team het gebruikt. Dat bereik je met een inrichting die past bij hoe jullie werken.'
   };
