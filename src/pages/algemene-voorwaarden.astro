@@ -1,0 +1,10 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Pagina from "@components/Pagina.astro";
+import { getEntry } from "astro:content";
+const pagina = await getEntry("pagina", "voorwaarden-nl");
+---
+
+<PageLayout title={`${pagina!.data.titel} | FortCRM`} description={pagina!.data.omschrijving} lang="nl" vertaling="/en/terms/">
+  <Pagina lang="nl" pagina={pagina} />
+</PageLayout>

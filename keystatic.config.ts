@@ -349,6 +349,7 @@ const instellingenSchema = {
       artikelen: tekst("Kopje laatste artikelen"),
       linkedin: tekst("Linktekst LinkedIn"),
       privacy: tekst("Regel privacyverklaring"),
+      voorwaarden: tekst("Link algemene voorwaarden"),
       partner: tekst("Regel Pipedrive-partner"),
       cookieknop: tekst("Knop cookievoorkeuren"),
     },
@@ -494,8 +495,8 @@ export default config({
   ui: {
     brand: { name: "FortCRM" },
     navigation: {
-      Nederlands: ["homeNl", "landingNl", "blogNl", "quickscanNl", "instellingenNl", "privacyNl"],
-      English: ["homeEn", "landingEn", "blogEn", "instellingenEn", "privacyEn"],
+      Nederlands: ["homeNl", "landingNl", "blogNl", "quickscanNl", "instellingenNl", "privacyNl", "voorwaardenNl"],
+      English: ["homeEn", "landingEn", "blogEn", "instellingenEn", "privacyEn", "voorwaardenEn"],
     },
   },
   singletons: {
@@ -506,6 +507,8 @@ export default config({
     instellingenEn: singleton({ label: "Menu, footer en formulier (EN)", path: "src/content/instellingen/en", format: { data: "yaml" }, schema: instellingenSchema }),
     privacyNl: singleton({ label: "Privacyverklaring", path: "src/content/pagina/privacy-nl", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
     privacyEn: singleton({ label: "Privacy statement (EN)", path: "src/content/pagina/privacy-en", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
+    voorwaardenNl: singleton({ label: "Algemene voorwaarden", path: "src/content/pagina/voorwaarden-nl", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
+    voorwaardenEn: singleton({ label: "Terms and conditions (EN)", path: "src/content/pagina/voorwaarden-en", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
   },
   collections: {
     landingNl: landing("Landingspagina's", "nl"),
