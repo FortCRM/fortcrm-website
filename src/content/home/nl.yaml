@@ -11,15 +11,44 @@ hero:
   knopPakketten: Bekijk de pakketten
   knopScan: Of doe eerst de CRM-check (2 min)
   voetnoot: '* Niet binnen 6 weken live, terwijl jouw requirements op orde waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na 60 dagen niet actief met Pipedrive, dan krijg je een gratis extra trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared. Wat actief is, leggen we vooraf samen vast.'
-  feiten:
-  - kop: Pipedrive
-    tekst: Eén CRM als bron van waarheid voor je klantdata
-  - kop: Authorized partner
-    tekst: Officieel partner van Pipedrive
-  - kop: 5 tot 250 medewerkers
-    tekst: Het MKB waar wij het verschil maken
   beeld:
   beeldAlt: ''
+pipedrive:
+  eyebrow: Pipedrive Authorized Partner
+  titel: Officieel partner van Pipedrive
+  tekst: FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het bij jouw team past, en zorgen dat je de functies gebruikt die het verschil maken.
+  voordelen:
+  - 30 dagen proefperiode via onze partnerlink, in plaats van 14
+  - Advies over het abonnement dat bij je team past
+  - Eén aanspreekpunt voor inrichting, koppelingen en vragen
+  functiesTitel: Wat Pipedrive voor je team doet
+  functies:
+  - titel: E-mailsynchronisatie
+    tekst: Je mailbox gekoppeld aan Pipedrive. Elke mail komt bij de juiste klant en deal.
+    icoon: mail
+  - titel: Agendakoppeling
+    tekst: Afspraken uit Google of Outlook staan in Pipedrive, en andersom.
+    icoon: agenda
+  - titel: Afspraken inplannen
+    tekst: Klanten kiezen zelf een moment via je planningslink. Geen heen-en-weer gemail.
+    icoon: afspraak
+  - titel: WhatsApp
+    tekst: Gesprekken met klanten voeren en vastleggen vanuit Pipedrive.
+    icoon: chat
+  - titel: 'Nova: AI-notities'
+    tekst: Nova maakt notities van je klantgesprekken en zet de vervolgstappen klaar.
+    icoon: notitie
+  - titel: Automatiseringen
+    tekst: Taken, mails en updates lopen vanzelf, op basis van wat er in een deal gebeurt.
+    icoon: bliksem
+  - titel: Rapportages
+    tekst: Dashboards met je pijplijn, verwachte omzet en resultaten per verkoper.
+    icoon: grafiek
+  - titel: Mobiele app
+    tekst: Alles bij de hand onderweg, ook een gesprek vastleggen direct na een bezoek.
+    icoon: mobiel
+  knop: ''
+  knopLink: ''
 herkenbaar:
   eyebrow: Herkenbaar?
   titel: Dit horen we bij bijna elk MKB-bedrijf

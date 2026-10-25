@@ -17,6 +17,12 @@ export const ICONEN = {
   doel: { label: "Doel", svg: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>' },
   klok: { label: "Tijd", svg: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>' },
   hand: { label: "Persoonlijk contact", svg: '<path d="M7 11V6.5a1.5 1.5 0 013 0V11M10 10V4.5a1.5 1.5 0 013 0V10M13 10V5.5a1.5 1.5 0 013 0V12M16 9.5a1.5 1.5 0 013 0V14c0 4-3 7-7 7-3 0-4.5-1.5-6-4l-2.2-3.8a1.5 1.5 0 012.6-1.5L7 13"/>' },
+  mail: { label: "E-mail", svg: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>' },
+  agenda: { label: "Agenda", svg: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>' },
+  afspraak: { label: "Afspraak inplannen", svg: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15.5l2 2 4-4"/>' },
+  chat: { label: "Berichten / WhatsApp", svg: '<path d="M20 11.5a8 8 0 01-11.7 7.1L4 20l1.4-4.1A8 8 0 1120 11.5z"/><path d="M9 10.5h6M9 13.5h4"/>' },
+  notitie: { label: "AI-notities", svg: '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h3"/><path d="M19.5 13.5l.6 1.5 1.4.5-1.4.5-.6 1.5-.6-1.5-1.4-.5 1.4-.5z"/>' },
+  mobiel: { label: "Mobiele app", svg: '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>' },
   herhalen: { label: "Bijsturen / herhalen", svg: '<path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/>' },
 } as const;
 

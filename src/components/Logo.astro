@@ -1,9 +1,9 @@
 ---
 // Beeldmerk en woordmerk zoals in de navigatie van de oude fortcrm.nl
-const { maat = 30 } = Astro.props as { maat?: number };
+const { maat = 38 } = Astro.props as { maat?: number };
 ---
 
-<span class="flex items-center gap-2.5">
+<span class="flex items-center gap-3">
   <svg width={maat} height={maat} viewBox="0 0 714.69478 905.33575" aria-hidden="true">
     <g transform="translate(-143.13014,-47.645)">
       <path fill="none" stroke="currentColor" stroke-width="87.9632" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.78919167,0,0,0.80243733,500.35252,500.36271)" d="M -74.002289,428.806 C -188.17015,360.97979 -293.63716,306.30918 -408.66177,239.89969 l 0.0272,-480.39322 c 94.37252,-54.04829 141.17492,-77.20878 233.98856,-133.81945 m 245.295337,-53.75434 338.329233,187.54453 -1e-5,480.57826 c -94.07437,54.31912 -150.09939,79.05456 -244.18579,133.35349"></path>
@@ -14,5 +14,5 @@ const { maat = 30 } = Astro.props as { maat?: number };
       <rect fill="currentColor" stroke="currentColor" stroke-width="1.09949" stroke-linejoin="round" width="300" height="102.75375" x="806.78595" y="710.20972" ry="8.7757597" rx="9.4862862" transform="translate(-49.999968,-259.28113) matrix(1,0,-0.56187757,0.82722041,0,0)"></rect>
     </g>
   </svg>
-  <span class="font-display font-bold text-lg tracking-tight">Fort<span class="font-light text-viridiaan">CRM</span></span>
+  <span class="font-display font-bold text-2xl tracking-tight">Fort<span class="font-light text-viridiaan">CRM</span></span>
 </span>

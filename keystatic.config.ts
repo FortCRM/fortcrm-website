@@ -44,13 +44,24 @@ const homeSchema = {
       beeld: fields.image({ label: "Beeld rechts", description: "Bijvoorbeeld een geanonimiseerd Pipedrive-scherm. Leeg = voorbeeldpijplijn.", directory: "public/images/hero", publicPath: "/images/hero/" }),
       beeldAlt: tekst("Omschrijving van het beeld (voor schermlezers)"),
       voetnoot: alinea("Voetnoot bij de belofte"),
-      feiten: lijst(
-        fields.object({ kop: tekst("Kop"), tekst: tekst("Tekst") }),
-        "Feiten onder de hero",
-        (p) => p.fields.kop.value,
-      ),
     },
     { label: "Bovenaan (hero)" },
+  ),
+  pipedrive: fields.object(
+    {
+      ...kop,
+      tekst: alinea("Wat het partnerschap jou oplevert"),
+      voordelen: lijst(tekst("Voordeel"), "Voordelen van het partnerschap", (p) => p.value),
+      functiesTitel: tekst("Kopje boven de functies"),
+      functies: lijst(
+        fields.object({ titel: tekst("Functie"), tekst: alinea("Korte uitleg"), icoon: icoon() }),
+        "Functies van Pipedrive",
+        (p) => p.fields.titel.value,
+      ),
+      knop: tekst("Linktekst proefperiode", "Leeg = verbergen."),
+      knopLink: tekst("Link proefperiode", "Partnerlink van FortCRM voor de proefperiode."),
+    },
+    { label: "Pipedrive-partnerschap", description: "Staat direct onder de hero, met de partnerbadge." },
   ),
   herkenbaar: fields.object(
     {

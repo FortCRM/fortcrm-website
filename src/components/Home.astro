@@ -5,6 +5,7 @@ import Tabel from "@components/Tabel.astro";
 import Icoon from "@components/Icoon.astro";
 import PipelineBeeld from "@components/PipelineBeeld.astro";
 import Bewijs from "@components/Bewijs.astro";
+import Pipedrive from "@components/Pipedrive.astro";
 import { home } from "@lib/content";
 import { splitNadruk } from "@lib/utils";
 import { pad, SITE, type Lang } from "@consts";
@@ -59,19 +60,9 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
   </div>
 </section>
 
-{!(b.logos ?? []).some((l: any) => l.logo) && !heeftCijfers && h.hero.feiten?.length > 0 && (
-  <section class="border-y border-inkt/10">
-    <ul class="wrap grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-inkt/10">
-      {h.hero.feiten.map((f: any) => (
-        <li class="py-6 sm:px-8 first:sm:pl-0">
-          <div class="font-display font-semibold text-lg">{f.kop}</div>
-          <div class="text-sm text-inkt/60">{f.tekst}</div>
-        </li>
-      ))}
-    </ul>
-  </section>
-)}
 <Bewijs deel="logos" b={b} />
+
+<Pipedrive p={h.pipedrive} lang={lang} />
 
 <!-- herkenbaar -->
 <section class="py-24 md:py-32">

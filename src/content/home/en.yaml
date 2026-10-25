@@ -11,15 +11,44 @@ hero:
   knopPakketten: See the packages
   knopScan: ''
   voetnoot: '* Not live within 6 weeks while your requirements were in order? Then you pay no licence fees for the overrun. If your team is not actively using Pipedrive after 60 days, you get an extra training session for free. Both guarantees apply to Fully managed and Shared. What active means is agreed together up front.'
-  feiten:
-  - kop: Pipedrive
-    tekst: One CRM as the single source of truth for your customer data
-  - kop: Authorized partner
-    tekst: Official Pipedrive partner
-  - kop: 5 to 250 employees
-    tekst: The businesses where we make the difference
   beeld:
   beeldAlt: ''
+pipedrive:
+  eyebrow: Pipedrive Authorized Partner
+  titel: An official Pipedrive partner
+  tekst: FortCRM is an Authorized Partner of Pipedrive. We set it up the way your team works, and make sure you use the features that make the difference.
+  voordelen:
+  - 30-day trial through our partner link instead of 14
+  - Advice on the plan that fits your team
+  - One point of contact for setup, integrations and questions
+  functiesTitel: What Pipedrive does for your team
+  functies:
+  - titel: Email sync
+    tekst: Your mailbox connected to Pipedrive. Every email lands with the right contact and deal.
+    icoon: mail
+  - titel: Calendar sync
+    tekst: Meetings from Google or Outlook show up in Pipedrive, and the other way round.
+    icoon: agenda
+  - titel: Meeting scheduler
+    tekst: Clients pick a time through your booking link. No back-and-forth emails.
+    icoon: afspraak
+  - titel: WhatsApp
+    tekst: Hold and log conversations with clients from within Pipedrive.
+    icoon: chat
+  - titel: 'Nova: AI notes'
+    tekst: Nova takes notes of your client meetings and prepares the next steps.
+    icoon: notitie
+  - titel: Automations
+    tekst: Tasks, emails and updates run by themselves, based on what happens in a deal.
+    icoon: bliksem
+  - titel: Reporting
+    tekst: Dashboards with your pipeline, expected revenue and results per rep.
+    icoon: grafiek
+  - titel: Mobile app
+    tekst: Everything at hand on the road, including logging a meeting right after a visit.
+    icoon: mobiel
+  knop: ''
+  knopLink: ''
 herkenbaar:
   eyebrow: Sound familiar?
   titel: What we hear at almost every growing business
