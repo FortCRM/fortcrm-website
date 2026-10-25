@@ -109,7 +109,8 @@ summary {
   .knop-sm { @apply h-8 min-h-8 px-3.5 sm:px-5; }
   .knop-lijn {
     @apply inline-flex items-center justify-center h-12 min-h-12 rounded-full px-7 text-sm font-semibold;
-    @apply border border-inkt/20 text-inkt hover:border-inkt/40 hover:bg-inkt/5 transition-colors cursor-pointer select-none;
+    @apply border border-inkt/20 bg-transparent text-inkt hover:border-inkt/40 hover:bg-inkt/5 transition-colors cursor-pointer select-none;
+    box-shadow: none;
   }
   .rondje {
     @apply flex items-center justify-center rounded-full flex-shrink-0;
@@ -159,7 +160,7 @@ summary {
   .ind { @apply grid gap-3 list-none m-0 p-0; }
   .ind li { @apply grid gap-1 sm:grid-cols-[7rem_11rem_1fr] sm:items-center; }
   .ind .nm { @apply font-display font-semibold; }
-  .chip { @apply inline-block w-fit rounded-full px-3 py-0.5 text-xs font-mono font-medium; }
+  .chip { @apply inline-block w-fit rounded-full px-3 py-0.5 text-xs font-semibold; }
   .chip.s2 { @apply bg-viridiaan/15 text-viridiaan; }
   .chip.s1 { @apply bg-oker/20 text-omber dark:text-oker; }
   .chip.s0 { @apply bg-vermiljoen/15 text-vermiljoen; }

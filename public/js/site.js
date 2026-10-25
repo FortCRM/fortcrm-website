@@ -136,6 +136,7 @@
         '<label class="fld">Voornaam<input name="naam" autocomplete="given-name" required></label>' +
         '<label class="fld">E-mailadres<input name="mail" type="email" autocomplete="email" required></label>' +
         '<label class="chk"><input type="checkbox" name="bel" id="bel"><span>Bel me liever. Ik laat mijn telefoonnummer achter.</span></label>' +
+        '<label class="chk"><input type="checkbox" name="optin" id="opt-in"><span>Stuur me ook de FortCRM-inzichten over CRM en AI voor het MKB, maximaal één keer per maand. Opzeggen kan altijd.</span></label>' +
         '<label class="fld" id="telw" hidden>Telefoonnummer<input name="tel" type="tel" autocomplete="tel"></label>' +
         '<p class="msg" role="alert" id="gmsg"></p>' +
         '<div class="qnav"><button type="button" class="btn line" data-back>Terug</button><button class="btn" type="submit">Toon mijn uitslag</button></div>' +
@@ -154,6 +155,7 @@
         if (CFG.formEndpoint) {
           send({ soort: 'quickscan', naam: nm, mail: f.mail.value.trim(), terugbellen: f.bel.checked,
             telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan' }).catch(function () {});
+          if (f.optin.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan' }).catch(function () {});
         }
         i++; step();
       });
@@ -181,18 +183,10 @@
       }
       h += '<div class="res-sub"><h3>Drie eerste stappen</h3><ol>' + t.stap.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>';
       h += '<div class="next"><div class="btnrow"><a class="btn" href="/#contact" data-plan>Plan een gesprek van 30 minuten</a><a class="btn line" href="/#pakketten">Bekijk de pakketten</a></div>' +
-        '<label class="chk" for="opt-in"><input type="checkbox" id="opt-in"><span>Stuur me ook de FortCRM-inzichten over CRM en AI voor het MKB, maximaal één keer per maand. Opzeggen kan altijd.</span></label>' +
         '<p class="micro">Dit is een eerste indruk op basis van zes vragen, geen volledige analyse. In het gesprek kijken we naar jullie echte situatie.</p></div>';
       h += '</div></div>';
       body.innerHTML = h;
       prog.parentNode.hidden = true;
-      var oi = body.querySelector('#opt-in');
-      if (oi) {
-        if (!CFG.formEndpoint) { oi.closest('label').hidden = true; }
-        oi.addEventListener('change', function () {
-          if (oi.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan' }).catch(function () {});
-        });
-      }
     };
 
     var step = function (first) {
