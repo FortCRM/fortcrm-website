@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: Pipedrive-specialist voor het MKB
   titel: Al je klanten, offertes en afspraken op _één plek_.
-  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, afspraken, offertes en de uitvoering daarna bijhoudt. Zo blijft er niets liggen, weet iedereen wat er speelt en ligt de basis voor AI klaar.'
+  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, afspraken, offertes en de uitvoering daarna bijhoudt. Zo ligt de basis voor AI klaar.'
   uitleg: ''
   beeldOnderschrift: ''
   belofte: Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet, dan staan wij ervoor in.*
@@ -157,17 +157,17 @@ pakketten:
   intro: Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive als de plek waar al je klantgegevens kloppen.
   kolommen:
   - naam: Zelfstandig
-    prijs: €4.950
+    prijs: vanaf €4.950
     uitgelicht: false
     kleur: grijs
     badge: ''
   - naam: Shared
-    prijs: €7.950
+    prijs: vanaf €7.950
     uitgelicht: true
     kleur: vermiljoen
     badge: Meest gekozen
   - naam: Volledig ontzorgd
-    prijs: €12.950
+    prijs: vanaf €12.950
     uitgelicht: false
     kleur: viridiaan
     badge: ''
@@ -197,11 +197,6 @@ pakketten:
     - '1'
     - '2'
     - '3'
-  - onderdeel: Projects (na de verkoop)
-    waarden:
-    - Los af te nemen
-    - Eén projectsjabloon
-    - Ingericht met sjablonen en automatiseringen
   - onderdeel: Migratie van je data
     waarden:
     - Eén Excel- of CSV-bestand
@@ -342,7 +337,7 @@ faq:
   - vraag: Wat als mijn team het niet gebruikt?
     antwoord: Daar is de garantie op gebruik voor. We kijken na 60 dagen samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie. Geldt voor Volledig ontzorgd en Shared.
   - vraag: Wat kost het?
-    antwoord: 'Zelfstandig kost €4.950, Shared €7.950 en Volledig ontzorgd €12.950. Na de start kies je een onderhoudsabonnement: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
+    antwoord: 'Zelfstandig kost vanaf €4.950, Shared vanaf €7.950 en Volledig ontzorgd vanaf €12.950. Na de start kies je een onderhoudsabonnement: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
 contact:
   eyebrow: Contact
   titel: Plan een gesprek van 30 minuten

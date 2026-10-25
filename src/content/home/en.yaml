@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: Pipedrive specialist for SMEs
   titel: All your clients, quotes and meetings in _one place_.
-  intro: 'We set up Pipedrive for you: the system where your whole team keeps track of client contact, agreements, quotes and the delivery that follows. Nothing slips through, everyone knows what is going on and the foundation for AI is in place.'
+  intro: 'We set up Pipedrive for you: the system where your whole team keeps track of client contact, agreements, quotes and the delivery that follows. That puts the foundation for AI in place.'
   uitleg: ''
   beeldOnderschrift: ''
   belofte: Live within 6 weeks. Still in use after 60 days. If not, we stand behind it.*
@@ -157,17 +157,17 @@ pakketten:
   intro: Three ways to work with us. All three are built with Pipedrive as the source of truth.
   kolommen:
   - naam: Self-directed
-    prijs: €4,950
+    prijs: from €4,950
     uitgelicht: false
     kleur: grijs
     badge: ''
   - naam: Shared
-    prijs: €7,950
+    prijs: from €7,950
     uitgelicht: true
     kleur: vermiljoen
     badge: Most chosen
   - naam: Fully managed
-    prijs: €12,950
+    prijs: from €12,950
     uitgelicht: false
     kleur: viridiaan
     badge: ''
@@ -197,11 +197,6 @@ pakketten:
     - '1'
     - '2'
     - '3'
-  - onderdeel: Projects (after the sale)
-    waarden:
-    - Available separately
-    - One project template
-    - Set up with templates and automations
   - onderdeel: Data migration
     waarden:
     - One Excel or CSV file
@@ -342,7 +337,7 @@ faq:
   - vraag: What if my team doesn't use it?
     antwoord: That is what the usage guarantee is for. After 60 days we check together whether your team is actively using Pipedrive. If not, you get an extra training session for free. Applies to Fully managed and Shared.
   - vraag: What does it cost?
-    antwoord: 'Self-directed costs €4,950, Shared €7,950 and Fully managed €12,950. After go-live you choose an SLA: Basic €595, Plus €1,250 or Max €2,450 per month. All excluding VAT. After the first call you receive a proposal.'
+    antwoord: 'Self-directed costs from €4,950, Shared from €7,950 and Fully managed from €12,950. After go-live you choose an SLA: Basic €595, Plus €1,250 or Max €2,450 per month. All excluding VAT. After the first call you receive a proposal.'
 contact:
   eyebrow: Contact
   titel: Book a 30-minute call
