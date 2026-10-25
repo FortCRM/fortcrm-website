@@ -70,6 +70,7 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
     try { t = localStorage.getItem("fortcrm-theme"); } catch (e) {}
     var dark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
     document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.classList.add("js");
   })();
 </script>
 <script is:inline src="/js/site.js" defer></script>

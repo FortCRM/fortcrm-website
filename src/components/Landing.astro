@@ -4,7 +4,7 @@ import Contact from "@components/Contact.astro";
 import Icoon from "@components/Icoon.astro";
 import { home } from "@lib/content";
 import { kleurBij, type KleurNaam } from "@lib/iconen";
-import { pad, type Lang } from "@consts";
+import { pad, SITE, type Lang } from "@consts";
 
 const { lang, p } = Astro.props as { lang: Lang; p: any };
 const h = await home(lang);
@@ -12,26 +12,26 @@ const d = p.data;
 const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
 ---
 
-<section class="relative hex-texture bg-krijt">
+<section class="relative">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
     <a href={pad(lang, "/#voor-wie")} class="groenlink">← {h.voorWie.eyebrow}</a>
-    <p class="mt-8 font-mono text-sm tracking-[0.2em] text-omber dark:text-oker uppercase mb-6">{d.eyebrow}</p>
-    <h1 class="font-display font-bold text-4xl md:text-6xl leading-[1.05] max-w-3xl">{d.kop}</h1>
+    <p class="mt-8 eyebrow mb-6">{d.eyebrow}</p>
+    <h1 class="font-display font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.02] tracking-tight max-w-4xl">{d.kop}</h1>
     <p class="mt-6 text-lg md:text-xl text-inkt/75 max-w-xl leading-relaxed">{d.intro}</p>
     <div class="mt-10 flex flex-wrap items-center gap-6">
-      <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
-      {lang === "nl" && h.hero.knopScan && <a href="/quick-scan/" class="tekstlink">{h.hero.knopScan} →</a>}
+      <a href="#contact" data-plan class="knop px-8">{h.hero.knopGesprek}</a>
+      {lang === "nl" && h.hero.knopScan && <a href={SITE.CHECK} class="tekstlink">{h.hero.knopScan} →</a>}
     </div>
   </div>
 </section>
 
 {d.pijnpunten.length > 0 && (
-  <section class="max-w-6xl mx-auto px-6 py-24">
+  <section class="max-w-6xl mx-auto px-6 pb-24 md:pb-32">
     <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={d.pijnTitel} />
     <div class="mt-12 grid md:grid-cols-3 gap-8">
       {d.pijnpunten.map((t: string, i: number) => (
-        <div class:list={["border-l-2 pl-6", kleurBij(i, reeks).lijn]}>
-          <p class="font-display font-semibold text-xl leading-snug">{t}</p>
+        <div class="reveal border-t border-inkt/20 pt-6">
+          <p class="font-display font-semibold text-2xl leading-snug tracking-tight">{t}</p>
         </div>
       ))}
     </div>
@@ -39,24 +39,23 @@ const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
 )}
 
 {d.inrichting.length > 0 && (
-  <section class="tint py-24">
+  <section class="band py-24 md:py-32">
     <div class="wrap">
       <Sectiekop eyebrow={d.eyebrow} titel={d.inrichtingTitel} />
       <div class="mt-12 grid md:grid-cols-3 gap-8">
         {d.inrichting.map((k: any, i: number) => {
-          const c = kleurBij(i);
           return (
-            <div class="bg-krijt rounded-2xl p-8">
-              {k.icoon && k.icoon !== "geen" && <span class:list={["rondje w-11 h-11 mb-4", c.zacht]}><Icoon naam={k.icoon} kleur={c.hex} /></span>}
+            <div class="reveal rounded-2xl border border-inkt/10 bg-white/[0.04] p-8">
+              {k.icoon && k.icoon !== "geen" && <span class="block mb-6 text-[#8FBFA6]"><Icoon naam={k.icoon} maat={24} /></span>}
               <h3 class="font-display font-semibold text-lg mb-2">{k.titel}</h3>
               <p class="text-inkt/70 leading-relaxed">{k.tekst}</p>
             </div>
           );
         })}
       </div>
-      {d.slot && <p class="mt-14 text-center font-display font-semibold text-2xl md:text-3xl text-viridiaan max-w-2xl mx-auto">{d.slot}</p>}
+      {d.slot && <p class="mt-16 font-display font-bold text-3xl md:text-4xl leading-tight tracking-tight max-w-3xl">{d.slot}</p>}
     </div>
   </section>
 )}
 
-<Contact lang={lang} data={h.contact} tint={d.inrichting.length === 0} />
+<Contact lang={lang} data={h.contact} tint={false} />

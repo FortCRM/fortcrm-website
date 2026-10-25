@@ -9,7 +9,7 @@ hero:
   belofte: Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet, dan staan wij ervoor in.*
   knopGesprek: Plan een gesprek
   knopPakketten: Bekijk de pakketten
-  knopScan: Doe de quick scan
+  knopScan: Of doe eerst de CRM-check (2 min)
   voetnoot: '* Niet binnen 6 weken live, terwijl jouw requirements op orde waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na 60 dagen niet actief met Pipedrive, dan krijg je een gratis extra trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared. Wat actief is, leggen we vooraf samen vast.'
   feiten:
   - kop: Pipedrive
@@ -18,6 +18,8 @@ hero:
     tekst: Officieel partner van Pipedrive
   - kop: 5 tot 250 medewerkers
     tekst: Het MKB waar wij het verschil maken
+  beeld:
+  beeldAlt: ''
 herkenbaar:
   eyebrow: Herkenbaar?
   titel: Dit horen we bij bijna elk MKB-bedrijf
@@ -36,7 +38,7 @@ aanpak:
   intro: Vijf stappen. Na elke stap weet je wat je krijgt.
   stappen:
   - titel: Kennismaking
-    tekst: Een gesprek van 30 minuten over hoe jullie nu werken en wat je wilt bereiken.
+    tekst: Een gesprek van 30 minuten over hoe jullie nu werken en wat je wilt bereiken. Deed je de CRM-check, dan nemen we je uitslag mee.
     resultaat: Een eerlijk antwoord of Pipedrive past.
   - titel: Ontwerp
     tekst: We leggen vast hoe een aanvraag een klant wordt, in jullie eigen woorden.
@@ -75,10 +77,10 @@ voorWie:
   meerTekst: Bekijk wat we inrichten
 scan:
   tonen: true
-  eyebrow: Quick scan
-  titel: Hoe staat je CRM-basis ervoor?
-  tekst: Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen, en waar je als eerste winst haalt.
-  knop: Start de quick scan
+  eyebrow: CRM-check
+  titel: Nog niet klaar voor een gesprek?
+  tekst: Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen. In het gesprek bouwen we op je uitslag voort.
+  knop: Start de CRM-check
 pakketten:
   eyebrow: Pakketten
   titel: Kies hoeveel je zelf doet
@@ -198,7 +200,7 @@ pakketten:
     - Nee
     - Ja
   knopVoorstel: Vraag een voorstel aan
-  knopScan: Doe eerst de quick scan
+  knopScan: ''
 garantie:
   getal: '60'
   getalTekst: dagen garantie
@@ -274,3 +276,24 @@ contact:
   intro: We kijken wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.
   knopPlanner: Kies direct een moment
   reactietijd: We reageren binnen één werkdag.
+bewijs:
+  logosTitel: Zij werken al met ons
+  logos: []
+  cijfers: []
+  reviewsEyebrow: Wat klanten zeggen
+  reviewsTitel: Van klanten die het al gebruiken
+  reviews: []
+  caseTonen: false
+  case:
+    eyebrow: Case
+    klant: ''
+    titel: ''
+    tekst: ''
+    resultaten: []
+    citaat: ''
+    citaatNaam: ''
+    foto:
+    link: ''
+  videoEyebrow: ''
+  videoTitel: ''
+  videoUrl:

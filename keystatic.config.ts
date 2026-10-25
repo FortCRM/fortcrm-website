@@ -40,7 +40,9 @@ const homeSchema = {
       belofte: tekst("Belofte in het vet"),
       knopGesprek: tekst("Knop gesprek plannen"),
       knopPakketten: tekst("Knop naar pakketten"),
-      knopScan: tekst("Knop quick scan", "Laat leeg om de knop te verbergen."),
+      knopScan: tekst("Tekstlink CRM-check", "Bijvoorbeeld: Of doe eerst de CRM-check (2 min). Leeg = verbergen."),
+      beeld: fields.image({ label: "Beeld rechts", description: "Bijvoorbeeld een geanonimiseerd Pipedrive-scherm. Leeg = voorbeeldpijplijn.", directory: "public/images/hero", publicPath: "/images/hero/" }),
+      beeldAlt: tekst("Omschrijving van het beeld (voor schermlezers)"),
       voetnoot: alinea("Voetnoot bij de belofte"),
       feiten: lijst(
         fields.object({ kop: tekst("Kop"), tekst: tekst("Tekst") }),
@@ -85,6 +87,7 @@ const homeSchema = {
           titel: tekst("Titel"),
           tekst: alinea("Tekst"),
           icoon: icoon(),
+          foto: fields.image({ label: "Foto", description: "Optioneel. Liggend, minstens 800 px breed.", directory: "public/images/voor-wie", publicPath: "/images/voor-wie/" }),
           pagina: tekst("Link naar landingspagina", "De korte naam van de pagina, bijvoorbeeld weinig-deals. Leeg = geen link."),
         }),
         "Soorten bedrijven",
@@ -100,12 +103,12 @@ const homeSchema = {
   ),
   scan: fields.object(
     {
-      tonen: fields.checkbox({ label: "Blok quick scan tonen", defaultValue: true }),
+      tonen: fields.checkbox({ label: "Blok CRM-check tonen", defaultValue: true }),
       ...kop,
       tekst: alinea("Tekst"),
       knop: tekst("Knop"),
     },
-    { label: "Quick scan-blok" },
+    { label: "CRM-check-blok" },
   ),
   pakketten: fields.object(
     {
@@ -151,7 +154,7 @@ const homeSchema = {
         (p) => p.fields.onderdeel.value,
       ),
       knopVoorstel: tekst("Knop voorstel aanvragen"),
-      knopScan: tekst("Knop quick scan", "Leeg = verbergen."),
+      knopScan: tekst("Tekstlink CRM-check", "Leeg = verbergen."),
     },
     { label: "Pakketten en SLA" },
   ),
@@ -196,6 +199,56 @@ const homeSchema = {
     },
     { label: "Over ons" },
   ),
+  bewijs: fields.object(
+    {
+      logosTitel: tekst("Kopje bij de logo's", "Bijvoorbeeld: Zij werken al met ons"),
+      logos: lijst(
+        fields.object({
+          naam: tekst("Bedrijfsnaam"),
+          logo: fields.image({ label: "Logo", description: "Liefst SVG of PNG met transparante achtergrond. Alleen met toestemming van de klant.", directory: "public/images/logos", publicPath: "/images/logos/" }),
+        }),
+        "Klantlogo's",
+        (p) => p.fields.naam.value,
+      ),
+      cijfers: lijst(
+        fields.object({ getal: tekst("Getal", "Bijvoorbeeld 12 of 6 weken"), tekst: tekst("Toelichting") }),
+        "Kerncijfers (max. 3)",
+        (p) => `${p.fields.getal.value} ${p.fields.tekst.value}`,
+      ),
+      reviewsEyebrow: tekst("Reviews: klein kopje"),
+      reviewsTitel: tekst("Reviews: titel"),
+      reviews: lijst(
+        fields.object({
+          citaat: alinea("Citaat"),
+          naam: tekst("Naam"),
+          functie: tekst("Functie"),
+          bedrijf: tekst("Bedrijf"),
+          foto: fields.image({ label: "Foto", directory: "public/images/reviews", publicPath: "/images/reviews/" }),
+        }),
+        "Reviews",
+        (p) => p.fields.naam.value,
+      ),
+      caseTonen: fields.checkbox({ label: "Uitgelichte case tonen", defaultValue: false }),
+      case: fields.object(
+        {
+          eyebrow: tekst("Klein kopje", "Bijvoorbeeld: Case"),
+          klant: tekst("Klant"),
+          titel: tekst("Titel"),
+          tekst: alinea("Situatie en aanpak"),
+          resultaten: lijst(tekst("Resultaat"), "Resultaten", (p) => p.value),
+          citaat: alinea("Citaat van de klant (optioneel)"),
+          citaatNaam: tekst("Naam en functie bij het citaat"),
+          foto: fields.image({ label: "Foto", directory: "public/images/cases", publicPath: "/images/cases/" }),
+          link: tekst("Link naar het volledige verhaal (optioneel)"),
+        },
+        { label: "Case" },
+      ),
+      videoEyebrow: tekst("Video: klein kopje"),
+      videoTitel: tekst("Video: titel"),
+      videoUrl: fields.url({ label: "Video: YouTube- of Vimeo-link", description: "Leeg = geen videoblok." }),
+    },
+    { label: "Bewijs: logo's, cijfers, reviews, case, video", description: "Elk blok verschijnt pas als het is ingevuld." },
+  ),
   faq: fields.object(
     {
       ...kop,
@@ -227,7 +280,7 @@ const instellingenSchema = {
       voorWie: tekst("Voor wie"),
       overOns: tekst("Over ons"),
       faq: tekst("Veelgestelde vragen"),
-      quickscan: tekst("Quick scan", "Leeg = niet in het menu."),
+      quickscan: tekst("CRM-check", "Leeg = niet in het menu."),
       blog: tekst("Blog"),
       knop: tekst("Knop gesprek plannen"),
       menu: tekst("Menuknop op mobiel"),
@@ -390,7 +443,7 @@ export default config({
   singletons: {
     homeNl: singleton({ label: "Homepage", path: "src/content/home/nl", format: { data: "yaml" }, schema: homeSchema }),
     homeEn: singleton({ label: "Homepage (EN)", path: "src/content/home/en", format: { data: "yaml" }, schema: homeSchema }),
-    quickscanNl: singleton({ label: "Quick scan: uitslagteksten", path: "src/content/quickscan/nl", format: { data: "yaml" }, schema: quickscanSchema }),
+    quickscanNl: singleton({ label: "CRM-check: uitslagteksten", path: "src/content/quickscan/nl", format: { data: "yaml" }, schema: quickscanSchema }),
     instellingenNl: singleton({ label: "Menu, footer en formulier", path: "src/content/instellingen/nl", format: { data: "yaml" }, schema: instellingenSchema }),
     instellingenEn: singleton({ label: "Menu, footer en formulier (EN)", path: "src/content/instellingen/en", format: { data: "yaml" }, schema: instellingenSchema }),
   },

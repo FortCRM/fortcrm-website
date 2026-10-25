@@ -52,6 +52,28 @@ summary {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='48'%3E%3Cg fill='none' stroke='%23F0EEE4' stroke-opacity='0.12' stroke-width='1.4'%3E%3Cpolygon points='21,2 39,12 39,32 21,42 3,32 3,12'/%3E%3Cpolygon points='63,2 81,12 81,32 63,42 45,32 45,12'/%3E%3Cpolygon points='0,24 18,34 18,54 0,64 -18,54 -18,34'/%3E%3Cpolygon points='84,24 102,34 102,54 84,64 66,54 66,34'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* donkere band: binnen de band wisselen krijt en inkt om, in licht en donker thema */
+.band {
+  --color-krijt: 22 26 21;
+  --color-inkt: 240 238 228;
+  --color-tabelkop: 22 26 21;
+  background-color: rgb(var(--color-krijt));
+  color: rgb(var(--color-inkt));
+  color-scheme: dark;
+}
+.dark .band {
+  --color-krijt: 14 17 13;
+  --color-tabelkop: 14 17 13;
+}
+.band .eyebrow { color: #8FBFA6; }
+/* viridiaan is te donker op een donkere achtergrond: lichtere tint in donker thema */
+.dark .eyebrow, .dark .text-viridiaan, .dark .groenlink { color: #8FBFA6; }
+
+/* rustig binnenkomen bij scrollen */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.zichtbaar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } }
+
 /* blogartikelen */
 .prose-post h2 { @apply font-display font-bold text-2xl mt-8 mb-3; }
 .prose-post h3 { @apply font-display font-semibold text-xl mt-6 mb-2; }
@@ -72,9 +94,9 @@ summary {
   .wrap { @apply max-w-6xl mx-auto px-6; }
   .sectie { @apply py-24; }
   .tint { @apply bg-salie/10; }
-  .eyebrow { @apply font-mono text-sm tracking-[0.2em] text-viridiaan uppercase; }
-  .sectiekop { @apply font-display font-bold text-3xl md:text-4xl leading-tight max-w-xl; }
-  .intro { @apply text-inkt/70 leading-relaxed max-w-xl; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-wider text-viridiaan; }
+  .sectiekop { @apply font-display font-bold text-3xl md:text-5xl leading-[1.08] tracking-tight max-w-2xl; }
+  .intro { @apply text-lg text-inkt/70 leading-relaxed max-w-xl; }
   .navlink { @apply hover:text-viridiaan transition-colors; }
   .tekstlink { @apply text-sm font-medium text-inkt/70 hover:text-inkt transition-colors; }
   .groenlink { @apply text-sm font-medium text-viridiaan hover:text-inkt transition-colors; }
@@ -82,7 +104,7 @@ summary {
   /* knoppen zoals de oude DaisyUI-knop: vermiljoen, rond */
   .knop {
     @apply inline-flex items-center justify-center h-12 min-h-12 rounded-full px-7 text-sm font-semibold;
-    @apply bg-vermiljoen text-inkt hover:bg-vermiljoen/90 transition-colors cursor-pointer select-none;
+    @apply bg-vermiljoen text-[#1D211C] hover:bg-vermiljoen/90 transition-colors cursor-pointer select-none;
   }
   .knop-sm { @apply h-8 min-h-8 px-3.5 sm:px-5; }
   .knop-lijn {
@@ -92,7 +114,9 @@ summary {
   .rondje {
     @apply flex items-center justify-center rounded-full flex-shrink-0;
   }
-  .kaart { @apply rounded-2xl border border-inkt/15 p-8; }
+  .kaart { @apply rounded-2xl border border-inkt/10 bg-krijt p-8; }
+  .kaart-hover { @apply transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-12px_rgb(29_33_28/0.25)] hover:border-inkt/20; }
+  .knop { box-shadow: 0 1px 0 rgb(255 255 255 / .25) inset, 0 6px 16px -8px rgb(219 127 40 / .7); }
 
   /* formulieren */
   .veld { @apply grid gap-1.5 text-sm font-medium text-inkt/80; }

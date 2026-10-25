@@ -3,244 +3,306 @@ import Sectiekop from "@components/Sectiekop.astro";
 import Contact from "@components/Contact.astro";
 import Tabel from "@components/Tabel.astro";
 import Icoon from "@components/Icoon.astro";
+import PipelineBeeld from "@components/PipelineBeeld.astro";
+import Bewijs from "@components/Bewijs.astro";
 import { home } from "@lib/content";
 import { splitNadruk } from "@lib/utils";
-import { KLEUREN, kleurBij, type KleurNaam } from "@lib/iconen";
-import { pad, type Lang } from "@consts";
+import { pad, SITE, type Lang } from "@consts";
 
 const { lang } = Astro.props as { lang: Lang };
 const h = await home(lang);
+const b = h.bewijs ?? {};
 const titel = splitNadruk(h.hero.titel);
 const [oproepVoor, oproepNa] = h.voorWie.oproepLink && h.voorWie.oproep.includes(h.voorWie.oproepLink)
   ? h.voorWie.oproep.split(h.voorWie.oproepLink)
   : [h.voorWie.oproep, null];
-const toonScan = lang === "nl" && h.scan?.tonen;
-const herkenReeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
+const nl = lang === "nl";
+const toonCheck = nl && h.scan?.tonen;
+const heeftCijfers = (b.cijfers ?? []).some((c: any) => c.getal);
 const nr = (i: number) => String(i + 1).padStart(2, "0");
-const swipe = lang === "nl" ? "Swipe ← →" : "Swipe ← →";
-const meer = h.voorWie.meerTekst || (lang === "nl" ? "Bekijk wat we inrichten" : "See what we set up");
+const swipe = "Swipe ← →";
+const meer = h.voorWie.meerTekst || (nl ? "Bekijk wat we inrichten" : "See what we set up");
+const belofte = (h.hero.belofte || "").replace(/\*$/, "");
+const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 ---
 
 <!-- hero -->
-<section class="relative hex-texture bg-krijt text-inkt">
-  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10">
-    <p class="font-mono text-sm tracking-[0.2em] text-omber dark:text-oker uppercase mb-6">{h.hero.eyebrow}</p>
-    <h1 class="font-display font-bold text-5xl md:text-7xl leading-[1.05] max-w-4xl">
-      {titel.map((t) => (t.nadruk ? <span class="font-light text-viridiaan">{t.deel}</span> : t.deel))}
-    </h1>
-    <p class="mt-6 text-lg md:text-xl text-inkt/75 max-w-xl leading-relaxed">{h.hero.intro}</p>
-    <p class="mt-5 font-display font-semibold text-lg max-w-xl">{h.hero.belofte}</p>
-    <div class="mt-10 flex flex-wrap items-center gap-6">
-      <a href="#contact" data-plan class="knop">{h.hero.knopGesprek}</a>
-      <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
-      {h.hero.knopScan && lang === "nl" && <a href="/quick-scan/" class="tekstlink">{h.hero.knopScan} →</a>}
+<section class="relative overflow-hidden">
+  <div class="wrap pt-14 pb-20 md:pt-20 md:pb-24 grid gap-16 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+    <div class="min-w-0">
+      <p class="eyebrow mb-6">{h.hero.eyebrow}</p>
+      <h1 class="font-display font-bold text-5xl md:text-6xl xl:text-[4.25rem] leading-[1.02] tracking-tight">
+        {titel.map((t) => (t.nadruk ? <span class="text-viridiaan">{t.deel}</span> : t.deel))}
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-inkt/70 max-w-xl leading-relaxed">{h.hero.intro}</p>
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="#contact" data-plan class="knop px-8">{h.hero.knopGesprek}</a>
+        {h.hero.knopScan && nl ? (
+          <a href={SITE.CHECK} class="tekstlink">{h.hero.knopScan} →</a>
+        ) : (
+          <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
+        )}
+      </div>
+      {belofte && (
+        <p class="mt-10 flex items-start gap-3 text-sm text-inkt/70 max-w-lg">
+          <span class="mt-0.5 flex size-5 flex-none items-center justify-center rounded-full bg-viridiaan/15 text-viridiaan"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span><span class="font-semibold text-inkt">{belofte}</span> <a href="#garantie" class="underline underline-offset-2 decoration-inkt/25 hover:text-inkt">{garantieLink}</a></span>
+        </p>
+      )}
+      {heeftCijfers && <div class="mt-10"><Bewijs deel="cijfers" b={b} /></div>}
     </div>
-    <p class="mt-8 text-xs text-inkt/55 max-w-2xl leading-relaxed">{h.hero.voetnoot}</p>
-    {h.hero.feiten?.length > 0 && (
-      <ul class="mt-12 grid gap-6 sm:grid-cols-3 border-t border-inkt/10 pt-8 max-w-4xl">
-        {h.hero.feiten.map((f: any, i: number) => (
-          <li class:list={["border-l-2 pl-4", kleurBij(i).lijn]}>
-            <div class="font-display font-semibold text-lg">{f.kop}</div>
-            <div class="text-sm text-inkt/60">{f.tekst}</div>
-          </li>
-        ))}
-      </ul>
+    <div class="min-w-0 lg:pl-6">
+      {h.hero.beeld
+        ? <img src={h.hero.beeld} alt={h.hero.beeldAlt || ""} class="w-full rounded-2xl border border-inkt/10 shadow-[0_30px_60px_-30px_rgb(29_33_28/0.45)]" />
+        : <PipelineBeeld lang={lang} />}
+    </div>
+  </div>
+</section>
+
+{!(b.logos ?? []).some((l: any) => l.logo) && !heeftCijfers && h.hero.feiten?.length > 0 && (
+  <section class="border-y border-inkt/10">
+    <ul class="wrap grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-inkt/10">
+      {h.hero.feiten.map((f: any) => (
+        <li class="py-6 sm:px-8 first:sm:pl-0">
+          <div class="font-display font-semibold text-lg">{f.kop}</div>
+          <div class="text-sm text-inkt/60">{f.tekst}</div>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+<Bewijs deel="logos" b={b} />
+
+<!-- herkenbaar -->
+<section class="py-24 md:py-32">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow mb-4">{h.herkenbaar.eyebrow}</p>
+      <h2 class="sectiekop">{h.herkenbaar.titel}</h2>
+    </div>
+    <div class="mt-16 grid md:grid-cols-3 gap-x-10 gap-y-12">
+      {h.herkenbaar.kaarten.map((k: any) => (
+        <figure class="reveal border-t border-inkt/20 pt-6">
+          <blockquote class="font-display font-semibold text-2xl md:text-[1.7rem] leading-snug tracking-tight">&ldquo;{k.citaat}&rdquo;</blockquote>
+          <figcaption class="mt-4 text-inkt/65 leading-relaxed">{k.tekst}</figcaption>
+        </figure>
+      ))}
+    </div>
+    <div class="reveal mt-20 max-w-3xl">
+      <p class="font-display font-bold text-3xl md:text-4xl leading-tight tracking-tight">{h.herkenbaar.slotVet}</p>
+      <p class="mt-4 text-lg text-inkt/70 leading-relaxed">{h.herkenbaar.slot}</p>
+    </div>
+  </div>
+</section>
+
+<!-- aanpak: donkere band met tijdlijn -->
+<section id="aanpak" class="band py-24 md:py-32">
+  <div class="wrap">
+    <div class="reveal grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{h.aanpak.eyebrow}</p>
+        <h2 class="sectiekop">{h.aanpak.titel}</h2>
+      </div>
+      {h.aanpak.intro && <p class="intro lg:justify-self-end">{h.aanpak.intro}</p>}
+    </div>
+    <ol class="mt-20 grid gap-10 lg:grid-cols-5 lg:gap-6 relative">
+      <span class="hidden lg:block absolute left-0 right-0 top-5 h-px bg-inkt/15" aria-hidden="true"></span>
+      {h.aanpak.stappen.map((s: any, i: number) => (
+        <li class="reveal relative">
+          <span class:list={["relative flex size-10 items-center justify-center rounded-full font-display font-bold text-sm border", i === 0 ? "bg-vermiljoen border-vermiljoen text-[#1D211C]" : "bg-krijt border-inkt/25"]}>{nr(i)}</span>
+          <h3 class="mt-6 font-display font-semibold text-xl">{s.titel}</h3>
+          <p class="mt-2 text-inkt/65 leading-relaxed">{s.tekst}</p>
+          {s.resultaat && <p class="mt-4 text-sm font-medium text-[#8FBFA6]">{s.resultaat}</p>}
+        </li>
+      ))}
+    </ol>
+    {h.aanpak.naderhandTitel && (
+      <div class="reveal mt-20 pt-10 border-t border-inkt/15 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <h3 class="font-display font-semibold text-2xl">{h.aanpak.naderhandTitel}</h3>
+        <p class="text-lg text-inkt/70 leading-relaxed">{h.aanpak.naderhandTekst}</p>
+      </div>
     )}
   </div>
 </section>
 
-<!-- herkenbaar -->
-<section class="max-w-6xl mx-auto px-6 py-24">
-  <Sectiekop eyebrow={h.herkenbaar.eyebrow} titel={h.herkenbaar.titel} />
-  <div class="mt-12 grid md:grid-cols-3 gap-8">
-    {h.herkenbaar.kaarten.map((k: any, i: number) => (
-      <div class:list={["border-l-2 pl-6", kleurBij(i, herkenReeks).lijn]}>
-        <p class="font-display font-semibold text-2xl leading-snug">"{k.citaat}"</p>
-        <p class="mt-3 text-inkt/70 leading-relaxed">{k.tekst}</p>
-      </div>
-    ))}
-  </div>
-  <p class="mt-14 text-center font-display font-semibold text-2xl md:text-3xl text-viridiaan max-w-2xl mx-auto">{h.herkenbaar.slotVet}</p>
-  <p class="mt-4 text-center text-inkt/70 leading-relaxed max-w-xl mx-auto">{h.herkenbaar.slot}</p>
-</section>
-
-<!-- aanpak -->
-<section id="aanpak" class="tint py-24">
+<!-- voor wie -->
+<section id="voor-wie" class="py-24 md:py-32">
   <div class="wrap">
-    <Sectiekop eyebrow={h.aanpak.eyebrow} titel={h.aanpak.titel} intro={h.aanpak.intro} />
-    <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-      {h.aanpak.stappen.map((s: any, i: number) => {
-        const k = kleurBij(i, ["viridiaan", "salie", "oker", "vermiljoen", "omber"]);
-        return (
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <svg width="36" height="36" viewBox="0 0 120 120" aria-hidden="true"><polygon points="60,8 104,34 104,86 60,112 16,86 16,34" fill="none" stroke={k.hex} stroke-width="6"></polygon></svg>
-              <span class:list={["font-mono text-xs font-semibold text-inkt/70 rounded-full px-2.5 py-1", k.pil]}>{nr(i)}</span>
+    <div class="reveal">
+      <p class="eyebrow mb-4">{h.voorWie.eyebrow}</p>
+      <h2 class="sectiekop">{h.voorWie.titel}</h2>
+    </div>
+    <div class="mt-16 grid md:grid-cols-3 gap-6">
+      {h.voorWie.kaarten.map((k: any, i: number) => {
+        const inhoud = (
+          <>
+            {k.foto && <img src={k.foto} alt="" class="w-full aspect-[16/10] object-cover" loading="lazy" />}
+            <div class="p-8 flex flex-col flex-1">
+              <div class="flex items-center justify-between text-inkt/40">
+                <span class="font-display font-semibold text-sm">{nr(i)}</span>
+                {k.icoon && k.icoon !== "geen" && <span class="text-viridiaan"><Icoon naam={k.icoon} maat={22} /></span>}
+              </div>
+              <h3 class="mt-8 font-display font-semibold text-xl leading-snug transition-colors group-hover:text-viridiaan">{k.titel}</h3>
+              <p class="mt-3 text-inkt/65 leading-relaxed">{k.tekst}</p>
+              {k.pagina && <span class="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-semibold text-viridiaan">{meer} <span class="transition-transform group-hover:translate-x-1">→</span></span>}
             </div>
-            <h3 class="font-display font-semibold text-xl mb-2">{s.titel}</h3>
-            <p class="text-inkt/70 leading-relaxed">{s.tekst}</p>
-            {s.resultaat && <p class="mt-3 text-sm font-medium text-viridiaan">→ {s.resultaat}</p>}
-          </div>
+          </>
         );
+        return k.pagina
+          ? <a href={pad(lang, `/${k.pagina}/`)} class="reveal group flex flex-col rounded-2xl border border-inkt/10 bg-white/50 dark:bg-white/[0.03] overflow-hidden kaart-hover">{inhoud}</a>
+          : <div class="reveal flex flex-col rounded-2xl border border-inkt/10 overflow-hidden">{inhoud}</div>;
       })}
     </div>
-
-    <div class="mt-10 rounded-[2rem] border-l-4 border-viridiaan bg-viridiaan/8 px-6 py-8 md:px-10 md:py-10">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <span class="rondje h-11 w-11 bg-viridiaan/10 text-viridiaan"><Icoon naam="herhalen" /></span>
-          <h3 class="font-display font-semibold text-xl">{h.aanpak.naderhandTitel}</h3>
-        </div>
-        <p class="text-inkt/70 max-w-2xl leading-relaxed">{h.aanpak.naderhandTekst}</p>
+    <div class="reveal mt-16 grid gap-10 md:grid-cols-2 md:gap-16">
+      <p class="text-lg text-inkt/75 leading-relaxed">
+        {oproepNa !== null ? (<>{oproepVoor}<a href="#contact" data-plan class="font-semibold text-viridiaan underline underline-offset-4 decoration-viridiaan/30 hover:decoration-viridiaan">{h.voorWie.oproepLink}</a>{oproepNa}</>) : oproepVoor}
+      </p>
+      <div class="border-l border-inkt/15 pl-6">
+        <h3 class="font-display font-semibold text-lg">{h.voorWie.nietVoorTitel}</h3>
+        <p class="mt-2 text-inkt/65 leading-relaxed">{h.voorWie.nietVoorTekst}</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- voor wie -->
-<section id="voor-wie" class="max-w-6xl mx-auto px-6 py-24">
-  <Sectiekop eyebrow={h.voorWie.eyebrow} titel={h.voorWie.titel} />
-  <div class="mt-12 grid md:grid-cols-3 gap-8">
-    {h.voorWie.kaarten.map((k: any, i: number) => {
-      const c = kleurBij(i, ["viridiaan", "salie", "vermiljoen", "oker"]);
-      const inhoud = (
-        <>
-          {k.icoon && k.icoon !== "geen" && <span class:list={["rondje w-11 h-11 mb-4", c.zacht]}><Icoon naam={k.icoon} kleur={c.hex} /></span>}
-          <h3 class="font-display font-semibold text-lg mb-2 transition-colors group-hover:text-viridiaan">{k.titel}</h3>
-          <p class="text-inkt/70 leading-relaxed">{k.tekst}</p>
-          {k.pagina && <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-viridiaan">{meer} <span class="transition-transform group-hover:translate-x-1">→</span></span>}
-        </>
-      );
-      return k.pagina
-        ? <a href={pad(lang, `/${k.pagina}/`)} class="group block rounded-2xl border border-inkt/15 p-8 transition-colors hover:border-viridiaan/50">{inhoud}</a>
-        : <div class="rounded-2xl border border-inkt/15 p-8">{inhoud}</div>;
-    })}
-  </div>
-  <p class="mt-12 text-inkt/70 leading-relaxed max-w-2xl">
-    {oproepNa !== null ? (<>{oproepVoor}<a href="#contact" data-plan class="font-medium text-viridiaan underline underline-offset-2 hover:text-inkt">{h.voorWie.oproepLink}</a>{oproepNa}</>) : oproepVoor}
-  </p>
-  <div class="mt-8 rounded-2xl border border-dashed border-inkt/25 p-6 md:p-8 max-w-3xl">
-    <h3 class="font-display font-semibold text-lg mb-2">{h.voorWie.nietVoorTitel}</h3>
-    <p class="text-inkt/70 leading-relaxed">{h.voorWie.nietVoorTekst}</p>
-  </div>
+<Bewijs deel="reviews" b={b} />
 
-  {toonScan && (
-    <div class="mt-16 rounded-[2rem] border-l-4 border-vermiljoen bg-vermiljoen/8 px-6 py-8 md:px-10 md:py-10">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div class="max-w-2xl">
-          <p class="eyebrow mb-3">{h.scan.eyebrow}</p>
-          <h3 class="font-display font-bold text-2xl md:text-3xl">{h.scan.titel}</h3>
-          <p class="mt-3 text-inkt/70 leading-relaxed">{h.scan.tekst}</p>
-        </div>
-        <a href="/quick-scan/" class="knop flex-shrink-0">{h.scan.knop}</a>
-      </div>
-    </div>
-  )}
-</section>
-
-<!-- pakketten, SLA en garantie -->
-<section id="pakketten" class="tint py-24">
+<!-- pakketten en SLA -->
+<section id="pakketten" class="tint py-24 md:py-32">
   <div class="wrap">
-    <Sectiekop eyebrow={h.pakketten.eyebrow} titel={h.pakketten.titel} intro={h.pakketten.intro} />
-    <div class="mt-8"><Tabel kolommen={h.pakketten.kolommen} rijen={h.pakketten.rijen} hint={swipe} /></div>
+    <div class="reveal grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{h.pakketten.eyebrow}</p>
+        <h2 class="sectiekop">{h.pakketten.titel}</h2>
+      </div>
+      {h.pakketten.intro && <p class="intro lg:justify-self-end">{h.pakketten.intro}</p>}
+    </div>
+    <div class="reveal mt-12"><Tabel kolommen={h.pakketten.kolommen} rijen={h.pakketten.rijen} hint={swipe} /></div>
     <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{h.pakketten.prijsnoot}</p>
 
-    <Sectiekop class="mt-20" eyebrow={h.pakketten.slaEyebrow} titel={h.pakketten.slaTitel} intro={h.pakketten.slaIntro} />
-    <div class="mt-8"><Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} hint={swipe} /></div>
-
-    <div class="mt-10 flex flex-wrap items-center gap-6">
-      <a href="#contact" data-plan class="knop">{h.pakketten.knopVoorstel}</a>
-      {h.pakketten.knopScan && lang === "nl" && <a href="/quick-scan/" class="tekstlink">{h.pakketten.knopScan} →</a>}
+    <div class="reveal mt-24 grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{h.pakketten.slaEyebrow}</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl leading-tight tracking-tight">{h.pakketten.slaTitel}</h2>
+      </div>
+      {h.pakketten.slaIntro && <p class="text-inkt/70 leading-relaxed max-w-xl lg:justify-self-end">{h.pakketten.slaIntro}</p>}
     </div>
+    <div class="reveal mt-10"><Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} hint={swipe} /></div>
 
-    <!-- garantie -->
-    <div class="mt-20 rounded-[2rem] border-l-4 border-viridiaan bg-krijt px-6 py-8 md:px-10 md:py-12 grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
-      <div class="leading-none">
-        <div class="font-display font-bold text-7xl md:text-8xl text-viridiaan tabular-nums">{h.garantie.getal}</div>
-        <div class="mt-2 font-mono text-xs tracking-[0.2em] uppercase text-inkt/60">{h.garantie.getalTekst}</div>
-      </div>
-      <div class="min-w-0">
-        <p class="eyebrow mb-3">{h.garantie.eyebrow}</p>
-        <h3 class="font-display font-bold text-2xl md:text-3xl max-w-2xl">{h.garantie.titel}</h3>
-        <ul class="mt-6 space-y-3 max-w-2xl">
-          {h.garantie.punten.map((p: string) => (
-            <li class="flex items-start gap-3">
-              <span class="rondje mt-0.5 w-6 h-6 bg-viridiaan/15"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="#2C6C4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-              <span class="text-inkt/80 leading-relaxed">{p}</span>
-            </li>
-          ))}
-        </ul>
-        <p class="mt-5 text-sm text-inkt/50">{h.garantie.noot}</p>
-      </div>
+    <div class="mt-12 flex flex-wrap items-center gap-6">
+      <a href="#contact" data-plan class="knop px-8">{h.pakketten.knopVoorstel}</a>
+      {h.pakketten.knopScan && nl && <a href={SITE.CHECK} class="tekstlink">{h.pakketten.knopScan} →</a>}
     </div>
   </div>
 </section>
 
-<!-- waarom -->
-<section id="waarom" class="max-w-6xl mx-auto px-6 py-24">
-  <Sectiekop eyebrow={h.waarom.eyebrow} titel={h.waarom.titel} />
-  <ul class="mt-14 grid gap-x-12 gap-y-8 md:grid-cols-2">
-    {h.waarom.punten.map((p: any, i: number) => {
-      const c = kleurBij(i);
-      return (
-        <li class="flex items-start gap-4">
-          <span class:list={["rondje mt-1 w-10 h-10", c.zacht]}><Icoon naam={p.icoon && p.icoon !== "geen" ? p.icoon : "vinkje"} kleur={c.hex} maat={18} /></span>
-          <div>
-            <h3 class="font-display font-semibold text-lg mb-1">{p.titel}</h3>
-            <p class="text-inkt/70 leading-relaxed">{p.tekst}</p>
-          </div>
-        </li>
-      );
-    })}
-  </ul>
+<!-- garantie -->
+<section id="garantie" class="py-24 md:py-32">
+  <div class="wrap grid gap-12 lg:grid-cols-[auto_1fr] lg:gap-24 lg:items-start">
+    <div class="reveal leading-none">
+      <div class="font-display font-bold text-[7rem] md:text-[10rem] tracking-tighter text-viridiaan tabular-nums">{h.garantie.getal}</div>
+      <div class="mt-2 text-sm font-semibold uppercase tracking-wider text-inkt/55">{h.garantie.getalTekst}</div>
+    </div>
+    <div class="reveal min-w-0 lg:pt-6">
+      <p class="eyebrow mb-4">{h.garantie.eyebrow}</p>
+      <h2 class="sectiekop">{h.garantie.titel}</h2>
+      <ul class="mt-10 grid gap-x-10 gap-y-6 md:grid-cols-2">
+        {h.garantie.punten.map((p: string) => <li class="border-t border-inkt/15 pt-4 text-inkt/80 leading-relaxed">{p}</li>)}
+      </ul>
+      <p class="mt-8 text-sm text-inkt/50">{h.garantie.noot}</p>
+    </div>
+  </div>
 </section>
 
-<!-- team -->
-<section id="over-ons" class="tint py-24">
-  <div class="wrap">
-    <Sectiekop eyebrow={h.team.eyebrow} titel={h.team.titel} intro={h.team.intro} />
-    <div class="mt-14 grid md:grid-cols-2 gap-8">
-      {h.team.mensen.map((m: any, i: number) => (
-        <div class:list={["bg-krijt rounded-2xl p-8 border-l-4", i % 2 ? "border-l-vermiljoen" : "border-l-viridiaan"]}>
-          <div class="flex gap-6">
-            {m.foto && (
-              <div class="w-20 h-20 relative flex-shrink-0">
-                <img src={m.foto} alt={m.naam} width="80" height="80" class="absolute inset-0 w-full h-full object-cover rounded-full" />
-              </div>
-            )}
-            <div class="min-w-0">
-              <h3 class="font-display font-semibold text-xl mb-1">{m.naam}</h3>
-              <p class="font-mono text-xs text-viridiaan uppercase tracking-wide mb-4">{m.rol}</p>
-              <p class="text-inkt/70 leading-relaxed">{m.tekst}</p>
-              {m.linkedin && (
-                <a href={m.linkedin} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 groenlink">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-                  {m.linkedinTekst}
-                </a>
-              )}
-            </div>
-          </div>
+<Bewijs deel="case" b={b} />
+
+{toonCheck && (
+  <section class="pb-24 md:pb-32">
+    <div class="wrap">
+      <div class="reveal kaart md:p-12 grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+        <div class="max-w-2xl">
+          <p class="eyebrow mb-3">{h.scan.eyebrow}</p>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">{h.scan.titel}</h2>
+          <p class="mt-3 text-inkt/70 leading-relaxed">{h.scan.tekst}</p>
         </div>
+        <a href={SITE.CHECK} class="knop-lijn px-8">{h.scan.knop} →</a>
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- waarom -->
+<section id="waarom" class="tint py-24 md:py-32">
+  <div class="wrap grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+    <div class="reveal lg:sticky lg:top-28 lg:self-start">
+      <p class="eyebrow mb-4">{h.waarom.eyebrow}</p>
+      <h2 class="sectiekop">{h.waarom.titel}</h2>
+    </div>
+    <ul class="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+      {h.waarom.punten.map((p: any) => (
+        <li class="reveal">
+          <span class="text-viridiaan"><Icoon naam={p.icoon && p.icoon !== "geen" ? p.icoon : "vinkje"} maat={24} /></span>
+          <h3 class="mt-4 font-display font-semibold text-lg">{p.titel}</h3>
+          <p class="mt-2 text-inkt/65 leading-relaxed">{p.tekst}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<Bewijs deel="video" b={b} />
+
+<!-- team -->
+<section id="over-ons" class="py-24 md:py-32">
+  <div class="wrap">
+    <div class="reveal grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{h.team.eyebrow}</p>
+        <h2 class="sectiekop">{h.team.titel}</h2>
+      </div>
+      {h.team.intro && <p class="intro lg:justify-self-end">{h.team.intro}</p>}
+    </div>
+    <div class="mt-16 grid md:grid-cols-2 gap-10">
+      {h.team.mensen.map((m: any) => (
+        <article class="reveal grid gap-6 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:items-start">
+          {m.foto && <img src={m.foto} alt={m.naam} width="320" height="320" class="w-full aspect-square object-cover rounded-2xl" />}
+          <div class="min-w-0">
+            <p class="eyebrow mb-2">{m.rol}</p>
+            <h3 class="font-display font-semibold text-2xl">{m.naam}</h3>
+            <p class="mt-3 text-inkt/70 leading-relaxed">{m.tekst}</p>
+            {m.linkedin && (
+              <a href={m.linkedin} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 groenlink">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                {m.linkedinTekst}
+              </a>
+            )}
+          </div>
+        </article>
       ))}
     </div>
-    {h.team.noot && <p class="mt-6 text-sm text-inkt/50">{h.team.noot}</p>}
+    {h.team.noot && <p class="mt-10 text-sm text-inkt/50">{h.team.noot}</p>}
   </div>
 </section>
 
 <!-- faq -->
-<section id="faq" class="max-w-6xl mx-auto px-6 py-24">
-  <Sectiekop eyebrow={h.faq.eyebrow} titel={h.faq.titel} />
-  <div class="mt-12 space-y-3 max-w-3xl">
-    {h.faq.vragen.map((v: any) => (
-      <details class="group border border-inkt/15 rounded-xl px-6 py-4 transition-colors hover:border-viridiaan/50 open:border-viridiaan/50">
-        <summary class="-mx-6 -my-4 px-6 py-4 flex items-center justify-between gap-4 cursor-pointer font-display font-semibold text-lg transition-colors group-hover:text-viridiaan group-open:text-viridiaan">
-          {v.vraag}
-          <span class="text-viridiaan text-2xl leading-none flex-shrink-0 transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-        </summary>
-        <p class="mt-3 text-inkt/70 leading-relaxed">{v.antwoord}</p>
-      </details>
-    ))}
+<section id="faq" class="pb-24 md:pb-32">
+  <div class="wrap grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+    <div class="reveal">
+      <p class="eyebrow mb-4">{h.faq.eyebrow}</p>
+      <h2 class="sectiekop">{h.faq.titel}</h2>
+    </div>
+    <div class="reveal divide-y divide-inkt/15 border-y border-inkt/15">
+      {h.faq.vragen.map((v: any) => (
+        <details class="group py-5">
+          <summary class="flex items-center justify-between gap-6 cursor-pointer font-display font-semibold text-lg transition-colors hover:text-viridiaan">
+            {v.vraag}
+            <span class="flex size-8 flex-none items-center justify-center rounded-full border border-inkt/20 text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 pr-12 text-inkt/70 leading-relaxed">{v.antwoord}</p>
+        </details>
+      ))}
+    </div>
   </div>
 </section>
 
-<Contact lang={lang} data={h.contact} />
+<Contact lang={lang} data={h.contact} donker />

@@ -323,3 +323,13 @@ document.querySelectorAll('[data-kopieer]').forEach(function (b) {
     }).catch(function () {});
   });
 });
+
+/* Secties rustig laten binnenkomen */
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('zichtbaar'); }); return; }
+  var io = new IntersectionObserver(function (items) {
+    items.forEach(function (it) { if (it.isIntersecting) { it.target.classList.add('zichtbaar'); io.unobserve(it.target); } });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();

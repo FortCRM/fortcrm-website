@@ -21,7 +21,7 @@ const getal = (w: string) => /^[\d\s.,€+%/-]+$/.test(w.trim());
 const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/80 py-4 pr-6 align-middle w-28 sm:w-auto text-xs sm:text-base leading-snug sm:leading-normal";
 ---
 
-<div class="mt-2 overflow-x-auto">
+<div class="mt-2 overflow-x-auto [contain:paint]">
   <table class="w-full border-collapse min-w-[640px]">
     <thead>
       <tr>
@@ -30,7 +30,7 @@ const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/8
         </th>
         {kolommen.map((k, i) => (
           <th scope="col" class="pb-6 px-6 align-bottom text-center font-normal">
-            {k.badge && <span class="inline-block bg-vermiljoen text-inkt text-xs font-mono font-medium px-3 py-1 rounded-full whitespace-nowrap mb-3">{k.badge}</span>}
+            {k.badge && <span class="inline-block bg-vermiljoen text-[#1D211C] text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap mb-3">{k.badge}</span>}
             <span class:list={["block w-2.5 h-2.5 rounded-full mx-auto mb-3", kleurVan(k, i).vol]}></span>
             <span class="block font-display font-semibold text-lg">{k.naam}</span>
             {k.prijs && <span class="block mt-1 font-display font-semibold text-inkt/70 tabular-nums">{k.prijs}</span>}
@@ -68,7 +68,7 @@ const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/8
                       <span class="sr-only">{w}</span>
                     </span>
                   )}
-                  {s === "tekst" && <span class:list={["text-sm text-inkt/70", getal(w) && "font-mono"]}>{w}</span>}
+                  {s === "tekst" && <span class:list={["text-sm text-inkt/70", getal(w) && "tabular-nums font-medium"]}>{w}</span>}
                 </td>
               );
             })

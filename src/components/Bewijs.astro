@@ -1,0 +1,98 @@
+---
+// Bewijsblokken uit Keystatic (homepage > Bewijs). Elk blok verschijnt alleen als het is ingevuld.
+const { deel, b } = Astro.props as { deel: "logos" | "cijfers" | "reviews" | "case" | "video"; b: any };
+const logos = (b?.logos ?? []).filter((l: any) => l.logo);
+const cijfers = (b?.cijfers ?? []).filter((c: any) => c.getal).slice(0, 3);
+const reviews = (b?.reviews ?? []).filter((r: any) => r.citaat && r.naam);
+const c = b?.case;
+const toonCase = b?.caseTonen && c?.titel;
+
+const embed = (url?: string | null) => {
+  if (!url) return null;
+  const yt = url.match(/(?:youtu\.be\/|v=|shorts\/)([\w-]{11})/);
+  if (yt) return `https://www.youtube-nocookie.com/embed/${yt[1]}?rel=0`;
+  const vi = url.match(/vimeo\.com\/(\d+)/);
+  if (vi) return `https://player.vimeo.com/video/${vi[1]}?dnt=1`;
+  return null;
+};
+const video = embed(b?.videoUrl);
+---
+
+{deel === "logos" && logos.length > 0 && (
+  <section class="border-y border-inkt/10 py-10">
+    <div class="wrap">
+      {b.logosTitel && <p class="text-center text-sm text-inkt/55 mb-6">{b.logosTitel}</p>}
+      <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        {logos.map((l: any) => (
+          <li><img src={l.logo} alt={l.naam} class="h-8 w-auto max-w-[140px] object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition dark:invert" loading="lazy" /></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+{deel === "cijfers" && cijfers.length > 0 && (
+  <dl class="grid grid-cols-3 gap-6 max-w-xl">
+    {cijfers.map((x: any) => (
+      <div>
+        <dt class="sr-only">{x.tekst}</dt>
+        <dd class="font-display font-bold text-3xl md:text-4xl tracking-tight">{x.getal}</dd>
+        <dd class="mt-1 text-sm text-inkt/60 leading-snug">{x.tekst}</dd>
+      </div>
+    ))}
+  </dl>
+)}
+
+{deel === "reviews" && reviews.length > 0 && (
+  <section class="py-24 md:py-32">
+    <div class="wrap">
+      {b.reviewsEyebrow && <p class="eyebrow mb-4">{b.reviewsEyebrow}</p>}
+      {b.reviewsTitel && <h2 class="sectiekop">{b.reviewsTitel}</h2>}
+      <div class:list={["mt-14 grid gap-6", reviews.length > 1 && "md:grid-cols-2", reviews.length > 2 && "lg:grid-cols-3"]}>
+        {reviews.map((r: any) => (
+          <figure class="kaart flex flex-col justify-between gap-8">
+            <blockquote class="text-lg leading-relaxed">&ldquo;{r.citaat}&rdquo;</blockquote>
+            <figcaption class="flex items-center gap-3">
+              {r.foto && <img src={r.foto} alt="" width="44" height="44" class="size-11 rounded-full object-cover" loading="lazy" />}
+              <span class="text-sm"><span class="block font-semibold">{r.naam}</span><span class="text-inkt/60">{[r.functie, r.bedrijf].filter(Boolean).join(", ")}</span></span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+{deel === "case" && toonCase && (
+  <section class="py-24 md:py-32">
+    <div class="wrap grid gap-12 lg:grid-cols-2 lg:items-center">
+      {c.foto && <img src={c.foto} alt={c.klant} class="w-full aspect-[4/3] object-cover rounded-2xl" loading="lazy" />}
+      <div class="min-w-0">
+        <p class="eyebrow mb-4">{c.eyebrow}{c.klant && ` · ${c.klant}`}</p>
+        <h2 class="sectiekop">{c.titel}</h2>
+        {c.tekst && <p class="intro mt-5">{c.tekst}</p>}
+        {c.resultaten?.length > 0 && (
+          <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+            {c.resultaten.map((r: string) => <li class="border-t border-inkt/15 pt-3 font-display font-semibold text-lg">{r}</li>)}
+          </ul>
+        )}
+        {c.citaat && (
+          <blockquote class="mt-8 text-inkt/80 leading-relaxed">&ldquo;{c.citaat}&rdquo;{c.citaatNaam && <footer class="mt-2 text-sm text-inkt/55">{c.citaatNaam}</footer>}</blockquote>
+        )}
+        {c.link && <a href={c.link} class="mt-8 inline-block groenlink">Lees het hele verhaal →</a>}
+      </div>
+    </div>
+  </section>
+)}
+
+{deel === "video" && video && (
+  <section class="band py-24 md:py-32">
+    <div class="wrap text-center">
+      {b.videoEyebrow && <p class="eyebrow mb-4">{b.videoEyebrow}</p>}
+      {b.videoTitel && <h2 class="sectiekop mx-auto">{b.videoTitel}</h2>}
+      <div class="mt-12 mx-auto max-w-4xl aspect-video rounded-2xl overflow-hidden border border-inkt/10">
+        <iframe src={video} title={b.videoTitel || "Video"} class="w-full h-full" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+)}

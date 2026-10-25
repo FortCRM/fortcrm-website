@@ -8,7 +8,7 @@ const m = i.menu, f = i.footer, b = i.bedrijf;
 const laatste = (await posts(lang)).slice(0, SITE.BLOG_IN_FOOTER);
 const home = pad(lang);
 const tel = (b.telefoon || "").replace(/[^+0-9]/g, "");
-const kopje = "font-mono text-xs tracking-[0.2em] text-viridiaan uppercase mb-4";
+const kopje = "eyebrow mb-4";
 const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
 ---
 
@@ -32,7 +32,7 @@ const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
         <li><a class={link} href={`${home}#aanpak`}>{m.aanpak}</a></li>
         <li><a class={link} href={`${home}#voor-wie`}>{m.voorWie}</a></li>
         <li><a class={link} href={`${home}#pakketten`}>{m.pakketten}</a></li>
-        {m.quickscan && lang === "nl" && <li><a class={link} href="/quick-scan/">{m.quickscan}</a></li>}
+        {m.quickscan && lang === "nl" && <li><a class={link} href={SITE.CHECK}>{m.quickscan}</a></li>}
         <li><a class={link} href={`${home}#over-ons`}>{m.overOns}</a></li>
         <li><a class={link} href={`${home}#faq`}>{m.faq}</a></li>
       </ul>

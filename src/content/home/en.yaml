@@ -18,6 +18,8 @@ hero:
     tekst: Official Pipedrive partner
   - kop: 5 to 250 employees
     tekst: The businesses where we make the difference
+  beeld:
+  beeldAlt: ''
 herkenbaar:
   eyebrow: Sound familiar?
   titel: What we hear at almost every growing business
@@ -274,3 +276,24 @@ contact:
   intro: We look at what Pipedrive can do for your team. If it is not a fit, we will tell you honestly.
   knopPlanner: Pick a time
   reactietijd: We reply within one working day.
+bewijs:
+  logosTitel: They already work with us
+  logos: []
+  cijfers: []
+  reviewsEyebrow: What clients say
+  reviewsTitel: From teams who already use it
+  reviews: []
+  caseTonen: false
+  case:
+    eyebrow: Case
+    klant: ''
+    titel: ''
+    tekst: ''
+    resultaten: []
+    citaat: ''
+    citaatNaam: ''
+    foto:
+    link: ''
+  videoEyebrow: ''
+  videoTitel: ''
+  videoUrl:

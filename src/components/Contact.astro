@@ -2,27 +2,27 @@
 import { instellingen } from "@lib/content";
 import type { Lang } from "@consts";
 
-const { lang, data, tint = true } = Astro.props as { lang: Lang; data: any; tint?: boolean };
+const { lang, data, tint = true, donker = false } = Astro.props as { lang: Lang; data: any; tint?: boolean; donker?: boolean };
 const i = await instellingen(lang);
 const f = i.formulier, b = i.bedrijf;
 const tel = (b.telefoon || "").replace(/[^+0-9]/g, "");
 const opties = ["referral", "linkedin", "zoeken", "netwerk", "pipedrive", "anders"];
 ---
 
-<section id="contact" class:list={["py-28", tint && "tint"]}>
+<section id="contact" class:list={["py-24 md:py-32", donker ? "band" : tint && "tint"]}>
   <div class="wrap grid gap-12 md:grid-cols-2 md:items-start">
     <div>
       <p class="eyebrow mb-4">{data.eyebrow}</p>
-      <h2 class="font-display font-bold text-3xl md:text-5xl leading-tight">{data.titel}</h2>
+      <h2 class="font-display font-bold text-4xl md:text-6xl leading-[1.04] tracking-tight">{data.titel}</h2>
       <p class="mt-5 text-inkt/70 text-lg max-w-xl leading-relaxed">{data.intro}</p>
       <a href="#contact" data-plan class="knop mt-8 px-8">{data.knopPlanner}</a>
       <ul class="mt-10 space-y-2 text-sm text-inkt/70">
         <li><a class="hover:text-inkt transition-colors" href={`mailto:${b.mail}`}>{b.mail}</a></li>
         <li><a class="hover:text-inkt transition-colors" href={`tel:${tel}`}>{b.telefoon}</a></li>
-        <li class="font-mono text-xs tracking-wide text-viridiaan pt-2">{data.reactietijd}</li>
+        <li class="text-sm font-medium text-viridiaan pt-2">{data.reactietijd}</li>
       </ul>
     </div>
-    <form class="relative grid gap-4 bg-krijt rounded-2xl border border-inkt/10 p-6 sm:p-8" data-contact novalidate>
+    <form class:list={["relative grid gap-4 rounded-2xl border p-6 sm:p-8", donker ? "bg-white/[0.04] border-white/10" : "bg-krijt border-inkt/10"]} data-contact novalidate>
       <label class="veld">{f.naam}<input id="contact-naam" name="naam" autocomplete="name" required /></label>
       <label class="veld">{f.mail}<input id="contact-mail" name="mail" type="email" autocomplete="email" required /></label>
       <label class="veld">{f.bron}
