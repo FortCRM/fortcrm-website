@@ -1,5 +1,6 @@
 ---
 titel: 'EU AI Act: from August 2 your chatbot has to identify itself. What this means for small businesses'
+seoTitel: 'EU AI Act: your chatbot must identify itself'
 omschrijving: Since August 2, 2026, the transparency obligations of the EU AI Act apply to every business that deploys AI toward EU customers, regardless of size. What this concretely means for a small business with a chatbot or AI writing tool.
 datum: '2026-08-18'
 tldr:

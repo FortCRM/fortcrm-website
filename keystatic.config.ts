@@ -417,6 +417,7 @@ const landingSchema = {
 // ---------- blog ----------
 const blogSchema = {
   titel: fields.slug({ name: { label: "Titel" } }),
+  seoTitel: tekst("SEO-titel", "Korte titel voor Google, max. 50 tekens. Leeg = gewone titel."),
   omschrijving: alinea("Samenvatting", "Staat in het overzicht en in Google."),
   datum: fields.date({ label: "Datum" }),
   tldr: lijst(tekst("Punt"), "Kort samengevat", (p) => p.value),

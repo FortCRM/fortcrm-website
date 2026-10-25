@@ -1,5 +1,6 @@
 ---
 titel: Vakantie plannen voor je team is makkelijk. Vakantie plannen voor je klantproces is het echte werk
+seoTitel: 'Vakantie plannen voor je klantproces'
 omschrijving: 'Voor veel ondernemers is de zomer financieel de zwaarste periode: klanten zijn weg, beslissingen worden uitgesteld. Bedrijven die de zomer juist gebruiken om te groeien, hebben één ding gemeen: hun klantproces staat, ook als het team dat niet doet.'
 datum: '2026-08-11'
 tldr:

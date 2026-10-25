@@ -1,5 +1,6 @@
 ---
 titel: 'Terug van vakantie en je pijplijn staat er nog precies zo bij als je hem achterliet: dat is het doel'
+seoTitel: 'Terug van vakantie met een intacte pijplijn'
 omschrijving: 'Vier weken vakantiereeks samengevat in één vraag: wat moet er staan vóór je vertrekt, zodat je bij terugkomst geen achterstand hoeft in te lopen, maar gewoon verder kunt?'
 datum: '2026-08-13'
 tldr:

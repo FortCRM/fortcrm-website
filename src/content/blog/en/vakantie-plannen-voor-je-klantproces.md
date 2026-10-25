@@ -1,5 +1,6 @@
 ---
 titel: Planning vacation for your team is easy. Planning vacation for your customer process is the real work
+seoTitel: 'Planning vacation for your customer process'
 omschrijving: 'For many entrepreneurs, summer is the financially toughest period: customers are away, decisions get postponed. Businesses that use summer to grow instead have one thing in common: their customer process holds up, even when the team doesn''t.'
 datum: '2026-08-11'
 tldr:

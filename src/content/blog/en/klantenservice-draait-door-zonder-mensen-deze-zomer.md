@@ -1,5 +1,6 @@
 ---
 titel: 'Customer service keeps running without people this summer: what does that mean for small businesses?'
+seoTitel: 'Customer service without people: what it means'
 omschrijving: '85% of all customer service interactions now start with AI in 2026, up from 60% in 2024. While staff are on vacation, that part of customer service just keeps running: with both benefits and friction.'
 datum: '2026-08-06'
 tldr:

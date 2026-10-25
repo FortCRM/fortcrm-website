@@ -1,5 +1,6 @@
 ---
 titel: CRM-implementatie, en dan? Wat er misgaat na livegang
+seoTitel: 'CRM-implementatie: wat misgaat na livegang'
 omschrijving: Tot 63% van de CRM-implementaties levert niet op wat beloofd was, en dat ligt zelden aan de software. Wat er misgaat ná de livegang, en hoe je het voorkomt.
 datum: '2026-08-20'
 tldr:

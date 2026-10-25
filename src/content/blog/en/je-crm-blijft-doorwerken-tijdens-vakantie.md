@@ -1,5 +1,6 @@
 ---
 titel: While you're at the beach, your CRM keeps working
+seoTitel: 'Your CRM keeps working while you’re away'
 omschrijving: Research among over 2,000 self-employed professionals shows only 32% fully disconnect on vacation. Automation is what lets that number go up, without anything falling through the cracks.
 datum: '2026-07-28'
 tldr:

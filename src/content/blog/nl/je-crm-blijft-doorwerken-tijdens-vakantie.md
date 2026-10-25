@@ -1,5 +1,6 @@
 ---
 titel: Terwijl jij aan het strand ligt, blijft je CRM gewoon doorwerken
+seoTitel: 'Je CRM werkt door tijdens je vakantie'
 omschrijving: Onderzoek onder ruim 2.000 zelfstandigen laat zien dat maar 32% echt volledig offline gaat op vakantie. Automatisering is de reden waarom dat percentage omhoog kan, zonder dat er iets blijft liggen.
 datum: '2026-07-28'
 tldr:

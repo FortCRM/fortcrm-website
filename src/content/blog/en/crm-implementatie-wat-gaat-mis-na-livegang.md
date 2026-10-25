@@ -1,5 +1,6 @@
 ---
 titel: CRM implementation, then what? What goes wrong after go-live
+seoTitel: 'CRM implementation: what goes wrong after go-live'
 omschrijving: Up to 63% of CRM implementations fail to deliver what was promised, and it's rarely the software's fault. What goes wrong after go-live, and how to prevent it.
 datum: '2026-08-20'
 tldr:

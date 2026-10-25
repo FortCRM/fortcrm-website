@@ -1,5 +1,6 @@
 ---
 titel: 'Back from vacation and your pipeline looks exactly as you left it: that''s the goal'
+seoTitel: 'Back from vacation with your pipeline intact'
 omschrijving: 'Four weeks of vacation-themed posts, summarized in one question: what needs to be in place before you leave, so coming back doesn''t mean catching up, just picking up?'
 datum: '2026-08-13'
 tldr:

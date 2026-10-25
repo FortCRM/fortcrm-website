@@ -1,5 +1,6 @@
 ---
 titel: 'Van workflow naar AI-agent: wat automatisering in 2026 anders maakt'
+seoTitel: 'Van workflow naar AI-agent in 2026'
 omschrijving: Automatisering verschuift van vaste als-dit-dan-dat-regels naar AI-agents die zelf beslissen. Wat dit betekent voor MKB-bedrijven, en waar je het beste kunt beginnen.
 datum: '2026-07-21'
 tldr:

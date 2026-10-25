@@ -1,5 +1,6 @@
 ---
 titel: 'From workflow to AI agent: what''s different about automation in 2026'
+seoTitel: 'From workflow to AI agent in 2026'
 omschrijving: Automation is shifting from fixed if-this-then-that rules to AI agents that decide for themselves. What this means for small businesses, and where to start.
 datum: '2026-07-21'
 tldr:

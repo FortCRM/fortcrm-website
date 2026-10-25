@@ -1,5 +1,6 @@
 ---
 titel: 'Klantenservice draait deze zomer door zonder mensen: wat betekent dat voor het MKB?'
+seoTitel: 'Klantenservice zonder mensen: wat betekent dat?'
 omschrijving: '85% van alle klantenservice-interacties start in 2026 met AI, tegen 60% in 2024. Terwijl personeel op vakantie is, draait die AI gewoon door: met zowel voordelen als wrijving.'
 datum: '2026-08-06'
 tldr:

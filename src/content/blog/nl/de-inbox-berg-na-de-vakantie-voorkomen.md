@@ -1,5 +1,6 @@
 ---
 titel: 'De inbox-berg na de vakantie: hoe je hem dit jaar voorkomt'
+seoTitel: 'De inbox-berg na de vakantie voorkomen'
 omschrijving: 43% noemt 'terugkomen op een berg werk' als belangrijkste reden om geen vakantie te nemen. Met een CRM dat binnenkomende zaken automatisch ordent, hoeft die berg er niet te zijn.
 datum: '2026-08-04'
 tldr:
