@@ -329,6 +329,7 @@ const instellingenSchema = {
   ),
   formulier: fields.object(
     {
+      kop: tekst("Kopje boven het contactformulier", "Bijvoorbeeld: Liever eerst een vraag stellen?"),
       naam: tekst("Label naam"),
       mail: tekst("Label e-mail"),
       bron: tekst("Label hoe ken je ons"),

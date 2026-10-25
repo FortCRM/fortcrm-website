@@ -28,6 +28,7 @@ cookies:
   weigeren: Decline
   akkoord: OK
 formulier:
+  kop: Rather ask a question first?
   naam: Name
   mail: Email
   bron: How did you find us? (optional)
