@@ -1,0 +1,37 @@
+---
+// AI en koppelingen: Pipedrive als basis voor AI. Inhoud uit Keystatic (homepage > AI en koppelingen).
+import Icoon from "@components/Icoon.astro";
+const { a } = Astro.props as { a: any };
+const kolommen = (a?.kolommen ?? []).filter((k: any) => k.titel);
+---
+
+{a?.tonen && a?.titel && (
+  <section id="ai" class="band py-24 md:py-32">
+    <div class="wrap">
+      <div class="reveal max-w-3xl">
+        <p class="eyebrow mb-4">{a.eyebrow}</p>
+        <h2 class="sectiekop">{a.titel}</h2>
+        {a.intro && <p class="intro mt-5">{a.intro}</p>}
+      </div>
+      {kolommen.length > 0 && (
+        <div class:list={["mt-16 grid gap-6", kolommen.length > 1 && "md:grid-cols-2", kolommen.length > 2 && "lg:grid-cols-3"]}>
+          {kolommen.map((k: any, i: number) => (
+            <div class="reveal min-w-0 rounded-2xl border border-inkt/15 bg-inkt/[0.04] p-7 md:p-8">
+              <div class="flex items-center gap-3">
+                {k.icoon && k.icoon !== "geen" && <span class="flex size-11 flex-none items-center justify-center rounded-xl bg-inkt/[0.08] text-[#8FBFA6]"><Icoon naam={k.icoon} maat={24} /></span>}
+                <span class="font-mono text-xs text-inkt/45">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+              <h3 class="mt-6 font-display font-bold text-2xl tracking-tight">{k.titel}</h3>
+              <ul class="mt-5 space-y-4">
+                {(k.punten ?? []).filter((p: any) => p.tekst || p.vet).map((p: any) => (
+                  <li class="text-inkt/70 leading-relaxed">{p.vet && <span class="font-semibold text-inkt">{p.vet}</span>}{p.vet && " "}{p.tekst}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+      {a.slot && <p class="reveal mt-14 font-display font-semibold text-xl md:text-2xl tracking-tight">{a.slot}</p>}
+    </div>
+  </section>
+)}

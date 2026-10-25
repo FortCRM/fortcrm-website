@@ -6,6 +6,7 @@ import Icoon from "@components/Icoon.astro";
 import PipelineBeeld from "@components/PipelineBeeld.astro";
 import Bewijs from "@components/Bewijs.astro";
 import Pipedrive from "@components/Pipedrive.astro";
+import Ai from "@components/Ai.astro";
 import { home } from "@lib/content";
 import { splitNadruk } from "@lib/utils";
 import { pad, SITE, type Lang } from "@consts";
@@ -65,6 +66,8 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 <Bewijs deel="logos" b={b} />
 
 <Pipedrive p={h.pipedrive} lang={lang} />
+
+<Ai a={h.ai} />
 
 <!-- herkenbaar -->
 <section class="py-24 md:py-32">

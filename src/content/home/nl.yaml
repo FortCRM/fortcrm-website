@@ -54,6 +54,40 @@ pipedrive:
     icoon: mobiel
   knop: ''
   knopLink: ''
+ai:
+  tonen: true
+  eyebrow: AI en koppelingen
+  titel: Pipedrive als basis voor AI
+  intro: 'AI is zo slim als de gegevens eronder. Staat alles goed in Pipedrive, dan werkt AI voor je hele team: in het systeem zelf, in je eigen AI-assistent en in je andere software.'
+  kolommen:
+  - titel: AI in Pipedrive
+    icoon: ai
+    punten:
+    - vet: Nova
+      tekst: bereidt gesprekken voor, maakt notities en zet vervolgstappen klaar. Het stelt updates voor je deals voor en jij keurt ze goed. Nova zit in elk abonnement.
+    - vet: Sales Assistant
+      tekst: beantwoordt vragen over je klanten en deals in gewone taal.
+    - vet: Mail en rapportages.
+      tekst: AI schrijft en vat mails samen, en maakt een rapport op basis van één vraag.
+  - titel: Je eigen AI aan Pipedrive
+    icoon: chat
+    punten:
+    - vet: ''
+      tekst: Via de officiële Pipedrive-koppeling (MCP) werkt Claude of ChatGPT direct met je Pipedrive-gegevens.
+    - vet: ''
+      tekst: 'Stel een vraag als: "Welke offertes staan langer dan twee weken open?"'
+    - vet: ''
+      tekst: Laat AI deals bijwerken, activiteiten inplannen en leads omzetten. Jij houdt de regie.
+  - titel: Alles praat met elkaar
+    icoon: koppeling
+    punten:
+    - vet: ''
+      tekst: Pipedrive is het middelpunt. Wij koppelen het aan je boekhouding, website, mail, agenda, telefonie en planning.
+    - vet: ''
+      tekst: Zo lopen automatiseringen over systemen heen.
+    - vet: 'Voorbeeld:'
+      tekst: offerte geaccepteerd, factuur klaar in je boekhouding, project aangemaakt en het team op de hoogte. Zonder overtypen.
+  slot: Eerst de basis op orde, dan AI erop. Daarom beginnen we bij de inrichting.
 herkenbaar:
   eyebrow: Herkenbaar?
   titel: Dit horen we bij bijna elk MKB-bedrijf

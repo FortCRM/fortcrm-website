@@ -65,6 +65,28 @@ const homeSchema = {
     },
     { label: "Pipedrive-partnerschap", description: "Staat direct onder de hero, met de partnerbadge." },
   ),
+  ai: fields.object(
+    {
+      tonen: fields.checkbox({ label: "Blok tonen", defaultValue: true }),
+      ...kop,
+      intro: alinea("Intro"),
+      kolommen: lijst(
+        fields.object({
+          titel: tekst("Titel kolom"),
+          icoon: icoon(),
+          punten: lijst(
+            fields.object({ vet: tekst("Vet begin (optioneel)"), tekst: alinea("Tekst") }),
+            "Punten",
+            (p) => p.fields.vet.value || p.fields.tekst.value,
+          ),
+        }),
+        "Kolommen",
+        (p) => p.fields.titel.value,
+      ),
+      slot: tekst("Slotregel"),
+    },
+    { label: "AI en koppelingen", description: "Donker blok onder het Pipedrive-partnerschap." },
+  ),
   herkenbaar: fields.object(
     {
       ...kop,

@@ -54,6 +54,40 @@ pipedrive:
     icoon: mobiel
   knop: ''
   knopLink: ''
+ai:
+  tonen: true
+  eyebrow: AI and integrations
+  titel: Pipedrive as the foundation for AI
+  intro: 'AI is only as smart as the data underneath. When everything is right in Pipedrive, AI works for your whole team: in the system itself, in your own AI assistant and in your other software.'
+  kolommen:
+  - titel: AI in Pipedrive
+    icoon: ai
+    punten:
+    - vet: Nova
+      tekst: prepares meetings, takes notes and lines up next steps. It suggests updates to your deals and you approve them. Nova is included in every plan.
+    - vet: Sales Assistant
+      tekst: answers questions about your clients and deals in plain language.
+    - vet: Email and reports.
+      tekst: AI writes and summarises emails, and builds a report from a single question.
+  - titel: Your own AI on Pipedrive
+    icoon: chat
+    punten:
+    - vet: ''
+      tekst: With the official Pipedrive connection (MCP), Claude or ChatGPT works directly with your Pipedrive data.
+    - vet: ''
+      tekst: 'Ask things like: "Which quotes have been open for more than two weeks?"'
+    - vet: ''
+      tekst: Let AI update deals, schedule activities and convert leads. You stay in control.
+  - titel: Everything talks to each other
+    icoon: koppeling
+    punten:
+    - vet: ''
+      tekst: Pipedrive is the hub. We connect it to your accounting, website, email, calendar, phone system and planning.
+    - vet: ''
+      tekst: That way, automations run across systems.
+    - vet: 'Example:'
+      tekst: quote accepted, invoice ready in your accounting, project created and the team informed. No retyping.
+  slot: Get the foundation right first, then add AI. That is why we start with the setup.
 herkenbaar:
   eyebrow: Sound familiar?
   titel: What we hear at almost every growing business
