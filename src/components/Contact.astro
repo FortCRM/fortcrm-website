@@ -1,6 +1,6 @@
 ---
 import { instellingen } from "@lib/content";
-import type { Lang } from "@consts";
+import { pad, type Lang } from "@consts";
 
 const { lang, data, tint = true, donker = false } = Astro.props as { lang: Lang; data: any; tint?: boolean; donker?: boolean };
 const i = await instellingen(lang);
@@ -48,7 +48,7 @@ const opties = ["referral", "linkedin", "zoeken", "netwerk", "pipedrive", "ander
       <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Laat leeg<input name="website" tabindex="-1" autocomplete="off" /></label></div>
       <p class="msg" role="status"></p>
       <button class="knop w-fit" type="submit" data-demo={f.verstuurDemo || f.verstuur} data-vraag={f.verstuur}>{f.keuzeDemo ? (f.verstuurDemo || f.verstuur) : f.verstuur}</button>
-      <p class="text-xs text-inkt/50">{f.privacy}</p>
+      <p class="text-xs text-inkt/50">{f.privacy} <a href={pad(lang, "/privacy/")} class="underline hover:text-inkt">{lang === "en" ? "Privacy statement" : "Privacyverklaring"}</a></p>
     </form>
   </div>
 </section>

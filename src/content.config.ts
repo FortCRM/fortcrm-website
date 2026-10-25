@@ -13,6 +13,12 @@ const blog = defineCollection({
   }),
 });
 
+// losse pagina's zoals de privacyverklaring (privacy-nl.md, privacy-en.md)
+const pagina = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/pagina" }),
+  schema: z.object({ titel: z.string(), omschrijving: z.string().default(""), bijgewerkt: z.coerce.date() }),
+});
+
 const landing = defineCollection({
   loader: glob({ pattern: "**/*.yaml", base: "./src/content/landing" }),
   schema: z.object({
@@ -35,4 +41,4 @@ const instellingen = defineCollection({ loader: glob({ pattern: "*.yaml", base: 
 
 const quickscan = defineCollection({ loader: glob({ pattern: "*.yaml", base: "./src/content/quickscan" }), schema: z.any() });
 
-export const collections = { blog, landing, home, instellingen, quickscan };
+export const collections = { blog, landing, home, instellingen, quickscan, pagina };

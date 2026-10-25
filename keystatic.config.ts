@@ -482,13 +482,20 @@ const quickscanSchema = {
   ),
 };
 
+const paginaSchema = {
+  titel: tekst("Titel"),
+  omschrijving: alinea("Beschrijving in Google"),
+  bijgewerkt: fields.date({ label: "Laatst bijgewerkt" }),
+  inhoud: fields.markdoc({ label: "Tekst", extension: "md" }),
+};
+
 export default config({
   storage,
   ui: {
     brand: { name: "FortCRM" },
     navigation: {
-      Nederlands: ["homeNl", "landingNl", "blogNl", "quickscanNl", "instellingenNl"],
-      English: ["homeEn", "landingEn", "blogEn", "instellingenEn"],
+      Nederlands: ["homeNl", "landingNl", "blogNl", "quickscanNl", "instellingenNl", "privacyNl"],
+      English: ["homeEn", "landingEn", "blogEn", "instellingenEn", "privacyEn"],
     },
   },
   singletons: {
@@ -497,6 +504,8 @@ export default config({
     quickscanNl: singleton({ label: "CRM-check: uitslagteksten", path: "src/content/quickscan/nl", format: { data: "yaml" }, schema: quickscanSchema }),
     instellingenNl: singleton({ label: "Menu, footer en formulier", path: "src/content/instellingen/nl", format: { data: "yaml" }, schema: instellingenSchema }),
     instellingenEn: singleton({ label: "Menu, footer en formulier (EN)", path: "src/content/instellingen/en", format: { data: "yaml" }, schema: instellingenSchema }),
+    privacyNl: singleton({ label: "Privacyverklaring", path: "src/content/pagina/privacy-nl", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
+    privacyEn: singleton({ label: "Privacy statement (EN)", path: "src/content/pagina/privacy-en", format: { contentField: "inhoud" }, entryLayout: "content", schema: paginaSchema }),
   },
   collections: {
     landingNl: landing("Landingspagina's", "nl"),

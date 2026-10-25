@@ -1,0 +1,18 @@
+---
+// Losse tekstpagina (privacyverklaring), inhoud uit Keystatic
+import { render } from "astro:content";
+import { formatDatum } from "@lib/utils";
+import type { Lang } from "@consts";
+
+const { lang, pagina } = Astro.props as { lang: Lang; pagina: any };
+const { Content } = await render(pagina);
+const d = pagina.data;
+---
+
+<section>
+  <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">
+    <h1 class="font-display font-bold text-4xl md:text-5xl leading-[1.05]">{d.titel}</h1>
+    <p class="mt-4 text-sm text-inkt/50">{lang === "en" ? "Last updated" : "Laatst bijgewerkt"}: {formatDatum(d.bijgewerkt, lang)}</p>
+    <div class="prose-post mt-10"><Content /></div>
+  </div>
+</section>

@@ -235,7 +235,7 @@
         '<label class="fld" id="telw" hidden>' + S.tel + '<input name="tel" type="tel" autocomplete="tel"></label>' +
         '<p class="msg" role="alert" id="gmsg"></p>' +
         '<div class="qnav"><button type="button" class="btn line" data-back>' + S.terug + '</button><button class="btn" type="submit">' + S.toon + '</button></div>' +
-        '<p class="micro">' + S.micro + ' <a href="#privacy">Privacy</a></p></form></div>';
+        '<p class="micro">' + S.micro + ' <a href="' + (CFG.lang === 'en' ? '/en/privacy/' : '/privacy/') + '">Privacy</a></p></form></div>';
       var f = body.querySelector('#gate');
       f.bel.addEventListener('change', function () { f.querySelector('#telw').hidden = !f.bel.checked; });
       body.querySelector('[data-back]').addEventListener('click', function () { i--; step(); });
