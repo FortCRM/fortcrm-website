@@ -1,23 +1,11 @@
 ---
-import { instellingen, posts } from "@lib/content";
-import { formatDatum } from "@lib/utils";
-import { pad, type Lang } from "@consts";
+// Blogoverzicht: dezelfde opbouw als een artikel, met het nieuwste artikel rechts.
+import BlogPost from "@components/BlogPost.astro";
+import { posts } from "@lib/content";
+import type { Lang } from "@consts";
 
 const { lang } = Astro.props as { lang: Lang };
-const b = (await instellingen(lang)).blog;
-const lijst = await posts(lang);
+const nieuwste = (await posts(lang))[0];
 ---
 
-<section class="max-w-6xl mx-auto px-6 py-20">
-  <p class="eyebrow mb-4">FortCRM {b.titel}</p>
-  <h1 class="font-display font-bold text-3xl md:text-5xl max-w-2xl">{b.intro}</h1>
-  <div class="mt-14 grid md:grid-cols-2 gap-8">
-    {lijst.map((p) => (
-      <a href={pad(lang, `/blog/${p.slug}/`)} class="group block rounded-2xl border border-inkt/15 p-8 hover:border-viridiaan transition-colors">
-        <p class="text-sm text-inkt/50 mb-3">{formatDatum(p.data.datum, lang)}</p>
-        <h2 class="font-display font-semibold text-xl mb-3 group-hover:text-viridiaan transition-colors">{p.data.titel}</h2>
-        {p.data.omschrijving && <p class="text-inkt/70 leading-relaxed line-clamp-3">{p.data.omschrijving}</p>}
-      </a>
-    ))}
-  </div>
-</section>
+{nieuwste && <BlogPost lang={lang} post={nieuwste} />}

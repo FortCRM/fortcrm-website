@@ -306,18 +306,67 @@
   }
 })();
 
-/* Link kopiëren onder blogartikelen */
-document.querySelectorAll('[data-kopieer]').forEach(function (b) {
-  b.addEventListener('click', function () {
-    if (!navigator.clipboard) return;
-    navigator.clipboard.writeText(b.getAttribute('data-kopieer')).then(function () {
-      var m = document.querySelector('[data-kopieer-melding]');
-      if (!m) return;
-      m.classList.remove('opacity-0');
-      setTimeout(function () { m.classList.add('opacity-0'); }, 2000);
-    }).catch(function () {});
-  });
+/* Link kopiëren onder blogartikelen (gedelegeerd, werkt ook na wisselen van artikel) */
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-kopieer]');
+  if (!b || !navigator.clipboard) return;
+  navigator.clipboard.writeText(b.getAttribute('data-kopieer')).then(function () {
+    var m = document.querySelector('[data-kopieer-melding]');
+    if (!m) return;
+    m.classList.remove('opacity-0');
+    setTimeout(function () { m.classList.add('opacity-0'); }, 2000);
+  }).catch(function () {});
 });
+
+/* Blog: artikel rechts wisselen zonder de pagina te herladen. Elk artikel houdt zijn eigen URL. */
+(function () {
+  var vak = document.querySelector('[data-blogtekst]');
+  if (!vak || !window.fetch || !window.history.pushState) return;
+  var cache = {};
+  function markeer(pad) {
+    document.querySelectorAll('[data-blogitem]').forEach(function (a) {
+      if (a.getAttribute('href') === pad) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+  }
+  function laad(pad, push) {
+    var p = cache[pad] || (cache[pad] = fetch(pad).then(function (r) { if (!r.ok) throw r; return r.text(); }));
+    vak.style.opacity = '0.4';
+    p.then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var nieuw = doc.querySelector('[data-blogtekst]');
+      if (!nieuw) { location.href = pad; return; }
+      vak.innerHTML = nieuw.innerHTML;
+      document.title = doc.title;
+      var canon = document.querySelector('link[rel="canonical"]'), nc = doc.querySelector('link[rel="canonical"]');
+      if (canon && nc) canon.href = nc.href;
+      if (push) history.pushState({ blog: pad }, '', pad);
+      markeer(pad);
+      vak.style.opacity = '';
+      var top = vak.getBoundingClientRect().top + window.scrollY - 100;
+      if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+      if (window.innerWidth < 1024) { var d = document.querySelector('.blogmenu'); if (d) d.open = false; }
+      if (window.gtag) gtag('event', 'page_view', { page_location: location.href, page_title: document.title });
+    }).catch(function () { location.href = pad; });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-blogitem]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    var pad = a.getAttribute('href');
+    if (pad === location.pathname) return;
+    laad(pad, true);
+  });
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest('[data-blogitem]');
+    if (a) { var pad = a.getAttribute('href'); if (!cache[pad]) cache[pad] = fetch(pad).then(function (r) { return r.text(); }); }
+  });
+  window.addEventListener('popstate', function () {
+    if (/\/blog\//.test(location.pathname)) laad(location.pathname, false);
+  });
+  if (window.innerWidth < 1024 && !/\/blog\/$/.test(location.pathname)) { var d = document.querySelector('.blogmenu'); if (d) d.open = false; }
+  var act = document.querySelector('[data-blogitem][aria-current]');
+  if (act && window.innerWidth >= 1024) { var nav = act.closest('nav'); if (nav) nav.scrollTop = act.offsetTop - nav.clientHeight / 3; }
+})();
 
 /* Secties rustig laten binnenkomen */
 (function () {

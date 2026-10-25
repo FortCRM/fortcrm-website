@@ -19,10 +19,11 @@ interface Props {
   socialTitle?: string;
   lang: Lang;
   vertaling?: string;
+  canonical?: string;
 }
 
-const { title, description, socialTitle, lang, vertaling } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title, description, socialTitle, lang, vertaling, canonical } = Astro.props;
+const canonicalURL = new URL(canonical ?? Astro.url.pathname, Astro.site);
 const image = new URL("/banner.png", Astro.site);
 const bedrijf = (await instellingen(lang)).bedrijf ?? {};
 const orgSchema = {

@@ -11,15 +11,16 @@ type Props = {
   socialTitle?: string;
   lang?: Lang;
   vertaling?: string;
+  canonical?: string;
 };
 
-const { title, description, socialTitle, lang = "nl", vertaling } = Astro.props;
+const { title, description, socialTitle, lang = "nl", vertaling, canonical } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <Head title={title} description={description} socialTitle={socialTitle} lang={lang} vertaling={vertaling} />
+    <Head title={title} description={description} socialTitle={socialTitle} lang={lang} vertaling={vertaling} canonical={canonical} />
   </head>
   <body>
     <Header lang={lang} vertaling={vertaling} />

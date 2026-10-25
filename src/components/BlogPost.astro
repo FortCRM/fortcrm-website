@@ -3,6 +3,7 @@ import { instellingen } from "@lib/content";
 import { formatDatum } from "@lib/utils";
 import { render } from "astro:content";
 import { pad, SITE, type Lang } from "@consts";
+import BlogShell from "@components/BlogShell.astro";
 
 const { lang, post } = Astro.props as { lang: Lang; post: any };
 const b = (await instellingen(lang)).blog;
@@ -38,10 +39,10 @@ const schema = {
 const rond = "w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors";
 ---
 
+<BlogShell lang={lang} actief={post.slug}>
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-<article class="max-w-3xl mx-auto px-6 py-20">
-  <a href={pad(lang, "/blog/")} class="groenlink">← {b.terug}</a>
-  <p class="eyebrow mt-8 mb-4">{formatDatum(d.datum, lang)}</p>
+<article class="max-w-3xl" data-titel={`${d.seoTitel || d.titel} | FortCRM`}>
+  <p class="eyebrow mb-4">{formatDatum(d.datum, lang)}</p>
   <h1 class="font-display font-bold text-3xl md:text-4xl leading-tight mb-10">{d.titel}</h1>
 
   {d.tldr.length > 0 && (
@@ -79,3 +80,4 @@ const rond = "w-10 h-10 rounded-full border border-inkt/15 flex items-center jus
     </div>
   </div>
 </article>
+</BlogShell>

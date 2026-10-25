@@ -173,3 +173,8 @@ summary {
   .next { @apply grid gap-3 border-t border-inkt/10 pt-5; }
   .btnrow { @apply flex flex-wrap gap-3 items-center; }
 }
+
+/* Blogmenu: actief artikel */
+.blogitem[aria-current="page"] { background: rgb(var(--color-inkt) / 0.06); border-left-color: #2C6C4F; }
+.dark .blogitem[aria-current="page"] { border-left-color: #8FBFA6; }
+@media (min-width: 1024px) { .blogmenu > summary { display: none; } }
