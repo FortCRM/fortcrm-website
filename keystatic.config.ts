@@ -349,6 +349,7 @@ const instellingenSchema = {
         { label: "Keuzes hoe ken je ons", description: "Alleen de tekst is aan te passen; de waarde achter elke keuze gaat naar Pipedrive." },
       ),
       vraag: tekst("Label vraag"),
+      nieuwsbrief: alinea("Vinkje nieuwsbrief onder het formulier", "Aanvinken zet het contact in Pipedrive op geabonneerd voor Campaigns. Leeg = geen vinkje."),
       verstuur: tekst("Knop versturen"),
       privacy: tekst("Regel onder het formulier"),
       planner: tekst("Titel afspraakplanner"),

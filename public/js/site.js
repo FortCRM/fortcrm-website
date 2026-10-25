@@ -230,6 +230,7 @@
       btn.disabled = true;
       send(data).then(function () {
         m.textContent = T.ok(naam);
+        if (el.optin && el.optin.checked) send({ soort: 'nieuwsbrief', naam: naam, mail: mail, bron: 'contactformulier' }).catch(function () {});
       }).catch(function () {
         btn.disabled = false;
         m.classList.add('err');

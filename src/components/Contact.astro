@@ -37,6 +37,7 @@ const opties = ["referral", "linkedin", "zoeken", "netwerk", "pipedrive", "ander
         </select>
       </label>
       <label class="veld">{f.vraag}<textarea id="contact-vraag" name="vraag"></textarea></label>
+      {f.nieuwsbrief && <label class="chk"><input type="checkbox" name="optin" /><span>{f.nieuwsbrief}</span></label>}
       <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Laat leeg<input name="website" tabindex="-1" autocomplete="off" /></label></div>
       <p class="msg" role="status"></p>
       <button class="knop w-fit" type="submit">{f.verstuur}</button>
