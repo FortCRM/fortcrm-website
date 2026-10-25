@@ -87,7 +87,7 @@ ai:
       tekst: That way, automations run across systems.
     - vet: 'Example:'
       tekst: quote accepted, invoice ready in your accounting, project created and the team informed. No retyping.
-  slot: Get the foundation right first, then add AI. That is why we start with the setup.
+  slot: Get the foundation right first, then add AI.
 herkenbaar:
   eyebrow: Sound familiar?
   titel: What we hear at almost every growing business
