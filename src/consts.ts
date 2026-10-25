@@ -4,7 +4,7 @@ export const SITE = {
   URL: "https://fortcrm.nl",
   // n8n-workflow "Websiteformulieren naar Pipedrive"
   FORM_ENDPOINT: "https://fortcrm.app.n8n.cloud/webhook/fortcrm-website-formulier",
-  SCHEDULER_URL: "https://fortcrm.pipedrive.com/scheduler/MkpLWmFq/kennismaking-met-fortcrm",
+  SCHEDULER_URL: "https://rf-fortcrm.pipedrive.com/scheduler/dGE6r8sD/kennismaking-fortcrm",
   GA_ID: "G-SLD185WBNG",
   BLOG_IN_FOOTER: 3,
   // pad van de online CRM-check (vroeger /quick-scan/, die redirect staat in public/_redirects)
