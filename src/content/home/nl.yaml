@@ -106,8 +106,8 @@ voorWie:
     icoon: trechter
   oproep: Herken je jezelf in een van de drie? Plan een gesprek van 30 minuten, dan kijken we wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.
   oproepLink: Plan een gesprek van 30 minuten
-  nietVoorTitel: Voor wie we het niet zijn
-  nietVoorTekst: 'Werk je met één of twee mensen? Dan is een uitgebreide inrichting misschien nog niet nodig. Plan toch een gesprek: we kijken samen of het past en als er een betere eerste stap is, zeggen we dat.'
+  nietVoorTitel: ''
+  nietVoorTekst: ''
   meerTekst: Bekijk wat we inrichten
 scan:
   tonen: true

@@ -150,10 +150,12 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
       <p class="text-lg text-inkt/75 leading-relaxed">
         {oproepNa !== null ? (<>{oproepVoor}<a href="#contact" data-plan class="font-semibold text-viridiaan underline underline-offset-4 decoration-viridiaan/30 hover:decoration-viridiaan">{h.voorWie.oproepLink}</a>{oproepNa}</>) : oproepVoor}
       </p>
-      <div class="border-l border-inkt/15 pl-6">
-        <h3 class="font-display font-semibold text-lg">{h.voorWie.nietVoorTitel}</h3>
-        <p class="mt-2 text-inkt/65 leading-relaxed">{h.voorWie.nietVoorTekst}</p>
-      </div>
+      {h.voorWie.nietVoorTitel && (
+        <div class="border-l border-inkt/15 pl-6">
+          <h3 class="font-display font-semibold text-lg">{h.voorWie.nietVoorTitel}</h3>
+          <p class="mt-2 text-inkt/65 leading-relaxed">{h.voorWie.nietVoorTekst}</p>
+        </div>
+      )}
     </div>
   </div>
 </section>

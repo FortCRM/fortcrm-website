@@ -106,8 +106,8 @@ voorWie:
     icoon: trechter
   oproep: Recognise yourself in one of these? Book a 30-minute call and we'll look at what Pipedrive can do for your team. If it is not a fit, we'll tell you honestly.
   oproepLink: Book a 30-minute call
-  nietVoorTitel: Who we are not for
-  nietVoorTekst: 'Working with one or two people? Then an extensive setup may not be needed yet. Book a call anyway: we''ll see together whether it fits, and if there is a better first step, we''ll say so.'
+  nietVoorTitel: ''
+  nietVoorTekst: ''
   meerTekst: See what we set up
 scan:
   tonen: false
