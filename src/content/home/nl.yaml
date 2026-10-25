@@ -1,349 +1,406 @@
 seo:
   titel: 'FortCRM: Pipedrive-implementatie voor het MKB'
-  beschrijving: 'FortCRM richt Pipedrive in voor het MKB: klanten, afspraken, offertes en projecten op één plek. De basis voor AI, binnen 6 weken live.'
+  beschrijving: >-
+    FortCRM richt Pipedrive in voor het MKB: klanten, afspraken, offertes en
+    projecten op één plek. De basis voor AI, binnen 6 weken live.
   deelTitel: 'FortCRM: Pipedrive dat je team echt gebruikt'
 hero:
   eyebrow: Pipedrive-specialist voor het MKB
   titel: Al je klanten, offertes en afspraken op _één plek_.
-  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, afspraken, offertes en de uitvoering daarna bijhoudt. Zo ligt de basis voor AI klaar.'
-  uitleg: ''
-  beeldOnderschrift: ''
-  belofte: Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet, dan staan wij ervoor in.*
+  intro: >-
+    Wij richten Pipedrive voor je in: het systeem waarin je hele team
+    klantcontact, afspraken, offertes en uitvoering bijhoudt. En een basis voor
+    AI.
+  belofte: >-
+    Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet,
+    dan staan wij ervoor in.*
   knopGesprek: Plan een gesprek
   knopPakketten: Bekijk de pakketten
   knopScan: Of doe eerst de CRM-check (2 min)
   knopDemo: of vraag een demo aan
-  voetnoot: '* Niet binnen 6 weken live, terwijl jouw wensen en afspraken op tijd rond waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na 60 dagen niet actief met Pipedrive, dan krijg je een gratis extra trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared. Wat actief is, leggen we vooraf samen vast.'
-  beeld:
-  beeldAlt: ''
+  voetnoot: >-
+    * Niet binnen 6 weken live, terwijl jouw wensen en afspraken op tijd rond
+    waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na
+    60 dagen niet actief met Pipedrive, dan krijg je een gratis extra
+    trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared.
+    Wat actief is, leggen we vooraf samen vast.
 pipedrive:
   eyebrow: Pipedrive Authorized Partner
   titel: Officieel partner van Pipedrive
-  tekst: FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het bij jouw team past, van eerste aanvraag tot oplevering, en zorgen dat je de functies gebruikt die het verschil maken.
+  tekst: >-
+    FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het
+    bij jouw team past, van eerste aanvraag tot oplevering, en zorgen dat je de
+    functies gebruikt die het verschil maken.
   voordelen: []
   functiesTitel: Wat Pipedrive voor je team doet
   functies:
-  - titel: E-mailsynchronisatie
-    tekst: Je mailbox gekoppeld aan Pipedrive. Elke mail komt bij de juiste klant en deal.
-    icoon: mail
-  - titel: Agendakoppeling
-    tekst: Afspraken uit Google of Outlook staan in Pipedrive, en andersom.
-    icoon: agenda
-  - titel: Afspraken inplannen
-    tekst: Klanten kiezen zelf een moment via je planningslink. Geen heen-en-weer gemail.
-    icoon: afspraak
-  - titel: WhatsApp
-    tekst: Gesprekken met klanten voeren en vastleggen vanuit Pipedrive.
-    icoon: chat
-  - titel: 'Nova: AI-notities'
-    tekst: Nova maakt notities van je klantgesprekken en zet de vervolgstappen klaar.
-    icoon: notitie
-  - titel: Automatiseringen
-    tekst: Taken, mails en updates lopen vanzelf, op basis van wat er in een deal gebeurt.
-    icoon: bliksem
-  - titel: Campaigns
-    tekst: Nieuwsbrieven en mailcampagnes vanuit Pipedrive, naar de juiste groep klanten. Je ziet wie opent en klikt.
-    icoon: campagne
-  - titel: Projects
-    tekst: 'Na de verkoop: planning, taken en oplevering in hetzelfde systeem. Een gewonnen deal wordt met één klik een project.'
-    icoon: project
-  - titel: Rapportages
-    tekst: Dashboards met je verkoopoverzicht, verwachte omzet en resultaten per verkoper.
-    icoon: grafiek
-  - titel: Mobiele app
-    tekst: Alles bij de hand onderweg, ook een gesprek vastleggen direct na een bezoek.
-    icoon: mobiel
-  knop: ''
-  knopLink: ''
+    - titel: E-mailsynchronisatie
+      tekst: >-
+        Je mailbox gekoppeld aan Pipedrive. Elke mail komt bij de juiste klant
+        en deal.
+      icoon: mail
+    - titel: Agendakoppeling
+      tekst: Afspraken uit Google of Outlook staan in Pipedrive, en andersom.
+      icoon: agenda
+    - titel: Afspraken inplannen
+      tekst: >-
+        Klanten kiezen zelf een moment via je planningslink. Geen heen-en-weer
+        gemail.
+      icoon: afspraak
+    - titel: WhatsApp
+      tekst: Gesprekken met klanten voeren en vastleggen vanuit Pipedrive.
+      icoon: chat
+    - titel: 'Nova: AI-notities'
+      tekst: >-
+        Nova maakt notities van je klantgesprekken en zet de vervolgstappen
+        klaar.
+      icoon: notitie
+    - titel: Automatiseringen
+      tekst: >-
+        Taken, mails en updates lopen vanzelf, op basis van wat er in een deal
+        gebeurt.
+      icoon: bliksem
+    - titel: Campaigns
+      tekst: >-
+        Nieuwsbrieven en mailcampagnes vanuit Pipedrive, naar de juiste groep
+        klanten. Je ziet wie opent en klikt.
+      icoon: campagne
+    - titel: Projects
+      tekst: >-
+        Na de verkoop: planning, taken en oplevering in hetzelfde systeem. Een
+        gewonnen deal wordt met één klik een project.
+      icoon: project
+    - titel: Rapportages
+      tekst: >-
+        Dashboards met je verkoopoverzicht, verwachte omzet en resultaten per
+        verkoper.
+      icoon: grafiek
+    - titel: Mobiele app
+      tekst: >-
+        Alles bij de hand onderweg, ook een gesprek vastleggen direct na een
+        bezoek.
+      icoon: mobiel
 ai:
   tonen: true
   eyebrow: AI en koppelingen
   titel: Pipedrive als basis voor AI
-  intro: 'AI is zo slim als de gegevens eronder. Staat alles goed in Pipedrive, dan werkt AI voor je hele team: in het systeem zelf, in je eigen AI-assistent en in je andere software.'
+  intro: >-
+    AI is zo slim als de gegevens eronder. Staat alles goed in Pipedrive, dan
+    werkt AI voor je hele team: in het systeem zelf, in je eigen AI-assistent en
+    in je andere software.
   kolommen:
-  - titel: AI in Pipedrive
-    icoon: ai
-    punten:
-    - vet: Nova
-      tekst: bereidt gesprekken voor, maakt notities en zet vervolgstappen klaar. Het stelt updates voor je deals voor en jij keurt ze goed. Nova zit in elk abonnement.
-    - vet: Sales Assistant
-      tekst: beantwoordt vragen over je klanten en deals in gewone taal.
-    - vet: Mail en rapportages.
-      tekst: AI schrijft en vat mails samen, en maakt een rapport op basis van één vraag.
-  - titel: Je eigen AI aan Pipedrive
-    icoon: chat
-    punten:
-    - vet: ''
-      tekst: Via de officiële Pipedrive-koppeling (MCP) werkt Claude of ChatGPT direct met je Pipedrive-gegevens.
-    - vet: ''
-      tekst: 'Stel een vraag als: "Welke offertes staan langer dan twee weken open?"'
-    - vet: ''
-      tekst: Laat AI deals bijwerken, activiteiten inplannen en leads omzetten. Jij houdt de regie.
-  - titel: Alles praat met elkaar
-    icoon: koppeling
-    punten:
-    - vet: ''
-      tekst: Pipedrive is het middelpunt. Wij koppelen het aan je boekhouding, website, mail, agenda, telefonie en planning.
-    - vet: ''
-      tekst: Zo lopen automatiseringen over systemen heen.
-    - vet: 'Voorbeeld:'
-      tekst: offerte geaccepteerd, factuur klaar in je boekhouding, project aangemaakt en het team op de hoogte. Zonder overtypen.
+    - titel: AI in Pipedrive
+      icoon: ai
+      punten:
+        - vet: Nova
+          tekst: >-
+            bereidt gesprekken voor, maakt notities en zet vervolgstappen klaar.
+            Het stelt updates voor je deals voor en jij keurt ze goed. Nova zit
+            in elk abonnement.
+        - vet: Sales Assistant
+          tekst: beantwoordt vragen over je klanten en deals in gewone taal.
+        - vet: Mail en rapportages.
+          tekst: >-
+            AI schrijft en vat mails samen, en maakt een rapport op basis van
+            één vraag.
+    - titel: Je eigen AI aan Pipedrive
+      icoon: chat
+      punten:
+        - tekst: >-
+            Via de officiële Pipedrive-koppeling (MCP) werkt Claude of ChatGPT
+            direct met je Pipedrive-gegevens.
+        - tekst: >-
+            Stel een vraag als: "Welke offertes staan langer dan twee weken
+            open?"
+        - tekst: >-
+            Laat AI deals bijwerken, activiteiten inplannen en leads omzetten.
+            Jij houdt de regie.
+    - titel: Alles praat met elkaar
+      icoon: koppeling
+      punten:
+        - tekst: >-
+            Pipedrive is het middelpunt. Wij koppelen het aan je boekhouding,
+            website, mail, agenda, telefonie en planning.
+        - tekst: Zo lopen automatiseringen over systemen heen.
+        - vet: 'Voorbeeld:'
+          tekst: >-
+            offerte geaccepteerd, factuur klaar in je boekhouding, project
+            aangemaakt en het team op de hoogte. Zonder overtypen.
   slot: Eerst de basis op orde, dan AI erop.
 herkenbaar:
   eyebrow: Herkenbaar?
   titel: Dit horen we bij bijna elk MKB-bedrijf
   kaarten:
-  - citaat: Opvolgen gebeurt als er tijd is.
-    tekst: Er komen dagelijks aanvragen en orders binnen, maar iedereen handelt ze anders af.
-  - citaat: Dat weet alleen wie erbij zat.
-    tekst: Eén deal kost vijf gesprekken. Wat er is besproken, weet alleen degene die erbij zat.
-  - citaat: Wat hadden we nou afgesproken?
-    tekst: Afspraken staan in mailtjes, notitieblokken en hoofden. Terugzoeken kost tijd, en soms een klant.
-  slotVet: ''
-  slot: ''
+    - citaat: Opvolgen gebeurt als er tijd is.
+      tekst: >-
+        Er komen dagelijks aanvragen en orders binnen, maar iedereen handelt ze
+        anders af.
+    - citaat: Dat weet alleen wie erbij zat.
+      tekst: >-
+        Eén deal kost vijf gesprekken. Wat er is besproken, weet alleen degene
+        die erbij zat.
+    - citaat: Wat hadden we nou afgesproken?
+      tekst: >-
+        Afspraken staan in mailtjes, notitieblokken en hoofden. Terugzoeken kost
+        tijd, en soms een klant.
 aanpak:
   eyebrow: Onze aanpak
   titel: Van eerste gesprek tot een team dat het gebruikt
-  intro: ''
   stappen:
-  - titel: Kennismaking
-    tekst: Een gesprek van 30 minuten over hoe jullie nu werken en wat je wilt bereiken. Deed je de CRM-check, dan nemen we je uitslag mee.
-    resultaat: Een eerlijk antwoord of Pipedrive past.
-    knop: Plan je kennismaking
-  - titel: Ontwerp
-    tekst: We leggen in jullie eigen woorden vast hoe een aanvraag een klant wordt, en een opdracht een project.
-    resultaat: Een inrichtingsplan dat je team herkent.
-  - titel: Inrichting en automatisering
-    tekst: FortCRM richt Pipedrive in, zet je data over en bouwt de automatisering eromheen.
-    resultaat: Een werkend Pipedrive, klaar voor gebruik.
-  - titel: Training en start
-    tekst: Je team leert werken in de situatie zoals die echt is, niet in een demo. Binnen 6 weken na de start ben je live.
-    resultaat: Je team werkt in Pipedrive.
-  - titel: Bijsturen
-    tekst: Na 60 dagen kijken we samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie.
-    resultaat: Gebruik dat blijft.
+    - titel: Kennismaking
+      tekst: >-
+        Een gesprek van 30 minuten over hoe jullie nu werken en wat je wilt
+        bereiken. Deed je de CRM-check, dan nemen we je uitslag mee.
+      resultaat: Een eerlijk antwoord of Pipedrive past.
+      knop: Plan je kennismaking
+    - titel: Ontwerp
+      tekst: >-
+        We leggen in jullie eigen woorden vast hoe een aanvraag een klant wordt,
+        en een opdracht een project.
+      resultaat: Een inrichtingsplan dat je team herkent.
+    - titel: Inrichting en automatisering
+      tekst: >-
+        FortCRM richt Pipedrive in, zet je data over en bouwt de automatisering
+        eromheen.
+      resultaat: Een werkend Pipedrive, klaar voor gebruik.
+    - titel: Training en start
+      tekst: >-
+        Je team leert werken in de situatie zoals die echt is, niet in een demo.
+        Binnen 6 weken na de start ben je live.
+      resultaat: Je team werkt in Pipedrive.
+    - titel: Bijsturen
+      tekst: >-
+        Na 60 dagen kijken we samen of je team actief met Pipedrive werkt. Zo
+        niet, dan krijg je een gratis extra trainingssessie.
+      resultaat: Gebruik dat blijft.
   naderhandTitel: 'Daarna: het ambitiegesprek'
-  naderhandTekst: Wat werkt, wat niet, en wat de volgende stap is. Zo groeit Pipedrive mee met je bedrijf. Onderdeel van elk onderhoudsabonnement.
+  naderhandTekst: >-
+    Wat werkt, wat niet, en wat de volgende stap is. Zo groeit Pipedrive mee met
+    je bedrijf. Onderdeel van elk onderhoudsabonnement.
 voorWie:
   eyebrow: Voor wie we werken
   titel: Van eerste aanvraag tot opgeleverd werk
   kaarten:
-  - titel: Weinig opdrachten, groot werk
-    tekst: Bijvoorbeeld bouw en installatie. Elke offerte volg je strak op. Na de opdracht loopt de uitvoering als project in hetzelfde systeem, met alles wat je met de klant hebt afgesproken.
-    pagina: weinig-deals
-    icoon: offerte
-  - titel: Advies en maatwerk
-    tekst: Eén klant, veel gesprekken. Elke afspraak en elk besluit staat vast en is terug te vinden, ook als een collega het overneemt. Van eerste gesprek tot opdracht en levering.
-    pagina: advies-maatwerk
-    icoon: gesprek
-  - titel: Veel aanvragen, veel klanten
-    tekst: Grote aantallen, één vaste route. Elke aanvraag wordt hetzelfde opgepakt. Na de verkoop weet iedereen wat er beloofd is.
-    pagina: veel-aanvragen
-    icoon: trechter
-  oproep: ''
-  oproepLink: ''
-  nietVoorTitel: ''
-  nietVoorTekst: ''
+    - titel: Weinig opdrachten, groot werk
+      tekst: >-
+        Bijvoorbeeld bouw en installatie. Elke offerte volg je strak op. Na de
+        opdracht loopt de uitvoering als project in hetzelfde systeem, met alles
+        wat je met de klant hebt afgesproken.
+      icoon: offerte
+      pagina: weinig-deals
+    - titel: Advies en maatwerk
+      tekst: >-
+        Eén klant, veel gesprekken. Elke afspraak en elk besluit staat vast en
+        is terug te vinden, ook als een collega het overneemt. Van eerste
+        gesprek tot opdracht en levering.
+      icoon: gesprek
+      pagina: advies-maatwerk
+    - titel: Veel aanvragen, veel klanten
+      tekst: >-
+        Grote aantallen, één vaste route. Elke aanvraag wordt hetzelfde
+        opgepakt. Na de verkoop weet iedereen wat er beloofd is.
+      icoon: trechter
+      pagina: veel-aanvragen
   meerTekst: Bekijk wat we inrichten
 scan:
   tonen: false
   eyebrow: CRM-check
   titel: Nog niet klaar voor een gesprek?
-  tekst: Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen. In het gesprek bouwen we op je uitslag voort.
+  tekst: >-
+    Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen,
+    opvolgen en delen. In het gesprek bouwen we op je uitslag voort.
   knop: Start de CRM-check
 pakketten:
   eyebrow: Pakketten
   titel: Kies hoeveel je zelf doet
-  intro: Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive als de plek waar al je klantgegevens kloppen.
+  intro: >-
+    Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive
+    als de plek waar al je klantgegevens kloppen.
   kolommen:
-  - naam: Zelfstandig
-    prijs: vanaf €4.950
-    uitgelicht: false
-    kleur: grijs
-    badge: ''
-  - naam: Shared
-    prijs: vanaf €7.950
-    uitgelicht: true
-    kleur: vermiljoen
-    badge: Meest gekozen
-  - naam: Volledig ontzorgd
-    prijs: vanaf €12.950
-    uitgelicht: false
-    kleur: viridiaan
-    badge: ''
+    - naam: Zelfstandig
+      prijs: vanaf €4.950
+      uitgelicht: false
+      kleur: grijs
+    - naam: Shared
+      prijs: vanaf €7.950
+      uitgelicht: true
+      badge: Meest gekozen
+      kleur: vermiljoen
+    - naam: Volledig ontzorgd
+      prijs: vanaf €12.950
+      uitgelicht: false
+      kleur: viridiaan
   rijen:
-  - onderdeel: Voor wie
-    waarden:
-    - Jij doet het zelf.
-    - We doen het samen.
-    - Wij doen het voor je.
-  - onderdeel: Verkoopoverzichten (pipelines)
-    waarden:
-    - '1'
-    - '2'
-    - '3'
-  - onderdeel: Velden
-    waarden:
-    - Tot 20
-    - Tot 30
-    - Tot 60
-  - onderdeel: Automatiseringen
-    waarden:
-    - '4'
-    - '8'
-    - '12'
-  - onderdeel: Dashboards
-    waarden:
-    - '1'
-    - '2'
-    - '3'
-  - onderdeel: Migratie van je data
-    waarden:
-    - Eén Excel- of CSV-bestand
-    - Eén systeem
-    - Tot twee systemen
-  - onderdeel: Koppeling met extern systeem
-    waarden:
-    - Los af te nemen
-    - Los af te nemen
-    - Eén inbegrepen
-  - onderdeel: Training
-    waarden:
-    - 1 sessie
-    - 2 sessies
-    - 3 sessies
-  - onderdeel: Nazorg na de start
-    waarden:
-    - 30 dagen
-    - 30 dagen
-    - 30 dagen
-  - onderdeel: Doorlooptijd
-    waarden:
-    - Binnen 6 weken live, mits je wensen en afspraken op tijd rond zijn.
-  - onderdeel: Garantie op tijd live en op gebruik
-    waarden:
-    - Nee
-    - Ja
-    - Ja
-  - onderdeel: Onderhoud en ambitiegesprek
-    waarden:
-    - Bij elk pakket af te nemen, zie hieronder.
-  prijsnoot: 'Alle prijzen zijn excl. btw. Pipedrive-licenties zijn niet inbegrepen, die factureert Pipedrive zelf. Extra koppeling met een extern systeem: €950 per koppeling. Tech Discovery sessie: €1.295.'
+    - onderdeel: Voor wie
+      waarden:
+        - Jij doet het zelf.
+        - We doen het samen.
+        - Wij doen het voor je.
+    - onderdeel: Verkoopoverzichten (pipelines)
+      waarden:
+        - '1'
+        - '2'
+        - '3'
+    - onderdeel: Velden
+      waarden:
+        - Tot 20
+        - Tot 30
+        - Tot 60
+    - onderdeel: Automatiseringen
+      waarden:
+        - '4'
+        - '8'
+        - '12'
+    - onderdeel: Dashboards
+      waarden:
+        - '1'
+        - '2'
+        - '3'
+    - onderdeel: Migratie van je data
+      waarden:
+        - Eén Excel- of CSV-bestand
+        - Eén systeem
+        - Tot twee systemen
+    - onderdeel: Koppeling met extern systeem
+      waarden:
+        - Los af te nemen
+        - Los af te nemen
+        - Eén inbegrepen
+    - onderdeel: Training
+      waarden:
+        - 1 sessie
+        - 2 sessies
+        - 3 sessies
+    - onderdeel: Nazorg na de start
+      waarden:
+        - 30 dagen
+        - 30 dagen
+        - 30 dagen
+    - onderdeel: Doorlooptijd
+      waarden:
+        - Binnen 6 weken live, mits je wensen en afspraken op tijd rond zijn.
+    - onderdeel: Garantie op tijd live en op gebruik
+      waarden:
+        - Nee
+        - Ja
+        - Ja
+    - onderdeel: Onderhoud en ambitiegesprek
+      waarden:
+        - Bij elk pakket af te nemen, zie hieronder.
+  prijsnoot: >-
+    Alle prijzen zijn excl. btw. Pipedrive-licenties zijn niet inbegrepen, die
+    factureert Pipedrive zelf. Extra koppeling met een extern systeem: €950 per
+    koppeling. Tech Discovery sessie: €1.295.
   slaKnop: Bekijk de onderhoudsabonnementen
   slaEyebrow: Na de start
   slaTitel: 'Onderhoudsabonnement: support, beheer en het ambitiegesprek'
-  slaIntro: 'Met een onderhoudsabonnement blijven we sturen op gebruik. In elk niveau zit het ambitiegesprek: wat werkt, wat niet en wat de volgende stap is.'
+  slaIntro: >-
+    Met een onderhoudsabonnement blijven we sturen op gebruik. In elk niveau zit
+    het ambitiegesprek: wat werkt, wat niet en wat de volgende stap is.
   slaKolommen:
-  - naam: Basis
-    prijs: €595 p/m
-    uitgelicht: false
-    kleur: grijs
-    badge: ''
-  - naam: Plus
-    prijs: €1.250 p/m
-    uitgelicht: true
-    kleur: vermiljoen
-    badge: ''
-  - naam: Max
-    prijs: €2.450 p/m
-    uitgelicht: false
-    kleur: viridiaan
-    badge: ''
+    - naam: Basis
+      prijs: €595 p/m
+      uitgelicht: false
+      kleur: grijs
+    - naam: Plus
+      prijs: €1.250 p/m
+      uitgelicht: true
+      kleur: vermiljoen
+    - naam: Max
+      prijs: €2.450 p/m
+      uitgelicht: false
+      kleur: viridiaan
   slaRijen:
-  - onderdeel: Ambitiegesprek
-    waarden:
-    - Elk kwartaal
-    - Elke maand
-    - Elke maand
-  - onderdeel: Support-uren inbegrepen
-    waarden:
-    - 2 per maand
-    - 6 per maand
-    - 14 per maand
-  - onderdeel: Beheer en kleine aanpassingen
-    waarden:
-    - Ja
-    - Ja
-    - Ja
-  - onderdeel: Vast aanspreekpunt
-    waarden:
-    - Nee
-    - Nee
-    - Ja
+    - onderdeel: Ambitiegesprek
+      waarden:
+        - Elk kwartaal
+        - Elke maand
+        - Elke maand
+    - onderdeel: Support-uren inbegrepen
+      waarden:
+        - 2 per maand
+        - 6 per maand
+        - 14 per maand
+    - onderdeel: Beheer en kleine aanpassingen
+      waarden:
+        - Ja
+        - Ja
+        - Ja
+    - onderdeel: Vast aanspreekpunt
+      waarden:
+        - Nee
+        - Nee
+        - Ja
   knopVoorstel: Vraag een voorstel aan
-  knopScan: ''
 garantie:
   getal: '60'
   getalTekst: dagen garantie
   eyebrow: Onze garantie
   titel: Op tijd live en in gebruik. Anders staan wij ervoor in.
   punten:
-  - Niet binnen 6 weken live, terwijl je wensen en afspraken op tijd rond waren? Dan betaal je geen licentiekosten over de uitloop.
-  - Na 60 dagen kijken we samen of je team actief met Pipedrive werkt.
-  - Zo niet, dan krijg je een gratis extra trainingssessie.
-  - Wat actief is, leggen we vooraf samen vast. Geen discussie achteraf.
+    - >-
+      Niet binnen 6 weken live, terwijl je wensen en afspraken op tijd rond
+      waren? Dan betaal je geen licentiekosten over de uitloop.
+    - Na 60 dagen kijken we samen of je team actief met Pipedrive werkt.
+    - Zo niet, dan krijg je een gratis extra trainingssessie.
+    - Wat actief is, leggen we vooraf samen vast. Geen discussie achteraf.
   noot: Beide garanties gelden voor Volledig ontzorgd en Shared.
 waarom:
   tonen: false
   eyebrow: Waarom FortCRM
   titel: Gebruik is het doel, niet de oplevering
   punten:
-  - titel: Resultaat, geen inspanning
-    tekst: Anderen beloven inspanning. Wij beloven een team dat Pipedrive na 60 dagen nog gebruikt, en sturen daarop.
-    icoon: doel
-  - titel: Koppelingen zelf gebouwd
-    tekst: Wij bouwen de koppelingen en workflows rond Pipedrive zelf. Zo verdwijnt handwerk en blijft het aanpasbaar.
-    icoon: koppeling
-  - titel: Klaar voor AI
-    tekst: Al je klantgegevens op één plek, en ze kloppen. Daar kan AI op rekenen.
-    icoon: ai
-  - titel: Eerlijk over wat past
-    tekst: Past Pipedrive niet bij jullie, dan horen jullie dat van ons in het eerste gesprek.
-    icoon: gesprek
-  - titel: Vaste aanspreekpunten
-    tekst: Je werkt met twee mensen die het ook echt doen, ook ruim na de start. Geen overdracht tussen sales en uitvoering.
-    icoon: mensen
-  - titel: Veilige basis
-    tekst: EU-hosting en AVG zijn standaard, voor Pipedrive en voor de koppelingen die wij bouwen.
-    icoon: schild
+    - titel: Resultaat, geen inspanning
+      tekst: >-
+        Anderen beloven inspanning. Wij beloven een team dat Pipedrive na 60
+        dagen nog gebruikt, en sturen daarop.
+      icoon: doel
+    - titel: Koppelingen zelf gebouwd
+      tekst: >-
+        Wij bouwen de koppelingen en workflows rond Pipedrive zelf. Zo verdwijnt
+        handwerk en blijft het aanpasbaar.
+      icoon: koppeling
+    - titel: Klaar voor AI
+      tekst: Al je klantgegevens op één plek, en ze kloppen. Daar kan AI op rekenen.
+      icoon: ai
+    - titel: Eerlijk over wat past
+      tekst: >-
+        Past Pipedrive niet bij jullie, dan horen jullie dat van ons in het
+        eerste gesprek.
+      icoon: gesprek
+    - titel: Vaste aanspreekpunten
+      tekst: >-
+        Je werkt met twee mensen die het ook echt doen, ook ruim na de start.
+        Geen overdracht tussen sales en uitvoering.
+      icoon: mensen
+    - titel: Veilige basis
+      tekst: >-
+        EU-hosting en AVG zijn standaard, voor Pipedrive en voor de koppelingen
+        die wij bouwen.
+      icoon: schild
 team:
   eyebrow: Over ons
   titel: Twee mensen, samen ruim twintig jaar systeemimplementaties
   intro: Je werkt met de twee mensen die het bedrijf draaien.
   mensen:
-  - naam: Joost Smaardijk
-    rol: Strategie en begeleiding
-    tekst: 'Zorgt dat het project klopt: strategie, sales, begeleiding en projectleiding. Eerder 15 jaar projectleider bij SAP-trajecten.'
-    foto: /images/team/joost-smaardijk.jpg
-    linkedin: https://www.linkedin.com/in/joostsmaardijk/
-    linkedinTekst: Connect op LinkedIn
-  - naam: Joost Beers
-    rol: Implementatie en technologie
-    tekst: Bouwt de inrichting, automatiseringen, integraties en workflows, en optimaliseert processen. Deed de afgelopen drie jaar drie volledige Pipedrive-implementaties, inclusief migratie. Daarvoor zeven jaar business consultant IT.
-    foto: /images/team/joost-beers.jpg
-    linkedin: https://www.linkedin.com/in/jfbeers
-    linkedinTekst: Connect op LinkedIn
-  noot: ''
-faq:
-  eyebrow: Veelgestelde vragen
-  titel: Wat mensen ons vooraf vragen
-  vragen:
-  - vraag: Hoe lang duurt een implementatie?
-    antwoord: 'Binnen 6 weken ben je live, mits je wensen en afspraken op tijd rond zijn. Live betekent: opgeleverd, getest volgens de afspraken en je team is getraind. Lukt dat niet, dan betaal je bij Volledig ontzorgd en Shared geen licentiekosten over de uitloop.'
-  - vraag: Waarom Pipedrive?
-    antwoord: Pipedrive is eenvoudig genoeg om dagelijks te gebruiken en krachtig genoeg om mee te groeien. Dat laatste is de reden dat teams het blijven gebruiken.
-  - vraag: Kan Pipedrive ook projecten beheren?
-    antwoord: Ja, met Projects. Een gewonnen deal wordt met één klik een project, met fases, taken en planning, en alle klantinformatie gaat mee. Projects zit in het Premium-abonnement en hoger; bij lagere abonnementen is het een add-on. Wij richten het in als onderdeel van je traject.
-  - vraag: Wat als mijn team het niet gebruikt?
-    antwoord: Daar is de garantie op gebruik voor. We kijken na 60 dagen samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie. Geldt voor Volledig ontzorgd en Shared.
-  - vraag: Wat kost het?
-    antwoord: 'Zelfstandig kost vanaf €4.950, Shared vanaf €7.950 en Volledig ontzorgd vanaf €12.950. Na de start kies je een onderhoudsabonnement: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
-contact:
-  eyebrow: Contact
-  titel: Plan een gesprek van 30 minuten
-  intro: We kijken wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.
-  knopPlanner: Kies direct een moment
-  reactietijd: We reageren binnen één werkdag.
+    - naam: Joost Smaardijk
+      rol: Strategie en begeleiding
+      tekst: >-
+        Zorgt dat het project klopt: strategie, sales, begeleiding en
+        projectleiding. Eerder 15 jaar projectleider bij SAP-trajecten.
+      foto: /images/team/team/mensen/0/foto.jpg
+      linkedin: https://www.linkedin.com/in/joostsmaardijk/
+      linkedinTekst: Connect op LinkedIn
+    - naam: Joost Beers
+      rol: Implementatie en technologie
+      tekst: >-
+        Bouwt de inrichting, automatiseringen, integraties en workflows, en
+        optimaliseert processen. Deed de afgelopen drie jaar drie volledige
+        Pipedrive-implementaties, inclusief migratie. Daarvoor zeven jaar
+        business consultant IT.
+      foto: /images/team/team/mensen/1/foto.jpg
+      linkedin: https://www.linkedin.com/in/jfbeers
+      linkedinTekst: Connect op LinkedIn
 bewijs:
   logosTitel: Zij werken al met ons
   logos: []
@@ -354,14 +411,44 @@ bewijs:
   caseTonen: false
   case:
     eyebrow: Case
-    klant: ''
-    titel: ''
-    tekst: ''
     resultaten: []
-    citaat: ''
-    citaatNaam: ''
-    foto:
-    link: ''
-  videoEyebrow: ''
-  videoTitel: ''
-  videoUrl:
+faq:
+  eyebrow: Veelgestelde vragen
+  titel: Wat mensen ons vooraf vragen
+  vragen:
+    - vraag: Hoe lang duurt een implementatie?
+      antwoord: >-
+        Binnen 6 weken ben je live, mits je wensen en afspraken op tijd rond
+        zijn. Live betekent: opgeleverd, getest volgens de afspraken en je team
+        is getraind. Lukt dat niet, dan betaal je bij Volledig ontzorgd en
+        Shared geen licentiekosten over de uitloop.
+    - vraag: Waarom Pipedrive?
+      antwoord: >-
+        Pipedrive is eenvoudig genoeg om dagelijks te gebruiken en krachtig
+        genoeg om mee te groeien. Dat laatste is de reden dat teams het blijven
+        gebruiken.
+    - vraag: Kan Pipedrive ook projecten beheren?
+      antwoord: >-
+        Ja, met Projects. Een gewonnen deal wordt met één klik een project, met
+        fases, taken en planning, en alle klantinformatie gaat mee. Projects zit
+        in het Premium-abonnement en hoger; bij lagere abonnementen is het een
+        add-on. Wij richten het in als onderdeel van je traject.
+    - vraag: Wat als mijn team het niet gebruikt?
+      antwoord: >-
+        Daar is de garantie op gebruik voor. We kijken na 60 dagen samen of je
+        team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra
+        trainingssessie. Geldt voor Volledig ontzorgd en Shared.
+    - vraag: Wat kost het?
+      antwoord: >-
+        Zelfstandig kost vanaf €4.950, Shared vanaf €7.950 en Volledig ontzorgd
+        vanaf €12.950. Na de start kies je een onderhoudsabonnement: Basis €595,
+        Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste
+        gesprek ontvang je een voorstel.
+contact:
+  eyebrow: Contact
+  titel: Plan een gesprek van 30 minuten
+  intro: >-
+    We kijken wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen
+    we dat eerlijk.
+  knopPlanner: Kies direct een moment
+  reactietijd: We reageren binnen één werkdag.
