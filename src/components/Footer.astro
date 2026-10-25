@@ -29,6 +29,7 @@ const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
     <div>
       <p class={kopje}>{f.paginas}</p>
       <ul class="space-y-3">
+        {m.pipedrive && <li><a class={link} href={`${home}#pipedrive`}>{m.pipedrive}</a></li>}
         <li><a class={link} href={`${home}#aanpak`}>{m.aanpak}</a></li>
         <li><a class={link} href={`${home}#voor-wie`}>{m.voorWie}</a></li>
         <li><a class={link} href={`${home}#pakketten`}>{m.pakketten}</a></li>

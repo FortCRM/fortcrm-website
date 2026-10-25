@@ -19,10 +19,7 @@ pipedrive:
   eyebrow: Pipedrive Authorized Partner
   titel: An official Pipedrive partner
   tekst: FortCRM is an Authorized Partner of Pipedrive. We set it up the way your team works, from first lead to delivery, and make sure you use the features that make the difference.
-  voordelen:
-  - 30-day trial through our partner link instead of 14
-  - Advice on the plan that fits your team
-  - One point of contact for setup, integrations and questions
+  voordelen: []
   functiesTitel: What Pipedrive does for your team
   functies:
   - titel: Email sync
@@ -64,8 +61,8 @@ herkenbaar:
     tekst: One deal takes five conversations. What was discussed is known only to whoever was in the room.
   - citaat: It runs on gut feeling.
     tekst: You send few quotes, but every quote counts. Follow-up runs on gut feeling.
-  slotVet: A CRM doesn't work because it's there.
-  slot: Pipedrive works when it fits how your team works, and when you keep steering it. That is what we do.
+  slotVet: ''
+  slot: ''
 aanpak:
   eyebrow: Our approach
   titel: From first call to a team that uses it
@@ -104,8 +101,8 @@ voorWie:
     tekst: 'Small amounts, large volumes. The gain is speed and a fixed route: every request is handled the same way.'
     pagina: ''
     icoon: trechter
-  oproep: Recognise yourself in one of these? Book a 30-minute call and we'll look at what Pipedrive can do for your team. If it is not a fit, we'll tell you honestly.
-  oproepLink: Book a 30-minute call
+  oproep: ''
+  oproepLink: ''
   nietVoorTitel: ''
   nietVoorTekst: ''
   meerTekst: See what we set up
@@ -193,6 +190,7 @@ pakketten:
     waarden:
     - Available with every package, see below.
   prijsnoot: 'All prices exclude VAT. Pipedrive licences are not included; Pipedrive invoices those directly. Extra integration with an external system: €950 per integration. Tech Discovery session: €1,295.'
+  slaKnop: See the maintenance plans
   slaEyebrow: After go-live
   slaTitel: 'SLA: support, management and the ambition review'
   slaIntro: 'With an SLA we keep steering on usage. Every level includes the ambition review: what works, what doesn''t and what the next step is.'
@@ -247,6 +245,7 @@ garantie:
   - What active means is agreed up front. No discussion afterwards.
   noot: Both guarantees apply to Fully managed and Shared.
 waarom:
+  tonen: false
   eyebrow: Why FortCRM
   titel: Usage is the goal, not go-live
   punten:
@@ -271,7 +270,7 @@ waarom:
 team:
   eyebrow: About us
   titel: Two people, over twenty years of system implementations combined
-  intro: FortCRM is a young agency. That means you work with the two people who run the company.
+  intro: You work with the two people who run the company.
   mensen:
   - naam: Joost Smaardijk
     rol: Strategy and guidance
@@ -298,14 +297,8 @@ faq:
     antwoord: Yes, with Projects. A won deal becomes a project in one click, with phases, tasks and planning, and all client information carries over. Projects is included in the Premium plan and up; on lower plans it is an add-on. We set it up as part of your project.
   - vraag: What if my team doesn't use it?
     antwoord: That is what the usage guarantee is for. After 60 days we check together whether your team is actively using Pipedrive. If not, you get an extra training session for free. Applies to Fully managed and Shared.
-  - vraag: Can I bring my existing data?
-    antwoord: Yes. We move data from Excel, mailboxes or your current CRM to Pipedrive and clean up duplicates.
-  - vraag: What does ready for AI mean?
-    antwoord: AI is only as good as the data it works on. We set up Pipedrive with clean, consistent data, so you can build AI applications on top of it later.
   - vraag: What does it cost?
     antwoord: 'Self-directed costs €4,950, Shared €7,950 and Fully managed €12,950. After go-live you choose an SLA: Basic €595, Plus €1,250 or Max €2,450 per month. All excluding VAT. After the first call you receive a proposal.'
-  - vraag: Do I already need a Pipedrive licence?
-    antwoord: 'No. We discuss that in the first call and advise which plan fits. As a Pipedrive partner we start your trial through our partner link: 30 days instead of 14.'
 contact:
   eyebrow: Contact
   titel: Book a 30-minute call

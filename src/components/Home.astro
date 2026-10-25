@@ -64,10 +64,8 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 
 <Bewijs deel="logos" b={b} />
 
-<Pipedrive p={h.pipedrive} lang={lang} />
-
 <!-- herkenbaar -->
-<section class="py-24 md:py-32">
+<section class="py-24 md:py-32 border-t border-inkt/10">
   <div class="wrap">
     <div class="reveal">
       <p class="eyebrow mb-4">{h.herkenbaar.eyebrow}</p>
@@ -81,12 +79,16 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
         </figure>
       ))}
     </div>
-    <div class="reveal mt-20 max-w-3xl">
-      <p class="font-display font-bold text-3xl md:text-4xl leading-tight tracking-tight">{h.herkenbaar.slotVet}</p>
-      <p class="mt-4 text-lg text-inkt/70 leading-relaxed">{h.herkenbaar.slot}</p>
-    </div>
+    {(h.herkenbaar.slotVet || h.herkenbaar.slot) && (
+      <div class="reveal mt-20 max-w-3xl">
+        <p class="font-display font-bold text-3xl md:text-4xl leading-tight tracking-tight">{h.herkenbaar.slotVet}</p>
+        <p class="mt-4 text-lg text-inkt/70 leading-relaxed">{h.herkenbaar.slot}</p>
+      </div>
+    )}
   </div>
 </section>
+
+<Pipedrive p={h.pipedrive} lang={lang} />
 
 <!-- aanpak: donkere band met tijdlijn -->
 <section id="aanpak" class="band py-24 md:py-32">
@@ -146,21 +148,13 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           : <div class="reveal flex flex-col rounded-2xl border border-inkt/10 overflow-hidden">{inhoud}</div>;
       })}
     </div>
-    <div class="reveal mt-16 grid gap-10 md:grid-cols-2 md:gap-16">
-      <p class="text-lg text-inkt/75 leading-relaxed">
+    {h.voorWie.oproep && (
+      <p class="reveal mt-16 max-w-2xl text-lg text-inkt/75 leading-relaxed">
         {oproepNa !== null ? (<>{oproepVoor}<a href="#contact" data-plan class="font-semibold text-viridiaan underline underline-offset-4 decoration-viridiaan/30 hover:decoration-viridiaan">{h.voorWie.oproepLink}</a>{oproepNa}</>) : oproepVoor}
       </p>
-      {h.voorWie.nietVoorTitel && (
-        <div class="border-l border-inkt/15 pl-6">
-          <h3 class="font-display font-semibold text-lg">{h.voorWie.nietVoorTitel}</h3>
-          <p class="mt-2 text-inkt/65 leading-relaxed">{h.voorWie.nietVoorTekst}</p>
-        </div>
-      )}
-    </div>
+    )}
   </div>
 </section>
-
-<Bewijs deel="reviews" b={b} />
 
 <!-- pakketten en SLA -->
 <section id="pakketten" class="tint py-24 md:py-32">
@@ -175,15 +169,21 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
     <div class="reveal mt-12"><Tabel kolommen={h.pakketten.kolommen} rijen={h.pakketten.rijen} hint={swipe} /></div>
     <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{h.pakketten.prijsnoot}</p>
 
-    <div class="reveal mt-24 grid gap-6 lg:grid-cols-2 lg:items-end">
+    <details class="group mt-12 border-t border-inkt/15 pt-6">
+      <summary class="flex items-center gap-3 cursor-pointer font-display font-semibold text-lg hover:text-viridiaan">
+        <span class="flex size-8 flex-none items-center justify-center rounded-full border border-inkt/20 text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+        {h.pakketten.slaKnop || (nl ? "Bekijk de onderhoudsabonnementen" : "See the maintenance plans")}
+      </summary>
+    <div class="mt-10 grid gap-6 lg:grid-cols-2 lg:items-end">
       <div>
         <p class="eyebrow mb-4">{h.pakketten.slaEyebrow}</p>
         <h2 class="font-display font-bold text-2xl md:text-3xl leading-tight tracking-tight">{h.pakketten.slaTitel}</h2>
       </div>
       {h.pakketten.slaIntro && <p class="text-inkt/70 leading-relaxed max-w-xl lg:justify-self-end">{h.pakketten.slaIntro}</p>}
     </div>
-    <div class="reveal mt-10"><Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} hint={swipe} /></div>
+    <div class="mt-8"><Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} hint={swipe} /></div>
 
+    </details>
     <div class="mt-12 flex flex-wrap items-center gap-6">
       <a href="#contact" data-plan class="knop px-8">{h.pakketten.knopVoorstel}</a>
       {h.pakketten.knopScan && nl && <a href={SITE.CHECK} class="tekstlink">{h.pakketten.knopScan} →</a>}
@@ -209,7 +209,11 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
   </div>
 </section>
 
+<Bewijs deel="reviews" b={b} />
+
 <Bewijs deel="case" b={b} />
+
+<Bewijs deel="video" b={b} />
 
 {toonCheck && (
   <section class="pb-24 md:pb-32">
@@ -225,8 +229,8 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
     </div>
   </section>
 )}
-
-<!-- waarom -->
+<!-- waarom (alleen als het aan staat in Keystatic) -->
+{h.waarom.tonen && (
 <section id="waarom" class="tint py-24 md:py-32">
   <div class="wrap grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
     <div class="reveal lg:sticky lg:top-28 lg:self-start">
@@ -245,7 +249,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
   </div>
 </section>
 
-<Bewijs deel="video" b={b} />
+)}
 
 <!-- team -->
 <section id="over-ons" class="py-24 md:py-32">

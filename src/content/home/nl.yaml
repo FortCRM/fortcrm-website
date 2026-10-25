@@ -19,10 +19,7 @@ pipedrive:
   eyebrow: Pipedrive Authorized Partner
   titel: Officieel partner van Pipedrive
   tekst: FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het bij jouw team past, van eerste aanvraag tot oplevering, en zorgen dat je de functies gebruikt die het verschil maken.
-  voordelen:
-  - 30 dagen proefperiode via onze partnerlink, in plaats van 14
-  - Advies over het abonnement dat bij je team past
-  - Eén aanspreekpunt voor inrichting, koppelingen en vragen
+  voordelen: []
   functiesTitel: Wat Pipedrive voor je team doet
   functies:
   - titel: E-mailsynchronisatie
@@ -64,8 +61,8 @@ herkenbaar:
     tekst: Eén deal kost vijf gesprekken. Wat er is besproken, weet alleen degene die erbij zat.
   - citaat: Het gaat op gevoel.
     tekst: Je maakt weinig offertes, maar elke offerte telt. Opvolgen gaat op gevoel.
-  slotVet: Een CRM werkt niet doordat het er staat.
-  slot: Pipedrive werkt als het past bij hoe jouw team werkt, en als je het blijft bijsturen. Dat is wat wij doen.
+  slotVet: ''
+  slot: ''
 aanpak:
   eyebrow: Onze aanpak
   titel: Van eerste gesprek tot een team dat het gebruikt
@@ -104,13 +101,13 @@ voorWie:
     tekst: 'Kleine bedragen, grote aantallen. Winst zit in snelheid en een vaste route: elke aanvraag wordt op dezelfde manier opgepakt.'
     pagina: veel-aanvragen
     icoon: trechter
-  oproep: Herken je jezelf in een van de drie? Plan een gesprek van 30 minuten, dan kijken we wat Pipedrive voor jouw team kan doen. Past het niet, dan zeggen we dat eerlijk.
-  oproepLink: Plan een gesprek van 30 minuten
+  oproep: ''
+  oproepLink: ''
   nietVoorTitel: ''
   nietVoorTekst: ''
   meerTekst: Bekijk wat we inrichten
 scan:
-  tonen: true
+  tonen: false
   eyebrow: CRM-check
   titel: Nog niet klaar voor een gesprek?
   tekst: Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen. In het gesprek bouwen we op je uitslag voort.
@@ -193,6 +190,7 @@ pakketten:
     waarden:
     - Bij elk pakket af te nemen, zie hieronder.
   prijsnoot: 'Alle prijzen zijn excl. btw. Pipedrive-licenties zijn niet inbegrepen, die factureert Pipedrive zelf. Extra koppeling met een extern systeem: €950 per koppeling. Tech Discovery sessie: €1.295.'
+  slaKnop: Bekijk de onderhoudsabonnementen
   slaEyebrow: Na de start
   slaTitel: 'Onderhoudsabonnement: support, beheer en het ambitiegesprek'
   slaIntro: 'Met een onderhoudsabonnement blijven we sturen op gebruik. In elk niveau zit het ambitiegesprek: wat werkt, wat niet en wat de volgende stap is.'
@@ -247,6 +245,7 @@ garantie:
   - Wat actief is, leggen we vooraf samen vast. Geen discussie achteraf.
   noot: Beide garanties gelden voor Volledig ontzorgd en Shared.
 waarom:
+  tonen: false
   eyebrow: Waarom FortCRM
   titel: Gebruik is het doel, niet de oplevering
   punten:
@@ -271,7 +270,7 @@ waarom:
 team:
   eyebrow: Over ons
   titel: Twee mensen, samen ruim twintig jaar systeemimplementaties
-  intro: FortCRM is een jonge agency. Dat betekent dat je met de twee mensen werkt die het bedrijf draaien.
+  intro: Je werkt met de twee mensen die het bedrijf draaien.
   mensen:
   - naam: Joost Smaardijk
     rol: Strategie en begeleiding
@@ -298,14 +297,8 @@ faq:
     antwoord: Ja, met Projects. Een gewonnen deal wordt met één klik een project, met fases, taken en planning, en alle klantinformatie gaat mee. Projects zit in het Premium-abonnement en hoger; bij lagere abonnementen is het een add-on. Wij richten het in als onderdeel van je traject.
   - vraag: Wat als mijn team het niet gebruikt?
     antwoord: Daar is de garantie op gebruik voor. We kijken na 60 dagen samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie. Geldt voor Volledig ontzorgd en Shared.
-  - vraag: Kan ik mijn bestaande data meenemen?
-    antwoord: Ja. We zetten data uit Excel, mailboxen of je huidige CRM over naar Pipedrive en ruimen duplicaten op.
-  - vraag: Wat is klaar voor AI?
-    antwoord: AI is zo goed als de data waar het op werkt. Wij richten Pipedrive in met schone, consistente data, zodat je daar later AI-toepassingen op kunt zetten.
   - vraag: Wat kost het?
     antwoord: 'Zelfstandig kost €4.950, Shared €7.950 en Volledig ontzorgd €12.950. Na de start kies je een onderhoudsabonnement: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
-  - vraag: Heb ik al een Pipedrive-licentie nodig?
-    antwoord: 'Nee. Dat bespreken we in het eerste gesprek, en we adviseren welk abonnement past. Als Pipedrive-partner starten we je proefperiode via onze partnerlink: 30 dagen in plaats van 14.'
 contact:
   eyebrow: Contact
   titel: Plan een gesprek van 30 minuten

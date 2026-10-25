@@ -147,6 +147,7 @@ const homeSchema = {
         (p) => p.fields.onderdeel.value,
       ),
       prijsnoot: alinea("Noot onder de tabel"),
+      slaKnop: tekst("Knop om de onderhoudsabonnementen uit te klappen"),
       slaEyebrow: tekst("SLA: klein kopje"),
       slaTitel: tekst("SLA: titel"),
       slaIntro: alinea("SLA: inleiding"),
@@ -183,6 +184,7 @@ const homeSchema = {
   ),
   waarom: fields.object(
     {
+      tonen: fields.checkbox({ label: "Blok Waarom FortCRM tonen", defaultValue: false }),
       ...kop,
       punten: lijst(
         fields.object({ titel: tekst("Titel"), tekst: alinea("Tekst"), icoon: icoon("vinkje") }),
@@ -288,6 +290,7 @@ const homeSchema = {
 const instellingenSchema = {
   menu: fields.object(
     {
+      pipedrive: tekst("Pipedrive", "Leeg = niet in het menu."),
       aanpak: tekst("Aanpak"),
       pakketten: tekst("Pakketten"),
       voorWie: tekst("Voor wie"),

@@ -7,11 +7,10 @@ const { lang, vertaling } = Astro.props as { lang: Lang; vertaling?: string };
 const m = (await instellingen(lang)).menu;
 const home = pad(lang);
 const links = [
+  { href: `${home}#pipedrive`, tekst: m.pipedrive },
   { href: `${home}#aanpak`, tekst: m.aanpak },
-  { href: `${home}#voor-wie`, tekst: m.voorWie },
   { href: `${home}#pakketten`, tekst: m.pakketten },
   { href: `${home}#over-ons`, tekst: m.overOns },
-  { href: `${home}#faq`, tekst: m.faq },
   ...(m.quickscan && lang === "nl" ? [{ href: SITE.CHECK, tekst: m.quickscan }] : []),
   { href: pad(lang, "/blog/"), tekst: m.blog },
 ].filter((l) => l.tekst);
