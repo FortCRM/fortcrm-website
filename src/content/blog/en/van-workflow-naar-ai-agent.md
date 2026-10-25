@@ -12,7 +12,7 @@ Automation used to mean: a trigger, an action, a fixed route. If a form gets sub
 
 ## The shift from workflows to agents
 
-In 2026, this is shifting toward AI agents: systems that don't just follow a fixed route, but decide for themselves what the next step should be. You give an agent an instruction like "manage the follow-up on this lead," and the agent assesses on its own: was there recent contact, what's the current status, what's a logical next action? Platforms like n8n and Make have made this accessible without needing a team of developers.
+In 2026, this is shifting toward AI agents: systems that don't just follow a fixed route, but decide for themselves what the next step should be. You give an agent an instruction like "manage the follow-up on this lead," and the agent assesses on its own: was there recent contact, what's the current status, what's a logical next action? Modern automation platforms have made this accessible without needing a team of developers.
 
 The difference between a workflow and an agent isn't just technical: it changes what still ends up on someone's plate. A simple workflow covers the average case. Anything that deviates (a lead that doesn't respond twice, a quote that just missed its deadline) falls back to a human. An agent can assess those deviations itself and either handle them or escalate intelligently.
 

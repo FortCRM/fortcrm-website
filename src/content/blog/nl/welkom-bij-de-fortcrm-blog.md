@@ -12,7 +12,7 @@ Geen buzzwords, geen verkooppraatjes, gewoon concrete lessen uit de praktijk van
 
 ## Wat je kan verwachten
 
-- Praktische Pipedrive- en N8N-tips
+- Praktische tips voor Pipedrive en automatisering
 - Uitleg over security en GDPR zonder technisch jargon
 - Eerlijke verhalen over wat wel en niet werkt bij CRM-trajecten
 

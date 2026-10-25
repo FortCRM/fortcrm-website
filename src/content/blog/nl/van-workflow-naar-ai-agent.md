@@ -12,7 +12,7 @@ Automatisering betekende lange tijd: een trigger, een actie, een vaste route. Al
 
 ## De verschuiving van workflows naar agents
 
-In 2026 verschuift dit naar AI-agents: systemen die niet alleen een vaste route volgen, maar zelf bepalen wat de volgende stap moet zijn. Je geeft een agent een opdracht als "beheer de opvolging van deze lead", en de agent beoordeelt zelf: is er recent contact geweest, wat is de status, wat is een logische vervolgactie? Platforms als n8n en Make maken dit inmiddels toegankelijk zonder dat je een team aan ontwikkelaars nodig hebt.
+In 2026 verschuift dit naar AI-agents: systemen die niet alleen een vaste route volgen, maar zelf bepalen wat de volgende stap moet zijn. Je geeft een agent een opdracht als "beheer de opvolging van deze lead", en de agent beoordeelt zelf: is er recent contact geweest, wat is de status, wat is een logische vervolgactie? Moderne automatiseringsplatforms maken dit inmiddels toegankelijk zonder dat je een team aan ontwikkelaars nodig hebt.
 
 Het verschil tussen een workflow en een agent is niet alleen technisch, het verandert ook wat er handmatig blijft liggen. Een simpele workflow dekt het gemiddelde geval. Alles wat afwijkt (een lead die twee keer niet reageert, een offerte die net over de deadline gaat) valt terug op een mens. Een agent kan die afwijkingen zelf beoordelen en afhandelen, of in ieder geval slim escaleren.
 

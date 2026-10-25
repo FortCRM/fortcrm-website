@@ -12,7 +12,7 @@ No buzzwords, no sales pitches, just concrete lessons from the field of CRM impl
 
 ## What to expect
 
-- Practical Pipedrive and N8N tips
+- Practical tips for Pipedrive and automation
 - Explanations of security and GDPR without technical jargon
 - Honest stories about what does and doesn't work in CRM projects
 
