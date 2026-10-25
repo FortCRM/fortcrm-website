@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: Pipedrive-specialist voor het MKB
   titel: Al je klanten, offertes en afspraken op _één plek_.
-  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, offertes en opvolging bijhoudt. Zo blijft er niets liggen en weet iedereen wat er speelt.'
+  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, afspraken, offertes en de uitvoering daarna bijhoudt. Zo blijft er niets liggen en weet iedereen wat er speelt.'
   uitleg: ''
   beeldOnderschrift: ''
   belofte: Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet, dan staan wij ervoor in.*
@@ -62,8 +62,8 @@ herkenbaar:
     tekst: Er komen dagelijks aanvragen en orders binnen, maar iedereen handelt ze anders af.
   - citaat: Dat weet alleen wie erbij zat.
     tekst: Eén deal kost vijf gesprekken. Wat er is besproken, weet alleen degene die erbij zat.
-  - citaat: Het gaat op gevoel.
-    tekst: Je maakt weinig offertes, maar elke offerte telt. Opvolgen gaat op gevoel.
+  - citaat: Wat hadden we nou afgesproken?
+    tekst: Afspraken staan in mailtjes, notitieblokken en hoofden. Terugzoeken kost tijd, en soms een klant.
   slotVet: ''
   slot: ''
 aanpak:
@@ -75,7 +75,7 @@ aanpak:
     tekst: Een gesprek van 30 minuten over hoe jullie nu werken en wat je wilt bereiken. Deed je de CRM-check, dan nemen we je uitslag mee.
     resultaat: Een eerlijk antwoord of Pipedrive past.
   - titel: Ontwerp
-    tekst: We leggen vast hoe een aanvraag een klant wordt, in jullie eigen woorden.
+    tekst: We leggen in jullie eigen woorden vast hoe een aanvraag een klant wordt, en een opdracht een project.
     resultaat: Een inrichtingsplan dat je team herkent.
   - titel: Inrichting en automatisering
     tekst: FortCRM richt Pipedrive in, zet je data over en bouwt de automatisering eromheen.
@@ -90,18 +90,18 @@ aanpak:
   naderhandTekst: Wat werkt, wat niet, en wat de volgende stap is. Zo groeit Pipedrive mee met je bedrijf. Onderdeel van elk onderhoudsabonnement.
 voorWie:
   eyebrow: Voor wie we werken
-  titel: Drie soorten bedrijven waar Pipedrive het verschil maakt
+  titel: Van eerste aanvraag tot opgeleverd werk
   kaarten:
-  - titel: Weinig deals, hoge slagingskans
-    tekst: Bijvoorbeeld bouwbedrijven. Je maakt weinig offertes en elke telt. Winst zit in strakke opvolging van elke offerte.
+  - titel: Weinig opdrachten, groot werk
+    tekst: Bijvoorbeeld bouw en installatie. Elke offerte volg je strak op. Na de opdracht loopt de uitvoering als project in hetzelfde systeem, met alles wat je met de klant hebt afgesproken.
     pagina: weinig-deals
     icoon: offerte
-  - titel: Maatwerk en advies met meerdere gesprekken
-    tekst: Adviesbureaus en bureaus waar één deal meerdere gesprekken kost. Winst zit in een compleet klantbeeld, ook als iemand anders het overneemt.
+  - titel: Advies en maatwerk
+    tekst: Eén klant, veel gesprekken. Elke afspraak en elk besluit staat vast en is terug te vinden, ook als een collega het overneemt. Van eerste gesprek tot opdracht en levering.
     pagina: advies-maatwerk
     icoon: gesprek
-  - titel: Veel aanvragen, veel orders
-    tekst: 'Kleine bedragen, grote aantallen. Winst zit in snelheid en een vaste route: elke aanvraag wordt op dezelfde manier opgepakt.'
+  - titel: Veel aanvragen, veel klanten
+    tekst: Grote aantallen, één vaste route. Elke aanvraag wordt hetzelfde opgepakt. Na de verkoop weet iedereen wat er beloofd is.
     pagina: veel-aanvragen
     icoon: trechter
   oproep: ''

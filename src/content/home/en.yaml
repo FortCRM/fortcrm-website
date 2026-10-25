@@ -5,7 +5,7 @@ seo:
 hero:
   eyebrow: Pipedrive specialist for SMEs
   titel: All your clients, quotes and meetings in _one place_.
-  intro: 'We set up Pipedrive for you: the system where your whole team keeps track of client contact, quotes and follow-up. Nothing slips through and everyone knows what is going on.'
+  intro: 'We set up Pipedrive for you: the system where your whole team keeps track of client contact, agreements, quotes and the delivery that follows. Nothing slips through and everyone knows what is going on.'
   uitleg: ''
   beeldOnderschrift: ''
   belofte: Live within 6 weeks. Still in use after 60 days. If not, we stand behind it.*
@@ -62,8 +62,8 @@ herkenbaar:
     tekst: Requests and orders come in every day, but everyone handles them differently.
   - citaat: Only the person who was there knows.
     tekst: One deal takes five conversations. What was discussed is known only to whoever was in the room.
-  - citaat: It runs on gut feeling.
-    tekst: You send few quotes, but every quote counts. Follow-up runs on gut feeling.
+  - citaat: What did we agree again?
+    tekst: Agreements live in emails, notepads and people's heads. Looking them up costs time, and sometimes a client.
   slotVet: ''
   slot: ''
 aanpak:
@@ -75,7 +75,7 @@ aanpak:
     tekst: A 30-minute call about how you work today and what you want to achieve.
     resultaat: An honest answer on whether Pipedrive fits.
   - titel: Design
-    tekst: We map how a request becomes a customer, in your own words.
+    tekst: In your own words, we map how a request becomes a customer, and an order becomes a project.
     resultaat: A setup plan your team recognises.
   - titel: Setup and automation
     tekst: FortCRM sets up Pipedrive, migrates your data and builds the automation around it.
@@ -90,18 +90,18 @@ aanpak:
   naderhandTekst: What works, what doesn't, and what the next step is. That way Pipedrive grows with your business. Part of every SLA.
 voorWie:
   eyebrow: Who we help
-  titel: Three kinds of businesses where Pipedrive makes the difference
+  titel: From first request to delivered work
   kaarten:
-  - titel: Few deals, high win rate
-    tekst: Construction companies, for example. You send few quotes and each one counts. The gain is in tight follow-up on every quote.
+  - titel: Few orders, big jobs
+    tekst: Construction and installation, for example. You follow up every quote closely. Once you win the job, delivery runs as a project in the same system, with everything you agreed with the client.
     pagina: ''
     icoon: offerte
-  - titel: Custom work and advice with several conversations
-    tekst: Consultancies and agencies where one deal takes several conversations. The gain is a complete customer picture, even when someone else takes over.
+  - titel: Advice and custom work
+    tekst: One client, many conversations. Every agreement and decision is recorded and easy to find, even when a colleague takes over. From first meeting to order and delivery.
     pagina: ''
     icoon: gesprek
-  - titel: Many requests, many orders
-    tekst: 'Small amounts, large volumes. The gain is speed and a fixed route: every request is handled the same way.'
+  - titel: Many requests, many clients
+    tekst: Large volumes, one fixed route. Every request is handled the same way. After the sale, everyone knows what was promised.
     pagina: ''
     icoon: trechter
   oproep: ''
