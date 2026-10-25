@@ -19,7 +19,7 @@ Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koop
 
 2.2 De opdracht komt tot stand zodra de klant de offerte digitaal of schriftelijk akkoord geeft.
 
-2.3 Wat binnen de opdracht valt, staat in de offerte. Extra werk tijdens de implementatie doen we pas na akkoord op een aanvullende offerte. Meeruren na livegang rekenen we af tegen de uurtarieven uit de offerte, maandelijks achteraf.
+2.3 Wat binnen de opdracht valt, staat in de offerte. Extra werk tijdens de implementatie doen we pas na akkoord op een aanvullende offerte. Uren na livegang rekenen we af tegen de uurtarieven uit de offerte, maandelijks achteraf: het tarief onder SLA als de klant een onderhoudsabonnement heeft, anders het tarief zonder SLA.
 
 ## 3. Uitvoering
 
@@ -58,7 +58,7 @@ Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koop
 
 ## 6. Onderhoudsabonnement
 
-6.1 Een onderhoudsabonnement (SLA) start bij livegang met een gratis proefmaand. Daarna loopt het per kalendermaand en wordt het telkens stilzwijgend met een maand verlengd.
+6.1 Een onderhoudsabonnement (SLA) is optioneel. Kiest de klant ervoor, dan start het bij livegang met een gratis proefmaand. Daarna loopt het per kalendermaand en wordt het telkens stilzwijgend met een maand verlengd.
 
 6.2 Beide partijen kunnen het abonnement opzeggen met een opzegtermijn van één maand, per het einde van een kalendermaand.
 

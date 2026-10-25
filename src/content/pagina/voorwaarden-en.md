@@ -19,7 +19,7 @@ These are the general terms and conditions of FortCRM, registered with the Dutch
 
 2.2 The engagement starts as soon as the client accepts the quote digitally or in writing.
 
-2.3 The scope of the work is set out in the quote. Extra work during the implementation is only done after the client accepts an additional quote. Extra hours after go-live are charged at the hourly rates in the quote, monthly in arrears.
+2.3 The scope of the work is set out in the quote. Extra work during the implementation is only done after the client accepts an additional quote. Hours after go-live are charged at the hourly rates in the quote, monthly in arrears: the SLA rate if the client has a support plan, otherwise the rate without SLA.
 
 ## 3. Delivery
 
@@ -58,7 +58,7 @@ These are the general terms and conditions of FortCRM, registered with the Dutch
 
 ## 6. Support plans
 
-6.1 A support plan (SLA) starts at go-live with a free trial month. After that it runs per calendar month and renews automatically each month.
+6.1 A support plan (SLA) is optional. If the client chooses one, it starts at go-live with a free trial month. After that it runs per calendar month and renews automatically each month.
 
 6.2 Either party can cancel the plan with one month's notice, effective at the end of a calendar month.
 
