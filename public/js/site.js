@@ -193,7 +193,7 @@
       prog.parentNode.hidden = false;
       if (i < Q.length) question(); else if (i === Q.length) gate(); else result();
       var t = document.getElementById('qt');
-      if (!first) { if (t) t.focus({ preventScroll: true }); root.scrollIntoView({ block: 'start' }); }
+      if (!first && t) t.focus({ preventScroll: true });
     };
     step(true);
   }

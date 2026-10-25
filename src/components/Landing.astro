@@ -42,7 +42,7 @@ const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
   <section class="band py-24 md:py-32">
     <div class="wrap">
       <Sectiekop eyebrow={d.eyebrow} titel={d.inrichtingTitel} />
-      <div class="mt-12 grid md:grid-cols-3 gap-8">
+      <div class:list={["mt-12 grid gap-8", d.inrichting.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"]}>
         {d.inrichting.map((k: any, i: number) => {
           return (
             <div class="reveal rounded-2xl border border-inkt/10 bg-white/[0.04] p-8">

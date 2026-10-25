@@ -19,4 +19,7 @@ inrichting:
 - titel: Koppeling met mail en agenda
   tekst: Mail en afspraken komen automatisch bij de juiste deal terecht.
   icoon: koppeling
+- titel: Van opdracht naar project
+  tekst: Een gewonnen opdracht wordt een project met fases en taken. Wie het werk uitvoert, ziet direct wat er met de klant is besproken.
+  icoon: project
 slot: Bij meerdere gesprekken per deal gaat informatie verloren tussen de gesprekken.

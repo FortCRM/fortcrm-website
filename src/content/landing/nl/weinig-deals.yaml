@@ -19,4 +19,7 @@ inrichting:
 - titel: Zicht op de verwachte omzet
   tekst: Een overzicht van wat er loopt, met kans en waarde per offerte.
   icoon: grafiek
+- titel: Van offerte naar project
+  tekst: Is de offerte getekend, dan wordt de deal met één klik een project. Planning en uitvoering starten met alle informatie uit de verkoop.
+  icoon: project
 slot: Bij weinig offertes mag er geen enkele blijven liggen.

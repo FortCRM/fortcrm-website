@@ -18,7 +18,7 @@ hero:
 pipedrive:
   eyebrow: Pipedrive Authorized Partner
   titel: Officieel partner van Pipedrive
-  tekst: FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het bij jouw team past, en zorgen dat je de functies gebruikt die het verschil maken.
+  tekst: FortCRM is Authorized Partner van Pipedrive. Wij richten het in zoals het bij jouw team past, van eerste aanvraag tot oplevering, en zorgen dat je de functies gebruikt die het verschil maken.
   voordelen:
   - 30 dagen proefperiode via onze partnerlink, in plaats van 14
   - Advies over het abonnement dat bij je team past
@@ -43,6 +43,9 @@ pipedrive:
   - titel: Automatiseringen
     tekst: Taken, mails en updates lopen vanzelf, op basis van wat er in een deal gebeurt.
     icoon: bliksem
+  - titel: Projects
+    tekst: 'Na de verkoop: planning, taken en oplevering in hetzelfde systeem. Een gewonnen deal wordt met één klik een project.'
+    icoon: project
   - titel: Rapportages
     tekst: Dashboards met je verkoopoverzicht, verwachte omzet en resultaten per verkoper.
     icoon: grafiek
@@ -291,6 +294,8 @@ faq:
     antwoord: 'Binnen 6 weken ben je live, mits je wensen en afspraken op tijd rond zijn. Live betekent: opgeleverd, getest volgens de afspraken en je team is getraind. Lukt dat niet, dan betaal je bij Volledig ontzorgd en Shared geen licentiekosten over de uitloop.'
   - vraag: Waarom Pipedrive?
     antwoord: Pipedrive is eenvoudig genoeg om dagelijks te gebruiken en krachtig genoeg om mee te groeien. Dat laatste is de reden dat teams het blijven gebruiken.
+  - vraag: Kan Pipedrive ook projecten beheren?
+    antwoord: Ja, met Projects. Een gewonnen deal wordt met één klik een project, met fases, taken en planning, en alle klantinformatie gaat mee. Projects zit in het Premium-abonnement en hoger; bij lagere abonnementen is het een add-on. Wij richten het in als onderdeel van je traject.
   - vraag: Wat als mijn team het niet gebruikt?
     antwoord: Daar is de garantie op gebruik voor. We kijken na 60 dagen samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie. Geldt voor Volledig ontzorgd en Shared.
   - vraag: Kan ik mijn bestaande data meenemen?

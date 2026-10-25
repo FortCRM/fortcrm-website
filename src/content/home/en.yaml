@@ -18,7 +18,7 @@ hero:
 pipedrive:
   eyebrow: Pipedrive Authorized Partner
   titel: An official Pipedrive partner
-  tekst: FortCRM is an Authorized Partner of Pipedrive. We set it up the way your team works, and make sure you use the features that make the difference.
+  tekst: FortCRM is an Authorized Partner of Pipedrive. We set it up the way your team works, from first lead to delivery, and make sure you use the features that make the difference.
   voordelen:
   - 30-day trial through our partner link instead of 14
   - Advice on the plan that fits your team
@@ -43,6 +43,9 @@ pipedrive:
   - titel: Automations
     tekst: Tasks, emails and updates run by themselves, based on what happens in a deal.
     icoon: bliksem
+  - titel: Projects
+    tekst: 'After the sale: planning, tasks and delivery in the same system. A won deal becomes a project in one click.'
+    icoon: project
   - titel: Reporting
     tekst: Dashboards with your pipeline, expected revenue and results per rep.
     icoon: grafiek
@@ -291,6 +294,8 @@ faq:
     antwoord: 'You are live within 6 weeks, provided your requirements are in order. Live means: delivered, tested against what we agreed and your team is trained. If we miss that, with Fully managed and Shared you pay no licence fees for the overrun.'
   - vraag: Why Pipedrive?
     antwoord: Pipedrive is simple enough to use every day and powerful enough to grow with you. That second part is why teams keep using it.
+  - vraag: Can Pipedrive manage projects too?
+    antwoord: Yes, with Projects. A won deal becomes a project in one click, with phases, tasks and planning, and all client information carries over. Projects is included in the Premium plan and up; on lower plans it is an add-on. We set it up as part of your project.
   - vraag: What if my team doesn't use it?
     antwoord: That is what the usage guarantee is for. After 60 days we check together whether your team is actively using Pipedrive. If not, you get an extra training session for free. Applies to Fully managed and Shared.
   - vraag: Can I bring my existing data?
