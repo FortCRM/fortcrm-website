@@ -275,11 +275,6 @@ pakketten:
         - '1'
         - '2'
         - '3'
-    - onderdeel: Migratie van je data
-      waarden:
-        - Eén Excel- of CSV-bestand
-        - Eén systeem
-        - Tot twee systemen
     - onderdeel: Koppeling met extern systeem
       waarden:
         - Los af te nemen
@@ -400,7 +395,7 @@ waarom:
 team:
   eyebrow: Over ons
   titel: Twee mensen, samen ruim twintig jaar systeemimplementaties
-  intro: Je werkt met de twee mensen die het bedrijf draaien.
+  intro: ''
   mensen:
     - naam: Joost Smaardijk
       rol: Strategie en begeleiding

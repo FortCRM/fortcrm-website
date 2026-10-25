@@ -216,11 +216,6 @@ pakketten:
     - '1'
     - '2'
     - '3'
-  - onderdeel: Data migration
-    waarden:
-    - One Excel or CSV file
-    - One system
-    - Up to two systems
   - onderdeel: Integration with an external system
     waarden:
     - Available separately
@@ -328,7 +323,7 @@ waarom:
 team:
   eyebrow: About us
   titel: Two people, over twenty years of system implementations combined
-  intro: You work with the two people who run the company.
+  intro: ''
   mensen:
   - naam: Joost Smaardijk
     rol: Strategy and guidance
