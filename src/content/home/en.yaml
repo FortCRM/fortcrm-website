@@ -11,7 +11,7 @@ hero:
   belofte: Live within 6 weeks. Still in use after 60 days. If not, we stand behind it.*
   knopGesprek: Book a call
   knopPakketten: See the packages
-  knopScan: ''
+  knopScan: Or take the CRM check first (2 min)
   knopDemo: or request a demo
   voetnoot: '* Not live within 6 weeks while your requirements were in order? Then you pay no licence fees for the overrun. If your team is not actively using Pipedrive after 60 days, you get an extra training session for free. Both guarantees apply to Fully managed and Shared. What active means is agreed together up front.'
   beeld:
@@ -289,7 +289,7 @@ pakketten:
   slaKort: After that you choose a maintenance plan, from €595 per month.
   paginaTitel: Pipedrive implementation packages and pricing | FortCRM
   paginaBeschrijving: 'Three packages for a Pipedrive implementation: Self-directed, Shared and Fully managed. Who does what, what you get and what it costs.'
-  knopScan: ''
+  knopScan: Or take the CRM check first (2 min)
 garantie:
   getal: '60'
   getalTekst: day guarantee

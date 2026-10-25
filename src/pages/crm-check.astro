@@ -4,7 +4,7 @@ import { getEntry } from "astro:content";
 const scan = (await getEntry("quickscan", "nl"))?.data ?? null;
 ---
 
-<PageLayout title="CRM-check: hoe staat je CRM-basis ervoor? | FortCRM" description="Zes vragen, twee minuten. Zie direct hoe het staat met vastleggen, opvolgen en delen in je bedrijf." lang="nl">
+<PageLayout title="CRM-check: hoe staat je CRM-basis ervoor? | FortCRM" description="Zes vragen, twee minuten. Zie direct hoe het staat met vastleggen, opvolgen en delen in je bedrijf." lang="nl" vertaling="/en/crm-check/">
   <script is:inline define:vars={{ scan }}>window.FORTCRM_SCAN = scan;</script>
   <section>
     <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">

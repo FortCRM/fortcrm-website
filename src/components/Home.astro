@@ -19,7 +19,7 @@ const [oproepVoor, oproepNa] = h.voorWie.oproepLink && h.voorWie.oproep.includes
   ? h.voorWie.oproep.split(h.voorWie.oproepLink)
   : [h.voorWie.oproep, null];
 const nl = lang === "nl";
-const toonCheck = nl && h.scan?.tonen;
+const toonCheck = h.scan?.tonen;
 const heeftCijfers = (b.cijfers ?? []).some((c: any) => c.getal);
 const nr = (i: number) => String(i + 1).padStart(2, "0");
 const swipe = "Swipe ← →";
@@ -40,8 +40,8 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
       <p class="mt-6 text-lg md:text-xl text-inkt/70 max-w-xl leading-relaxed">{h.hero.intro}</p>
       <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
         <a href="#contact" data-plan class="knop px-8">{h.hero.knopGesprek}</a>
-        {h.hero.knopScan && nl ? (
-          <a href={SITE.CHECK} class="tekstlink">{h.hero.knopScan} →</a>
+        {h.hero.knopScan ? (
+          <a href={pad(lang, SITE.CHECK)} class="tekstlink">{h.hero.knopScan} →</a>
         ) : (
           <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
         )}
@@ -224,7 +224,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">{h.scan.titel}</h2>
           <p class="mt-3 text-inkt/70 leading-relaxed">{h.scan.tekst}</p>
         </div>
-        <a href={SITE.CHECK} class="knop-lijn px-8">{h.scan.knop} →</a>
+        <a href={pad(lang, SITE.CHECK)} class="knop-lijn px-8">{h.scan.knop} →</a>
       </div>
     </div>
   </section>

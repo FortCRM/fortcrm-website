@@ -75,7 +75,7 @@
   };
 
   /* teksten uit Keystatic (Quick scan: uitslagteksten) gaan voor */
-  var KS = window.FORTCRM_SCAN;
+  var KS = CFG.lang === 'en' ? null : window.FORTCRM_SCAN;
   if (KS) {
     var n3 = function (o) { return o ? [o.niet, o.deels, o.wel] : null; };
     if (KS.niveaus) LEVEL = n3(KS.niveaus);
@@ -87,6 +87,101 @@
       if (t) TYPE[k] = { kop: t.kop, tekst: t.tekst, stap: [t.stap1, t.stap2, t.stap3].filter(Boolean) };
     });
     if (KS.wens) Object.keys(KS.wens).forEach(function (k) { if (KS.wens[k]) PAIN[k] = KS.wens[k]; });
+  }
+
+  /* Engelse versie van de CRM-check (pagina /en/crm-check/). Interne sleutels blijven Nederlands. */
+  var SCAN_EN = CFG.lang === 'en';
+  var PARTNAAM = { 'Vastleggen': 'Vastleggen', 'Opvolgen': 'Opvolgen', 'Delen': 'Delen' };
+  var S = {
+    vraag: function (a, b) { return 'Vraag ' + a + ' van ' + b; }, laatste: 'Laatste stap', terug: 'Terug', volgende: 'Volgende', naarUitslag: 'Naar de uitslag',
+    gateKop: 'Waar sturen we de uitslag naartoe?', gateLead: 'Je ziet de uitslag direct na dit scherm. Meer hebben we niet nodig.',
+    voornaam: 'Voornaam', email: 'E-mailadres', bel: 'Bel me liever. Ik laat mijn telefoonnummer achter.',
+    optin: 'Stuur me ook de FortCRM-inzichten over CRM en AI voor het MKB, maximaal één keer per maand. Opzeggen kan altijd.',
+    tel: 'Telefoonnummer', toon: 'Toon mijn uitslag',
+    micro: 'We gebruiken je gegevens alleen voor deze uitslag en om te reageren als je een gesprek wilt.',
+    errNaam: 'Vul je voornaam in.', errMail: 'Dit e-mailadres lijkt niet te kloppen.', errTel: 'Vul je telefoonnummer in, of haal het vinkje weg.',
+    head: ['Je basis heeft aandacht nodig', 'Je basis staat voor de helft', 'Je basis staat er al goed voor'],
+    uitslagVoor: 'Uitslag voor ', opOrde: 'Je basis is op orde.', beginBij: function (p) { return 'Begin bij ' + p.toLowerCase() + '.'; },
+    klein: 'Wij zijn vooral sterk voor bedrijven vanaf 5 medewerkers. Plan toch een gesprek, dan kijken we samen of het past.',
+    stappen: 'Drie eerste stappen', gesprek: 'Plan een gesprek van 30 minuten', pakketten: 'Bekijk de pakketten',
+    contactUrl: '/#contact', pakkettenUrl: '/pakketten/',
+    disclaimer: 'Dit is een eerste indruk op basis van zes vragen, geen volledige analyse. In het gesprek kijken we naar jullie echte situatie.'
+  };
+  if (SCAN_EN) {
+    PARTNAAM = { 'Vastleggen': 'Recording', 'Opvolgen': 'Follow-up', 'Delen': 'Sharing' };
+    Q = [
+      { id: 'size', title: 'How many people work at your company?', opts: [
+        ['1-4', '1 to 4 people'], ['5-25', '5 to 25 people'], ['26-100', '26 to 100 people'],
+        ['101-250', '101 to 250 people'], ['250+', 'More than 250 people']] },
+      { id: 'type', title: 'Which description fits your company best?', opts: [
+        ['A', 'Many requests or orders, each with a low value'],
+        ['B', 'Custom work and advice, with several conversations per deal'],
+        ['C', 'Few quotes, but every quote counts'],
+        ['D', 'None of these, or I am not sure']] },
+      { id: 'vast', part: 'Vastleggen', title: 'Where are client details and agreements kept?', opts: [
+        [2, 'In one system. Everyone fills it in the same way.'],
+        [1, 'Partly in a system, partly in mailboxes, Excel or people\'s heads.'],
+        [0, 'Scattered. Every colleague does it their own way.']] },
+      { id: 'volg', part: 'Opvolgen', title: 'What happens to a new request or quote?', opts: [
+        [2, 'There is a fixed route. Nothing gets left behind.'],
+        [1, 'Usually it gets followed up, but it depends on how busy we are.'],
+        [0, 'Follow-up runs on gut feeling, when there is time.']] },
+      { id: 'deel', part: 'Delen', title: 'A colleague is ill. Can someone else take over their clients?', opts: [
+        [2, 'Yes, within minutes. Everything is in the system.'],
+        [1, 'Yes, but it takes some digging first.'],
+        [0, 'No. Only the person who was there knows what was discussed.']] },
+      { id: 'pain', title: 'What do you want solved first?', opts: [
+        ['lead', 'No more requests or quotes left behind'],
+        ['overzicht', 'A clear view of sales and expected revenue'],
+        ['handwerk', 'Less manual work and admin'],
+        ['gebruik', 'A team that actually uses the system']] }
+    ];
+    LEVEL = ['Not in order yet', 'Partly in order', 'In order'];
+    PART = {
+      'Vastleggen': [
+        'Client details are scattered. Start with one place where everything lands, with fixed fields.',
+        'Most of it is recorded, but not by everyone in the same way. Fixed fields and agreements make it reliable.',
+        'You record in one place and one way. That is the foundation for automation and AI.'],
+      'Opvolgen': [
+        'Follow-up depends on who has time. A fixed route with reminders keeps deals from stalling.',
+        'It usually goes well, but busy periods cost deals. Automatic reminders and fixed steps catch that.',
+        'Follow-up is in place. The question is whether it stays that way as you grow.'],
+      'Delen': [
+        'Knowledge lives in people\'s heads. As soon as someone is away, a deal stalls.',
+        'Taking over is possible, but takes digging. That calls for a shared client view per contact and deal.',
+        'Your team can take over from each other without a phone call. That is rare.']
+    };
+    TYPE = {
+      A: { kop: 'Many requests, many clients', tekst: 'With many requests, what counts is that every lead follows the same route. Fast replies and automatic follow-up pay off most here.',
+        stap: ['Bring all request channels into one pipeline.', 'Set a fixed route with reminders.', 'Automate the first reply and the tasks after it.'] },
+      B: { kop: 'Advice and custom work', tekst: 'With several conversations per deal, information gets lost in between. A complete client view per deal makes the difference.',
+        stap: ['Record what was discussed after every meeting, with a fixed structure.', 'Connect email and calendar to the deal.', 'Make the next step clear for every stage.'] },
+      C: { kop: 'Few orders, big jobs', tekst: 'With few quotes, not a single one can slip. Tight quote follow-up is worth its weight in gold here.',
+        stap: ['Log every quote with a follow-up date.', 'Let Pipedrive create a task when a quote sits idle.', 'Track the probability and expected value of every quote.'] },
+      D: { kop: 'Still looking for the right setup', tekst: 'First make sure the foundation is right. Then we choose together which route fits your company.',
+        stap: ['Map how a request turns into a client today.', 'Choose the smallest setup that supports that.', 'Expand once the team uses it.'] }
+    };
+    PAIN = {
+      lead: 'You want no more requests left behind. That calls for a fixed follow-up route.',
+      overzicht: 'You want a clear view of sales and revenue. That first calls for reliable input.',
+      handwerk: 'You want less manual work. We solve that with automation around Pipedrive.',
+      gebruik: 'You want your team to use it. You get there with a setup that fits how you work.'
+    };
+    S = {
+      vraag: function (a, b) { return 'Question ' + a + ' of ' + b; }, laatste: 'Last step', terug: 'Back', volgende: 'Next', naarUitslag: 'See my result',
+      gateKop: 'Where should we send your result?', gateLead: 'You will see your result right after this screen. That is all we need.',
+      voornaam: 'First name', email: 'Email address', bel: 'Call me instead. I will leave my phone number.',
+      optin: 'Also send me the FortCRM insights on CRM and AI for SMEs, at most once a month. Unsubscribe at any time.',
+      tel: 'Phone number', toon: 'Show my result',
+      micro: 'We only use your details for this result and to reply if you want a call.',
+      errNaam: 'Please enter your first name.', errMail: 'This email address does not look right.', errTel: 'Please enter your phone number, or untick the box.',
+      head: ['Your foundation needs attention', 'Your foundation is halfway there', 'Your foundation is in good shape'],
+      uitslagVoor: 'Result for ', opOrde: 'Your foundation is in order.', beginBij: function (p) { return 'Start with ' + p.toLowerCase() + '.'; },
+      klein: 'We are strongest for companies with 5 or more employees. Book a call anyway and we will see together whether it fits.',
+      stappen: 'Three first steps', gesprek: 'Book a 30-minute call', pakketten: 'See the packages',
+      contactUrl: '/en/#contact', pakkettenUrl: '/en/packages/',
+      disclaimer: 'This is a first impression based on six questions, not a full analysis. In the call we look at your actual situation.'
+    };
   }
 
   /* ---------- quick scan ---------- */
@@ -103,19 +198,19 @@
         h += '<li class="' + (k < i ? 'done' : k === i ? 'now' : '') + '"></li>';
       }
       prog.innerHTML = h;
-      prog.setAttribute('aria-label', i < Q.length ? 'Vraag ' + (i + 1) + ' van ' + Q.length : 'Laatste stap');
+      prog.setAttribute('aria-label', i < Q.length ? S.vraag(i + 1, Q.length) : S.laatste);
     };
 
     var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
     var question = function () {
-      var q = Q[i], h = '<div class="qcard"><p class="eyebrow">Vraag ' + (i + 1) + ' van ' + Q.length + '</p>' +
+      var q = Q[i], h = '<div class="qcard"><p class="eyebrow">' + S.vraag(i + 1, Q.length) + '</p>' +
         '<h2 id="qt" tabindex="-1">' + q.title + '</h2><fieldset class="opts"><legend class="sr-only">' + q.title + '</legend>';
       q.opts.forEach(function (o, n) {
         h += '<label class="opt"><input type="radio" name="q" value="' + o[0] + '"' + (String(ans[q.id]) === String(o[0]) ? ' checked' : '') + '><span>' + o[1] + '</span></label>';
       });
-      h += '</fieldset><div class="qnav">' + (i ? '<button type="button" class="btn line" data-back>Terug</button>' : '') +
-        '<button type="button" class="btn" data-next disabled>' + (i === Q.length - 1 ? 'Naar de uitslag' : 'Volgende') + '</button></div></div>';
+      h += '</fieldset><div class="qnav">' + (i ? '<button type="button" class="btn line" data-back>' + S.terug + '</button>' : '') +
+        '<button type="button" class="btn" data-next disabled>' + (i === Q.length - 1 ? S.naarUitslag : S.volgende) + '</button></div></div>';
       body.innerHTML = h;
       var nx = body.querySelector('[data-next]');
       if (ans[q.id] !== undefined) nx.disabled = false;
@@ -129,33 +224,33 @@
     };
 
     var gate = function () {
-      body.innerHTML = '<div class="qcard"><p class="eyebrow">Laatste stap</p>' +
-        '<h2 id="qt" tabindex="-1">Waar sturen we de uitslag naartoe?</h2>' +
-        '<p class="lead">Je ziet de uitslag direct na dit scherm. Meer hebben we niet nodig.</p>' +
+      body.innerHTML = '<div class="qcard"><p class="eyebrow">' + S.laatste + '</p>' +
+        '<h2 id="qt" tabindex="-1">' + S.gateKop + '</h2>' +
+        '<p class="lead">' + S.gateLead + '</p>' +
         '<form id="gate" novalidate style="display:grid;gap:14px">' +
-        '<label class="fld">Voornaam<input name="naam" autocomplete="given-name" required></label>' +
-        '<label class="fld">E-mailadres<input name="mail" type="email" autocomplete="email" required></label>' +
-        '<label class="chk"><input type="checkbox" name="bel" id="bel"><span>Bel me liever. Ik laat mijn telefoonnummer achter.</span></label>' +
-        '<label class="chk"><input type="checkbox" name="optin" id="opt-in"><span>Stuur me ook de FortCRM-inzichten over CRM en AI voor het MKB, maximaal één keer per maand. Opzeggen kan altijd.</span></label>' +
-        '<label class="fld" id="telw" hidden>Telefoonnummer<input name="tel" type="tel" autocomplete="tel"></label>' +
+        '<label class="fld">' + S.voornaam + '<input name="naam" autocomplete="given-name" required></label>' +
+        '<label class="fld">' + S.email + '<input name="mail" type="email" autocomplete="email" required></label>' +
+        '<label class="chk"><input type="checkbox" name="bel" id="bel"><span>' + S.bel + '</span></label>' +
+        '<label class="chk"><input type="checkbox" name="optin" id="opt-in"><span>' + S.optin + '</span></label>' +
+        '<label class="fld" id="telw" hidden>' + S.tel + '<input name="tel" type="tel" autocomplete="tel"></label>' +
         '<p class="msg" role="alert" id="gmsg"></p>' +
-        '<div class="qnav"><button type="button" class="btn line" data-back>Terug</button><button class="btn" type="submit">Toon mijn uitslag</button></div>' +
-        '<p class="micro">We gebruiken je gegevens alleen voor deze uitslag en om te reageren als je een gesprek wilt. <a href="#privacy">Privacy</a></p></form></div>';
+        '<div class="qnav"><button type="button" class="btn line" data-back>' + S.terug + '</button><button class="btn" type="submit">' + S.toon + '</button></div>' +
+        '<p class="micro">' + S.micro + ' <a href="#privacy">Privacy</a></p></form></div>';
       var f = body.querySelector('#gate');
       f.bel.addEventListener('change', function () { f.querySelector('#telw').hidden = !f.bel.checked; });
       body.querySelector('[data-back]').addEventListener('click', function () { i--; step(); });
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         var msg = f.querySelector('#gmsg');
-        if (!f.naam.value.trim()) { msg.textContent = 'Vul je voornaam in.'; f.naam.focus(); return; }
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.mail.value.trim())) { msg.textContent = 'Dit e-mailadres lijkt niet te kloppen.'; f.mail.focus(); return; }
-        if (f.bel.checked && !f.tel.value.trim()) { msg.textContent = 'Vul je telefoonnummer in, of haal het vinkje weg.'; f.tel.focus(); return; }
+        if (!f.naam.value.trim()) { msg.textContent = S.errNaam; f.naam.focus(); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.mail.value.trim())) { msg.textContent = S.errMail; f.mail.focus(); return; }
+        if (f.bel.checked && !f.tel.value.trim()) { msg.textContent = S.errTel; f.tel.focus(); return; }
         nm = f.naam.value.trim();
         ml = f.mail.value.trim();
         if (CFG.formEndpoint) {
           send({ soort: 'quickscan', naam: nm, mail: f.mail.value.trim(), terugbellen: f.bel.checked,
-            telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan' }).catch(function () {});
-          if (f.optin.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan' }).catch(function () {});
+            telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan', taal: CFG.lang || 'nl' }).catch(function () {});
+          if (f.optin.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan', taal: CFG.lang || 'nl' }).catch(function () {});
         }
         i++; step();
       });
@@ -170,20 +265,20 @@
       var total = parts.reduce(function (a, p) { return a + p.s; }, 0);
       var low = parts.slice().sort(function (a, b) { return a.s - b.s; })[0];
       var t = TYPE[ans.type];
-      var head = total >= 5 ? 'Je basis staat er al goed voor' : total >= 3 ? 'Je basis staat voor de helft' : 'Je basis heeft aandacht nodig';
-      var h = '<div class="result"><div class="rh"><p class="eyebrow">Uitslag voor ' + esc(nm) + '</p><h2 id="qt" tabindex="-1">' + head + '</h2>' +
+      var head = total >= 5 ? S.head[2] : total >= 3 ? S.head[1] : S.head[0];
+      var h = '<div class="result"><div class="rh"><p class="eyebrow">' + S.uitslagVoor + esc(nm) + '</p><h2 id="qt" tabindex="-1">' + head + '</h2>' +
         '<p>' + t.kop + '. ' + t.tekst + '</p></div><div class="rb">';
       h += '<ul class="ind">';
       parts.forEach(function (p) {
-        h += '<li><span class="nm">' + p.naam + '</span><span class="chip s' + p.s + '">' + LEVEL[p.s] + '</span><span class="tx">' + PART[p.naam][p.s] + '</span></li>';
+        h += '<li><span class="nm">' + PARTNAAM[p.naam] + '</span><span class="chip s' + p.s + '">' + LEVEL[p.s] + '</span><span class="tx">' + PART[p.naam][p.s] + '</span></li>';
       });
-      h += '</ul><p class="focus">' + (total === 6 ? '<b>Je basis is op orde.</b> ' : '<b>Begin bij ' + low.naam.toLowerCase() + '.</b> ') + PAIN[ans.pain] + '</p>';
+      h += '</ul><p class="focus">' + (total === 6 ? '<b>' + S.opOrde + '</b> ' : '<b>' + S.beginBij(PARTNAAM[low.naam]) + '</b> ') + PAIN[ans.pain] + '</p>';
       if (ans.size === '1-4') {
-        h += '<p class="note">Wij zijn vooral sterk voor bedrijven vanaf 5 medewerkers. Plan toch een gesprek, dan kijken we samen of het past.</p>';
+        h += '<p class="note">' + S.klein + '</p>';
       }
-      h += '<div class="res-sub"><h3>Drie eerste stappen</h3><ol>' + t.stap.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>';
-      h += '<div class="next"><div class="btnrow"><a class="btn" href="/#contact" data-plan>Plan een gesprek van 30 minuten</a><a class="btn line" href="/pakketten/">Bekijk de pakketten</a></div>' +
-        '<p class="micro">Dit is een eerste indruk op basis van zes vragen, geen volledige analyse. In het gesprek kijken we naar jullie echte situatie.</p></div>';
+      h += '<div class="res-sub"><h3>' + S.stappen + '</h3><ol>' + t.stap.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>';
+      h += '<div class="next"><div class="btnrow"><a class="btn" href="' + S.contactUrl + '" data-plan>' + S.gesprek + '</a><a class="btn line" href="' + S.pakkettenUrl + '">' + S.pakketten + '</a></div>' +
+        '<p class="micro">' + S.disclaimer + '</p></div>';
       h += '</div></div>';
       body.innerHTML = h;
       prog.parentNode.hidden = true;

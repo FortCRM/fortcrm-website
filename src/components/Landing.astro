@@ -35,7 +35,7 @@ const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
     <p class="mt-6 text-lg md:text-xl text-inkt/75 max-w-xl leading-relaxed">{d.intro}</p>
     <div class="mt-10 flex flex-wrap items-center gap-6">
       <a href="#contact" data-plan class="knop px-8">{h.hero.knopGesprek}</a>
-      {lang === "nl" && h.hero.knopScan && <a href={SITE.CHECK} class="tekstlink">{h.hero.knopScan} →</a>}
+      {h.hero.knopScan && <a href={pad(lang, SITE.CHECK)} class="tekstlink">{h.hero.knopScan} →</a>}
     </div>
   </div>
 </section>

@@ -11,7 +11,7 @@ const links = [
   { href: `${home}#aanpak`, tekst: m.aanpak },
   { href: pakkettenPad(lang), tekst: m.pakketten },
   { href: `${home}#over-ons`, tekst: m.overOns },
-  ...(m.quickscan && lang === "nl" ? [{ href: SITE.CHECK, tekst: m.quickscan }] : []),
+  ...(m.quickscan ? [{ href: pad(lang, SITE.CHECK), tekst: m.quickscan }] : []),
   { href: pad(lang, "/blog/"), tekst: m.blog },
 ].filter((l) => l.tekst);
 

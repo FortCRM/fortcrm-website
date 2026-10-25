@@ -34,7 +34,7 @@ const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
         <li><a class={link} href={`${home}#aanpak`}>{m.aanpak}</a></li>
         <li><a class={link} href={`${home}#voor-wie`}>{m.voorWie}</a></li>
         <li><a class={link} href={pakkettenPad(lang)}>{m.pakketten}</a></li>
-        {m.quickscan && lang === "nl" && <li><a class={link} href={SITE.CHECK}>{m.quickscan}</a></li>}
+        {m.quickscan && <li><a class={link} href={pad(lang, SITE.CHECK)}>{m.quickscan}</a></li>}
         <li><a class={link} href={`${home}#over-ons`}>{m.overOns}</a></li>
         <li><a class={link} href={`${home}#faq`}>{m.faq}</a></li>
       </ul>

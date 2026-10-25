@@ -26,7 +26,7 @@ const contact = `${pad(lang)}#contact`;
     <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{p.prijsnoot}</p>
     <div class="mt-10 flex flex-wrap items-center gap-6">
       <a href={contact} data-plan class="knop px-8">{p.knopVoorstel}</a>
-      {p.knopScan && nl && <a href={SITE.CHECK} class="tekstlink">{p.knopScan} →</a>}
+      {p.knopScan && <a href={pad(lang, SITE.CHECK)} class="tekstlink">{p.knopScan} →</a>}
     </div>
   </div>
 </section>

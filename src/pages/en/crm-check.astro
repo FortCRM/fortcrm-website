@@ -1,0 +1,19 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+const scan = null;
+---
+
+<PageLayout title="CRM check: how solid is your CRM foundation? | FortCRM" description="Six questions, two minutes. See right away how recording, follow-up and sharing work in your company." lang="en" vertaling="/crm-check/">
+  <script is:inline define:vars={{ scan }}>window.FORTCRM_SCAN = scan;</script>
+  <section>
+    <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">
+      <p class="eyebrow mb-6">CRM check</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl leading-[1.05]">How solid is your CRM foundation?</h1>
+      <p class="mt-6 text-lg text-inkt/75 leading-relaxed max-w-xl">Six questions, two minutes. You see right away how recording, follow-up and sharing work, and where you gain the most first.</p>
+      <div class="mt-10 grid gap-6" id="scan">
+        <div><ol class="prog" data-prog aria-label="Progress"></ol></div>
+        <div data-body></div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
