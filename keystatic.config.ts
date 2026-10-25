@@ -164,7 +164,7 @@ const homeSchema = {
       rijen: lijst(
         fields.object({
           onderdeel: tekst("Onderdeel"),
-          waarden: lijst(tekst("Waarde"), "Waarde per pakket, in dezelfde volgorde als de kolommen. Eén waarde = over de hele breedte."),
+          waarden: lijst(tekst("Waarde"), "Waarde per pakket, in dezelfde volgorde als de kolommen. Eén waarde = over de hele breedte. Geen waarden = tussenkop."),
         }),
         "Rijen",
         (p) => p.fields.onderdeel.value,

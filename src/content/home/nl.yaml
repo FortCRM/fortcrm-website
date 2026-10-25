@@ -231,11 +231,30 @@ pakketten:
       uitgelicht: false
       kleur: viridiaan
   rijen:
-    - onderdeel: Voor wie
+    - onderdeel: Wie doet wat
+      waarden: []
+    - onderdeel: In het kort
       waarden:
-        - Jij doet het zelf.
-        - We doen het samen.
-        - Wij doen het voor je.
+        - Wij leggen de basis, jij bouwt verder
+        - We bouwen samen, jij leert beheren
+        - Wij doen alles, jij gebruikt het
+    - onderdeel: Proces in kaart brengen
+      waarden:
+        - Wij, één sessie
+        - Wij, samen met jou
+        - Wij, met alle betrokkenen
+    - onderdeel: Inrichting en automatiseringen
+      waarden:
+        - Wij de basis, jij de rest
+        - Wij bouwen, jij past aan
+        - Wij
+    - onderdeel: Data overzetten
+      waarden:
+        - Jij, wij controleren
+        - Wij
+        - Wij
+    - onderdeel: Wat je krijgt
+      waarden: []
     - onderdeel: Verkoopoverzichten (pipelines)
       waarden:
         - '1'

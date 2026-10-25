@@ -18,7 +18,7 @@ const soort = (w: string) => {
   return "tekst";
 };
 const getal = (w: string) => /^[\d\s.,€+%/-]+$/.test(w.trim());
-const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/80 py-4 pr-6 align-middle w-28 sm:w-auto text-xs sm:text-base leading-snug sm:leading-normal";
+const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/80 py-2.5 pr-6 align-middle w-28 sm:w-auto text-xs sm:text-base leading-snug sm:leading-normal";
 ---
 
 <div class="mt-2 overflow-x-auto [contain:paint]">
@@ -39,17 +39,21 @@ const kopcel = "sticky left-0 z-10 bg-tabelkop text-left font-normal text-inkt/8
       </tr>
     </thead>
     <tbody>
-      {rijen.map((r, ri) => (
+      {rijen.map((r, ri) => (r.waarden?.length ?? 0) === 0 ? (
+        <tr>
+          <th scope="rowgroup" colspan={n + 1} class:list={["sticky left-0 bg-tabelkop text-left pb-2 text-xs font-semibold uppercase tracking-wider text-inkt/50", ri === 0 ? "pt-1" : "pt-8"]}>{r.onderdeel}</th>
+        </tr>
+      ) : (
         <tr class:list={["border-t border-inkt/10", ri === rijen.length - 1 && "border-b"]}>
           <th scope="row" class={kopcel}>{r.onderdeel}</th>
           {r.waarden.length === 1 && n > 1 ? (
-            <td colspan={n} class="text-center py-4 px-6 text-sm text-inkt/70">{r.waarden[0]}</td>
+            <td colspan={n} class="text-center py-2.5 px-6 text-sm text-inkt/70">{r.waarden[0]}</td>
           ) : (
             kolommen.map((_, i) => {
               const w = r.waarden[i] ?? "";
               const s = soort(w);
               return (
-                <td class="text-center py-4 px-6">
+                <td class="text-center py-2.5 px-6">
                   {s === "ja" && (
                     <span class="inline-flex w-6 h-6 rounded-full bg-viridiaan/15 items-center justify-center" title={w}>
                       <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="#2C6C4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>

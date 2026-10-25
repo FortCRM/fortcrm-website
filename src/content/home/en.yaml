@@ -172,11 +172,30 @@ pakketten:
     kleur: viridiaan
     badge: ''
   rijen:
-  - onderdeel: For whom
+  - onderdeel: Who does what
+    waarden: []
+  - onderdeel: In short
     waarden:
-    - You do it yourself.
-    - We do it together.
-    - We do it for you.
+    - We lay the foundation, you build on it
+    - We build together, you learn to manage it
+    - We do everything, you use it
+  - onderdeel: Mapping your process
+    waarden:
+    - Us, one session
+    - Us, together with you
+    - Us, with everyone involved
+  - onderdeel: Setup and automations
+    waarden:
+    - Us the basics, you the rest
+    - We build, you adjust
+    - Us
+  - onderdeel: Moving your data
+    waarden:
+    - You, we check
+    - Us
+    - Us
+  - onderdeel: What you get
+    waarden: []
   - onderdeel: Pipelines
     waarden:
     - '1'
