@@ -7,10 +7,12 @@ seo:
 hero:
   eyebrow: Pipedrive-specialist voor het MKB
   titel: Al je klanten, offertes en afspraken op _één plek_.
-  intro: >-
-    Wij richten Pipedrive voor je in: het systeem waarin je hele team
-    klantcontact, afspraken, offertes en uitvoering bijhoudt. En een basis voor
-    AI.
+  intro: 'Wij richten Pipedrive voor je in. Eén systeem voor je hele team:'
+  punten:
+    - Klantcontact en afspraken
+    - Offertes en opvolging
+    - Uitvoering na de verkoop
+    - Jouw basis voor AI
   belofte: >-
     Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet,
     dan staan wij ervoor in.*

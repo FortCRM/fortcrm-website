@@ -5,7 +5,12 @@ seo:
 hero:
   eyebrow: Pipedrive specialist for SMEs
   titel: All your clients, quotes and meetings in _one place_.
-  intro: 'We set up Pipedrive for you: the system where your whole team keeps track of client contact, agreements, quotes and the delivery that follows. That puts the foundation for AI in place.'
+  intro: 'We set up Pipedrive for you. One system for your whole team:'
+  punten:
+  - Client contact and meetings
+  - Quotes and follow-up
+  - Delivery after the sale
+  - Your foundation for AI
   uitleg: ''
   beeldOnderschrift: ''
   belofte: Live within 6 weeks. Still in use after 60 days. If not, we stand behind it.*
