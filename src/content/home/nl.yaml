@@ -346,6 +346,10 @@ pakketten:
         - Nee
         - Ja
   knopVoorstel: Vraag een voorstel aan
+  knopPagina: Bekijk pakketten en prijzen
+  slaKort: Daarna kies je een onderhoudsabonnement, vanaf €595 per maand.
+  paginaTitel: Pakketten en prijzen Pipedrive-implementatie | FortCRM
+  paginaBeschrijving: 'Drie pakketten voor een Pipedrive-implementatie: Zelfstandig, Shared en Volledig ontzorgd. Wie doet wat, wat je krijgt en wat het kost.'
 garantie:
   getal: '60'
   getalTekst: dagen garantie

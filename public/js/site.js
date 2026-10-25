@@ -182,7 +182,7 @@
         h += '<p class="note">Wij zijn vooral sterk voor bedrijven vanaf 5 medewerkers. Plan toch een gesprek, dan kijken we samen of het past.</p>';
       }
       h += '<div class="res-sub"><h3>Drie eerste stappen</h3><ol>' + t.stap.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol></div>';
-      h += '<div class="next"><div class="btnrow"><a class="btn" href="/#contact" data-plan>Plan een gesprek van 30 minuten</a><a class="btn line" href="/#pakketten">Bekijk de pakketten</a></div>' +
+      h += '<div class="next"><div class="btnrow"><a class="btn" href="/#contact" data-plan>Plan een gesprek van 30 minuten</a><a class="btn line" href="/pakketten/">Bekijk de pakketten</a></div>' +
         '<p class="micro">Dit is een eerste indruk op basis van zes vragen, geen volledige analyse. In het gesprek kijken we naar jullie echte situatie.</p></div>';
       h += '</div></div>';
       body.innerHTML = h;

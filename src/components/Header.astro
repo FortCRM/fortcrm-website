@@ -1,7 +1,7 @@
 ---
 import Logo from "@components/Logo.astro";
 import { instellingen } from "@lib/content";
-import { pad, SITE, type Lang } from "@consts";
+import { pad, SITE, type Lang, pakkettenPad } from "@consts";
 
 const { lang, vertaling } = Astro.props as { lang: Lang; vertaling?: string };
 const m = (await instellingen(lang)).menu;
@@ -9,7 +9,7 @@ const home = pad(lang);
 const links = [
   { href: `${home}#pipedrive`, tekst: m.pipedrive },
   { href: `${home}#aanpak`, tekst: m.aanpak },
-  { href: `${home}#pakketten`, tekst: m.pakketten },
+  { href: pakkettenPad(lang), tekst: m.pakketten },
   { href: `${home}#over-ons`, tekst: m.overOns },
   ...(m.quickscan && lang === "nl" ? [{ href: SITE.CHECK, tekst: m.quickscan }] : []),
   { href: pad(lang, "/blog/"), tekst: m.blog },

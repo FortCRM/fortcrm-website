@@ -1,0 +1,48 @@
+---
+// Volledige pakkettenpagina: tabel met pakketten, prijsnoot en onderhoudsabonnementen.
+// Teksten komen uit het blok Pakketten en SLA van de homepage in Keystatic.
+import Tabel from "@components/Tabel.astro";
+import { home } from "@lib/content";
+import { pad, SITE, type Lang } from "@consts";
+
+const { lang } = Astro.props as { lang: Lang };
+const h = await home(lang);
+const p = h.pakketten;
+const nl = lang === "nl";
+const swipe = "Swipe ← →";
+const contact = `${pad(lang)}#contact`;
+---
+
+<section class="tint py-20 md:py-24">
+  <div class="wrap">
+    <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{p.eyebrow}</p>
+        <h1 class="sectiekop">{p.titel}</h1>
+      </div>
+      {p.intro && <p class="intro lg:justify-self-end">{p.intro}</p>}
+    </div>
+    <div class="mt-12"><Tabel kolommen={p.kolommen} rijen={p.rijen} hint={swipe} /></div>
+    <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{p.prijsnoot}</p>
+    <div class="mt-10 flex flex-wrap items-center gap-6">
+      <a href={contact} data-plan class="knop px-8">{p.knopVoorstel}</a>
+      {p.knopScan && nl && <a href={SITE.CHECK} class="tekstlink">{p.knopScan} →</a>}
+    </div>
+  </div>
+</section>
+
+<section id="onderhoud" class="tint border-t border-inkt/10 py-20 md:py-24">
+  <div class="wrap">
+    <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="eyebrow mb-4">{p.slaEyebrow}</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl leading-tight tracking-tight">{p.slaTitel}</h2>
+      </div>
+      {p.slaIntro && <p class="text-inkt/70 leading-relaxed max-w-xl lg:justify-self-end">{p.slaIntro}</p>}
+    </div>
+    <div class="mt-8"><Tabel kolommen={p.slaKolommen} rijen={p.slaRijen} hint={swipe} /></div>
+    <div class="mt-10">
+      <a href={contact} data-plan class="knop px-8">{h.hero?.knopGesprek || (nl ? "Plan een gesprek" : "Book a call")}</a>
+    </div>
+  </div>
+</section>

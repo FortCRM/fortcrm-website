@@ -7,8 +7,9 @@ export async function getStaticPaths() {
   return (await landingspaginas("nl")).map((p) => ({ params: { slug: p.slug }, props: { p } }));
 }
 const { p } = Astro.props;
+const vertaling = p.data.vertaling ? `/en/${p.data.vertaling}/` : undefined;
 ---
 
-<PageLayout title={`${p.data.titel} | FortCRM`} description={p.data.beschrijving} lang="nl">
+<PageLayout title={`${p.data.titel} | FortCRM`} description={p.data.beschrijving} lang="nl" vertaling={vertaling}>
   <Landing lang="nl" p={p} />
 </PageLayout>

@@ -1,0 +1,10 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import PakkettenPagina from "@components/PakkettenPagina.astro";
+import { home } from "@lib/content";
+const h = await home("en");
+---
+
+<PageLayout title={h.pakketten.paginaTitel || "Packages and pricing | FortCRM"} description={h.pakketten.paginaBeschrijving || h.seo.beschrijving} lang="en" vertaling="/pakketten/">
+  <PakkettenPagina lang="en" />
+</PageLayout>

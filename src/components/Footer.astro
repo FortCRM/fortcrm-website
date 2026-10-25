@@ -1,6 +1,6 @@
 ---
 import { instellingen, posts } from "@lib/content";
-import { pad, SITE, type Lang } from "@consts";
+import { pad, SITE, type Lang, pakkettenPad } from "@consts";
 import Logo from "@components/Logo.astro";
 
 const { lang } = Astro.props as { lang: Lang };
@@ -33,7 +33,7 @@ const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
         {m.pipedrive && <li><a class={link} href={`${home}#pipedrive`}>{m.pipedrive}</a></li>}
         <li><a class={link} href={`${home}#aanpak`}>{m.aanpak}</a></li>
         <li><a class={link} href={`${home}#voor-wie`}>{m.voorWie}</a></li>
-        <li><a class={link} href={`${home}#pakketten`}>{m.pakketten}</a></li>
+        <li><a class={link} href={pakkettenPad(lang)}>{m.pakketten}</a></li>
         {m.quickscan && lang === "nl" && <li><a class={link} href={SITE.CHECK}>{m.quickscan}</a></li>}
         <li><a class={link} href={`${home}#over-ons`}>{m.overOns}</a></li>
         <li><a class={link} href={`${home}#faq`}>{m.faq}</a></li>

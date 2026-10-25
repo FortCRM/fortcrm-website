@@ -1,0 +1,23 @@
+titel: Many requests, many clients
+beschrijving: 'FortCRM for companies with many requests: one fixed route in Pipedrive, and after the sale everyone knows what was promised.'
+eyebrow: Many requests, many clients
+kop: Every request handled the same way.
+intro: Small amounts, large volumes. You do not grow by doing more, but by having every request follow the same route.
+pijnTitel: What these companies run into
+pijnpunten:
+- Requests and orders come in every day, but everyone handles them differently.
+- Follow-up happens when there is time, and as soon as it gets busy work piles up.
+- Requests come in by email, phone, form and webshop, and end up scattered everywhere.
+inrichtingTitel: Pipedrive for your situation
+inrichting:
+- titel: One overview for all channels
+  tekst: All requests arrive in one place, with fixed fields and a clear owner.
+  icoon: trechter
+- titel: Automatic follow-up
+  tekst: Reminders, tasks and first replies run automatically. Nothing gets left behind.
+  icoon: bliksem
+- titel: Integrations
+  tekst: We connect Pipedrive to your web form, webshop and email, so manual work disappears.
+  icoon: koppeling
+slot: With many requests, what counts is that every lead follows the same route.
+vertaling: veel-aanvragen

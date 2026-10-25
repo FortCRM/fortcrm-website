@@ -1,0 +1,26 @@
+titel: Few orders, big jobs
+beschrijving: 'FortCRM for companies with few orders and big jobs, such as construction and installation: tight quote follow-up and delivery in Pipedrive.'
+eyebrow: Few orders, big jobs
+kop: Never let a quote slip.
+intro: Construction companies, for example. You send few quotes and every one counts. Then you want follow-up that does not depend on gut feeling.
+pijnTitel: What these companies run into
+pijnpunten:
+- You send few quotes, but every quote counts.
+- Follow-up runs on gut feeling. Sometimes you hear nothing for weeks.
+- You do not know how much revenue is still up in the air.
+inrichtingTitel: Pipedrive for your situation
+inrichting:
+- titel: Every quote has a follow-up date
+  tekst: Every quote gets an owner, an expected value and a date for the next step.
+  icoon: offerte
+- titel: Alert when things stall
+  tekst: Pipedrive creates a task as soon as a quote sits idle.
+  icoon: klok
+- titel: Clear view of expected revenue
+  tekst: An overview of everything in progress, with probability and value per quote.
+  icoon: grafiek
+- titel: From quote to project
+  tekst: Once the quote is signed, the deal becomes a project in one click. Planning and delivery start with all the information from the sale.
+  icoon: project
+slot: With few quotes, not a single one can slip.
+vertaling: weinig-deals

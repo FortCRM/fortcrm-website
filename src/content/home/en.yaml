@@ -130,15 +130,15 @@ voorWie:
   kaarten:
   - titel: Few orders, big jobs
     tekst: Construction and installation, for example. You follow up every quote closely. Once you win the job, delivery runs as a project in the same system, with everything you agreed with the client.
-    pagina: ''
+    pagina: few-big-jobs
     icoon: offerte
   - titel: Advice and custom work
     tekst: One client, many conversations. Every agreement and decision is recorded and easy to find, even when a colleague takes over. From first meeting to order and delivery.
-    pagina: ''
+    pagina: advice-custom-work
     icoon: gesprek
   - titel: Many requests, many clients
     tekst: Large volumes, one fixed route. Every request is handled the same way. After the sale, everyone knows what was promised.
-    pagina: ''
+    pagina: many-requests
     icoon: trechter
   oproep: ''
   oproepLink: ''
@@ -285,6 +285,10 @@ pakketten:
     - 'No'
     - 'Yes'
   knopVoorstel: Request a proposal
+  knopPagina: See packages and pricing
+  slaKort: After that you choose a maintenance plan, from €595 per month.
+  paginaTitel: Pipedrive implementation packages and pricing | FortCRM
+  paginaBeschrijving: 'Three packages for a Pipedrive implementation: Self-directed, Shared and Fully managed. Who does what, what you get and what it costs.'
   knopScan: ''
 garantie:
   getal: '60'

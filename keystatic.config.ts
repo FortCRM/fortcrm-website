@@ -192,8 +192,12 @@ const homeSchema = {
       ),
       knopVoorstel: tekst("Knop voorstel aanvragen"),
       knopScan: tekst("Tekstlink CRM-check", "Leeg = verbergen."),
+      knopPagina: tekst("Homepage: knop naar de pakkettenpagina"),
+      slaKort: tekst("Homepage: regel over onderhoud onder de pakketten", "Bijvoorbeeld: Daarna onderhoud vanaf €595 per maand."),
+      paginaTitel: tekst("Pakkettenpagina: titel in Google"),
+      paginaBeschrijving: alinea("Pakkettenpagina: beschrijving in Google"),
     },
-    { label: "Pakketten en SLA" },
+    { label: "Pakketten en SLA", description: "De homepage toont een korte versie (pakket, prijs en de rij In het kort). De volledige tabel staat op /pakketten/." },
   ),
   garantie: fields.object(
     {
@@ -417,6 +421,7 @@ const landingSchema = {
     (p) => p.fields.titel.value,
   ),
   slot: alinea("Slotzin"),
+  vertaling: tekst("Vertaling", "De korte naam (slug) van dezelfde pagina in de andere taal. Leeg = geen vertaling."),
 };
 
 // ---------- blog ----------

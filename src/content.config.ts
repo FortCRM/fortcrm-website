@@ -26,6 +26,7 @@ const landing = defineCollection({
     inrichtingTitel: z.string().default(""),
     inrichting: z.array(z.object({ titel: z.string(), tekst: z.string(), icoon: z.string().nullish() })).default([]),
     slot: z.string().default(""),
+    vertaling: z.string().nullish(),
   }),
 });
 

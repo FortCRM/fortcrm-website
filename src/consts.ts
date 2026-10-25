@@ -13,3 +13,5 @@ export const SITE = {
 
 export type Lang = "nl" | "en";
 export const pad = (lang: Lang, p = "/") => (lang === "en" ? `/en${p}` : p);
+// aparte pagina met alle pakketten en prijzen
+export const pakkettenPad = (lang: Lang) => (lang === "en" ? "/en/packages/" : "/pakketten/");

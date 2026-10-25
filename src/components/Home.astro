@@ -9,7 +9,7 @@ import Pipedrive from "@components/Pipedrive.astro";
 import Ai from "@components/Ai.astro";
 import { home } from "@lib/content";
 import { splitNadruk } from "@lib/utils";
-import { pad, SITE, type Lang } from "@consts";
+import { pad, SITE, type Lang, pakkettenPad } from "@consts";
 
 const { lang } = Astro.props as { lang: Lang };
 const h = await home(lang);
@@ -25,6 +25,7 @@ const nr = (i: number) => String(i + 1).padStart(2, "0");
 const swipe = "Swipe ← →";
 const meer = h.voorWie.meerTekst || (nl ? "Bekijk wat we inrichten" : "See what we set up");
 const belofte = (h.hero.belofte || "").replace(/\*$/, "");
+const kortRij = (h.pakketten.rijen ?? []).find((r: any) => (r.waarden?.length ?? 0) > 1);
 const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 ---
 
@@ -162,7 +163,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
   </div>
 </section>
 
-<!-- pakketten en SLA -->
+<!-- pakketten: korte versie, de volledige tabel staat op de pakkettenpagina -->
 <section id="pakketten" class="tint py-24 md:py-32">
   <div class="wrap">
     <div class="reveal grid gap-6 lg:grid-cols-2 lg:items-end">
@@ -172,27 +173,20 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
       </div>
       {h.pakketten.intro && <p class="intro lg:justify-self-end">{h.pakketten.intro}</p>}
     </div>
-    <div class="reveal mt-12"><Tabel kolommen={h.pakketten.kolommen} rijen={h.pakketten.rijen} hint={swipe} /></div>
-    <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{h.pakketten.prijsnoot}</p>
-
-    <details class="group mt-12 border-t border-inkt/15 pt-6">
-      <summary class="flex items-center gap-3 cursor-pointer font-display font-semibold text-lg hover:text-viridiaan">
-        <span class="flex size-8 flex-none items-center justify-center rounded-full border border-inkt/20 text-xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-        {h.pakketten.slaKnop || (nl ? "Bekijk de onderhoudsabonnementen" : "See the maintenance plans")}
-      </summary>
-    <div class="mt-10 grid gap-6 lg:grid-cols-2 lg:items-end">
-      <div>
-        <p class="eyebrow mb-4">{h.pakketten.slaEyebrow}</p>
-        <h2 class="font-display font-bold text-2xl md:text-3xl leading-tight tracking-tight">{h.pakketten.slaTitel}</h2>
-      </div>
-      {h.pakketten.slaIntro && <p class="text-inkt/70 leading-relaxed max-w-xl lg:justify-self-end">{h.pakketten.slaIntro}</p>}
+    <div class="reveal mt-12 grid gap-6 md:grid-cols-3">
+      {h.pakketten.kolommen.map((k: any, i: number) => (
+        <a href={pakkettenPad(lang)} class:list={["group relative flex flex-col rounded-2xl border p-7 bg-krijt transition-colors hover:border-inkt/30", k.uitgelicht ? "border-vermiljoen/60" : "border-inkt/10"]}>
+          {k.badge && <span class="absolute -top-3 left-7 bg-vermiljoen text-[#1D211C] text-xs font-semibold px-3 py-1 rounded-full">{k.badge}</span>}
+          <span class="font-display font-semibold text-xl">{k.naam}</span>
+          {k.prijs && <span class="mt-1 font-display font-semibold text-inkt/70 tabular-nums">{k.prijs}</span>}
+          {kortRij && kortRij.waarden[i] && <span class="mt-4 text-inkt/75 leading-relaxed">{kortRij.waarden[i]}</span>}
+        </a>
+      ))}
     </div>
-    <div class="mt-8"><Tabel kolommen={h.pakketten.slaKolommen} rijen={h.pakketten.slaRijen} hint={swipe} /></div>
-
-    </details>
-    <div class="mt-12 flex flex-wrap items-center gap-6">
-      <a href="#contact" data-plan class="knop px-8">{h.pakketten.knopVoorstel}</a>
-      {h.pakketten.knopScan && nl && <a href={SITE.CHECK} class="tekstlink">{h.pakketten.knopScan} →</a>}
+    {h.pakketten.slaKort && <p class="mt-6 text-sm text-inkt/60">{h.pakketten.slaKort}</p>}
+    <div class="mt-10 flex flex-wrap items-center gap-6">
+      <a href={pakkettenPad(lang)} class="knop px-8">{h.pakketten.knopPagina || (nl ? "Bekijk pakketten en prijzen" : "See packages and pricing")}</a>
+      <a href="#contact" data-plan class="tekstlink">{h.pakketten.knopVoorstel} →</a>
     </div>
   </div>
 </section>
