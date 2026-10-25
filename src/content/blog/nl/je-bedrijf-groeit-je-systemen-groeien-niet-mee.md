@@ -1,5 +1,5 @@
 ---
-titel: Je bedrijf groeit. Je systemen groeien niet mee.
+titel: 'Je bedrijf groeit. Je systemen groeien niet mee.'
 omschrijving: Excel dat nooit helemaal klopt, offertes in Word, klantcontact verspreid over een overvolle inbox. Waarom dit patroon zo hardnekkig is, en waar het anders kan beginnen.
 datum: '2026-07-10'
 vertaling: your-business-is-growing-your-systems-arent

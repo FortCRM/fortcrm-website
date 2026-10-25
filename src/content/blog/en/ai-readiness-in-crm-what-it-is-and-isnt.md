@@ -6,7 +6,7 @@ tldr:
 - 'AI readiness is about whether your organization is ready to deploy AI effectively: clean data, clear processes, connected systems and defined ownership.'
 - It isn't the same as turning on an AI tool, it isn't a one-time project, and it doesn't replace human contact.
 - 'Just as relevant for SMEs: it''s not the size of your organization that counts, but whether the foundation is in place before you connect AI to it.'
-vertaling: ai-readiness-in-crm
+vertaling: ai-readiness-in-crm-wat-het-is-en-wat-niet
 ---
 AI in CRM is impossible to ignore now. Automatic follow-up emails, summaries of customer contact, predictions about who's about to churn: it now touches almost every layer of customer relationship management. But there's a term that keeps popping up as soon as organizations want to take this seriously: AI readiness. And that term gets confused far too often with "we turned on an AI tool." Time to get clear on what it actually is, and maybe more importantly, what it isn't.
 

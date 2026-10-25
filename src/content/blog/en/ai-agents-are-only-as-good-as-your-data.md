@@ -1,6 +1,5 @@
 ---
-titel: 'AI agents are only as good as your data: why CRM integration comes first'
-seoTitel: 'AI agents are only as good as your data'
+titel: 'AI agents are only as good as your data'
 omschrijving: Gartner expects AI agents to be embedded in 40% of business applications in 2026. But an AI agent is only as good as the data it can see, and at most SMBs, that data is still scattered across Excel, email, and disconnected systems.
 datum: '2026-07-23'
 tldr:

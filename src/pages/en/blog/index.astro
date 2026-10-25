@@ -1,12 +1,10 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import BlogIndex from "@components/BlogIndex.astro";
-import { instellingen, posts } from "@lib/content";
-import { pad } from "@consts";
+import { instellingen } from "@lib/content";
 const b = (await instellingen("en")).blog;
-const nieuwste = (await posts("en"))[0];
 ---
 
-<PageLayout canonical={nieuwste ? pad("en", `/blog/${nieuwste.slug}/`) : undefined} title={`${b.titel} | FortCRM`} description={b.beschrijving} lang="en" vertaling="/blog/">
+<PageLayout title={`${b.titel} | FortCRM`} description={b.beschrijving} lang="en" vertaling="/blog/">
   <BlogIndex lang="en" />
 </PageLayout>

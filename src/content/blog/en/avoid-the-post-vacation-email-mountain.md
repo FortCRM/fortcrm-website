@@ -1,6 +1,5 @@
 ---
-titel: 'The post-vacation email mountain: how to avoid it this year'
-seoTitel: 'Avoid the post-vacation email mountain'
+titel: 'Avoid the post-vacation email mountain'
 omschrijving: 43% cite 'coming back to a mountain of work' as the main reason they skip vacation. With a CRM that automatically sorts incoming items, that mountain doesn't have to exist.
 datum: '2026-08-04'
 tldr:

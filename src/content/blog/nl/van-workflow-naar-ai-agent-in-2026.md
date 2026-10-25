@@ -1,13 +1,12 @@
 ---
-titel: 'Van workflow naar AI-agent: wat automatisering in 2026 anders maakt'
-seoTitel: 'Van workflow naar AI-agent in 2026'
+titel: 'Van workflow naar AI-agent in 2026'
 omschrijving: Automatisering verschuift van vaste als-dit-dan-dat-regels naar AI-agents die zelf beslissen. Wat dit betekent voor MKB-bedrijven, en waar je het beste kunt beginnen.
 datum: '2026-07-21'
 tldr:
 - Automatisering verschuift van rigide "als dit gebeurt, doe dat"-regels naar AI-agents die zelf beslissen welke stappen nodig zijn.
 - Bedrijven met goed ingerichte automatisering besparen gemiddeld 5+ uur per medewerker per week op routinetaken.
 - 'Voor MKB geldt: begin niet bij de flashy AI-feature, maar bij het proces dat nu de meeste tijd kost.'
-vertaling: van-workflow-naar-ai-agent
+vertaling: from-workflow-to-ai-agent-in-2026
 ---
 Automatisering betekende lange tijd: een trigger, een actie, een vaste route. Als een formulier wordt ingevuld, stuur dan een mail. Als een deal naar "Gewonnen" verschuift, maak dan een factuur aan. Nuttig, maar star: iedere uitzondering moest je er handmatig bij bedenken.
 

@@ -1,13 +1,12 @@
 ---
-titel: 'Terug van vakantie en je pijplijn staat er nog precies zo bij als je hem achterliet: dat is het doel'
-seoTitel: 'Terug van vakantie met een intacte pijplijn'
+titel: 'Terug van vakantie met een intacte pijplijn'
 omschrijving: 'Vier weken vakantiereeks samengevat in één vraag: wat moet er staan vóór je vertrekt, zodat je bij terugkomst geen achterstand hoeft in te lopen, maar gewoon verder kunt?'
 datum: '2026-08-13'
 tldr:
 - Het doel van een goed ingericht CRM tijdens vakantie is niet "minder werk voor jou", maar "de klant merkt niets van je afwezigheid".
 - Een concurrent met een gemiddelde B2B-reactietijd van 42 uur verliest tijdens vakantieweken nog meer terrein aan wie sneller reageert.
 - 'De basis: automatische leadopvolging, een duidelijke back-up per deal, en gestructureerde binnenkomende data: geen los document, geen losse app-groep.'
-vertaling: pijplijn-ongeschonden-terug-van-vakantie
+vertaling: back-from-vacation-with-your-pipeline-intact
 ---
 Deze zomer schreven we vier posts over hetzelfde onderliggende thema: wat gebeurt er met je klanten als jij er even niet bent? Over het feit dat maar een derde van de ondernemers écht offline gaat. Over leads die binnen enkele minuten al bij de concurrent kunnen zijn beland. Over de inboxberg die wacht bij terugkomst. Over de overdracht die vaak niet meer is dan een appje. Tijd om dat samen te vatten in één concrete vraag: wat moet er staan vóórdat je de deur achter je dichttrekt?
 

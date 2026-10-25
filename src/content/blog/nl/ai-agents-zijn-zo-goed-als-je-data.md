@@ -1,13 +1,12 @@
 ---
-titel: 'AI-agents zijn zo goed als je data: waarom CRM-integratie eerst komt'
-seoTitel: 'AI-agents zijn zo goed als je data'
+titel: 'AI-agents zijn zo goed als je data'
 omschrijving: Gartner verwacht dat AI-agents in 2026 in 40% van alle bedrijfsapplicaties zitten. Maar een AI-agent is alleen zo goed als de data die hij ziet, en bij veel MKB-bedrijven staat die nog verspreid over Excel, mail en losse systemen.
 datum: '2026-07-23'
 tldr:
 - Gartner verwacht dat 40% van de bedrijfsapplicaties in 2026 AI-agents bevat, tegen zo'n 5% in 2025.
 - Bedrijven verliezen 20-30% aan omzet door inefficiënties die ontstaan door verspreide, niet-gekoppelde data.
 - 'Voor MKB geldt: een AI-agent op gefragmenteerde data is niet slimmer dan een medewerker met een half dossier: eerst de koppeling, dan de AI-functie.'
-vertaling: ai-agents-zijn-zo-goed-als-je-data
+vertaling: ai-agents-are-only-as-good-as-your-data
 ---
 Iedereen heeft het over AI-agents: systemen die zelfstandig leads opvolgen, offertes checken of klantvragen routeren. Onderzoeksbureau Gartner voorspelt dat dit jaar 40 procent van alle bedrijfsapplicaties een AI-agent bevat: een sprong vanaf een kleine 5 procent vorig jaar. Maar er zit een addertje onder het gras dat in de hype vaak wordt overgeslagen: een AI-agent is alleen zo goed als de data die hij te zien krijgt.
 

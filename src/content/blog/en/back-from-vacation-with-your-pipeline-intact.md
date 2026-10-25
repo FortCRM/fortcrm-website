@@ -1,13 +1,12 @@
 ---
-titel: 'Back from vacation and your pipeline looks exactly as you left it: that''s the goal'
-seoTitel: 'Back from vacation with your pipeline intact'
+titel: 'Back from vacation with your pipeline intact'
 omschrijving: 'Four weeks of vacation-themed posts, summarized in one question: what needs to be in place before you leave, so coming back doesn''t mean catching up, just picking up?'
 datum: '2026-08-13'
 tldr:
 - 'The goal of a well-set-up CRM during vacation isn''t "less work for you": it''s "the customer doesn''t notice you were gone."'
 - A competitor with an average B2B response time of 42 hours loses even more ground during vacation weeks to whoever responds faster.
 - 'The basics: automatic lead follow-up, a clear backup per deal, and structured incoming data: no separate document, no group chat.'
-vertaling: pijplijn-ongeschonden-terug-van-vakantie
+vertaling: terug-van-vakantie-met-een-intacte-pijplijn
 ---
 This summer, we wrote four posts around the same underlying theme: what happens to your customers when you're not around for a bit? About the fact that only a third of entrepreneurs truly go offline. About leads that can end up with a competitor within minutes. About the email mountain waiting when you're back. About handovers that are often little more than a group chat message. Time to bring that together into one concrete question: what needs to be in place before you close the door behind you?
 

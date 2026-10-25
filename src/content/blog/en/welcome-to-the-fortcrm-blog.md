@@ -1,5 +1,5 @@
 ---
-titel: Welcome to the FortCRM blog
+titel: 'Welcome to the FortCRM blog'
 omschrijving: From today, we'll be sharing regular insights here on CRM implementation, AI automation, and how Dutch SMEs can get started with it in practice.
 datum: '2026-07-09'
 vertaling: welkom-bij-de-fortcrm-blog

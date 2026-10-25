@@ -1,13 +1,12 @@
 ---
-titel: 'Customer service keeps running without people this summer: what does that mean for small businesses?'
-seoTitel: 'Customer service without people: what it means'
+titel: 'Customer service without people: what it means'
 omschrijving: '85% of all customer service interactions now start with AI in 2026, up from 60% in 2024. While staff are on vacation, that part of customer service just keeps running: with both benefits and friction.'
 datum: '2026-08-06'
 tldr:
 - '85% of customer service interactions now start with AI in 2026, up from 60% in 2024: a difference that''s especially noticeable in summer, with fewer staff around.'
 - AI agents now independently handle 60-80% of routine questions, 24/7, with no wait time.
 - At the same time, 59% of consumers say they get frustrated with AI customer service, and 85% still prefer talking to a human.
-vertaling: klantenservice-draait-door-zonder-mensen-deze-zomer
+vertaling: klantenservice-zonder-mensen-wat-betekent-dat
 ---
 Summer has traditionally been the period when customer service teams are stretched thinnest: colleagues rotate through vacation, and whoever's left has to cover more than usual. This year, that picture looks structurally different for the first time, according to recent research: 85% of all customer service interactions now start with AI, up from 60% back in 2024. While staff are away on vacation, that portion of customer service simply keeps running.
 

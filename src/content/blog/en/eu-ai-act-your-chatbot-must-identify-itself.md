@@ -1,13 +1,12 @@
 ---
-titel: 'EU AI Act: from August 2 your chatbot has to identify itself. What this means for small businesses'
-seoTitel: 'EU AI Act: your chatbot must identify itself'
+titel: 'EU AI Act: your chatbot must identify itself'
 omschrijving: Since August 2, 2026, the transparency obligations of the EU AI Act apply to every business that deploys AI toward EU customers, regardless of size. What this concretely means for a small business with a chatbot or AI writing tool.
 datum: '2026-08-18'
 tldr:
 - Since August 2, 2026, the transparency obligations (Article 50) of the EU AI Act apply to every business that deploys AI toward EU customers, regardless of size.
 - If a customer is talking to a chatbot or voicebot, that has to be made clear. AI-generated text, images and audio also now carry a labeling obligation.
 - 'The heavier obligations for high-risk AI were actually delayed (via the Digital Omnibus, in force since July 27, 2026): the transparency obligation was not.'
-vertaling: eu-ai-act-chatbot-transparantie-mkb
+vertaling: eu-ai-act-je-chatbot-moet-zich-bekendmaken
 ---
 August 2, 2026 passed largely unnoticed, but on that date part of the EU AI Act formally became binding: the transparency obligations under Article 50. Unlike much EU regulation, there's no size threshold: the obligation applies to every business that offers or deploys AI systems toward users in the EU, from multinationals to a one-person business with a chatbot on their website.
 

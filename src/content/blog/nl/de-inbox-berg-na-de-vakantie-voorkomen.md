@@ -1,13 +1,12 @@
 ---
-titel: 'De inbox-berg na de vakantie: hoe je hem dit jaar voorkomt'
-seoTitel: 'De inbox-berg na de vakantie voorkomen'
+titel: 'De inbox-berg na de vakantie voorkomen'
 omschrijving: 43% noemt 'terugkomen op een berg werk' als belangrijkste reden om geen vakantie te nemen. Met een CRM dat binnenkomende zaken automatisch ordent, hoeft die berg er niet te zijn.
 datum: '2026-08-04'
 tldr:
 - '43% noemt "terugkomen op een berg werk" als belangrijkste reden om geen vakantie te nemen: een stijging ten opzichte van het jaar ervoor.'
 - Bijna 6 op de 10 mensen ervaren hun werklast na een vakantie als zwaarder dan normaal.
 - Het probleem zit niet in de vakantie, maar in de manier waarop binnenkomende zaken zich ondertussen opstapelen in één ongestructureerde inbox.
-vertaling: de-inbox-berg-na-de-vakantie-voorkomen
+vertaling: avoid-the-post-vacation-email-mountain
 ---
 De angst voor de inbox na thuiskomst is inmiddels een serieuze reden om helemaal geen vakantie te plannen. Onderzoek laat zien dat 43% "terugkomen op een berg werk" noemt als voornaamste reden om vrije dagen te laten liggen: een stijging ten opzichte van het jaar daarvoor. En terecht: bijna 6 op de 10 mensen (59,2%) zeggen dat ze na hun vakantie meestal of altijd met een zwaardere werklast te maken krijgen dan daarvoor.
 

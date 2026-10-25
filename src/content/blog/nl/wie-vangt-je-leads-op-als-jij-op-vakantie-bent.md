@@ -1,12 +1,12 @@
 ---
-titel: Wie vangt je leads op als jij op vakantie bent?
+titel: 'Wie vangt je leads op als jij op vakantie bent?'
 omschrijving: '78% van de B2B-kopers koopt bij de eerste leverancier die reageert. Tijdens vakantieweken loopt de gemiddelde reactietijd van bedrijven verder op: precies het moment waarop dat het meest pijn doet.'
 datum: '2026-07-30'
 tldr:
 - Reageren binnen 1 minuut in plaats van 2 minuten verhoogt de conversie met 391%; de gemiddelde B2B-reactietijd ligt echter op 42 uur.
 - 78% van de B2B-kopers koopt uiteindelijk bij de eerste leverancier die reageert.
 - 'Tijdens vakantieweken is er vaak nog minder capaciteit om snel te reageren: precies wanneer concurrenten die dit wél hebben opgelost het verschil maken.'
-vertaling: wie-vangt-je-leads-op-tijdens-vakantie
+vertaling: who-catches-your-leads-while-youre-on-vacation
 ---
 Een lead die zich meldt via je website is op dat moment aan het vergelijken. Hoe snel je reageert, bepaalt in grote mate of die vergelijking in jouw voordeel uitpakt. Onderzoek naar meer dan 250.000 inbound leads bij ruim 1.200 bedrijven laat zien hoe groot dat effect is: reageren binnen 1 minuut in plaats van 2 minuten verhoogt de kans op conversie met 391%. Leads die binnen 5 minuten worden gecontacteerd, zijn 21 keer waarschijnlijker om door te stromen naar een kwalificatie dan leads die na 30 minuten worden benaderd.
 

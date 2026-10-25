@@ -1,13 +1,12 @@
 ---
-titel: CRM-implementatie, en dan? Wat er misgaat na livegang
-seoTitel: 'CRM-implementatie: wat misgaat na livegang'
+titel: 'CRM-implementatie: wat misgaat na livegang'
 omschrijving: Tot 63% van de CRM-implementaties levert niet op wat beloofd was, en dat ligt zelden aan de software. Wat er misgaat ná de livegang, en hoe je het voorkomt.
 datum: '2026-08-20'
 tldr:
 - 'Tussen 30 en 63% van de CRM-implementaties levert niet de beloofde waarde op: slechts 6 tot 10% daarvan komt door de software zelf.'
 - 'De rest is een mensenprobleem: slechte adoptie (43%), rommelige data (34%) en te weinig training (22%) zijn de belangrijkste oorzaken.'
 - 'Maand 3 tot 6 na livegang is het gevaarlijkste moment: de eerste training is vergeten en oude gewoontes sluipen terug.'
-vertaling: crm-implementatie-wat-gaat-mis-na-livegang
+vertaling: crm-implementation-what-goes-wrong-after-go-live
 ---
 Een CRM-traject wordt bijna altijd afgerekend op de livegang: is het systeem ingericht, is de data overgezet, heeft iedereen een account en een trainingsweek gehad? Vink, vink, vink: project geslaagd. Behalve dat dat precies het moment is waarop het echte werk begint, niet eindigt.
 

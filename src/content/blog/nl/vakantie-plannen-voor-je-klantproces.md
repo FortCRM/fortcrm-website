@@ -1,13 +1,12 @@
 ---
-titel: Vakantie plannen voor je team is makkelijk. Vakantie plannen voor je klantproces is het echte werk
-seoTitel: 'Vakantie plannen voor je klantproces'
+titel: 'Vakantie plannen voor je klantproces'
 omschrijving: 'Voor veel ondernemers is de zomer financieel de zwaarste periode: klanten zijn weg, beslissingen worden uitgesteld. Bedrijven die de zomer juist gebruiken om te groeien, hebben één ding gemeen: hun klantproces staat, ook als het team dat niet doet.'
 datum: '2026-08-11'
 tldr:
 - 'Voor veel MKB-bedrijven is de zomer financieel de zwaarste periode: klanten zijn weg, beslissingen worden uitgesteld naar september.'
 - 'Andere bedrijven gebruiken de zomer juist actief om te groeien: het verschil zit in voorbereiding, niet in geluk.'
 - Een gestructureerde overdracht van lopende deals hoort in het CRM te leven, niet in een los Word-document of een berichtje in de app-groep.
-vertaling: vakantie-plannen-voor-je-klantproces
+vertaling: planning-vacation-for-your-customer-process
 ---
 Elk jaar hetzelfde verhaal: voor veel ondernemers is de zomer financieel de zwaarste periode. Klanten zijn op vakantie, beslissingen worden uitgesteld, en nieuwe opdrachten schuiven door naar september. Toch is dat niet voor iedereen zo. Onderzoek laat zien dat de zomer voor een deel van het Nederlandse MKB juist de belangrijkste verkoopperiode van het jaar is: bedrijven die de rustigere periode bewust gebruiken om terrein te winnen op concurrenten die wél stilvallen.
 

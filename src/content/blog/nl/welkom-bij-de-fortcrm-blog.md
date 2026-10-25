@@ -1,5 +1,5 @@
 ---
-titel: Welkom bij de FortCRM-blog
+titel: 'Welkom bij de FortCRM-blog'
 omschrijving: Vanaf vandaag delen we hier regelmatig inzichten over CRM-implementatie, AI-automatisering en hoe het Nederlandse MKB daar praktisch mee aan de slag kan.
 datum: '2026-07-09'
 vertaling: welcome-to-the-fortcrm-blog

@@ -1,13 +1,12 @@
 ---
-titel: 'From workflow to AI agent: what''s different about automation in 2026'
-seoTitel: 'From workflow to AI agent in 2026'
+titel: 'From workflow to AI agent in 2026'
 omschrijving: Automation is shifting from fixed if-this-then-that rules to AI agents that decide for themselves. What this means for small businesses, and where to start.
 datum: '2026-07-21'
 tldr:
 - Automation is shifting from rigid "if this happens, do that" rules to AI agents that decide for themselves which steps are needed.
 - Businesses with well-set-up automation save an average of 5+ hours per employee per week on routine tasks.
 - 'For small businesses: don''t start with the flashiest AI feature, start with the process that costs the most time right now.'
-vertaling: van-workflow-naar-ai-agent
+vertaling: van-workflow-naar-ai-agent-in-2026
 ---
 Automation used to mean: a trigger, an action, a fixed route. If a form gets submitted, send an email. If a deal moves to "Won," create an invoice. Useful, but rigid: every exception had to be thought through by hand in advance.
 

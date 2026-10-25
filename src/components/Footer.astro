@@ -1,6 +1,7 @@
 ---
 import { instellingen, posts } from "@lib/content";
 import { pad, SITE, type Lang } from "@consts";
+import Logo from "@components/Logo.astro";
 
 const { lang } = Astro.props as { lang: Lang };
 const i = await instellingen(lang);
@@ -16,7 +17,7 @@ const link = "text-sm text-inkt/60 hover:text-inkt transition-colors";
   <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 sm:grid-cols-3">
     <div>
       <p class={kopje}>{f.contact}</p>
-      <p class="font-display font-semibold text-base mb-2">FortCRM</p>
+      <a href={home} class="inline-block mb-3 text-inkt" aria-label="FortCRM, naar de homepage"><Logo maat={32} /></a>
       <p class="text-sm text-inkt/60 leading-relaxed">{f.tagline}</p>
       <p class="mt-3 text-sm text-inkt/60">KvK {b.kvk}</p>
       <a href={`mailto:${b.mail}`} class={`mt-2 block ${link}`}>{b.mail}</a>

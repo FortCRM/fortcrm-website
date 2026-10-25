@@ -1,13 +1,12 @@
 ---
-titel: Terwijl jij aan het strand ligt, blijft je CRM gewoon doorwerken
-seoTitel: 'Je CRM werkt door tijdens je vakantie'
+titel: 'Je CRM werkt door tijdens je vakantie'
 omschrijving: Onderzoek onder ruim 2.000 zelfstandigen laat zien dat maar 32% echt volledig offline gaat op vakantie. Automatisering is de reden waarom dat percentage omhoog kan, zonder dat er iets blijft liggen.
 datum: '2026-07-28'
 tldr:
 - Slechts 32% van de zelfstandig ondernemers is tijdens vakantie echt volledig offline; 36% houdt bewust een lijntje met werk.
 - Ondernemers die wél langere, onderbroken vakanties nemen, waarderen het ondernemerschap merkbaar hoger (8,5 versus 7,6).
 - Het verschil zit vaak niet in discipline, maar in of het werk daadwerkelijk kan doorlopen zonder dat jij erachter zit.
-vertaling: je-crm-blijft-doorwerken-tijdens-vakantie
+vertaling: your-crm-keeps-working-while-youre-away
 ---
 Het is die bekende reflex vlak voor vertrek: nog even snel de mail checken, nog één keer inloggen "voor de zekerheid". Onderzoek van Knab onder meer dan 2.000 zelfstandig ondernemers laat zien dat dit geen incident is, maar de norm. Terwijl 63,8% van de zzp'ers vier weken of meer vakantie neemt, is slechts 32% tijdens die weken echt volledig offline. 36% houdt bewust contact: een factuur versturen, een klant terugbellen, snel de mail scannen.
 

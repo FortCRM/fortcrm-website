@@ -1,13 +1,12 @@
 ---
-titel: CRM implementation, then what? What goes wrong after go-live
-seoTitel: 'CRM implementation: what goes wrong after go-live'
+titel: 'CRM implementation: what goes wrong after go-live'
 omschrijving: Up to 63% of CRM implementations fail to deliver what was promised, and it's rarely the software's fault. What goes wrong after go-live, and how to prevent it.
 datum: '2026-08-20'
 tldr:
 - 'Between 30 and 63% of CRM implementations fail to deliver the value that was promised: only 6 to 10% of that is caused by the software itself.'
 - 'The rest is a people problem: poor adoption (43%), messy data (34%) and insufficient training (22%) are the leading causes.'
 - 'Month 3 to 6 after go-live is the most dangerous period: the initial training has faded and old habits creep back in.'
-vertaling: crm-implementatie-wat-gaat-mis-na-livegang
+vertaling: crm-implementatie-wat-misgaat-na-livegang
 ---
 A CRM project is almost always judged by its go-live: is the system set up, has the data been migrated, did everyone get an account and a training week? Check, check, check: project done. Except that's exactly the moment the real work starts, not ends.
 

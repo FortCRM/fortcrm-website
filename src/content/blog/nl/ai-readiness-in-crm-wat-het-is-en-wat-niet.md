@@ -6,7 +6,7 @@ tldr:
 - 'AI readiness is de vraag of je organisatie klaar is om AI effectief in te zetten: schone data, heldere processen, gekoppelde systemen en duidelijk eigenaarschap.'
 - Het is niet hetzelfde als een AI-tool aanzetten, geen eenmalig project, en geen vervanging van menselijk contact.
 - 'Ook voor het MKB relevant: niet de grootte van je organisatie telt, maar of het fundament op orde is voordat je AI eraan koppelt.'
-vertaling: ai-readiness-in-crm
+vertaling: ai-readiness-in-crm-what-it-is-and-isnt
 ---
 AI in CRM is niet meer weg te denken. Automatische opvolgmails, samenvattingen van klantcontact, voorspellingen over wie gaat afhaken: het zit inmiddels op bijna elke laag van klantrelatiebeheer. Maar er is een term die steeds vaker opduikt zodra organisaties dit serieus willen aanpakken: AI readiness. En die term wordt te vaak verward met "we hebben een AI-tool aangezet". Tijd om scherp te krijgen wat het wel is, en misschien nog belangrijker, wat het niet is.
 

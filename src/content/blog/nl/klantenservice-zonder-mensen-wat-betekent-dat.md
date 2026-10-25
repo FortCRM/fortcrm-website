@@ -1,13 +1,12 @@
 ---
-titel: 'Klantenservice draait deze zomer door zonder mensen: wat betekent dat voor het MKB?'
-seoTitel: 'Klantenservice zonder mensen: wat betekent dat?'
+titel: 'Klantenservice zonder mensen: wat betekent dat?'
 omschrijving: '85% van alle klantenservice-interacties start in 2026 met AI, tegen 60% in 2024. Terwijl personeel op vakantie is, draait die AI gewoon door: met zowel voordelen als wrijving.'
 datum: '2026-08-06'
 tldr:
 - '85% van de klantenservice-interacties start in 2026 met AI, tegen 60% in 2024: juist in de zomer, met minder personeel, is dat merkbaar.'
 - AI-agents handelen inmiddels 60-80% van routinevragen zelfstandig af, 24/7, zonder wachttijd.
 - Tegelijk zegt 59% van de consumenten gefrustreerd te raken van AI-klantenservice, en geeft 85% de voorkeur aan een mens.
-vertaling: klantenservice-draait-door-zonder-mensen-deze-zomer
+vertaling: customer-service-without-people-what-it-means
 ---
 De zomer is traditioneel de periode waarin klantenservice-afdelingen het krapst bezet zijn: collega's zijn om beurten weg, en wie er wel is, moet meer opvangen dan normaal. Dit jaar is dat beeld voor het eerst structureel anders, blijkt uit recent onderzoek: 85% van alle klantenservice-interacties start inmiddels met AI, tegen 60% nog in 2024. Terwijl personeel met vakantie is, draait dat deel van de klantenservice gewoon door.
 

@@ -1,12 +1,12 @@
 ---
-titel: Who catches your leads while you're on vacation?
+titel: 'Who catches your leads while you''re on vacation?'
 omschrijving: '78% of B2B buyers go with the first vendor who responds. During vacation weeks, average response times get even longer: right when it hurts the most.'
 datum: '2026-07-30'
 tldr:
 - Responding within 1 minute instead of 2 raises conversion by 391%; the average B2B response time, however, sits at 42 hours.
 - 78% of B2B buyers ultimately go with the first vendor who responds.
 - 'During vacation weeks there''s often even less capacity to respond fast: exactly when competitors who''ve solved this make the difference.'
-vertaling: wie-vangt-je-leads-op-tijdens-vakantie
+vertaling: wie-vangt-je-leads-op-als-jij-op-vakantie-bent
 ---
 A lead who reaches out through your website is comparing options at that exact moment. How fast you respond largely decides whether that comparison works in your favor. Research covering more than 250,000 inbound leads across roughly 1,200 companies shows just how large that effect is: responding within 1 minute instead of 2 raises the chance of conversion by 391%. Leads contacted within 5 minutes are 21 times more likely to move to qualification than leads reached after 30 minutes.
 

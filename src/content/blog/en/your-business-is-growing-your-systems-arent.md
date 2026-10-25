@@ -1,8 +1,8 @@
 ---
-titel: Your business is growing. Your systems aren't.
+titel: 'Your business is growing. Your systems aren''t.'
 omschrijving: Spreadsheets that never quite add up, quotes in Word, customer contact scattered across an overflowing inbox. Why this pattern is so persistent, and where it can start to change.
 datum: '2026-07-10'
-vertaling: bedrijf-groeit-systemen-niet-mee
+vertaling: je-bedrijf-groeit-je-systemen-groeien-niet-mee
 ---
 It's Tuesday morning. The phone rings. A client you sent a quote to three months ago wants to know exactly what it covered. You open Outlook, scroll through dozens of emails, and eventually find a Word document named "quote_final_v3_ACTUALfinal.docx". While you search, you wonder: did I already call this client for follow-up? No idea. It was never written down anywhere.
 

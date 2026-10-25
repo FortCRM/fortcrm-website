@@ -1,11 +1,27 @@
 ---
-// Blogoverzicht: dezelfde opbouw als een artikel, met het nieuwste artikel rechts.
-import BlogPost from "@components/BlogPost.astro";
-import { posts } from "@lib/content";
-import type { Lang } from "@consts";
+// Blogoverzicht: één lijst met alle artikelen, zonder datums. De datum staat bij het artikel zelf.
+import { instellingen, posts } from "@lib/content";
+import { pad, type Lang } from "@consts";
 
 const { lang } = Astro.props as { lang: Lang };
-const nieuwste = (await posts(lang))[0];
+const b = (await instellingen(lang)).blog;
+const lijst = await posts(lang);
 ---
 
-{nieuwste && <BlogPost lang={lang} post={nieuwste} />}
+<section class="max-w-3xl mx-auto px-6 py-20">
+  <p class="eyebrow mb-4">FortCRM {b.titel}</p>
+  <h1 class="font-display font-bold text-3xl md:text-5xl leading-tight">{b.intro}</h1>
+  <ul class="mt-14 border-t border-inkt/15">
+    {lijst.map((p) => (
+      <li class="border-b border-inkt/15">
+        <a href={pad(lang, `/blog/${p.slug}/`)} class="group flex items-start justify-between gap-6 py-6">
+          <span class="min-w-0">
+            <span class="block font-display font-semibold text-xl leading-snug group-hover:text-viridiaan transition-colors">{p.data.titel}</span>
+            {p.data.omschrijving && <span class="mt-2 block text-inkt/65 leading-relaxed line-clamp-2">{p.data.omschrijving}</span>}
+          </span>
+          <span class="mt-1 flex-none text-inkt/40 group-hover:text-viridiaan group-hover:translate-x-1 transition" aria-hidden="true">→</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

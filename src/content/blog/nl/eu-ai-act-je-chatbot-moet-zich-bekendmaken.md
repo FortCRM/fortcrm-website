@@ -1,13 +1,12 @@
 ---
-titel: 'EU AI Act: vanaf 2 augustus moet je chatbot zich bekendmaken. Wat betekent dit voor het MKB?'
-seoTitel: 'EU AI Act: je chatbot moet zich bekendmaken'
+titel: 'EU AI Act: je chatbot moet zich bekendmaken'
 omschrijving: Sinds 2 augustus 2026 gelden de transparantieverplichtingen van de EU AI Act voor ieder bedrijf dat AI inzet richting EU-klanten, ongeacht de omvang. Wat dit concreet betekent voor een MKB'er met een chatbot of AI-schrijfhulp.
 datum: '2026-08-18'
 tldr:
 - Sinds 2 augustus 2026 gelden de transparantieverplichtingen (artikel 50) van de EU AI Act voor elk bedrijf dat AI inzet richting EU-klanten, ongeacht de grootte.
 - Praat een klant met een chatbot of voicebot? Dat moet duidelijk kenbaar worden gemaakt. Ook AI-gegenereerde tekst, beeld en audio krijgen een markeringsplicht.
 - 'De zwaardere verplichtingen voor high-risk AI zijn juist uitgesteld (via de Digital Omnibus, sinds 27 juli 2026 van kracht): de transparantieplicht niet.'
-vertaling: eu-ai-act-chatbot-transparantie-mkb
+vertaling: eu-ai-act-your-chatbot-must-identify-itself
 ---
 Twee augustus 2026 kwam en ging grotendeels ongemerkt voorbij, maar op die datum werd een deel van de EU AI Act formeel bindend: de transparantieverplichtingen uit artikel 50. Anders dan bij veel EU-regelgeving is er geen ondergrens voor bedrijfsgrootte: de verplichting geldt voor ieder bedrijf dat AI-systemen aanbiedt of inzet richting gebruikers in de EU, van multinational tot eenmanszaak met een chatbot op de website.
 

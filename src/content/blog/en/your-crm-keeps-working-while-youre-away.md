@@ -1,13 +1,12 @@
 ---
-titel: While you're at the beach, your CRM keeps working
-seoTitel: 'Your CRM keeps working while you’re away'
+titel: 'Your CRM keeps working while you''re away'
 omschrijving: Research among over 2,000 self-employed professionals shows only 32% fully disconnect on vacation. Automation is what lets that number go up, without anything falling through the cracks.
 datum: '2026-07-28'
 tldr:
 - Only 32% of self-employed entrepreneurs are fully offline during vacation; 36% deliberately keep a line open to work.
 - Entrepreneurs who take longer, uninterrupted vacations rate self-employment noticeably higher (8.5 versus 7.6).
 - 'The difference usually isn''t discipline: it''s whether the work can actually keep running without you behind it.'
-vertaling: je-crm-blijft-doorwerken-tijdens-vakantie
+vertaling: je-crm-werkt-door-tijdens-je-vakantie
 ---
 It's the familiar reflex right before you leave: one more quick check of email, one more login "just in case." Research by Dutch bank Knab among more than 2,000 self-employed professionals shows this isn't an isolated slip-up: it's the norm. While 63.8% of self-employed workers take four weeks of vacation or more, only 32% are actually fully offline during that time. 36% deliberately stay in touch: sending an invoice, calling a client back, quickly scanning email.
 

@@ -174,11 +174,6 @@ summary {
   .btnrow { @apply flex flex-wrap gap-3 items-center; }
 }
 
-/* Blogmenu: actief artikel */
-.blogitem[aria-current="page"] { background: rgb(var(--color-inkt) / 0.06); border-left-color: #2C6C4F; }
-.dark .blogitem[aria-current="page"] { border-left-color: #8FBFA6; }
-@media (min-width: 1024px) { .blogmenu > summary { display: none; } }
-
 /* Keuze demo of vraag in het contactformulier */
 .keuze { display: flex; flex-wrap: wrap; gap: .5rem; border: 0; padding: 0; margin: 0; }
 .keuze label { cursor: pointer; }

@@ -10,6 +10,6 @@ const { post } = Astro.props;
 const vertaling = post.data.vertaling ? `/blog/${post.data.vertaling}/` : undefined;
 ---
 
-<PageLayout title={`${post.data.seoTitel || post.data.titel} | FortCRM`} description={post.data.omschrijving} lang="en" vertaling={vertaling}>
+<PageLayout title={`${post.data.titel} | FortCRM`} description={post.data.omschrijving} lang="en" vertaling={vertaling}>
   <BlogPost lang="en" post={post} />
 </PageLayout>
