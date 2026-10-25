@@ -4,11 +4,11 @@ import { getEntry } from "astro:content";
 const scan = (await getEntry("quickscan", "nl"))?.data ?? null;
 ---
 
-<PageLayout title="Quick scan: hoe staat je CRM-basis ervoor? | FortCRM" description="Zes vragen, twee minuten. Zie direct hoe het staat met vastleggen, opvolgen en delen in je bedrijf." lang="nl">
+<PageLayout title="CRM-check: hoe staat je CRM-basis ervoor? | FortCRM" description="Zes vragen, twee minuten. Zie direct hoe het staat met vastleggen, opvolgen en delen in je bedrijf." lang="nl">
   <script is:inline define:vars={{ scan }}>window.FORTCRM_SCAN = scan;</script>
-  <section class="hex-texture bg-krijt">
+  <section>
     <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">
-      <p class="font-mono text-sm tracking-[0.2em] text-omber dark:text-oker uppercase mb-6">Quick scan</p>
+      <p class="eyebrow mb-6">CRM-check</p>
       <h1 class="font-display font-bold text-4xl md:text-5xl leading-[1.05]">Hoe staat je CRM-basis ervoor?</h1>
       <p class="mt-6 text-lg text-inkt/75 leading-relaxed max-w-xl">Zes vragen, twee minuten. Je ziet direct hoe het staat met vastleggen, opvolgen en delen, en waar je als eerste winst haalt.</p>
       <div class="mt-10 grid gap-6" id="scan">

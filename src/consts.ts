@@ -7,6 +7,8 @@ export const SITE = {
   SCHEDULER_URL: "https://fortcrm.pipedrive.com/scheduler/MkpLWmFq/kennismaking-met-fortcrm",
   GA_ID: "G-SLD185WBNG",
   BLOG_IN_FOOTER: 3,
+  // pad van de online CRM-check (vroeger /quick-scan/, die redirect staat in public/_redirects)
+  CHECK: "/crm-check/",
 };
 
 export type Lang = "nl" | "en";
