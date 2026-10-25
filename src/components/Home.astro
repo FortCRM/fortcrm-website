@@ -288,6 +288,11 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 </section>
 
 <!-- faq -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: h.faq.vragen.filter((v: any) => v.vraag && v.antwoord).map((v: any) => ({ "@type": "Question", name: v.vraag, acceptedAnswer: { "@type": "Answer", text: v.antwoord } })),
+})} />
 <section id="faq" class="py-24 md:py-32">
   <div class="wrap grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
     <div class="reveal">

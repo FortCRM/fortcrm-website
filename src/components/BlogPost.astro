@@ -9,9 +9,36 @@ const b = (await instellingen(lang)).blog;
 const { Content } = await render(post);
 const url = `${SITE.URL}${pad(lang, `/blog/${post.slug}/`)}`;
 const d = post.data;
+const blogUrl = `${SITE.URL}${pad(lang, "/blog/")}`;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      headline: d.titel,
+      description: d.omschrijving,
+      datePublished: d.datum.toISOString().slice(0, 10),
+      inLanguage: lang,
+      url,
+      mainEntityOfPage: url,
+      image: `${SITE.URL}/banner.png`,
+      author: { "@id": `${SITE.URL}/#organisatie` },
+      publisher: { "@id": `${SITE.URL}/#organisatie` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE.NAME, item: `${SITE.URL}${pad(lang, "/")}` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
+        { "@type": "ListItem", position: 3, name: d.titel, item: url },
+      ],
+    },
+  ],
+};
 const rond = "w-10 h-10 rounded-full border border-inkt/15 flex items-center justify-center text-inkt/60 hover:text-inkt hover:border-inkt/30 transition-colors";
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 <article class="max-w-3xl mx-auto px-6 py-20">
   <a href={pad(lang, "/blog/")} class="groenlink">← {b.terug}</a>
   <p class="eyebrow mt-8 mb-4">{formatDatum(d.datum, lang)}</p>

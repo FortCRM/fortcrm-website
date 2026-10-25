@@ -9,9 +9,24 @@ import { pad, SITE, type Lang } from "@consts";
 const { lang, p } = Astro.props as { lang: Lang; p: any };
 const h = await home(lang);
 const d = p.data;
+const paginaUrl = `${SITE.URL}${Astro.url.pathname}`;
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Service", name: d.titel, description: d.beschrijving, serviceType: "Pipedrive-implementatie", url: paginaUrl, provider: { "@id": `${SITE.URL}/#organisatie` }, areaServed: "NL" },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE.NAME, item: `${SITE.URL}${pad(lang, "/")}` },
+        { "@type": "ListItem", position: 2, name: d.titel, item: paginaUrl },
+      ],
+    },
+  ],
+};
 const reeks: KleurNaam[] = ["viridiaan", "vermiljoen", "oker"];
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 <section class="relative">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
     <a href={pad(lang, "/#voor-wie")} class="groenlink">← {h.voorWie.eyebrow}</a>

@@ -11,6 +11,7 @@ import "@fontsource/jetbrains-mono/latin-500.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import grotesk700 from "@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2";
 import { SITE, type Lang } from "@consts";
+import { instellingen } from "@lib/content";
 
 interface Props {
   title: string;
@@ -23,6 +24,26 @@ interface Props {
 const { title, description, socialTitle, lang, vertaling } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const image = new URL("/banner.png", Astro.site);
+const bedrijf = (await instellingen(lang)).bedrijf ?? {};
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE.URL}/#organisatie`,
+      name: SITE.NAME,
+      url: `${SITE.URL}/`,
+      logo: `${SITE.URL}/images/logo-square.svg`,
+      image: `${SITE.URL}/banner.png`,
+      email: bedrijf.mail,
+      telephone: bedrijf.telefoon,
+      areaServed: "NL",
+      sameAs: [bedrijf.linkedin].filter(Boolean),
+      knowsAbout: ["Pipedrive", "CRM", "Automatisering", "AI"],
+    },
+    { "@type": "WebSite", "@id": `${SITE.URL}/#website`, url: `${SITE.URL}/`, name: SITE.NAME, inLanguage: lang, publisher: { "@id": `${SITE.URL}/#organisatie` } },
+  ],
+};
 const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL, lang };
 ---
 
@@ -40,6 +61,7 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
 )}
 
 <title>{title}</title>
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 <meta name="description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="FortCRM" />
