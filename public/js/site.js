@@ -211,7 +211,21 @@
     ok: function (n) { return 'Bedankt ' + n + '. We reageren binnen één werkdag.'; },
     fail: 'Versturen lukte niet. Mail ons op <a href="mailto:hallo@fortcrm.nl">hallo@fortcrm.nl</a>.', subj: 'Gesprek aanvragen', bron: 'Hoe ken je ons: '
   };
+  function zetOnderwerp(f, waarde) {
+    var r = f.querySelector('input[name=onderwerp][value=' + waarde + ']');
+    if (r) r.checked = true;
+    var lab = f.querySelector('[data-vraaglabel]'), btn = f.querySelector('button[type=submit]');
+    if (lab) lab.textContent = lab.getAttribute('data-' + waarde) || lab.textContent;
+    if (btn) btn.textContent = btn.getAttribute('data-' + waarde) || btn.textContent;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href$="#demo"]');
+    if (!a) return;
+    var f = document.getElementById('demo');
+    if (f) { zetOnderwerp(f, 'demo'); setTimeout(function () { var n = f.querySelector('[name=naam]'); if (n) n.focus({ preventScroll: true }); }, 600); }
+  });
   document.querySelectorAll('form[data-contact]').forEach(function (f) {
+    f.addEventListener('change', function (e) { if (e.target.name === 'onderwerp') zetOnderwerp(f, e.target.value); });
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var m = f.querySelector('.msg'), el = f.elements;
@@ -219,7 +233,8 @@
       m.classList.remove('err');
       if (!naam) { m.textContent = T.naam; el.naam.focus(); return; }
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { m.textContent = T.mail; el.mail.focus(); return; }
-      var data = { soort: 'contact', naam: naam, mail: mail, bron: el.bron ? el.bron.value : '', vraag: el.vraag.value.trim(), website: el.website ? el.website.value : '' };
+      var onderwerp = el.onderwerp ? (f.querySelector('input[name=onderwerp]:checked') || {}).value || 'vraag' : 'vraag';
+      var data = { soort: 'contact', onderwerp: onderwerp, naam: naam, mail: mail, bron: el.bron ? el.bron.value : '', vraag: el.vraag.value.trim(), website: el.website ? el.website.value : '' };
       var btn = f.querySelector('button');
       var mailto = function () {
         var body = 'Naam: ' + naam + '\nE-mail: ' + mail + (data.bron ? '\n' + T.bron + data.bron : '') + '\n\n' + data.vraag;

@@ -178,3 +178,12 @@ summary {
 .blogitem[aria-current="page"] { background: rgb(var(--color-inkt) / 0.06); border-left-color: #2C6C4F; }
 .dark .blogitem[aria-current="page"] { border-left-color: #8FBFA6; }
 @media (min-width: 1024px) { .blogmenu > summary { display: none; } }
+
+/* Keuze demo of vraag in het contactformulier */
+.keuze { display: flex; flex-wrap: wrap; gap: .5rem; border: 0; padding: 0; margin: 0; }
+.keuze label { cursor: pointer; }
+.keuze input { position: absolute; opacity: 0; pointer-events: none; }
+.keuze span { display: inline-block; border: 1px solid rgb(var(--color-inkt) / .2); border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; font-weight: 500; transition: background-color .15s, border-color .15s, color .15s; }
+.keuze input:checked + span { background: #2C6C4F; border-color: #2C6C4F; color: #F0EEE4; }
+.keuze input:focus-visible + span { outline: 2px solid #2C6C4F; outline-offset: 2px; }
+#demo { scroll-margin-top: 110px; }

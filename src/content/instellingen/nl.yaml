@@ -29,7 +29,7 @@ cookies:
   weigeren: Weigeren
   akkoord: Oké
 formulier:
-  kop: Liever eerst een vraag stellen?
+  kop: Demo aanvragen of een vraag stellen?
   naam: Naam
   mail: E-mailadres
   bron: Hoe ken je ons? (optioneel)
@@ -41,8 +41,12 @@ formulier:
     netwerk: We kennen elkaar al
     pipedrive: Via Pipedrive
     anders: Anders
+  keuzeDemo: Ik wil een demo
+  keuzeVraag: Ik heb een vraag
+  vraagDemo: Wat wil je graag zien? (optioneel)
   vraag: Waar loop je tegenaan? (optioneel)
   nieuwsbrief: Stuur me ook de FortCRM-inzichten over CRM en AI voor het MKB, maximaal één keer per maand. Opzeggen kan altijd.
+  verstuurDemo: Demo aanvragen
   verstuur: Verstuur
   privacy: We gebruiken je gegevens alleen om te reageren op je vraag.
   planner: Plan een gesprek

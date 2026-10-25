@@ -45,6 +45,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
         )}
       </div>
+      {h.hero.knopDemo && <p class="mt-4"><a href="#demo" class="text-sm text-inkt/60 underline underline-offset-2 decoration-inkt/25 hover:text-inkt">{h.hero.knopDemo} ↓</a></p>}
       {h.hero.uitleg && <p class="mt-6 text-sm text-inkt/55 max-w-md leading-relaxed">{h.hero.uitleg}</p>}
       {belofte && (
         <p class="mt-10 flex items-start gap-3 text-sm text-inkt/70 max-w-lg">
