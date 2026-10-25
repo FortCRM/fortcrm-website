@@ -19,7 +19,7 @@ These are the general terms and conditions of FortCRM, registered with the Dutch
 
 2.2 The engagement starts as soon as the client accepts the quote digitally or in writing.
 
-2.3 The scope of the work is set out in the quote. We only do extra work after the client agrees, at the rates in the quote or based on an additional quote.
+2.3 The scope of the work is set out in the quote. Extra work during the implementation is only done after the client accepts an additional quote. Extra hours after go-live are charged at the hourly rates in the quote, monthly in arrears.
 
 ## 3. Delivery
 
@@ -39,7 +39,7 @@ These are the general terms and conditions of FortCRM, registered with the Dutch
 
 4.3 We invoice implementations in two parts: 50% when the quote is accepted and 50% when the setup goes live.
 
-4.4 Support plans are invoiced monthly in advance.
+4.4 Support plans are invoiced per calendar month in advance, starting with the first full calendar month after the free trial month.
 
 4.5 Payment is due within 14 days of the invoice date. If the client pays late, we send a reminder. If payment is still not made, we may suspend the work and charge statutory interest and reasonable collection costs.
 
@@ -58,7 +58,7 @@ These are the general terms and conditions of FortCRM, registered with the Dutch
 
 ## 6. Support plans
 
-6.1 A support plan (SLA) runs monthly and renews automatically each month.
+6.1 A support plan (SLA) starts at go-live with a free trial month. After that it runs per calendar month and renews automatically each month.
 
 6.2 Either party can cancel the plan with one month's notice, effective at the end of a calendar month.
 

@@ -19,7 +19,7 @@ Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koop
 
 2.2 De opdracht komt tot stand zodra de klant de offerte digitaal of schriftelijk akkoord geeft.
 
-2.3 Wat binnen de opdracht valt, staat in de offerte. Extra werk doen we pas na akkoord van de klant, tegen de tarieven uit de offerte of op basis van een aanvullende offerte.
+2.3 Wat binnen de opdracht valt, staat in de offerte. Extra werk tijdens de implementatie doen we pas na akkoord op een aanvullende offerte. Meeruren na livegang rekenen we af tegen de uurtarieven uit de offerte, maandelijks achteraf.
 
 ## 3. Uitvoering
 
@@ -39,7 +39,7 @@ Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koop
 
 4.3 Implementaties factureren we in twee delen: 50% bij akkoord op de offerte en 50% zodra de inrichting live is.
 
-4.4 Onderhoudsabonnementen factureren we maandelijks vooraf.
+4.4 Onderhoudsabonnementen factureren we per kalendermaand vooraf, vanaf de eerste hele kalendermaand na de gratis proefmaand.
 
 4.5 De betaaltermijn is 14 dagen na factuurdatum. Betaalt de klant niet op tijd, dan sturen we een herinnering. Blijft betaling daarna uit, dan mogen we het werk opschorten en wettelijke rente en redelijke incassokosten in rekening brengen.
 
@@ -58,7 +58,7 @@ Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koop
 
 ## 6. Onderhoudsabonnement
 
-6.1 Een onderhoudsabonnement (SLA) loopt per maand en wordt telkens stilzwijgend met een maand verlengd.
+6.1 Een onderhoudsabonnement (SLA) start bij livegang met een gratis proefmaand. Daarna loopt het per kalendermaand en wordt het telkens stilzwijgend met een maand verlengd.
 
 6.2 Beide partijen kunnen het abonnement opzeggen met een opzegtermijn van één maand, per het einde van een kalendermaand.
 
