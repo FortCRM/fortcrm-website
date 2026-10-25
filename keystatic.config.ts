@@ -37,6 +37,8 @@ const homeSchema = {
       eyebrow: tekst("Klein kopje boven de titel"),
       titel: tekst("Titel", "Zet het woord dat dun moet tussen _liggende streepjes_, bijvoorbeeld: Pipedrive dat je team _écht_ gebruikt."),
       intro: alinea("Inleiding"),
+      uitleg: alinea("Korte uitleg onder de knoppen", "Voor wie niet weet wat een CRM of Pipedrive is. Leeg = verbergen."),
+      beeldOnderschrift: tekst("Bijschrift onder het beeld", "Leeg = geen bijschrift."),
       belofte: tekst("Belofte in het vet"),
       knopGesprek: tekst("Knop gesprek plannen"),
       knopPakketten: tekst("Knop naar pakketten"),

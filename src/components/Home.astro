@@ -44,6 +44,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
         )}
       </div>
+      {h.hero.uitleg && <p class="mt-6 text-sm text-inkt/55 max-w-md leading-relaxed">{h.hero.uitleg}</p>}
       {belofte && (
         <p class="mt-10 flex items-start gap-3 text-sm text-inkt/70 max-w-lg">
           <span class="mt-0.5 flex size-5 flex-none items-center justify-center rounded-full bg-viridiaan/15 text-viridiaan"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
@@ -56,6 +57,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
       {h.hero.beeld
         ? <img src={h.hero.beeld} alt={h.hero.beeldAlt || ""} class="w-full rounded-2xl border border-inkt/10 shadow-[0_30px_60px_-30px_rgb(29_33_28/0.45)]" />
         : <PipelineBeeld lang={lang} />}
+      {h.hero.beeldOnderschrift && <p class="mt-10 text-sm text-inkt/55 max-w-md">{h.hero.beeldOnderschrift}</p>}
     </div>
   </div>
 </section>

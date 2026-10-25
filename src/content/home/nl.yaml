@@ -3,14 +3,16 @@ seo:
   beschrijving: 'FortCRM implementeert Pipedrive voor MKB-bedrijven en zorgt dat je team het blijft gebruiken: inrichting, automatisering en een maandelijks ambitiegesprek.'
   deelTitel: 'FortCRM: Pipedrive dat je team echt gebruikt'
 hero:
-  eyebrow: Pipedrive-implementatie voor het MKB
-  titel: Pipedrive dat je team _écht_ gebruikt.
-  intro: Wij richten Pipedrive in, bouwen de automatisering eromheen en sturen elke maand bij. Zodat je geen CRM hebt dat na drie weken stof vergaart, maar een systeem dat de basis van je bedrijf wordt. En klaar voor AI.
+  eyebrow: Pipedrive-specialist voor het MKB
+  titel: Al je klanten, offertes en afspraken op _één plek_.
+  intro: 'Wij richten Pipedrive voor je in: het systeem waarin je hele team klantcontact, offertes en opvolging bijhoudt. Zo blijft er niets liggen en weet iedereen wat er speelt.'
+  uitleg: 'Pipedrive is een CRM: software waarin je al je klanten, deals en afspraken bijhoudt, voor het hele team.'
+  beeldOnderschrift: 'Zo ziet je verkoop eruit in Pipedrive: elke aanvraag in een kolom, tot hij gewonnen is.'
   belofte: Binnen 6 weken live. Na 60 dagen gebruikt je team het nog. Lukt dat niet, dan staan wij ervoor in.*
   knopGesprek: Plan een gesprek
   knopPakketten: Bekijk de pakketten
   knopScan: Of doe eerst de CRM-check (2 min)
-  voetnoot: '* Niet binnen 6 weken live, terwijl jouw requirements op orde waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na 60 dagen niet actief met Pipedrive, dan krijg je een gratis extra trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared. Wat actief is, leggen we vooraf samen vast.'
+  voetnoot: '* Niet binnen 6 weken live, terwijl jouw wensen en afspraken op tijd rond waren? Dan betaal je geen licentiekosten over de uitloop. Werkt je team na 60 dagen niet actief met Pipedrive, dan krijg je een gratis extra trainingssessie. Beide garanties gelden voor Volledig ontzorgd en Shared. Wat actief is, leggen we vooraf samen vast.'
   beeld:
   beeldAlt: ''
 pipedrive:
@@ -42,7 +44,7 @@ pipedrive:
     tekst: Taken, mails en updates lopen vanzelf, op basis van wat er in een deal gebeurt.
     icoon: bliksem
   - titel: Rapportages
-    tekst: Dashboards met je pijplijn, verwachte omzet en resultaten per verkoper.
+    tekst: Dashboards met je verkoopoverzicht, verwachte omzet en resultaten per verkoper.
     icoon: grafiek
   - titel: Mobiele app
     tekst: Alles bij de hand onderweg, ook een gesprek vastleggen direct na een bezoek.
@@ -75,14 +77,14 @@ aanpak:
   - titel: Inrichting en automatisering
     tekst: FortCRM richt Pipedrive in, zet je data over en bouwt de automatisering eromheen.
     resultaat: Een werkend Pipedrive, klaar voor gebruik.
-  - titel: Training en livegang
+  - titel: Training en start
     tekst: Je team leert werken in de situatie zoals die echt is, niet in een demo. Binnen 6 weken na de start ben je live.
     resultaat: Je team werkt in Pipedrive.
   - titel: Bijsturen
     tekst: Na 60 dagen kijken we samen of je team actief met Pipedrive werkt. Zo niet, dan krijg je een gratis extra trainingssessie.
     resultaat: Gebruik dat blijft.
   naderhandTitel: 'Daarna: het ambitiegesprek'
-  naderhandTekst: Wat werkt, wat niet, en wat de volgende stap is. Zo groeit Pipedrive mee met je bedrijf. Onderdeel van elke SLA.
+  naderhandTekst: Wat werkt, wat niet, en wat de volgende stap is. Zo groeit Pipedrive mee met je bedrijf. Onderdeel van elk onderhoudsabonnement.
 voorWie:
   eyebrow: Voor wie we werken
   titel: Drie soorten bedrijven waar Pipedrive het verschil maakt
@@ -113,7 +115,7 @@ scan:
 pakketten:
   eyebrow: Pakketten
   titel: Kies hoeveel je zelf doet
-  intro: Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive als bron van waarheid.
+  intro: Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive als de plek waar al je klantgegevens kloppen.
   kolommen:
   - naam: Zelfstandig
     prijs: €4.950
@@ -136,7 +138,7 @@ pakketten:
     - Jij doet het zelf.
     - We doen het samen.
     - Wij doen het voor je.
-  - onderdeel: Pipelines
+  - onderdeel: Verkoopoverzichten (pipelines)
     waarden:
     - '1'
     - '2'
@@ -171,26 +173,26 @@ pakketten:
     - 1 sessie
     - 2 sessies
     - 3 sessies
-  - onderdeel: Hypercare na livegang
+  - onderdeel: Nazorg na de start
     waarden:
     - 30 dagen
     - 30 dagen
     - 30 dagen
   - onderdeel: Doorlooptijd
     waarden:
-    - Binnen 6 weken live, mits je requirements op orde zijn.
+    - Binnen 6 weken live, mits je wensen en afspraken op tijd rond zijn.
   - onderdeel: Garantie op tijd live en op gebruik
     waarden:
     - Nee
     - Ja
     - Ja
-  - onderdeel: SLA en ambitiegesprek
+  - onderdeel: Onderhoud en ambitiegesprek
     waarden:
     - Bij elk pakket af te nemen, zie hieronder.
   prijsnoot: 'Alle prijzen zijn excl. btw. Pipedrive-licenties zijn niet inbegrepen, die factureert Pipedrive zelf. Extra koppeling met een extern systeem: €950 per koppeling. Tech Discovery sessie: €1.295.'
-  slaEyebrow: Na livegang
-  slaTitel: 'SLA: support, beheer en het ambitiegesprek'
-  slaIntro: 'Met een SLA blijven we sturen op gebruik. In elk niveau zit het ambitiegesprek: wat werkt, wat niet en wat de volgende stap is.'
+  slaEyebrow: Na de start
+  slaTitel: 'Onderhoudsabonnement: support, beheer en het ambitiegesprek'
+  slaIntro: 'Met een onderhoudsabonnement blijven we sturen op gebruik. In elk niveau zit het ambitiegesprek: wat werkt, wat niet en wat de volgende stap is.'
   slaKolommen:
   - naam: Basis
     prijs: €595 p/m
@@ -236,14 +238,14 @@ garantie:
   eyebrow: Onze garantie
   titel: Op tijd live en in gebruik. Anders staan wij ervoor in.
   punten:
-  - Niet binnen 6 weken live, terwijl je requirements op orde waren? Dan betaal je geen licentiekosten over de uitloop.
+  - Niet binnen 6 weken live, terwijl je wensen en afspraken op tijd rond waren? Dan betaal je geen licentiekosten over de uitloop.
   - Na 60 dagen kijken we samen of je team actief met Pipedrive werkt.
   - Zo niet, dan krijg je een gratis extra trainingssessie.
   - Wat actief is, leggen we vooraf samen vast. Geen discussie achteraf.
   noot: Beide garanties gelden voor Volledig ontzorgd en Shared.
 waarom:
   eyebrow: Waarom FortCRM
-  titel: Gebruik is het doel, niet livegang
+  titel: Gebruik is het doel, niet de oplevering
   punten:
   - titel: Resultaat, geen inspanning
     tekst: Anderen beloven inspanning. Wij beloven een team dat Pipedrive na 60 dagen nog gebruikt, en sturen daarop.
@@ -252,13 +254,13 @@ waarom:
     tekst: Wij bouwen de koppelingen en workflows rond Pipedrive zelf. Zo verdwijnt handwerk en blijft het aanpasbaar.
     icoon: koppeling
   - titel: Klaar voor AI
-    tekst: Pipedrive als bron van waarheid, met schone data. Daar kan AI op rekenen.
+    tekst: Al je klantgegevens op één plek, en ze kloppen. Daar kan AI op rekenen.
     icoon: ai
   - titel: Eerlijk over wat past
     tekst: Past Pipedrive niet bij jullie, dan horen jullie dat van ons in het eerste gesprek.
     icoon: gesprek
   - titel: Vaste aanspreekpunten
-    tekst: Je werkt met twee mensen die het ook echt doen, ook ruim na livegang. Geen overdracht tussen sales en uitvoering.
+    tekst: Je werkt met twee mensen die het ook echt doen, ook ruim na de start. Geen overdracht tussen sales en uitvoering.
     icoon: mensen
   - titel: Veilige basis
     tekst: EU-hosting en AVG zijn standaard, voor Pipedrive en voor de koppelingen die wij bouwen.
@@ -286,7 +288,7 @@ faq:
   titel: Wat mensen ons vooraf vragen
   vragen:
   - vraag: Hoe lang duurt een implementatie?
-    antwoord: 'Binnen 6 weken ben je live, mits je requirements op orde zijn. Live betekent: opgeleverd, getest volgens de afspraken en je team is getraind. Lukt dat niet, dan betaal je bij Volledig ontzorgd en Shared geen licentiekosten over de uitloop.'
+    antwoord: 'Binnen 6 weken ben je live, mits je wensen en afspraken op tijd rond zijn. Live betekent: opgeleverd, getest volgens de afspraken en je team is getraind. Lukt dat niet, dan betaal je bij Volledig ontzorgd en Shared geen licentiekosten over de uitloop.'
   - vraag: Waarom Pipedrive?
     antwoord: Pipedrive is eenvoudig genoeg om dagelijks te gebruiken en krachtig genoeg om mee te groeien. Dat laatste is de reden dat teams het blijven gebruiken.
   - vraag: Wat als mijn team het niet gebruikt?
@@ -296,7 +298,7 @@ faq:
   - vraag: Wat is klaar voor AI?
     antwoord: AI is zo goed als de data waar het op werkt. Wij richten Pipedrive in met schone, consistente data, zodat je daar later AI-toepassingen op kunt zetten.
   - vraag: Wat kost het?
-    antwoord: 'Zelfstandig kost €4.950, Shared €7.950 en Volledig ontzorgd €12.950. Na livegang kies je een SLA: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
+    antwoord: 'Zelfstandig kost €4.950, Shared €7.950 en Volledig ontzorgd €12.950. Na de start kies je een onderhoudsabonnement: Basis €595, Plus €1.250 of Max €2.450 per maand. Alles excl. btw. Na het eerste gesprek ontvang je een voorstel.'
   - vraag: Heb ik al een Pipedrive-licentie nodig?
     antwoord: 'Nee. Dat bespreken we in het eerste gesprek, en we adviseren welk abonnement past. Als Pipedrive-partner starten we je proefperiode via onze partnerlink: 30 dagen in plaats van 14.'
 contact:
