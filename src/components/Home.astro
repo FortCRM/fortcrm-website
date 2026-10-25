@@ -64,8 +64,10 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 
 <Bewijs deel="logos" b={b} />
 
+<Pipedrive p={h.pipedrive} lang={lang} />
+
 <!-- herkenbaar -->
-<section class="py-24 md:py-32 border-t border-inkt/10">
+<section class="py-24 md:py-32">
   <div class="wrap">
     <div class="reveal">
       <p class="eyebrow mb-4">{h.herkenbaar.eyebrow}</p>
@@ -88,7 +90,6 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
   </div>
 </section>
 
-<Pipedrive p={h.pipedrive} lang={lang} />
 
 <!-- aanpak: donkere band met tijdlijn -->
 <section id="aanpak" class="band py-24 md:py-32">
@@ -252,7 +253,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 )}
 
 <!-- team -->
-<section id="over-ons" class="py-24 md:py-32">
+<section id="over-ons" class="tint py-24 md:py-32">
   <div class="wrap">
     <div class="reveal grid gap-6 lg:grid-cols-2 lg:items-end">
       <div>
@@ -284,7 +285,7 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
 </section>
 
 <!-- faq -->
-<section id="faq" class="pb-24 md:pb-32">
+<section id="faq" class="py-24 md:py-32">
   <div class="wrap grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
     <div class="reveal">
       <p class="eyebrow mb-4">{h.faq.eyebrow}</p>
