@@ -52,15 +52,15 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
           ))}
         </ul>
       )}
-      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
-        <a href="#contact" data-plan class="knop px-8">{h.hero.knopGesprek}</a>
+      <div class="mt-10 flex flex-wrap lg:flex-nowrap items-center gap-x-5 gap-y-4 whitespace-nowrap">
+        <a href="#contact" data-plan class="knop px-7">{h.hero.knopGesprek}</a>
         {h.hero.knopScan ? (
           <a href={pad(lang, SITE.CHECK)} class="tekstlink">{h.hero.knopScan} →</a>
         ) : (
           <a href="#pakketten" class="tekstlink">{h.hero.knopPakketten} ↓</a>
         )}
+        {h.hero.knopDemo && <a href="#demo" class="tekstlink">{h.hero.knopDemo} ↓</a>}
       </div>
-      {h.hero.knopDemo && <p class="mt-4"><a href="#demo" class="text-sm text-inkt/60 underline underline-offset-2 decoration-inkt/25 hover:text-inkt">{h.hero.knopDemo} ↓</a></p>}
       {h.hero.uitleg && <p class="mt-6 text-sm text-inkt/55 max-w-md leading-relaxed">{h.hero.uitleg}</p>}
       {belofte && (
         <p class="mt-10 flex items-start gap-3 text-sm text-inkt/70 max-w-lg">
