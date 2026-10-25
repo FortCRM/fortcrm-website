@@ -40,6 +40,9 @@ pipedrive:
   - titel: Automations
     tekst: Tasks, emails and updates run by themselves, based on what happens in a deal.
     icoon: bliksem
+  - titel: Campaigns
+    tekst: Newsletters and email campaigns from Pipedrive, sent to the right group of customers. See who opens and clicks.
+    icoon: campagne
   - titel: Projects
     tekst: 'After the sale: planning, tasks and delivery in the same system. A won deal becomes a project in one click.'
     icoon: project
@@ -158,6 +161,11 @@ pakketten:
     - '1'
     - '2'
     - '3'
+  - onderdeel: Projects (after the sale)
+    waarden:
+    - Available separately
+    - One project template
+    - Set up with templates and automations
   - onderdeel: Data migration
     waarden:
     - One Excel or CSV file

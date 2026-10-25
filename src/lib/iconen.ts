@@ -24,6 +24,7 @@ export const ICONEN = {
   notitie: { label: "AI-notities", svg: '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h3"/><path d="M19.5 13.5l.6 1.5 1.4.5-1.4.5-.6 1.5-.6-1.5-1.4-.5 1.4-.5z"/>' },
   mobiel: { label: "Mobiele app", svg: '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>' },
   project: { label: "Projecten / planning", svg: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M9 13h7M7 17h4"/>' },
+  campagne: { label: "Campagne / nieuwsbrief", svg: '<path d="M3 10v4h3l6 4V6L6 10H3z"/><path d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/>' },
   herhalen: { label: "Bijsturen / herhalen", svg: '<path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/>' },
 } as const;
 
