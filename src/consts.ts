@@ -11,6 +11,9 @@ export const SITE = {
   CHECK: "/crm-check/",
 };
 
+// Eén versie per build, achter /js-bestanden zodat browsers na een deploy geen oude versie uit de cache halen
+export const BUILD = Date.now().toString(36);
+
 export type Lang = "nl" | "en";
 export const pad = (lang: Lang, p = "/") => (lang === "en" ? `/en${p}` : p);
 // aparte pagina met alle pakketten en prijzen

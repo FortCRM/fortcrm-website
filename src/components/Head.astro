@@ -10,7 +10,7 @@ import "@fontsource/space-grotesk/latin-700.css";
 import "@fontsource/jetbrains-mono/latin-500.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import grotesk700 from "@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2";
-import { SITE, type Lang } from "@consts";
+import { SITE, BUILD, type Lang } from "@consts";
 import { instellingen } from "@lib/content";
 
 interface Props {
@@ -96,5 +96,5 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
     document.documentElement.classList.add("js");
   })();
 </script>
-<script is:inline src="/js/attributie.js" defer></script>
-<script is:inline src="/js/site.js" defer></script>
+<script is:inline src={`/js/attributie.js?v=${BUILD}`} defer></script>
+<script is:inline src={`/js/site.js?v=${BUILD}`} defer></script>
