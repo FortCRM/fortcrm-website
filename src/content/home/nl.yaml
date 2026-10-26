@@ -14,7 +14,6 @@ hero:
     - Uitvoering na de verkoop
     - Jouw basis voor AI
     - Snel live, met garantie*
-  belofte: ''
   knopGesprek: Plan een gesprek
   knopPakketten: Bekijk de pakketten
   knopScan: Doe de CRM-check
@@ -217,14 +216,24 @@ pakketten:
   intro: >-
     Drie manieren om met ons te werken. Alle drie richten we in met Pipedrive
     als de plek waar al je klantgegevens kloppen.
-  uitleg: |-
-    Waarom drie pakketten? Elk bedrijf verschilt op twee punten: wie het werk doet, en hoeveel er ingericht moet worden.
+  uitleg: >-
+    Waarom drie pakketten? Elk bedrijf verschilt op twee punten: wie het werk
+    doet, en hoeveel er ingericht moet worden.
 
-    Wie doet wat. Het ene team wil zelf aan de knoppen zitten en heeft vooral een goede basis nodig. Het andere bouwt liever samen met ons, zodat het daarna zelf kan beheren. En soms wil je het gewoon uit handen geven.
 
-    Hoeveel. Eén verkoopproces vraagt minder pipelines, velden en automatiseringen dan meerdere teams met eigen werkwijzen en koppelingen.
+    Wie doet wat. Het ene team wil zelf aan de knoppen zitten en heeft vooral
+    een goede basis nodig. Het andere bouwt liever samen met ons, zodat het
+    daarna zelf kan beheren. En soms wil je het gewoon uit handen geven.
 
-    De drie pakketten zijn herkenbare startpunten op die twee assen. Alle drie richten we in met Pipedrive als de plek waar al je klantgegevens kloppen. De prijzen zijn een indicatie: elke offerte is maatwerk, op basis van jouw wensen en de manier waarop je wilt werken.
+
+    Hoeveel. Eén verkoopproces vraagt minder pipelines, velden en
+    automatiseringen dan meerdere teams met eigen werkwijzen en koppelingen.
+
+
+    De drie pakketten zijn herkenbare startpunten op die twee assen. Alle drie
+    richten we in met Pipedrive als de plek waar al je klantgegevens kloppen. De
+    prijzen zijn een indicatie: elke offerte is maatwerk, op basis van jouw
+    wensen en de manier waarop je wilt werken.
   kolommen:
     - naam: Zelfstandig
       prijs: vanaf €4.950
@@ -359,7 +368,9 @@ pakketten:
   knopPagina: Bekijk pakketten en prijzen
   slaKort: Daarna kies je een onderhoudsabonnement, vanaf €595 per maand.
   paginaTitel: Pakketten en prijzen Pipedrive-implementatie | FortCRM
-  paginaBeschrijving: 'Drie pakketten voor een Pipedrive-implementatie: Zelfstandig, Shared en Volledig ontzorgd. Wie doet wat, wat je krijgt en wat het kost.'
+  paginaBeschrijving: >-
+    Drie pakketten voor een Pipedrive-implementatie: Zelfstandig, Shared en
+    Volledig ontzorgd. Wie doet wat, wat je krijgt en wat het kost.
 garantie:
   getal: '60'
   getalTekst: dagen garantie
@@ -406,7 +417,6 @@ waarom:
 team:
   eyebrow: Over ons
   titel: Twee mensen, samen ruim twintig jaar systeemimplementaties
-  intro: ''
   mensen:
     - naam: Joost Smaardijk
       rol: Strategie en begeleiding
@@ -420,9 +430,8 @@ team:
       rol: Implementatie en technologie
       tekst: >-
         Bouwt de inrichting, automatiseringen, integraties en workflows, en
-        optimaliseert processen. Deed de afgelopen drie jaar drie volledige
-        Pipedrive-implementaties, inclusief migratie. Daarvoor zeven jaar
-        business consultant IT.
+        optimaliseert je proces. Doet al een paar jaar Pipedrive-implementaties
+        en migraties. Daarvoor zeven jaar business consultant IT.
       foto: /images/team/team/mensen/1/foto.jpg
       linkedin: https://www.linkedin.com/in/jfbeers
       linkedinTekst: Connect op LinkedIn
