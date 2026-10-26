@@ -45,7 +45,7 @@ const orgSchema = {
     { "@type": "WebSite", "@id": `${SITE.URL}/#website`, url: `${SITE.URL}/`, name: SITE.NAME, inLanguage: lang, publisher: { "@id": `${SITE.URL}/#organisatie` } },
   ],
 };
-const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL, lang };
+const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL, gaId: SITE.GA_ID, lang };
 ---
 
 <meta charset="utf-8" />
@@ -96,4 +96,5 @@ const config = { formEndpoint: SITE.FORM_ENDPOINT, scheduler: SITE.SCHEDULER_URL
     document.documentElement.classList.add("js");
   })();
 </script>
+<script is:inline src="/js/attributie.js" defer></script>
 <script is:inline src="/js/site.js" defer></script>

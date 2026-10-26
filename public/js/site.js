@@ -1,16 +1,22 @@
 /* FortCRM website: quick scan, formulieren, afspraakplanner en cookiebanner.
-   Formulieren gaan naar het endpoint uit _config.yml (form_endpoint). Is dat leeg,
-   dan opent het contactformulier het mailprogramma met een ingevuld bericht. */
+   Formulieren gaan naar het endpoint uit src/consts.ts (FORM_ENDPOINT). Is dat leeg,
+   dan opent het contactformulier het mailprogramma met een ingevuld bericht.
+   Attributie en GA4-conversie-events komen uit /js/attributie.js (window.FortAttr). */
 (function () {
   'use strict';
   var CFG = window.FORTCRM || {};
 
+  var ATTR = window.FortAttr || { collect: function () { return Promise.resolve({}); }, event: function () {} };
   var send = function (payload) {
     if (!CFG.formEndpoint) return Promise.reject(new Error('geen endpoint'));
     payload.pagina = location.pathname;
     payload.verstuurd = new Date().toISOString();
-    return fetch(CFG.formEndpoint, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    // herkomst (first- en last-touch, GA4 client_id en session_id) mee naar n8n
+    return ATTR.collect().catch(function () { return {}; }).then(function (a) {
+      payload.attributie = a;
+      return fetch(CFG.formEndpoint, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+      });
     }).then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r; });
   };
 
@@ -249,7 +255,9 @@
         ml = f.mail.value.trim();
         if (CFG.formEndpoint) {
           send({ soort: 'quickscan', naam: nm, mail: f.mail.value.trim(), terugbellen: f.bel.checked,
-            telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan', taal: CFG.lang || 'nl' }).catch(function () {});
+            telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan', taal: CFG.lang || 'nl' })
+            .then(function () { ATTR.event('generate_lead', { form_id: 'crm_check', conversion_type: 'formulier' }); })
+            .catch(function () {});
           if (f.optin.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan', taal: CFG.lang || 'nl' }).catch(function () {});
         }
         i++; step();
@@ -340,6 +348,7 @@
       btn.disabled = true;
       send(data).then(function () {
         m.textContent = T.ok(naam);
+        ATTR.event('generate_lead', { form_id: 'contact_' + onderwerp, conversion_type: 'formulier' });
         if (el.optin && el.optin.checked) send({ soort: 'nieuwsbrief', naam: naam, mail: mail, bron: 'contactformulier' }).catch(function () {});
       }).catch(function () {
         btn.disabled = false;
@@ -349,6 +358,15 @@
     });
   });
 
+  /* ---------- mail- en tel-links: GA4-event contact (geen adres of nummer mee) ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (/^mailto:\?/.test(href)) return; // delen per mail, geen contact
+    ATTR.event('contact', { conversion_type: href.indexOf('tel:') === 0 ? 'tel' : 'mailto' });
+  });
+
   /* ---------- afspraakplanner (Pipedrive) ---------- */
   var sched = document.getElementById('sched');
   if (sched && CFG.scheduler) {
@@ -356,6 +374,9 @@
     var open = function (e) {
       e.preventDefault();
       if (!frame.src) frame.src = CFG.scheduler;
+      // De Pipedrive-planner meldt geen geboekte afspraak aan de site (cross-origin, geen postMessage).
+      // Daarom alleen het openen meten; de boeking zelf komt via n8n in Pipedrive.
+      ATTR.event('planner_open', { conversion_type: 'planner' });
       sched.hidden = bg.hidden = false;
       document.body.style.overflow = 'hidden';
       sched.querySelector('button').focus();
@@ -377,6 +398,7 @@
     var set = function (ok) {
       try { localStorage.setItem('fortcrm-consent', ok ? 'granted' : 'denied'); } catch (e) {}
       if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: ok ? 'granted' : 'denied' });
+      if (window.FortAttr) window.FortAttr.consent(ok);
       cb.hidden = true;
     };
     if (!get()) cb.hidden = false;

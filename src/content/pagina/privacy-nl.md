@@ -50,7 +50,7 @@ We nemen geen besluiten die alleen op geautomatiseerde verwerking zijn gebaseerd
 
 ## Cookies
 
-We gebruiken alleen analytics-cookies van Google Analytics, en alleen met je toestemming via de cookiebanner. We gebruiken geen marketing- of trackingcookies van derden. Je kunt je keuze wijzigen door je cookies te wissen; de banner verschijnt dan opnieuw.
+We gebruiken alleen analytics-cookies van Google Analytics en onze eigen cookie fc_attr (90 dagen), en alleen met je toestemming via de cookiebanner. In fc_attr staat hoe je op de site kwam: campagnecodes, de verwijzende website en de eerste pagina die je bezocht. Vul je daarna een formulier in, dan bewaren we die herkomst en je Google Analytics-ID bij je gegevens, zodat we kunnen zien welke kanalen klanten opleveren. Je naam en e-mailadres sturen we niet naar Google. We gebruiken geen marketing- of trackingcookies van derden. Je kunt je keuze wijzigen door je cookies te wissen; de banner verschijnt dan opnieuw.
 
 ## Beveiliging
 

@@ -50,7 +50,7 @@ We do not make decisions based solely on automated processing. The CRM check res
 
 ## Cookies
 
-We only use Google Analytics cookies, and only with your consent via the cookie banner. We do not use third-party marketing or tracking cookies. You can change your choice by clearing your cookies; the banner will then appear again.
+We only use Google Analytics cookies and our own cookie fc_attr (90 days), and only with your consent via the cookie banner. fc_attr records how you arrived at the site: campaign codes, the referring website and the first page you visited. If you then submit a form, we store that origin and your Google Analytics ID with your details, so we can see which channels bring in customers. We do not send your name or email address to Google. We do not use third-party marketing or tracking cookies. You can change your choice by clearing your cookies; the banner will then appear again.
 
 ## Security
 
