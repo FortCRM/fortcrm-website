@@ -1,5 +1,5 @@
 // fortcrm-formulier-monitor
-// Controleert elk uur of de formulier-webhook van fortcrm.nl bereikbaar is, net zoals de site hem aanroept
+// Controleert dagelijks of de formulier-webhook van fortcrm.nl bereikbaar is, net zoals de site hem aanroept
 // (POST met Origin https://fortcrm.nl). Gaat het twee keer achter elkaar mis, dan volgt een melding in de
 // Google Chat-space voor foutmeldingen. Draait bewust buiten n8n: valt n8n uit, dan werkt deze check nog.
 //

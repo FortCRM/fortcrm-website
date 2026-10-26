@@ -1,6 +1,6 @@
 # fortcrm-formulier-monitor
 
-Cloudflare Worker die elk uur (minuut 17) controleert of de formulier-webhook van fortcrm.nl werkt. Bij twee mislukte pogingen achter elkaar volgt een melding in de Google Chat-space voor foutmeldingen.
+Cloudflare Worker die dagelijks om 07:17 UTC (08:17 of 09:17 Nederlandse tijd) controleert of de formulier-webhook van fortcrm.nl werkt. Bij twee mislukte pogingen achter elkaar volgt een melding in de Google Chat-space voor foutmeldingen.
 
 Waarom buiten n8n: als n8n uitvalt of de flow niet actief is, merkt n8n dat zelf niet. Fouten verderop in de flow (Pipedrive, data table) vangt de errorworkflow "Error melding n8n flow" al af.
 
@@ -23,7 +23,7 @@ Waarom buiten n8n: als n8n uitvalt of de flow niet actief is, merkt n8n dat zelf
 
    Plak bij de laatste stap de webhook-URL. Deel die URL niet in chats of documenten.
 
-3. Testen zonder te wachten: `npx wrangler dev --test-scheduled` en dan `curl "http://localhost:8787/__scheduled?cron=17+*+*+*+*"`.
+3. Testen zonder te wachten: `npx wrangler dev --test-scheduled` en dan `curl "http://localhost:8787/__scheduled?cron=17+7+*+*+*"`.
 
 ## Logboek
 

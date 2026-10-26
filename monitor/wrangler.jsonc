@@ -1,10 +1,10 @@
 {
-  // Losse Worker naast de site: elk uur een beschikbaarheidscheck van de formulier-webhook
+  // Losse Worker naast de site: dagelijks (07:17 UTC) een beschikbaarheidscheck van de formulier-webhook
   "name": "fortcrm-formulier-monitor",
   "main": "src/index.js",
   "compatibility_date": "2026-10-01",
   "workers_dev": false,
-  "triggers": { "crons": ["17 * * * *"] },
+  "triggers": { "crons": ["17 7 * * *"] },
   "observability": { "enabled": true },
   "vars": {
     "WEBHOOK_URL": "https://fortcrm.app.n8n.cloud/webhook/fortcrm-website-formulier",
