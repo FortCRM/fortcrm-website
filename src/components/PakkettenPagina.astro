@@ -9,19 +9,20 @@ const { lang } = Astro.props as { lang: Lang };
 const h = await home(lang);
 const p = h.pakketten;
 const nl = lang === "nl";
+const uitleg = String(p.uitleg || p.intro || "").split(/\n\s*\n/).map((a) => a.trim()).filter(Boolean);
 const swipe = "Swipe ← →";
 const contact = `${pad(lang)}#contact`;
 ---
 
 <section class="tint py-20 md:py-24">
   <div class="wrap">
-    <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
-      <div>
-        <p class="eyebrow mb-4">{p.eyebrow}</p>
-        <h1 class="sectiekop">{p.titel}</h1>
+    <p class="eyebrow mb-4">{p.eyebrow}</p>
+    <h1 class="sectiekop">{p.titel}</h1>
+    {uitleg.length > 0 && (
+      <div class="mt-6 max-w-3xl space-y-4 text-lg text-inkt/70 leading-relaxed">
+        {uitleg.map((a) => <p>{a}</p>)}
       </div>
-      {p.intro && <p class="intro lg:justify-self-end">{p.intro}</p>}
-    </div>
+    )}
     <div class="mt-12"><Tabel kolommen={p.kolommen} rijen={p.rijen} hint={swipe} /></div>
     <p class="mt-4 text-sm text-inkt/50 max-w-3xl">{p.prijsnoot}</p>
     <div class="mt-10 flex flex-wrap items-center gap-6">

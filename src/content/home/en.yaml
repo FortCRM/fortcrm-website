@@ -161,6 +161,14 @@ pakketten:
   eyebrow: Packages
   titel: Choose how much you do yourself
   intro: Three ways to work with us. All three are built with Pipedrive as the source of truth.
+  uitleg: |-
+    Why three packages? Every business differs on two points: who does the work, and how much needs to be set up.
+
+    Who does what. One team wants to be hands-on and mainly needs a solid foundation. Another prefers to build with us, so they can manage it themselves afterwards. And sometimes you simply want it taken off your hands.
+
+    How much. One sales process needs fewer pipelines, fields and automations than several teams with their own ways of working and integrations.
+
+    The three packages are recognisable starting points on those two axes. All three are built with Pipedrive as the place where your customer data is right. Prices are indicative: every quote is tailored to your needs and the way you want to work.
   kolommen:
   - naam: Self-directed
     prijs: from €4,950

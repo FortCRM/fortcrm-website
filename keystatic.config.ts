@@ -151,6 +151,7 @@ const homeSchema = {
     {
       ...kop,
       intro: alinea("Inleiding"),
+      uitleg: alinea("Pakkettenpagina: uitleg onder de titel", "Waarom er drie pakketten zijn. Witregel = nieuwe alinea. Leeg = de inleiding wordt getoond."),
       kolommen: lijst(
         fields.object({
           naam: tekst("Pakket"),

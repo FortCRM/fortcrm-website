@@ -3,7 +3,7 @@ titel: Algemene voorwaarden
 omschrijving: De afspraken die gelden voor alle offertes, opdrachten en onderhoudsabonnementen van FortCRM.
 bijgewerkt: 2026-10-25
 ---
-Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koophandel onder nummer 42105837. We hebben ze kort en in gewone taal gehouden. Vragen? Mail naar [hallo@fortcrm.nl](mailto:hallo@fortcrm.nl). Liever een PDF? [Download de algemene voorwaarden](/downloads/algemene-voorwaarden-fortcrm.pdf).
+Dit zijn de algemene voorwaarden van FortCRM, ingeschreven bij de Kamer van Koophandel onder nummer 42105837. We hebben ze kort en in gewone taal gehouden. Vragen? Mail naar [hallo@fortcrm.nl](mailto:hallo@fortcrm.nl). Liever een PDF? <a href="/downloads/algemene-voorwaarden-fortcrm.pdf" target="_blank" rel="noopener">Download de algemene voorwaarden</a>.
 
 ## 1. Toepasselijkheid
 
