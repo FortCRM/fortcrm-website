@@ -14,7 +14,7 @@ export default defineConfig({
     react(),
     keystatic(),
     tailwind(),
-    sitemap({ filter: (page) => !page.includes("/keystatic") }),
+    sitemap({ filter: (page) => !page.includes("/keystatic") && !page.includes("/404") }),
   ],
   vite: {
     // Keystatic leest zijn geheimen via astro:env; niet voorbundelen

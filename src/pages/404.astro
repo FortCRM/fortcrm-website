@@ -1,0 +1,27 @@
+---
+// Cloudflare Pages serveert dist/404.html met status 404 voor elke onbekende URL.
+// Zonder dit bestand gaf elke onbekende URL de homepage met status 200 (soft 404).
+import PageLayout from "@layouts/PageLayout.astro";
+import { SITE } from "@consts";
+---
+
+<PageLayout title="Pagina niet gevonden | FortCRM" description="Deze pagina bestaat niet (meer). Ga naar de homepage, de pakketten of de blog van FortCRM." lang="nl">
+  <section>
+    <div class="max-w-3xl mx-auto px-6 py-20 md:py-28">
+      <p class="text-sm font-semibold uppercase tracking-wider text-inkt/50">404</p>
+      <h1 class="mt-3 font-display font-bold text-4xl md:text-5xl leading-[1.05]">Deze pagina bestaat niet (meer)</h1>
+      <p class="mt-6 text-lg text-inkt/70 leading-relaxed max-w-xl">
+        Misschien is hij verplaatst, of zit er een typfout in de link. Hieronder vind je de belangrijkste plekken.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="/" class="knop px-7">Naar de homepage</a>
+        <a href="/pakketten/" class="tekstlink self-center">Pakketten en prijzen →</a>
+        <a href={SITE.CHECK} class="tekstlink self-center">Doe de CRM-check →</a>
+        <a href="/blog/" class="tekstlink self-center">Blog →</a>
+      </div>
+      <p class="mt-12 text-sm text-inkt/50">
+        Looking for the English site? <a href="/en/" class="underline underline-offset-4">Go to fortcrm.nl/en</a>.
+      </p>
+    </div>
+  </section>
+</PageLayout>
