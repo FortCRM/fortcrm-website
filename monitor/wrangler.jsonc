@@ -1,0 +1,15 @@
+{
+  // Losse Worker naast de site: elk uur een beschikbaarheidscheck van de formulier-webhook
+  "name": "fortcrm-formulier-monitor",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "triggers": { "crons": ["17 * * * *"] },
+  "observability": { "enabled": true },
+  "vars": {
+    "WEBHOOK_URL": "https://fortcrm.app.n8n.cloud/webhook/fortcrm-website-formulier",
+    "ORIGIN": "https://fortcrm.nl"
+  }
+  // Geheim, niet in deze file: CHAT_WEBHOOK_URL
+  // npx wrangler secret put CHAT_WEBHOOK_URL
+}

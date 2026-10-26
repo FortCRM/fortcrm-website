@@ -17,7 +17,14 @@
       return fetch(CFG.formEndpoint, {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
       });
-    }).then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r; });
+    }).then(function (r) {
+      if (!r.ok) { var e = new Error('status ' + r.status); e.reden = 'http_' + r.status; throw e; }
+      return r;
+    }, function (e) { e.reden = 'netwerk'; throw e; });
+  };
+  // GA4-event bij een mislukte verzending, zonder persoonsgegevens
+  var meldFout = function (formId) {
+    return function (e) { ATTR.event('form_error', { form_id: formId, error_reason: (e && e.reden) || 'onbekend' }); };
   };
 
   var Q = [
@@ -257,7 +264,7 @@
           send({ soort: 'quickscan', naam: nm, mail: f.mail.value.trim(), terugbellen: f.bel.checked,
             telefoon: f.bel.checked ? f.tel.value.trim() : '', antwoorden: ans, bron: 'quickscan', taal: CFG.lang || 'nl' })
             .then(function () { ATTR.event('generate_lead', { form_id: 'crm_check', conversion_type: 'formulier' }); })
-            .catch(function () {});
+            .catch(meldFout('crm_check'));
           if (f.optin.checked) send({ soort: 'nieuwsbrief', naam: nm, mail: ml, bron: 'quickscan', taal: CFG.lang || 'nl' }).catch(function () {});
         }
         i++; step();
@@ -350,7 +357,8 @@
         m.textContent = T.ok(naam);
         ATTR.event('generate_lead', { form_id: 'contact_' + onderwerp, conversion_type: 'formulier' });
         if (el.optin && el.optin.checked) send({ soort: 'nieuwsbrief', naam: naam, mail: mail, bron: 'contactformulier' }).catch(function () {});
-      }).catch(function () {
+      }).catch(function (e) {
+        meldFout('contact_' + onderwerp)(e);
         btn.disabled = false;
         m.classList.add('err');
         m.innerHTML = T.fail;
