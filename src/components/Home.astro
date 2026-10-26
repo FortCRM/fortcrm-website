@@ -277,8 +277,13 @@ const garantieLink = nl ? "Zo werkt de garantie" : "How the guarantee works";
     </div>
     <div class="mt-16 grid md:grid-cols-2 gap-10">
       {h.team.mensen.map((m: any) => (
-        <article class="reveal grid gap-6 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:items-start">
-          {m.foto && <img src={m.foto} alt={m.naam} width="320" height="320" class="w-full aspect-square object-cover rounded-2xl" />}
+        <article class="reveal grid gap-6 sm:grid-cols-[160px_minmax(0,1fr)] sm:items-start">
+          {m.foto && (
+            <div class="teamfoto relative w-32 sm:w-40 aspect-square overflow-hidden rounded-2xl bg-viridiaan">
+              <img src={m.foto} alt={m.naam} width="160" height="160" loading="lazy" class="w-full h-full object-cover grayscale contrast-110" />
+              <span class="absolute inset-0 bg-viridiaan mix-blend-color opacity-70" aria-hidden="true"></span>
+            </div>
+          )}
           <div class="min-w-0">
             <p class="eyebrow mb-2">{m.rol}</p>
             <h3 class="font-display font-semibold text-2xl">{m.naam}</h3>

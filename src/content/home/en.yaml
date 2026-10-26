@@ -345,13 +345,13 @@ team:
   - naam: Joost Smaardijk
     rol: Strategy and guidance
     tekst: 'Makes sure the project adds up: strategy, sales, guidance and project management. Previously 15 years as a project lead on SAP programmes.'
-    foto: /images/team/joost-smaardijk.jpg
+    foto: /images/team/team/mensen/0/foto.jpg
     linkedin: https://www.linkedin.com/in/joostsmaardijk/
     linkedinTekst: Connect on LinkedIn
   - naam: Joost Beers
     rol: Implementation and technology
     tekst: Builds the setup, automations, integrations and workflows, and optimises processes. Delivered three full Pipedrive implementations in the past three years, including migration. Before that, seven years as an IT business consultant.
-    foto: /images/team/joost-beers.jpg
+    foto: /images/team/team/mensen/1/foto.jpg
     linkedin: https://www.linkedin.com/in/jfbeers
     linkedinTekst: Connect on LinkedIn
   noot: ''
