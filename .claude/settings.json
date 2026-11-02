@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm ci)",
+      "Bash(npm run *)",
+      "Bash(npx astro *)",
+      "Bash(npx wrangler dev*)",
+      "Bash(npx wrangler whoami)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)"
+    ],
+    "ask": [
+      "Bash(npx wrangler deploy*)",
+      "Bash(npx wrangler secret*)",
+      "Bash(git push*)"
+    ],
+    "deny": [
+      "Read(./.dev.vars*)",
+      "Read(./.env.local*)"
+    ]
+  }
+}

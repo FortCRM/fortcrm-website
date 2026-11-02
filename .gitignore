@@ -7,3 +7,6 @@ node_modules/
 .dev.vars
 .DS_Store
 !.env.production
+
+# Claude Code, persoonlijke instellingen
+.claude/settings.local.json
